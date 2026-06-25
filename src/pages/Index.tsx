@@ -48,64 +48,68 @@ const Index = () => {
 
           {/* Calendar block — date 7/7/2026 with heart strikethrough */}
           <section className="px-4 py-16">
-            <Reveal>
-              <div
-                className="mx-auto max-w-sm rounded-2xl p-6 text-center backdrop-blur-md"
-                style={{
-                  background: "hsla(40, 50%, 95%, 0.65)",
-                  border: "1.5px solid hsl(42 75% 55% / 0.5)",
-                  boxShadow: "var(--shadow-soft)",
-                }}
-              >
-                <div
-                  className="flex justify-between items-center font-display text-sm mb-3 px-2 py-2 rounded-lg"
-                  dir="ltr"
-                  style={{
-                    background: "linear-gradient(135deg, hsl(45 80% 60%), hsl(38 70% 45%))",
-                    color: "hsl(30 40% 18%)",
-                    fontWeight: 600,
-                  }}
-                >
-                  <span>Tuesday</span>
-                  <span>July</span>
-                  <span>2026</span>
-                </div>
+  <Reveal>
+    <div
+      className="mx-auto max-w-sm rounded-2xl p-6 text-center backdrop-blur-md"
+      style={{
+        background: "#F8F6F2",
+        border: "1.5px solid hsl(42 75% 55% / 0.5)",
+        boxShadow: "var(--shadow-soft)",
+        color: "#C8C3BD",
+      }}
+    >
+      <div
+        className="flex justify-between items-center font-display text-sm mb-3 px-2 py-2 rounded-lg"
+        dir="ltr"
+        style={{
+          background: "linear-gradient(135deg, #C8C3BD, #B89B5E)",
+          color: "#2B2B2B",
+          fontWeight: 600,
+        }}
+      >
+        <span>Tuesday</span>
+        <span>July</span>
+        <span>2026</span>
+      </div>
 
-                {/* Mini calendar grid */}
-                <div className="grid grid-cols-7 gap-1 text-[10px] font-display text-muted-foreground mb-1 mt-3" dir="ltr">
-                  {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
-                    <div key={i} className="py-1">{d}</div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-7 gap-1 text-xs font-display text-primary" dir="ltr">
-                  {/* July 2026 starts on Wednesday */}
-                  {[null, null, null, 1, 2, 3, 4,
-                    5, 6, 7, 8, 9, 10, 11,
-                    12, 13, 14, 15, 16, 17, 18,
-                    19, 20, 21, 22, 23, 24, 25,
-                    26, 27, 28, 29, 30, 31, null].map((d, i) => (
-                    <div
-                      key={i}
-                      className={`aspect-square flex items-center justify-center rounded ${
-                        d === 30 ? "heart-strike relative font-bold" : ""
-                      }`}
-                      style={
-                        d === 30
-                          ? { color: "hsl(0 0% 0%)", fontSize: "0.95rem" }
-                          : {}
-                      }
-                    >
-                      {d ?? ""}
-                    </div>
-                  ))}
-                </div>
+      <div className="grid grid-cols-7 gap-1 text-[10px] font-display text-muted-foreground mb-1 mt-3" dir="ltr">
+        {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
+          <div key={i} className="py-1">{d}</div>
+        ))}
+      </div>
 
-                <div className="font-arabic text-base mt-4 text-primary" style={{ fontWeight: 600 }}>
-                  الخميس 30 يوليو 2026
-                </div>
-              </div>
-            </Reveal>
-          </section>
+      <div className="grid grid-cols-7 gap-1 text-xs font-display text-primary" dir="ltr">
+        {[null, null, null, 1, 2, 3, 4,
+          5, 6, 7, 8, 9, 10, 11,
+          12, 13, 14, 15, 16, 17, 18,
+          19, 20, 21, 22, 23, 24, 25,
+          26, 27, 28, 29, 30, 31, null].map((d, i) => (
+          <div
+            key={i}
+            className={`aspect-square flex items-center justify-center rounded ${
+              d === 30 ? "heart-strike relative font-bold" : ""
+            }`}
+            style={
+              d === 30
+                ? {
+                    color: "#B89B5E",
+                    fontSize: "0.95rem",
+                    fontWeight: 700,
+                  }
+                : {}
+            }
+          >
+            {d ?? ""}
+          </div>
+        ))}
+      </div>
+
+      <div className="font-arabic text-base mt-4 text-primary" style={{ fontWeight: 600 }}>
+        الخميس 30 يوليو 2026
+      </div>
+    </div>
+  </Reveal>
+</section>
 
           {/* Countdown */}
           <section className="px-4 py-16">
