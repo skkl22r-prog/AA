@@ -15,11 +15,13 @@ const Index = () => {
 
   return (
   <div
-    style={{
-      backgroundImage: `url(${backgroundImg})`,
-      backgroundSize: "cover",
-    }}
-  >
+  style={{
+    backgroundImage: `url(${backgroundImg})`,
+    minHeight: "100vh",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
       {/* Ornamental gold damask pattern background */}
       <div
         aria-hidden
