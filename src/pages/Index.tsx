@@ -15,12 +15,11 @@ const Index = () => {
 
   return (
     <div
-      className="relative min-h-screen overflow-x-hidden"
-      style={{
-        background:
-backgroundImage: `url(${backgroundImg})`,
-      }}
-    >
+  className="relative min-h-screen overflow-x-hidden"
+  style={{
+    backgroundImage: `url(${backgroundImg})`,
+  }}
+>
       {/* Ornamental gold damask pattern background */}
       <div
         aria-hidden
