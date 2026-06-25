@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera } from "lucide-react";
-import invitationImg from "@/assets/photo-output.png";
+import invitationImg from "@/assets/invitation.jpeg";
 import Envelope from "@/components/Envelope";
 import SprayParticles from "@/components/SprayParticles";
 import Reveal from "@/components/Reveal";
@@ -37,7 +37,7 @@ const Index = () => {
         <main className="relative z-10">
           <section className="min-h-screen flex items-center justify-center">
             <img
-              src={/photo-output.png}
+              src={invitationImg}
               alt=" غيمة"
               className="w-screen h-auto max-w-none animate-fade-in"
               style={{ boxShadow: "var(--shadow-elegant)" }}
