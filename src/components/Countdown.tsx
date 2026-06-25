@@ -40,9 +40,9 @@ const Countdown = () => {
           }}
         >
           <div
-            className="font-display text-3xl sm:text-4xl font-light tabular-nums"
-            style={{ color: "#C8C3BD" }}
-          >
+  className="font-display text-3xl sm:text-4xl font-light tabular-nums"
+  style={{ color: "#B89B5E" }}
+>
             {String(it.v).padStart(2, "0")}
           </div>
 
