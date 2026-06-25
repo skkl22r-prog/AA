@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Check, X, Heart } from "lucide-react";
+import { Check, X, Send, Heart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import Reveal from "./Reveal";
 import { QRCodeCanvas } from "qrcode.react";
@@ -157,7 +157,6 @@ await fetch(
             <br />
             ونراك في مناسبة أخرى بإذن الله
           </p>
-         </button>
         </div>
       </Reveal>
     );
