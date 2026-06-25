@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
-import { Check, X, Send, Heart } from "lucide-react";
+import { Check, X, Heart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import Reveal from "./Reveal";
 import { QRCodeCanvas } from "qrcode.react";
 
 // 👈 عدّل رقم الواتساب هنا (بصيغة دولية بدون + أو 00). مثال السعودية: 9665XXXXXXXX
-const HOST_WHATSAPP = "99554129943";
 
 type State =
   | { kind: "form" }
@@ -113,14 +112,6 @@ await fetch(
   }
 };
 
-  const sendWhatsApp = (status: "attending" | "declined", guestName: string) => {
-    const text =
-      status === "attending"
-        ? `🌸 تأكيد حضور حفل زفاف راشد و سارة\nالاسم: ${guestName}\nالحالة: سأحضر بإذن الله`
-        : `🌸 رد على دعوة حفل زفاف راشد و سارة\nالاسم: ${guestName}\nالحالة: للأسف لن أتمكن من الحضور`;
-    const url = `https://wa.me/${HOST_WHATSAPP}?text=${encodeURIComponent(text)}`;
-    window.location.href = url;
-  };
 
   // ===== Render states =====
 
@@ -142,7 +133,7 @@ await fetch(
             أهلاً وسهلاً، {state.name}
           </div>
           <p className="font-arabic text-sm text-muted-foreground">
-            سيتم تحويلك إلى الواتساب خلال لحظات لإرسال التأكيد...
+  تم تسجيل تأكيد حضورك بنجاح.
           </p>
         </div>
       </Reveal>
@@ -166,18 +157,7 @@ await fetch(
             <br />
             ونراك في مناسبة أخرى بإذن الله
           </p>
-          <button
-            onClick={() => sendWhatsApp("declined", state.name)}
-            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-arabic text-sm transition-all hover:scale-105"
-            style={{
-              background: "linear-gradient(135deg, hsl(142 70% 45%), hsl(142 65% 35%))",
-              color: "white",
-              boxShadow: "0 4px 14px hsl(142 60% 30% / 0.4)",
-            }}
-          >
-            <Send className="w-4 h-4" />
-            أرسل الاعتذار عبر واتساب
-          </button>
+         </button>
         </div>
       </Reveal>
     );
