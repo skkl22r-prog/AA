@@ -170,8 +170,12 @@ const Index = () => {
           {/* Details */}
           <section className="px-4 py-16">
             <Reveal>
-              <h2 className="text-center font-arabic text-3xl text-primary mb-10">تفاصيل الحفل</h2>
-            </Reveal>
+              <h2
+  className="text-center font-arabic text-3xl mb-10"
+  style={{ color: "#3C2E23" }}
+>
+  تفاصيل الحفل
+</h2>
             <div className="relative max-w-xl mx-auto">
               <div
                 className="absolute top-6 bottom-6 right-6 w-px"
@@ -202,7 +206,7 @@ const Index = () => {
                       <div
                         className="rounded-xl px-6 py-5 backdrop-blur-md flex items-center justify-between gap-4"
                         style={{
-                          background: "hsla(40, 50%, 95%, 0.55)",
+background: "#F8F6F2",
                           border: "1.5px solid hsl(42 75% 55% / 0.4)",
                           boxShadow: "var(--shadow-soft)",
                         }}
@@ -222,10 +226,18 @@ const Index = () => {
           {/* RSVP */}
           <section className="px-4 py-16">
             <Reveal>
-              <h2 className="text-center font-arabic text-3xl text-primary mb-2">أكّد حضورك</h2>
-              <p className="text-center font-arabic text-sm text-muted-foreground mb-10">
-                نتشرف بحضوركم — سيتم إصدار باركود خاص لكل ضيف
-              </p>
+<h2
+  className="text-center font-arabic text-3xl mb-2"
+  style={{ color: "#3C2E23" }}
+>
+  أكّد حضورك
+</h2>
+              <p
+  className="text-center font-arabic text-sm mb-10"
+  style={{ color: "#3C2E23" }}
+>
+  نتشرف بحضوركم — سيتم إصدار باركود خاص لكل ضيف
+</p>
             </Reveal>
             <RSVP />
           </section>
@@ -233,7 +245,10 @@ const Index = () => {
           {/* Footer */}
           <footer className="px-4 py-12 text-center">
             <Reveal>
-              <div className="flex items-center justify-center gap-2 text-primary">
+<div
+  className="flex items-center justify-center gap-2"
+  style={{ color: "#3C2E23" }}
+>
                 <Heart className="w-4 h-4 fill-current" />
                 <span className="font-arabic text-sm">
                   صُنع بحب بواسطة{" "}
@@ -242,7 +257,7 @@ const Index = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline underline-offset-4 transition-colors"
-                    style={{ color: "hsl(42 75% 45%)" }}
+style={{ color: "#3C2E23" }}
                   >
                     متجر غيمة
                   </a>
