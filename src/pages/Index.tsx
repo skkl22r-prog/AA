@@ -114,46 +114,37 @@ const Index = () => {
           {/* Countdown */}
         <section className="px-4 py-16">
   <Reveal>
-    <h2 className="text-center font-arabic text-3xl mb-10" style={{ color: "#FFFFFF" }}>
+    <h2 className="text-center font-arabic text-3xl mb-10" style={{ color: "#3C2E23" }}>
       العدّ التنازلي
     </h2>
   </Reveal>
 
   <Reveal delay={150}>
-    <div
-      className="mx-auto max-w-2xl rounded-2xl p-6"
-      style={{
-        background: "#F8F6F2",
-        border: "1.5px solid hsl(42 75% 55% / 0.5)",
-        boxShadow: "var(--shadow-soft)",
-      }}
-    >
-      <Countdown />
-    </div>
+    <Countdown />
   </Reveal>
 </section>
 
-{/* Venue */}
 <section className="px-4 py-16">
   <Reveal>
-    <h2 className="text-center font-arabic text-3xl mb-8" style={{ color: "#FFFFFF" }}>
+    <h2 className="text-center font-arabic text-3xl mb-8" style={{ color: "#3C2E23" }}>
       موقع حفلنا
     </h2>
   </Reveal>
 
   <Reveal delay={100}>
     <div className="text-center mb-6">
-      <MapPin className="mx-auto w-10 h-10 mb-3" style={{ color: "#FFFFFF" }} />
+      <MapPin className="mx-auto w-10 h-10 mb-3" style={{ color: "#3C2E23" }} />
 
-      <div className="font-arabic text-2xl" style={{ color: "#FFFFFF" }}>
+      <div className="font-arabic text-2xl" style={{ color: "#3C2E23" }}>
         قاعة المردون
       </div>
 
-      <div className="font-arabic text-lg mt-1" style={{ color: "#FFFFFF" }}>
+      <div className="font-arabic text-lg mt-1" style={{ color: "#3C2E23" }}>
         جدة
       </div>
     </div>
   </Reveal>
+</section>
 
   <Reveal delay={200}>
     <div
