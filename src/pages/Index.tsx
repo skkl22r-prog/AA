@@ -85,10 +85,10 @@ const Index = () => {
                     <div
                       key={i}
                       className={`aspect-square flex items-center justify-center rounded ${
-                        d === 7 ? "heart-strike relative font-bold" : ""
+                        d === 30 ? "heart-strike relative font-bold" : ""
                       }`}
                       style={
-                        d === 7
+                        d === 30
                           ? { color: "hsl(0 0% 0%)", fontSize: "0.95rem" }
                           : {}
                       }
@@ -99,7 +99,7 @@ const Index = () => {
                 </div>
 
                 <div className="font-arabic text-base mt-4 text-primary" style={{ fontWeight: 600 }}>
-                  الثلاثاء 7 يوليو 2026
+                  الخميس 30 يوليو 2026
                 </div>
               </div>
             </Reveal>
@@ -123,8 +123,8 @@ const Index = () => {
             <Reveal delay={100}>
               <div className="text-center mb-6">
                 <MapPin className="mx-auto w-10 h-10 mb-3" style={{ color: "hsl(42 75% 50%)" }} />
-                <div className="font-arabic text-2xl text-primary">فندق الريتز - كارلتون</div>
-                <div className="font-arabic text-lg text-muted-foreground mt-1">الرياض</div>
+                <div className="font-arabic text-2xl text-primary"> قاعة المردون  </div>
+                <div className="font-arabic text-lg text-muted-foreground mt-1">جدة</div>
               </div>
             </Reveal>
             <Reveal delay={200}>
@@ -136,7 +136,7 @@ const Index = () => {
                 }}
               >
                 <iframe
-                  title="موقع الحفل - فندق الريتز كارلتون الرياض"
+                  title="موقع الحفل - قاعة المردون - جدة"
                   src="https://www.google.com/maps?q=The+Ritz-Carlton+Riyadh&output=embed"
                   width="100%"
                   height="320"
