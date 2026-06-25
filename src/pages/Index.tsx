@@ -169,14 +169,16 @@ const Index = () => {
 
           {/* Details */}
           <section className="px-4 py-16">
-            <Reveal>
-              <h2
-  className="text-center font-arabic text-3xl mb-10"
-  style={{ color: "#3C2E23" }}
->
-  تفاصيل الحفل
-</h2>
-            <div className="relative max-w-xl mx-auto">
+  <Reveal>
+    <h2
+      className="text-center font-arabic text-3xl mb-10"
+      style={{ color: "#3C2E23" }}
+    >
+      تفاصيل الحفل
+    </h2>
+  </Reveal>
+
+  <div className="relative max-w-xl mx-auto">
               <div
                 className="absolute top-6 bottom-6 right-6 w-px"
                 style={{ background: "hsl(42 75% 55% / 0.5)" }}
