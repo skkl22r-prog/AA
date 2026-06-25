@@ -14,11 +14,11 @@ const Index = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <div
-  className="relative min-h-screen overflow-x-hidden"
-  style={{
-    backgroundImage: `url(${backgroundImg})`,
-  }}
+    style={{
+  backgroundImage: `url(${backgroundImg})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}}
 >
       {/* Ornamental gold damask pattern background */}
       <div
