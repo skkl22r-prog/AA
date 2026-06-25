@@ -20,9 +20,6 @@ const Index = () => {
       backgroundSize: "cover",
     }}
   >
-    ...
-  </div>
-);
       {/* Ornamental gold damask pattern background */}
       <div
         aria-hidden
