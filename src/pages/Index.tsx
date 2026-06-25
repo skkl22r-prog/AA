@@ -147,13 +147,7 @@ const Index = () => {
             </Reveal>
           </section>
 
-          {/* Program timeline */}
-          <section className="px-4 py-16">
-            <Reveal>
-              <h2 className="text-center font-arabic text-3xl text-primary mb-6">برنامج الحفل</h2>
-            </Reveal>
-            <Timeline />
-          </section>
+
 
           {/* Details */}
           <section className="px-4 py-16">
@@ -167,9 +161,10 @@ const Index = () => {
               />
               <div className="space-y-6">
                 {[
-                  { icon: QrCode, text: "يرجى إبراز الباركود عند الدخول" },
+                  { icon: QrCode, text: "  الاستقبــــال : 8:00 م" },
                   { icon: Baby, text: "يمنع اصطحاب الأطفال" },
                   { icon: Camera, text: "يمنع دخول جوالات الكاميرا" },
+                  { icon: QrCode, text: "يرجى إبراز الباركود عند الدخول" },
                 ].map((d, i) => (
                   <Reveal key={i} delay={i * 120}>
                     <div className="relative pr-16">
