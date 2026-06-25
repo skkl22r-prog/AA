@@ -112,46 +112,68 @@ const Index = () => {
 </section>
 
           {/* Countdown */}
-          <section className="px-4 py-16">
-            <Reveal>
-              <h2 className="text-center font-arabic text-3xl text-primary mb-10">العدّ التنازلي</h2>
-            </Reveal>
-            <Reveal delay={150}>
-              <Countdown />
-            </Reveal>
-          </section>
+        <section className="px-4 py-16">
+  <Reveal>
+    <h2 className="text-center font-arabic text-3xl mb-10" style={{ color: "#FFFFFF" }}>
+      العدّ التنازلي
+    </h2>
+  </Reveal>
 
-          {/* Venue */}
-          <section className="px-4 py-16">
-            <Reveal>
-              <h2 className="text-center font-arabic text-3xl text-primary mb-8">موقع حفلنا</h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="text-center mb-6">
-                <MapPin className="mx-auto w-10 h-10 mb-3" style={{ color: "hsl(42 75% 50%)" }} />
-                <div className="font-arabic text-2xl text-primary"> قاعة المردون  </div>
-                <div className="font-arabic text-lg text-muted-foreground mt-1">جدة</div>
-              </div>
-            </Reveal>
-            <Reveal delay={200}>
-              <div
-                className="max-w-2xl mx-auto rounded-2xl overflow-hidden"
-                style={{
-                  boxShadow: "var(--shadow-soft)",
-                  border: "1.5px solid hsl(42 75% 55% / 0.5)",
-                }}
-              >
-                <iframe
-  title="موقع الحفل - قاعة المردون"
-  src="https://www.google.com/maps?q=قاعة+المردون+جدة&output=embed"
-  width="100%"
-  height="320"
-  loading="lazy"
-  style={{ border: 0 }}
-/>
-              </div>
-            </Reveal>
-          </section>
+  <Reveal delay={150}>
+    <div
+      className="mx-auto max-w-2xl rounded-2xl p-6"
+      style={{
+        background: "#F8F6F2",
+        border: "1.5px solid hsl(42 75% 55% / 0.5)",
+        boxShadow: "var(--shadow-soft)",
+      }}
+    >
+      <Countdown />
+    </div>
+  </Reveal>
+</section>
+
+{/* Venue */}
+<section className="px-4 py-16">
+  <Reveal>
+    <h2 className="text-center font-arabic text-3xl mb-8" style={{ color: "#FFFFFF" }}>
+      موقع حفلنا
+    </h2>
+  </Reveal>
+
+  <Reveal delay={100}>
+    <div className="text-center mb-6">
+      <MapPin className="mx-auto w-10 h-10 mb-3" style={{ color: "#FFFFFF" }} />
+
+      <div className="font-arabic text-2xl" style={{ color: "#FFFFFF" }}>
+        قاعة المردون
+      </div>
+
+      <div className="font-arabic text-lg mt-1" style={{ color: "#FFFFFF" }}>
+        جدة
+      </div>
+    </div>
+  </Reveal>
+
+  <Reveal delay={200}>
+    <div
+      className="max-w-2xl mx-auto rounded-2xl overflow-hidden"
+      style={{
+        boxShadow: "var(--shadow-soft)",
+        border: "1.5px solid hsl(42 75% 55% / 0.5)",
+      }}
+    >
+      <iframe
+        title="موقع الحفل - قاعة المردون"
+        src="https://www.google.com/maps?q=قاعة+المردون+جدة&output=embed"
+        width="100%"
+        height="320"
+        loading="lazy"
+        style={{ border: 0 }}
+      />
+    </div>
+  </Reveal>
+</section>
 
 
 
