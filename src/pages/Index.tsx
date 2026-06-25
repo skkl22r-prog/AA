@@ -136,13 +136,13 @@ const Index = () => {
                 }}
               >
                 <iframe
-                  title="موقع الحفل - قاعة المردون - جدة"
-                  src="https://www.google.com/maps?q=The+Ritz-Carlton+Riyadh&output=embed"
-                  width="100%"
-                  height="320"
-                  loading="lazy"
-                  style={{ border: 0 }}
-                />
+  title="موقع الحفل - قاعة المردون"
+  src="https://www.google.com/maps?q=قاعة+المردون+جدة&output=embed"
+  width="100%"
+  height="320"
+  loading="lazy"
+  style={{ border: 0 }}
+/>
               </div>
             </Reveal>
           </section>
