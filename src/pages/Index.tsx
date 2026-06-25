@@ -14,12 +14,15 @@ const Index = () => {
   const [opened, setOpened] = useState(false);
 
   return (
+  <div
     style={{
-  backgroundImage: `url(${backgroundImg})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-}}
->
+      backgroundImage: `url(${backgroundImg})`,
+      backgroundSize: "cover",
+    }}
+  >
+    ...
+  </div>
+);
       {/* Ornamental gold damask pattern background */}
       <div
         aria-hidden
