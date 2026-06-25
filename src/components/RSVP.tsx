@@ -73,6 +73,21 @@ if (existing) {
   setState({ kind: "error", msg: "حدث خطأ، حاول مرة أخرى" });
   return;
 }
+await fetch(
+  "https://docs.google.com/forms/d/e/1FAIpQLSfW3kWwWKQD0_q1G7S9Df3-4T7E-2ZVvtMHd6IEdPaXOYz4fg/formResponse",
+  {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      "entry.911642472": name.trim(),
+      "entry.2040087077":
+        choice === "attending" ? "تاكيد الحضور" : "الاعتذار",
+    }),
+  }
+);
 
   if (choice === "attending") {
   const qrUrl = `${window.location.origin}/scan/${qr_token}`;
