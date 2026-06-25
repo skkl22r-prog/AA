@@ -305,7 +305,7 @@ if (state.kind === "qr") {
             }}
           >
             <X className="w-4 h-4" />
-            الاعتذار
+            الاعتذار عن الحضور
           </button>
         </div>
 
