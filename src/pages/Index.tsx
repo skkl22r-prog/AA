@@ -8,6 +8,7 @@ import Countdown from "@/components/Countdown";
 import Timeline from "@/components/Timeline";
 import RSVP from "@/components/RSVP";
 import MusicToggle from "@/components/MusicToggle";
+import backgroundImg from "@/assets/sarah.jpeg";
 
 const Index = () => {
   const [opened, setOpened] = useState(false);
@@ -17,7 +18,7 @@ const Index = () => {
       className="relative min-h-screen overflow-x-hidden"
       style={{
         background:
-          "linear-gradient(180deg, hsl(40 50% 92%) 0%, hsl(38 45% 86%) 50%, hsl(35 42% 80%) 100%)",
+backgroundImage: `url(${backgroundImg})`,
       }}
     >
       {/* Ornamental gold damask pattern background */}
