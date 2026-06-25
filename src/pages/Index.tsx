@@ -144,7 +144,6 @@ const Index = () => {
       </div>
     </div>
   </Reveal>
-</section>
 
   <Reveal delay={200}>
     <div
