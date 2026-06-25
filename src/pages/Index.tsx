@@ -37,7 +37,7 @@ const Index = () => {
         <main className="relative z-10">
           <section className="min-h-screen flex items-center justify-center">
             <img
-              src={invitationImg}
+              src={/photo-output.png}
               alt=" غيمة"
               className="w-screen h-auto max-w-none animate-fade-in"
               style={{ boxShadow: "var(--shadow-elegant)" }}
