@@ -37,13 +37,16 @@ backgroundPosition: "center top",
 
       {opened && (
         <main className="relative z-10">
-<section className="min-h-screen flex items-start justify-center">
+<section className="flex justify-center">
             <img
-              src={invitationImg}
-              alt=" غيمة"
-              className="w-screen h-auto max-w-none animate-fade-in"
-              style={{ boxShadow: "var(--shadow-elegant)" }}
-            />
+  src={invitationImg}
+  alt=" غيمة"
+  className="w-screen h-auto max-w-none block"
+  style={{
+    boxShadow: "var(--shadow-elegant)",
+    display: "block",
+  }}
+/>
           </section>
 
           {/* Calendar block — date 7/7/2026 with heart strikethrough */}
