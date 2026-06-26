@@ -37,7 +37,7 @@ backgroundPosition: "center top",
 
       {opened && (
         <main className="relative z-10">
-          <section className="min-h-screen flex items-start justify-center">
+<section className="min-h-screen flex items-start justify-center">
             <img
               src={invitationImg}
               alt=" غيمة"
