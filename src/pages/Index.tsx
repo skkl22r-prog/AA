@@ -19,7 +19,7 @@ const Index = () => {
     backgroundImage: `url(${backgroundImg})`,
     minHeight: "100vh",
     backgroundSize: "cover",
-    backgroundPosition: "center",
+backgroundPosition: "center top",
   }}
 >
       {/* Ornamental gold damask pattern background */}
@@ -37,7 +37,7 @@ const Index = () => {
 
       {opened && (
         <main className="relative z-10">
-          <section className="min-h-screen flex items-center justify-center">
+          <section className="min-h-screen flex items-start justify-center">
             <img
               src={invitationImg}
               alt=" غيمة"
