@@ -188,7 +188,7 @@ backgroundPosition: "center top",
               />
               <div className="space-y-6">
                 {[
-                  { icon: Clock, text: "  الاستقبــــال : 8:00 م" },
+                  { icon: Clock, text: "  الاستقبــــال : 9:00 م" },
                   { icon: Baby, text: "يمنع اصطحاب الأطفال" },
                   { icon: Camera, text: "يمنع دخول جوالات الكاميرا" },
                   { icon: QrCode, text: "يرجى إبراز الباركود عند الدخول" },
