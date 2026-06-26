@@ -18,17 +18,29 @@ const RSVP = () => {
   const [choice, setChoice] = useState<"attending" | "declined" | null>(null);
   const [state, setState] = useState<State>({ kind: "form" });
 useEffect(() => {
-  const saved = localStorage.getItem("guest_qr");
+  const savedQr = localStorage.getItem("guest_qr");
 
-  if (!saved) return;
-
-  const data = JSON.parse(saved);
+if (savedQr) {
+  const data = JSON.parse(savedQr);
 
   setState({
     kind: "qr",
     name: data.name,
     qr: data.qr,
   });
+  return;
+}
+
+const savedDeclined = localStorage.getItem("guest_declined");
+
+if (savedDeclined) {
+  const data = JSON.parse(savedDeclined);
+
+  setState({
+    kind: "declined",
+    name: data.name,
+  });
+}
 }, []);
 
   const submit = async () => {
@@ -105,11 +117,18 @@ await fetch(
     qr: qrUrl,
   });
 } else {
+    localStorage.setItem(
+      "guest_declined",
+      JSON.stringify({
+        name: name.trim(),
+      })
+    );
+
     setState({
       kind: "declined",
       name: name.trim(),
     });
-  }
+}
 };
 
 
