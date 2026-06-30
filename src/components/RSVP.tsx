@@ -95,7 +95,7 @@ await fetch(
     body: new URLSearchParams({
       "entry.911642472": name.trim(),
       "entry.2040087077":
-        choice === "attending" ? "تاكيد الحضور" : "الاعتذار",
+        choice === "attending" ? "تاكيد الحضور" : "الاعتذار عن الحضور",
     }),
   }
 );
