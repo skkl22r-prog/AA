@@ -16,7 +16,7 @@ const Index = () => {
   return (
   <div
   style={{
-    //backgroundImage: `url(${backgroundImg})`,
+    backgroundImage: `url(${backgroundImg})`,
     minHeight: "100vh",
     backgroundSize: "cover",
 backgroundPosition: "center top",
