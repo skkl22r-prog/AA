@@ -47,7 +47,7 @@ className="pointer-events-none fixed inset-0 z-0 opacity-[0.18]"
       display: "block",
     }}
   />
-</section>
+</section> 
 
           {/* Calendar block — date 7/7/2026 with heart strikethrough */}
           <section className="px-4 py-16">
