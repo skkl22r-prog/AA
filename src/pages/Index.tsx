@@ -15,7 +15,6 @@ const Index = () => {
 
   return (
   <div
-  className="relative z-10"
   style={{
     backgroundImage: `url(${backgroundImg})`,
     minHeight: "100vh",
