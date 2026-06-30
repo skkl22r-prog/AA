@@ -37,17 +37,17 @@ className="pointer-events-none fixed inset-0 z-0 opacity-[0.18]"
 
       {opened && (
         <main className="relative z-10">
-<section className="flex justify-center">
-            <img
-  src={invitationImg}
-  alt=" غيمة"
-  className="w-screen h-auto max-w-none block"
-  style={{
-    boxShadow: "var(--shadow-elegant)",
-    display: "block",
-  }}
-/>
-          </section>
+<section className="flex justify-center relative z-20">
+  <img
+    src={invitationImg}
+    alt=" غيمة"
+    className="w-screen h-auto max-w-none block"
+    style={{
+      boxShadow: "var(--shadow-elegant)",
+      display: "block",
+    }}
+  />
+</section>
 
           {/* Calendar block — date 7/7/2026 with heart strikethrough */}
           <section className="px-4 py-16">
