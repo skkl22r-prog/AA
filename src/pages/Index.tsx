@@ -109,25 +109,46 @@ src={invitationImg}
     </div>
   </Reveal>
 
-  <Reveal delay={200}>
-    <div
-      className="max-w-2xl mx-auto rounded-2xl overflow-hidden"
-      style={{
-        boxShadow: "var(--shadow-soft)",
-        border: "1.5px solid hsl(42 75% 55% / 0.5)",
-      }}
-    >
-      <iframe
-        title="موقع الحفل - قاعة المردون"
-        src="https://www.google.com/maps?q=قاعة+المردون+جدة&output=embed"
-        width="100%"
-        height="320"
-        loading="lazy"
-        style={{ border: 0 }}
+ <Reveal delay={200}>
+  <div
+    className="max-w-sm mx-auto rounded-3xl p-4"
+    style={{
+      background: "#FFFDFB",
+      border: "1px solid #D8C8D9",
+      boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
+    }}
+  >
+    <div className="flex items-center justify-center gap-2 mb-4">
+      <img
+        src={locationIcon}
+        alt=""
+        className="w-5 h-5"
       />
+
+      <span
+        className="font-arabic text-sm"
+        style={{
+          color: "#000",
+          fontWeight: 600,
+        }}
+      >
+        قاعة أروما للمناسبات والمؤتمرات
+      </span>
     </div>
-  </Reveal>
-</section>
+
+    <iframe
+      title="موقع الحفل - قاعة أروما"
+      src="https://www.google.com/maps?q=قاعة+أروما+الرياض&output=embed"
+      width="100%"
+      height="320"
+      loading="lazy"
+      style={{
+        border: 0,
+        borderRadius: "16px",
+      }}
+    />
+  </div>
+</Reveal>
 
 
 
