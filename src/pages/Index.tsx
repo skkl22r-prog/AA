@@ -10,6 +10,7 @@ import RSVP from "@/components/RSVP";
 import MusicToggle from "@/components/MusicToggle";
 import backgroundImg from "@/assets/sarah.png";
 import dividerImg from "@/assets/Photoroom_20260705_140806.png";
+import locationIcon from "@/assets/photo-output.png";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 
@@ -85,24 +86,30 @@ src={invitationImg}
 
 <section className="px-4 py-16">
   <Reveal>
-    <h2 className="text-center font-arabic text-3xl mb-8" style={{ color: "#3C2E23" }}>
-      موقع حفلنا
-    </h2>
-  </Reveal>
+    <div className="text-center mb-8">
+      <img
+        src={locationIcon}
+        alt=""
+        className="mx-auto mb-4 w-14 h-auto"
+      />
 
-  <Reveal delay={100}>
-    <div className="text-center mb-6">
-      <MapPin className="mx-auto w-10 h-10 mb-3" style={{ color: "#3C2E23" }} />
+      <h2
+        className="font-arabic text-3xl"
+        style={{ color: "#3C2E23" }}
+      >
+        تفاصيل يوم الفرح
+      </h2>
 
-      <div className="font-arabic text-2xl" style={{ color: "#3C2E23" }}>
-        قاعة المردون
-      </div>
-
-      <div className="font-arabic text-lg mt-1" style={{ color: "#3C2E23" }}>
-        جدة
+      <div
+        className="font-arabic text-sm mt-2"
+        style={{ color: "#7A6A82" }}
+      >
+        كل ما تحتاج معرفته
       </div>
     </div>
   </Reveal>
+
+  <Reveal delay={100}>
 
   <Reveal delay={200}>
     <div
