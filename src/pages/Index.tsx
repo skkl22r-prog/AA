@@ -75,11 +75,11 @@ src={invitationImg}
   </Reveal>
 </section>
 
-<section className="flex justify-center py-8">
+<section className="-mx-4 py-8">
   <img
     src={dividerImg}
     alt=""
-    className="w-full max-w-sm h-auto"
+    className="block w-full h-auto"
   />
 </section>
 
