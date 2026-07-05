@@ -149,7 +149,7 @@ src={invitationImg}
     />
   </div>
 </Reveal>
-
+</section>
 
 
           {/* Details */}
