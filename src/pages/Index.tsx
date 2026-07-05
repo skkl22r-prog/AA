@@ -59,7 +59,7 @@ src={invitationImg}
       className="text-center font-arabic text-sm mb-2"
       style={{ color: "#8C7A67" }}
     >
-      30 يوليو 2026
+30 . يوليو . 2026
     </p>
 
     <h2
