@@ -55,7 +55,17 @@ src={invitationImg}
           {/* Countdown */}
         <section className="px-4 py-16">
   <Reveal>
-    <h2 className="text-center font-arabic text-3xl mb-10" style={{ color: "#3C2E23" }}>
+    <p
+      className="text-center font-arabic text-sm mb-2"
+      style={{ color: "#8C7A67" }}
+    >
+      التاريخ
+    </p>
+
+    <h2
+      className="text-center font-arabic text-3xl mb-10"
+      style={{ color: "#3C2E23" }}
+    >
       العدّ التنازلي
     </h2>
   </Reveal>
