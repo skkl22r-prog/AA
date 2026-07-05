@@ -274,6 +274,24 @@ if (state.kind === "qr") {
           }}
           dir="rtl"
         />
+<label className="block font-arabic text-sm text-primary mb-2 mt-4 text-right">
+  عدد الأشخاص
+</label>
+
+<input
+  type="number"
+  min="1"
+  value={guestCount}
+  onChange={(e) => setGuestCount(e.target.value)}
+  placeholder="عدد الأشخاص"
+  className="w-full px-4 py-3 rounded-xl font-arabic text-right outline-none transition-colors"
+  style={{
+    background: "hsla(40, 50%, 98%, 0.8)",
+    border: "1.5px solid hsl(42 60% 60% / 0.6)",
+    color: "hsl(30 35% 22%)",
+  }}
+  dir="rtl"
+/>
 
         <div className="grid grid-cols-2 gap-3 mt-5">
           <button
