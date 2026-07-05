@@ -109,8 +109,6 @@ src={invitationImg}
     </div>
   </Reveal>
 
-  <Reveal delay={100}>
-
   <Reveal delay={200}>
     <div
       className="max-w-2xl mx-auto rounded-2xl overflow-hidden"
