@@ -39,7 +39,7 @@ className="hidden"
         <main className="relative z-10">
 <section className="flex justify-center relative z-20">
   <video
-    src={invitationVideo}
+src={invitationImg}
     autoPlay
     muted
     loop
