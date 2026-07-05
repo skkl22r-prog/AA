@@ -9,9 +9,9 @@ import Timeline from "@/components/Timeline";
 import RSVP from "@/components/RSVP";
 import MusicToggle from "@/components/MusicToggle";
 import backgroundImg from "@/assets/sarah.png";
-
+import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 const Index = () => {
-  const [opened, setOpened] = useState(false);
+  
 
   return (
   <div
@@ -73,6 +73,14 @@ src={invitationImg}
   <Reveal delay={150}>
     <Countdown />
   </Reveal>
+</section>
+
+<section className="flex justify-center py-8">
+  <img
+    src={dividerImg}
+    alt=""
+    className="w-full max-w-sm h-auto"
+  />
 </section>
 
 <section className="px-4 py-16">
