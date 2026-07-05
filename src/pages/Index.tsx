@@ -11,7 +11,7 @@ import MusicToggle from "@/components/MusicToggle";
 import backgroundImg from "@/assets/sarah.png";
 import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 const Index = () => {
-  
+  const [opened, setOpened] = useState(false);
 
   return (
   <div
