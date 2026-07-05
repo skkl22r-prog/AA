@@ -15,6 +15,7 @@ type State =
   | { kind: "qr"; name: string; qr: string };
 const RSVP = () => {
   const [name, setName] = useState("");
+const [guestCount, setGuestCount] = useState("");
   const [choice, setChoice] = useState<"attending" | "declined" | null>(null);
   const [state, setState] = useState<State>({ kind: "form" });
 useEffect(() => {
@@ -94,6 +95,7 @@ await fetch(
     },
     body: new URLSearchParams({
       "entry.911642472": name.trim(),
+"entry.145314951": guestCount,
       "entry.2040087077":
         choice === "attending" ? "تاكيد الحضور" : "الاعتذار عن الحضور",
     }),
