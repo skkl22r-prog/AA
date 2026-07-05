@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock } from "lucide-react";
-import invitationImg from "@/assets/invitation.jpeg";
+import invitationImg from "@/assets/ales.mov";
 import Envelope from "@/components/Envelope";
 import SprayParticles from "@/components/SprayParticles";
 import Reveal from "@/components/Reveal";
@@ -38,16 +38,19 @@ className="hidden"
       {opened && (
         <main className="relative z-10">
 <section className="flex justify-center relative z-20">
-  <img
-    src={invitationImg}
-    alt=" غيمة"
+  <video
+    src={invitationVideo}
+    autoPlay
+    muted
+    loop
+    playsInline
     className="w-screen h-auto max-w-none block"
     style={{
       boxShadow: "var(--shadow-elegant)",
       display: "block",
     }}
   />
-</section> 
+</section>
 
           {/* Calendar block — date 7/7/2026 with heart strikethrough */}
           <section className="px-4 py-16">
