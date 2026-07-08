@@ -122,21 +122,7 @@ className="hidden"
   </div>
 </div>
 
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div
-        className="text-center text-white font-arabic"
-        style={{
-          textShadow: "0 2px 5px rgba(0,0,0,.6)",
-        }}
-      >
-        <div>{t("invite_to")}</div>
-        <div>{t("invite_join")}</div>
-        <div>{t("bride_name")} ♥ {t("groom_name")}</div>
-        <div>{t("date_line")}</div>
-      </div>
-    </div>
 
-  </div>
 </section>
           {/* Countdown */}
         <section className="px-4 py-16">
