@@ -12,6 +12,7 @@ import backgroundImg from "@/assets/sarah.png";
 import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 import locationIcon from "@/assets/photo-output.png";
 import flowerDivider from "@/assets/Photoroom_20260705_152753.png";
+import programIcon from "@/assets/Photoroom_20260705_152814.png";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 
@@ -228,13 +229,29 @@ src={invitationImg}
           {/* Details */}
           <section className="px-4 py-16">
   <Reveal>
+  <div className="text-center mb-10">
+    <img
+      src={programIcon}
+      alt=""
+      className="mx-auto mb-4 w-16 h-auto select-none"
+      draggable={false}
+    />
+
     <h2
-      className="text-center font-arabic text-3xl mb-10"
+      className="font-arabic text-3xl"
       style={{ color: "#3C2E23" }}
     >
-      تفاصيل الحفل
+      برنامج الحفل
     </h2>
-  </Reveal>
+
+    <div
+      className="font-arabic text-sm mt-2"
+      style={{ color: "#7A6A82" }}
+    >
+      خطتنا لليوم الكبير
+    </div>
+  </div>
+</Reveal>
 
   <div className="relative max-w-xl mx-auto">
               <div
