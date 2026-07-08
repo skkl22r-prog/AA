@@ -124,13 +124,19 @@ src={invitationImg}
 
 <Reveal delay={200}>
   <div
-className="w-[280px] mx-auto rounded-3xl p-3"
     style={{
-      background: "#FFFDFB",
-      border: "1px solid #D8C8D9",
-      boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
+      transform: "scale(0.9)",
+      transformOrigin: "top center",
     }}
   >
+    <div
+      className="max-w-sm mx-auto rounded-3xl p-4"
+      style={{
+        background: "#FFFDFB",
+        border: "1px solid #D8C8D9",
+        boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
+      }}
+    >
     {/* اسم القاعة */}
     <div className="flex items-center justify-center gap-2 mb-4">
       <img
@@ -237,7 +243,7 @@ className="w-[280px] mx-auto rounded-3xl p-3"
     <img
       src={programIcon}
       alt=""
-      className="mx-auto mb-4 w-20 h-auto select-none"
+      className="mx-auto mb-4 w-22 h-auto select-none"
       draggable={false}
     />
 
@@ -271,7 +277,7 @@ className="w-[280px] mx-auto rounded-3xl p-3"
         <img
           src={zaffaImg}
           alt=""
-          className="w-14 h-auto mx-auto"
+          className="w-16 h-auto mx-auto"
         />
         <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
           الزفة
@@ -285,7 +291,7 @@ className="w-[280px] mx-auto rounded-3xl p-3"
         <img
           src={dinnerImg}
           alt=""
-          className="w-14 h-auto mx-auto"
+          className="w-16 h-auto mx-auto"
         />
         <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
           العشاء
@@ -299,7 +305,7 @@ className="w-[280px] mx-auto rounded-3xl p-3"
         <img
           src={cameraImg}
           alt=""
-          className="w-14 h-auto mx-auto"
+          className="w-16 h-auto mx-auto"
         />
         <div
           className="font-arabic text-sm mt-3"
@@ -313,7 +319,7 @@ className="w-[280px] mx-auto rounded-3xl p-3"
         <img
           src={kidsImg}
           alt=""
-          className="w-14 h-auto mx-auto"
+          className="w-16 h-auto mx-auto"
         />
         <div
           className="font-arabic text-sm mt-3"
