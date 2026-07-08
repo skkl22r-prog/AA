@@ -13,6 +13,10 @@ import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 import locationIcon from "@/assets/photo-output.png";
 import flowerDivider from "@/assets/Photoroom_20260705_152753.png";
 import programIcon from "@/assets/Photoroom_20260705_152814.png";
+import zaffaImg from "@/assets/14.png";
+import dinnerImg from "@/assets/11.png";
+import cameraImg from "@/assets/12.png";
+import kidsImg from "@/assets/13.png";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 
@@ -253,52 +257,83 @@ src={invitationImg}
   </div>
 </Reveal>
 
-  <div className="relative max-w-xl mx-auto">
-              <div
-                className="absolute top-6 bottom-6 right-6 w-px"
-                style={{ background: "hsl(42 75% 55% / 0.5)" }}
-              />
-              <div className="space-y-6">
-                {[
-                  { icon: Clock, text: "  الاستقبــــال : 9:00 م" },
-                  { icon: Baby, text: "يمنع اصطحاب الأطفال" },
-                  { icon: Camera, text: "يمنع دخول جوالات الكاميرا" },
-                  { icon: QrCode, text: "يرجى إبراز الباركود عند الدخول" },
-                ].map((d, i) => (
-                  <Reveal key={i} delay={i * 120}>
-                    <div className="relative pr-16">
-                      <div
-                        className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center z-10"
-                        style={{
-                          background: "hsl(40 50% 95%)",
-                          border: "2px solid hsl(42 75% 50%)",
-                          boxShadow: "0 0 14px hsl(42 80% 60% / 0.4)",
-                        }}
-                      >
-                        <span
-                          className="w-2 h-2 rounded-full"
-                          style={{ background: "hsl(42 75% 50%)" }}
-                        />
-                      </div>
-                      <div
-                        className="rounded-xl px-6 py-5 backdrop-blur-md flex items-center justify-between gap-4"
-                        style={{
-background: "#F8F6F2",
-                          border: "1.5px solid hsl(42 75% 55% / 0.4)",
-                          boxShadow: "var(--shadow-soft)",
-                        }}
-                      >
-                        <span className="font-arabic text-lg text-primary flex-1 text-right">
-                          {d.text}
-                        </span>
-                        <d.icon className="w-7 h-7 shrink-0" style={{ color: "hsl(42 75% 45%)" }} />
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </section>
+  <Reveal delay={150}>
+  <div
+    className="overflow-x-auto pb-3"
+    style={{
+      WebkitOverflowScrolling: "touch",
+      scrollbarWidth: "none",
+    }}
+  >
+    <div className="flex gap-8 px-2 w-max">
+
+      <div className="text-center shrink-0">
+        <img
+          src={zaffaImg}
+          alt=""
+          className="w-20 h-auto mx-auto"
+        />
+        <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
+          الزفة
+        </div>
+        <div className="font-arabic text-xs mt-1" style={{ color: "#7A6A82" }}>
+          10:30 م
+        </div>
+      </div>
+
+      <div className="text-center shrink-0">
+        <img
+          src={dinnerImg}
+          alt=""
+          className="w-20 h-auto mx-auto"
+        />
+        <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
+          العشاء
+        </div>
+        <div className="font-arabic text-xs mt-1" style={{ color: "#7A6A82" }}>
+          12:00 م
+        </div>
+      </div>
+
+      <div className="text-center shrink-0">
+        <img
+          src={cameraImg}
+          alt=""
+          className="w-20 h-auto mx-auto"
+        />
+        <div
+          className="font-arabic text-sm mt-3"
+          style={{ color: "#000", width: "120px" }}
+        >
+          يمنع دخول جوالات الكاميرا
+        </div>
+      </div>
+
+      <div className="text-center shrink-0">
+        <img
+          src={kidsImg}
+          alt=""
+          className="w-20 h-auto mx-auto"
+        />
+        <div
+          className="font-arabic text-sm mt-3"
+          style={{ color: "#000", width: "120px" }}
+        >
+          يمنع اصطحاب الأطفال
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p
+    className="text-center font-arabic text-sm mt-5"
+    style={{ color: "#7A6A82" }}
+  >
+    اسحب لرؤية المزيد
+  </p>
+</Reveal>
+</section>
 
           {/* RSVP */}
           <section className="px-4 py-16">
