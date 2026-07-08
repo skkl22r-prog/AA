@@ -89,8 +89,8 @@ ctx.fillStyle = `hsla(${p.hue}, 22%, 98%, ${Math.min(0.9, alpha + 0.1)})`;
 
   return (
     <canvas
-      ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-50"
+  ref={canvasRef}
+  className="pointer-events-none fixed inset-0 z-50 max-w-full"
       aria-hidden="true"
     />
   );
