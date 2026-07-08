@@ -124,7 +124,7 @@ src={invitationImg}
 
 <Reveal delay={200}>
   <div
-    className="max-w-sm mx-auto rounded-3xl p-4"
+className="w-[280px] mx-auto rounded-3xl p-3"
     style={{
       background: "#FFFDFB",
       border: "1px solid #D8C8D9",
@@ -237,7 +237,7 @@ src={invitationImg}
     <img
       src={programIcon}
       alt=""
-      className="mx-auto mb-4 w-16 h-auto select-none"
+      className="mx-auto mb-4 w-20 h-auto select-none"
       draggable={false}
     />
 
@@ -271,7 +271,7 @@ src={invitationImg}
         <img
           src={zaffaImg}
           alt=""
-          className="w-20 h-auto mx-auto"
+          className="w-14 h-auto mx-auto"
         />
         <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
           الزفة
@@ -285,7 +285,7 @@ src={invitationImg}
         <img
           src={dinnerImg}
           alt=""
-          className="w-20 h-auto mx-auto"
+          className="w-14 h-auto mx-auto"
         />
         <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
           العشاء
@@ -299,7 +299,7 @@ src={invitationImg}
         <img
           src={cameraImg}
           alt=""
-          className="w-20 h-auto mx-auto"
+          className="w-14 h-auto mx-auto"
         />
         <div
           className="font-arabic text-sm mt-3"
@@ -313,7 +313,7 @@ src={invitationImg}
         <img
           src={kidsImg}
           alt=""
-          className="w-20 h-auto mx-auto"
+          className="w-14 h-auto mx-auto"
         />
         <div
           className="font-arabic text-sm mt-3"
