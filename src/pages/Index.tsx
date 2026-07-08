@@ -17,6 +17,7 @@ import zaffaImg from "@/assets/14.png";
 import dinnerImg from "@/assets/11.png";
 import cameraImg from "@/assets/12.png";
 import kidsImg from "@/assets/13.png";
+import rsvpIcon from "@/assets/Photoroom_20260705_153052.png";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 
@@ -241,7 +242,7 @@ src={invitationImg}
     <img
       src={programIcon}
       alt=""
-      className="mx-auto mb-4 w-22 h-auto select-none"
+      className="mx-auto mb-4 w-20 h-auto select-none"
       draggable={false}
     />
 
