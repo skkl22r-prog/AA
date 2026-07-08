@@ -257,9 +257,12 @@ border: "1px solid #D8C8D9",
 boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
         }}
       >
-        <label className="block font-arabic text-sm text-primary mb-2 text-right">
-          الاسم الكريم
-        </label>
+        <label
+  className="block font-arabic text-sm mb-2 text-right"
+  style={{ color: "#3C2E23" }}
+>
+  الاسم الكريم
+</label>
         <input
           type="text"
           value={name}
@@ -274,10 +277,12 @@ color: "#3C2E23",
           }}
           dir="rtl"
         />
-<label className="block font-arabic text-sm text-primary mb-2 mt-4 text-right">
+<label
+  className="block font-arabic text-sm mb-2 mt-4 text-right"
+  style={{ color: "#3C2E23" }}
+>
   عدد الأشخاص
 </label>
-
 <div className="flex flex-row-reverse gap-2">
   {["5", "4", "3", "2", "1"].map((num) => (
     <button
