@@ -175,7 +175,7 @@ src={invitationImg}
         className="font-arabic text-sm"
         style={{ color: "#000" }}
       >
-        وقت الحضور الساعة 8:00 م
+      الحضور الساعة 8:00 م
       </span>
     </div>
 
@@ -197,17 +197,21 @@ src={invitationImg}
         افتح في الخريطة
       </a>
 
-      <button
-        className="py-3 rounded-xl font-arabic text-sm"
-        style={{
-          background: "#A882B8",
-          color: "#FFF",
-          border: "none",
-          fontWeight: 600,
-        }}
-      >
-        إضافة إلى التقويم
-      </button>
+     <a
+  href="/event.ics"
+  className="py-3 rounded-xl text-center font-arabic text-sm"
+  style={{
+    background: "#A882B8",
+    color: "#FFF",
+    fontWeight: 600,
+    textDecoration: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  إضافة إلى التقويم
+</a>
     </div>
   </div>
 </Reveal>
