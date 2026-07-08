@@ -341,23 +341,34 @@ src={invitationImg}
 </section>
 
           {/* RSVP */}
-          <section className="px-4 py-16">
-            <Reveal>
-<h2
-  className="text-center font-arabic text-3xl mb-2"
-  style={{ color: "#3C2E23" }}
->
-  أكّد حضورك
-</h2>
-              <p
-  className="text-center font-arabic text-sm mb-10"
-  style={{ color: "#3C2E23" }}
->
-  نتشرف بحضوركم — سيتم إصدار باركود خاص لكل ضيف
-</p>
-            </Reveal>
-            <RSVP />
-          </section>
+<section className="px-4 py-16">
+  <Reveal>
+    <div className="text-center mb-10">
+      <img
+        src={rsvpIcon}
+        alt=""
+        className="mx-auto mb-4 w-16 h-auto select-none"
+        draggable={false}
+      />
+
+      <h2
+        className="font-arabic text-3xl"
+        style={{ color: "#3C2E23" }}
+      >
+        تأكيد الحضور
+      </h2>
+
+      <div
+        className="font-arabic text-sm mt-2"
+        style={{ color: "#7A6A82" }}
+      >
+        نرجو الرد قبل 23 يوليو 2026
+      </div>
+    </div>
+  </Reveal>
+
+  <RSVP />
+</section>
 
           {/* Footer */}
           <footer className="px-4 py-12 text-center">
