@@ -34,21 +34,21 @@ const Countdown = () => {
           key={it.l}
           className="flex flex-col items-center justify-center rounded-xl px-4 sm:px-6 py-4 min-w-[70px] sm:min-w-[90px] backdrop-blur-md"
           style={{
-            background: "#F8F6F2",
-            border: "1px solid hsl(80 25% 45% / 0.3)",
-            boxShadow: "var(--shadow-soft)",
+            background: "#FFFDFB",
+border: "1px solid #D8C8D9",
+boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
           }}
         >
           <div
   className="font-display text-3xl sm:text-4xl font-light tabular-nums"
-  style={{ color: "#B89B5E" }}
+style={{ color: "#8F79A8" }}
 >
             {String(it.v).padStart(2, "0")}
           </div>
 
           <div
             className="text-xs uppercase tracking-widest mt-1"
-            style={{ color: "#3C2E23" }}
+style={{ color: "#7A6A82" }}
           >
             {it.l}
           </div>
