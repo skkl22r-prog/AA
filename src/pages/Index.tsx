@@ -118,6 +118,7 @@ src={invitationImg}
       boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
     }}
   >
+    {/* اسم القاعة */}
     <div className="flex items-center justify-center gap-2 mb-4">
       <img
         src={locationIcon}
@@ -136,20 +137,80 @@ src={invitationImg}
       </span>
     </div>
 
+    {/* الخريطة */}
     <iframe
       title="موقع الحفل - قاعة أروما"
       src="https://www.google.com/maps?q=قاعة+أروما+الرياض&output=embed"
       width="100%"
-      height="320"
+      height="230"
       loading="lazy"
       style={{
         border: 0,
         borderRadius: "16px",
       }}
     />
+
+    {/* اسم الموقع */}
+    <div
+      className="text-center mt-4 font-arabic"
+      style={{
+        color: "#000",
+        fontSize: "15px",
+        fontWeight: 600,
+      }}
+    >
+      قاعة أروما - الرياض
+    </div>
+
+    {/* وقت الحضور */}
+    <div
+      className="flex items-center justify-center gap-2 mt-3 mb-5"
+    >
+      <Clock
+        className="w-4 h-4"
+        style={{ color: "#A882B8" }}
+      />
+
+      <span
+        className="font-arabic text-sm"
+        style={{ color: "#000" }}
+      >
+        وقت الحضور الساعة 8:00 م
+      </span>
+    </div>
+
+    {/* الأزرار */}
+    <div className="grid grid-cols-2 gap-3">
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=قاعة+أروما+الرياض"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="py-3 rounded-xl text-center font-arabic text-sm"
+        style={{
+          background: "#FFFFFF",
+          border: "1px solid #D9C2E4",
+          color: "#A882B8",
+          fontWeight: 600,
+          textDecoration: "none",
+        }}
+      >
+        افتح في الخريطة
+      </a>
+
+      <button
+        className="py-3 rounded-xl font-arabic text-sm"
+        style={{
+          background: "#A882B8",
+          color: "#FFF",
+          border: "none",
+          fontWeight: 600,
+        }}
+      >
+        إضافة إلى التقويم
+      </button>
+    </div>
   </div>
 </Reveal>
-</section>
 
 
           {/* Details */}
