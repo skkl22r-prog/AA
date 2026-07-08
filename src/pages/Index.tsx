@@ -8,7 +8,6 @@ import Countdown from "@/components/Countdown";
 import Timeline from "@/components/Timeline";
 import RSVP from "@/components/RSVP";
 import MusicToggle from "@/components/MusicToggle";
-import backgroundImg from "@/assets/sarah.png";
 import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 import locationIcon from "@/assets/photo-output.png";
 import flowerDivider from "@/assets/Photoroom_20260705_152753.png";
@@ -24,10 +23,8 @@ const Index = () => {
   return (
   <div
   style={{
-    backgroundImage: `url(${backgroundImg})`,
+    background: "linear-gradient(180deg, #FCFBFD 0%, #F2EEF6 50%, #FCFBFD 100%)",
     minHeight: "100vh",
-    backgroundSize: "cover",
-    backgroundPosition: "center top",
   }}
 >
       {/* Ornamental gold damask pattern background */}
