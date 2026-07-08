@@ -211,7 +211,7 @@ src={invitationImg}
     </div>
   </div>
 </Reveal>
-
+</section>
 
           {/* Details */}
           <section className="px-4 py-16">
