@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Check, X, Send, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import Reveal from "./Reveal";
 import { QRCodeCanvas } from "qrcode.react";
@@ -252,9 +252,9 @@ if (state.kind === "qr") {
       <div
         className="mx-auto max-w-md rounded-2xl p-8 backdrop-blur-md"
         style={{
-          background: "hsla(40, 50%, 95%, 0.6)",
-          border: "1.5px solid hsl(42 75% 55% / 0.5)",
-          boxShadow: "var(--shadow-soft)",
+          background: "#FCFAF8",
+border: "1px solid #D8C8D9",
+boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
         }}
       >
         <label className="block font-arabic text-sm text-primary mb-2 text-right">
@@ -268,9 +268,9 @@ if (state.kind === "qr") {
           placeholder="اكتب اسمك هنا"
           className="w-full px-4 py-3 rounded-xl font-arabic text-right outline-none transition-colors"
           style={{
-            background: "hsla(40, 50%, 98%, 0.8)",
-            border: "1.5px solid hsl(42 60% 60% / 0.6)",
-            color: "hsl(30 35% 22%)",
+            background: "#FFFFFF",
+border: "1px solid #D8C8D9",
+color: "#3C2E23",
           }}
           dir="rtl"
         />
@@ -279,7 +279,7 @@ if (state.kind === "qr") {
 </label>
 
 <div className="flex flex-row-reverse gap-2">
-  {["1", "2", "3", "4", "5"].map((num) => (
+  {["5", "4", "3", "2", "1"].map((num) => (
     <button
       key={num}
       type="button"
@@ -287,18 +287,21 @@ if (state.kind === "qr") {
       className="flex-1 py-3 rounded-xl font-arabic transition-all"
       style={{
         background:
-          guestCount === num
-            ? "linear-gradient(135deg, hsl(45 80% 65%), hsl(38 70% 45%))"
-            : "hsla(40, 50%, 98%, 0.8)",
-        color:
-          guestCount === num
-            ? "hsl(30 40% 18%)"
-            : "hsl(30 35% 22%)",
-        border: "1.5px solid hsl(42 60% 60% / 0.6)",
-        boxShadow:
-          guestCount === num
-            ? "0 0 20px hsl(42 80% 60% / 0.35)"
-            : "none",
+  guestCount === num
+    ? "#A882B8"
+    : "#FFFFFF",
+color:
+  guestCount === num
+    ? "#FFFFFF"
+    : "#3C2E23",
+border:
+  guestCount === num
+    ? "1px solid #A882B8"
+    : "1px solid #D8C8D9",
+boxShadow:
+  guestCount === num
+    ? "0 8px 18px rgba(168,130,184,0.25)"
+    : "none",
       }}
     >
       {num}
@@ -311,31 +314,37 @@ if (state.kind === "qr") {
     onClick={() => setChoice("attending")}
     className="py-3 rounded-xl font-arabic text-sm transition-all flex items-center justify-center gap-2"
     style={{
-      background:
-        choice === "attending"
-          ? "linear-gradient(135deg, hsl(45 80% 65%), hsl(38 70% 45%))"
-          : "hsla(40, 50%, 98%, 0.6)",
-      color: choice === "attending" ? "hsl(30 40% 18%)" : "hsl(38 65% 38%)",
-      border: "1.5px solid hsl(42 75% 55%)",
-      boxShadow: choice === "attending" ? "0 0 20px hsl(42 80% 60% / 0.5)" : "none",
+background:
+  choice === "attending"
+    ? "linear-gradient(135deg, #CBBBCF, #A882B8)"
+    : "#F8F6F4",
+color: choice === "attending" ? "#FFFFFF" : "#7A6A82",
+border: "1px solid #D8C8D9",
+boxShadow:
+  choice === "attending"
+    ? "0 0 18px rgba(168,130,184,.25)"
+    : "none",
     }}
   >
-            <Check className="w-4 h-4" />
+
             تأكيد الحضور
           </button>
           <button
             onClick={() => setChoice("declined")}
-            className="py-3 rounded-xl font-arabic text-sm transition-all flex items-center justify-center gap-2"
+className="py-3 rounded-xl font-arabic text-sm transition-all flex items-center justify-center"
             style={{
               background:
-                choice === "declined"
-                  ? "hsl(30 30% 35%)"
-                  : "hsla(40, 50%, 98%, 0.6)",
-              color: choice === "declined" ? "hsl(40 50% 95%)" : "hsl(30 25% 35%)",
-              border: "1.5px solid hsl(30 30% 50%)",
+  choice === "declined"
+    ? "#B8A5BC"
+    : "#F8F6F4",
+color:
+  choice === "declined"
+    ? "#FFFFFF"
+    : "#7A6A82",
+border: "1px solid #D8C8D9",
             }}
           >
-            <X className="w-4 h-4" />
+
             الاعتذار عن الحضور
           </button>
         </div>
@@ -343,11 +352,11 @@ if (state.kind === "qr") {
         <button
           onClick={submit}
           disabled={!name.trim() || !choice || state.kind === "loading"}
-          className="w-full mt-5 py-3 rounded-xl font-arabic text-base transition-all hover:scale-[1.02] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+className="w-full mt-5 py-3 rounded-xl font-arabic text-base transition-all hover:scale-[1.02] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center"
           style={{
-            background: "linear-gradient(135deg, hsl(45 80% 65%), hsl(38 70% 42%))",
-            color: "hsl(30 40% 18%)",
-            boxShadow: "0 4px 20px hsl(42 80% 50% / 0.45)",
+            background: "linear-gradient(135deg, #CBBBCF, #A882B8)",
+color: "#FFFFFF",
+boxShadow: "0 4px 18px rgba(168,130,184,.28)",
             fontWeight: 700,
           }}
         >
