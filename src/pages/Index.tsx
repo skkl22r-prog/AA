@@ -111,7 +111,7 @@ src={invitationImg}
     <img
       src={flowerDivider}
       alt=""
-      className="mx-auto mt-4 mb-6 w-10 h-auto select-none"
+      className="mx-auto mt-4 mb-6 w-16 h-auto select-none"
       draggable={false}
     />
   </div>
