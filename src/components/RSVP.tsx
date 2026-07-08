@@ -360,7 +360,6 @@ boxShadow: "0 4px 18px rgba(168,130,184,.28)",
             fontWeight: 700,
           }}
         >
-          <Send className="w-4 h-4" />
           {state.kind === "loading" ? "جارٍ الإرسال..." : "إرسال"}
         </button>
 
