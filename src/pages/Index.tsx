@@ -59,6 +59,7 @@ className="hidden"
         boxShadow: "var(--shadow-elegant)",
       }}
     />
+</section
 <div
   dir={lang === "ar" ? "rtl" : "ltr"}
   className="absolute inset-0 flex items-center justify-center px-5 py-6"
