@@ -17,8 +17,10 @@ import dinnerImg from "@/assets/11.png";
 import cameraImg from "@/assets/12.png";
 import kidsImg from "@/assets/13.png";
 import rsvpIcon from "@/assets/Photoroom_20260705_153052.png";
+import { useLang } from "@/i18n/LanguageContext";
 const Index = () => {
   const [opened, setOpened] = useState(false);
+  const { t, lang } = useLang();
 
   return (
   <div
@@ -72,7 +74,7 @@ src={invitationImg}
       className="text-center font-arabic text-3xl mb-10"
       style={{ color: "#3C2E23" }}
     >
-      العدّ التنازلي
+    {t("countdown_title")}
     </h2>
   </Reveal>
 
@@ -102,7 +104,7 @@ src={invitationImg}
       className="font-arabic text-3xl"
       style={{ color: "#3C2E23" }}
     >
-      تفاصيل يوم الفرح
+{t("details_title")}
     </h2>
 
     <div
@@ -248,7 +250,7 @@ src={invitationImg}
       className="font-arabic text-3xl"
       style={{ color: "#3C2E23" }}
     >
-      برنامج الحفل
+    {t("program_title")}
     </h2>
 
     <div
