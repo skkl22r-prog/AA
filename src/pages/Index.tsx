@@ -11,6 +11,7 @@ import MusicToggle from "@/components/MusicToggle";
 import backgroundImg from "@/assets/sarah.png";
 import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 import locationIcon from "@/assets/photo-output.png";
+import flowerDivider from "@/assets/Photoroom_20260705_152753.png";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 
@@ -86,30 +87,37 @@ src={invitationImg}
 
 <section className="px-4 py-16">
   <Reveal>
-    <div className="text-center mb-8">
-      <img
-        src={locationIcon}
-        alt=""
-        className="mx-auto mb-4 w-14 h-auto"
-      />
+  <div className="text-center mb-8">
+    <img
+      src={locationIcon}
+      alt=""
+      className="mx-auto mb-4 w-14 h-auto"
+    />
 
-      <h2
-        className="font-arabic text-3xl"
-        style={{ color: "#3C2E23" }}
-      >
-        تفاصيل يوم الفرح
-      </h2>
+    <h2
+      className="font-arabic text-3xl"
+      style={{ color: "#3C2E23" }}
+    >
+      تفاصيل يوم الفرح
+    </h2>
 
-      <div
-        className="font-arabic text-sm mt-2"
-        style={{ color: "#7A6A82" }}
-      >
-        كل ما تحتاج معرفته
-      </div>
+    <div
+      className="font-arabic text-sm mt-2"
+      style={{ color: "#7A6A82" }}
+    >
+      كل ما تحتاج معرفته
     </div>
-  </Reveal>
 
- <Reveal delay={200}>
+    <img
+      src={flowerDivider}
+      alt=""
+      className="mx-auto mt-4 mb-6 w-10 h-auto select-none"
+      draggable={false}
+    />
+  </div>
+</Reveal>
+
+<Reveal delay={200}>
   <div
     className="max-w-sm mx-auto rounded-3xl p-4"
     style={{
