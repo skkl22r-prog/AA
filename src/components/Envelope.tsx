@@ -25,20 +25,21 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
   };
 
   const handleEnded = () => {
-    // يبدأ التلاشي
     setFadeOut(true);
 
-    // بعد انتهاء التلاشي يظهر المحتوى
     setTimeout(() => {
       onOpen();
-    }, 1200);
+    }, 1000);
   };
 
   return (
     <div
-      className={`fixed inset-0 z-40 cursor-pointer overflow-hidden bg-transparent transition-opacity duration-1000 ${
-        fadeOut ? "opacity-0" : "opacity-100"
-      }`}
+      className="fixed inset-0 z-40 cursor-pointer overflow-hidden"
+      style={{
+        background: "#3A2B22",
+        opacity: fadeOut ? 0 : 1,
+        transition: "opacity 1s ease",
+      }}
       onClick={trigger}
     >
       <video
