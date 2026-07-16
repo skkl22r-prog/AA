@@ -79,19 +79,19 @@ className="hidden"
 </div>
 
 <section className="flex justify-center relative z-20">
-  <div className="relative w-full">
+<div className="relative w-full aspect-[9/16] overflow-hidden">
 
-        <video
-      src={invitationImg}
-      autoPlay
-      muted
-      loop
-      playsInline
-      className="w-screen h-auto max-w-none block"
-      style={{
-        boxShadow: "var(--shadow-elegant)",
-      }}
-    />
+<video
+  src={invitationImg}
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+  style={{
+    boxShadow: "var(--shadow-elegant)",
+  }}
+/>
 
 <div
   dir={lang === "ar" ? "rtl" : "ltr"}
