@@ -41,11 +41,15 @@ className="hidden"
       />
       <SprayParticles />
       <MusicToggle active={opened} />
-      {!opened && <Envelope onOpen={() => setOpened(true)} />}
+<Envelope onOpen={() => setOpened(true)} />
 
-      {opened && (
-  <main className="relative z-10">
-
+{opened && (
+  <main
+    className="relative z-10"
+    style={{
+      animation: "fadeIn 0.8s ease forwards",
+    }}
+  >
    <div
  dir="ltr"
   className="fixed top-5 right-5 z-[9999] flex p-1 rounded-xl"
@@ -499,5 +503,16 @@ style={{ color: "#3C2E23" }}
     </div>
   );
 };
-
+<style>
+{`
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+`}
+</style>
 export default Index;
