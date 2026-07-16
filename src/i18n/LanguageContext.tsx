@@ -21,10 +21,11 @@ and: "على",
   invite_before_bride_2: "ابنتها",
   bride_name: "حاتم",
   groom_name: "روان",
-  invite_god_willing: "وذلك بمشيئة الله تعالى يوم السبت",
-  date_line: "2026 . 07 . 04 | 1448 . 01 . 19",
+  invite_god_willing: "وذلك بمشيئة الله تعالى يوم الاثنين",
+  date_line: "٢ . ٢ . ١٤٤٨ | ٢٨ . ١١ . ٢٠٢٦",
 
   // Countdown
+countdown_date: "٣٠ نوفمبر ٢٠٢٦",
   countdown_title: "العدّ التنازلي",
   days: "أيام",
   hours: "ساعات",
@@ -42,7 +43,7 @@ and: "على",
 
   hall_name: "قاعة أروما للمناسبات والمؤتمرات",
   hall_city: "قاعة أروما - الرياض",
-  arrival_time: "الحضور الساعة 8:00 م",
+  arrival_time: "الحضور الساعة ٨:٠٠ م",
   open_map: "افتح في الخريطة",
   add_calendar: "إضافة إلى التقويم",
 
@@ -59,7 +60,7 @@ and: "على",
   // RSVP
   rsvp_title: "أكد حضورك",
   rsvp_sub: "نتشرف بحضوركم",
-  rsvp_deadline: "نرجو الرد قبل 23 يوليو 2026",
+  rsvp_deadline: "نرجو الرد قبل  ٢٨ نوفمبر ٢٠٢٦",
 
   name_label: "الاسم الكريم",
   name_placeholder: "اكتب اسمك هنا",
@@ -92,7 +93,7 @@ dont_scan_qr: "الرجاء عدم مسح الباركود",
   store: "متجر غيمة",
 
   // Calendar
-  date_full: "السبت 4 يوليو 2026",
+  date_full: "الاثنين 28 نوفمبر 2026",
   cal_day: "Saturday",
   cal_month: "July",
   cal_year: "2026",
@@ -116,9 +117,10 @@ and: "&",
   bride_name: "Hatem",
   groom_name: "Rawan",
   invite_god_willing: "God willing, on Saturday",
-  date_line: "04 . 07 . 2026 | 19 . 01 . 1448",
+  date_line: "28 . 11 . 2026 | 02 . 02 . 1448",
 
   // Countdown
+countdown_date: "28 November 2026",
   countdown_title: "Countdown",
   days: "Days",
   hours: "Hours",
@@ -131,8 +133,8 @@ and: "&",
 
   // Venue
   venue_title: "Our Venue",
-  venue_name: "Scheherazade Hall",
-  venue_city: "Taif",
+  venue_name: "Aroma Hall",
+  venue_city: "Riyadh",
 
   hall_name: "Aroma Hall for Events & Conferences",
   hall_city: "Aroma Hall - Riyadh",
@@ -153,7 +155,7 @@ and: "&",
   // RSVP
   rsvp_title: "Confirm Your Attendance",
   rsvp_sub: "We would be honored by your presence",
-  rsvp_deadline: "Please respond before July 23, 2026",
+  rsvp_deadline: "Please respond before November 28, 2026",
 
   name_label: "Full Name",
   name_placeholder: "Enter your name",
