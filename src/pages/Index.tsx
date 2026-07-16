@@ -48,7 +48,7 @@ className="hidden"
 <section className="flex justify-center relative z-20">
   <div className="relative w-full">
 
-    <video
+        <video
       src={invitationImg}
       autoPlay
       muted
@@ -59,11 +59,15 @@ className="hidden"
         boxShadow: "var(--shadow-elegant)",
       }}
     />
-</section
+</section>
+
 <div
   dir={lang === "ar" ? "rtl" : "ltr"}
   className="absolute inset-0 flex items-center justify-center px-5 py-6"
 >
+  <div
+    className=""
+  >
   <div
     className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4"
     style={{
