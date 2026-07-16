@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "IranNastali";
-  src: url("./assets/fonts/IranNastali.ttf") format("truetype");
+  src: url("./assets/fonts/IranNastali.ttf");
 }
 
 @font-face {
