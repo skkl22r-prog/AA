@@ -167,7 +167,7 @@ className="hidden"
       className="text-center font-arabic text-sm mb-2"
       style={{ color: "#8C7A67" }}
     >
-30 . يوليو . 2026
+{t("countdown_date")}
     </p>
 
     <h2
@@ -207,12 +207,12 @@ className="hidden"
 {t("details_title")}
     </h2>
 
-    <div
-      className="font-arabic text-sm mt-2"
-      style={{ color: "#7A6A82" }}
-    >
-      كل ما تحتاج معرفته
-    </div>
+   <div
+  className="font-arabic text-sm mt-2"
+  style={{ color: "#7A6A82" }}
+>
+  {t("details_subtitle")}
+</div>
 
     <img
       src={flowerDivider}
@@ -253,13 +253,13 @@ className="hidden"
             fontWeight: 600,
           }}
         >
-          قاعة أروما للمناسبات والمؤتمرات
+{t("hall_name")}
         </span>
       </div>
 
       {/* الخريطة */}
       <iframe
-        title="موقع الحفل - قاعة أروما"
+title={t("map_title")}
         src="https://www.google.com/maps?q=قاعة+أروما+الرياض&output=embed"
         width="100%"
         height="230"
@@ -279,7 +279,7 @@ className="hidden"
           fontWeight: 600,
         }}
       >
-        قاعة أروما - الرياض
+{t("hall_city")}
       </div>
 
       {/* وقت الحضور */}
@@ -293,7 +293,7 @@ className="hidden"
           className="font-arabic text-sm"
           style={{ color: "#000" }}
         >
-          الحضور الساعة 8:00 م
+{t("arrival_time")}
         </span>
       </div>
 
@@ -312,7 +312,7 @@ className="hidden"
             textDecoration: "none",
           }}
         >
-          افتح في الخريطة
+{t("open_map")}
         </a>
 
         <a
@@ -328,7 +328,7 @@ className="hidden"
             justifyContent: "center",
           }}
         >
-          إضافة إلى التقويم
+{t("add_calendar")}
         </a>
       </div>
     </div>
@@ -357,7 +357,7 @@ className="hidden"
       className="font-arabic text-sm mt-2"
       style={{ color: "#7A6A82" }}
     >
-      خطتنا لليوم الكبير
+{t("program_subtitle")}
     </div>
   </div>
 </Reveal>
@@ -379,10 +379,10 @@ className="hidden"
           className="w-16 h-auto mx-auto"
         />
         <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
-          الزفة
+{t("program_zaffa")}
         </div>
         <div className="font-arabic text-xs mt-1" style={{ color: "#7A6A82" }}>
-          10:30 م
+{t("zaffa_time")}
         </div>
       </div>
 
@@ -393,10 +393,10 @@ className="hidden"
           className="w-16 h-auto mx-auto"
         />
         <div className="font-arabic text-sm mt-3" style={{ color: "#000" }}>
-          العشاء
+{t("program_dinner")}
         </div>
         <div className="font-arabic text-xs mt-1" style={{ color: "#7A6A82" }}>
-          12:00 م
+{t("dinner_time")}
         </div>
       </div>
 
@@ -410,7 +410,7 @@ className="hidden"
           className="font-arabic text-sm mt-3"
           style={{ color: "#000", width: "120px" }}
         >
-          يمنع دخول جوالات الكاميرا
+{t("no_cameras")}
         </div>
       </div>
 
@@ -424,7 +424,7 @@ className="hidden"
           className="font-arabic text-sm mt-3"
           style={{ color: "#000", width: "120px" }}
         >
-          يمنع اصطحاب الأطفال
+{t("no_kids")}
         </div>
       </div>
 
@@ -435,7 +435,7 @@ className="hidden"
     className="text-center font-arabic text-sm mt-5"
     style={{ color: "#7A6A82" }}
   >
-    اسحب لرؤية المزيد
+{t("swipe_more")}
   </p>
 </Reveal>
 </section>
@@ -455,14 +455,14 @@ className="hidden"
         className="font-arabic text-3xl"
         style={{ color: "#3C2E23" }}
       >
-        تأكيد الحضور
+{t("rsvp_title")}
       </h2>
 
       <div
         className="font-arabic text-sm mt-2"
         style={{ color: "#7A6A82" }}
       >
-        نرجو الرد قبل 23 يوليو 2026
+{t("rsvp_deadline")}
       </div>
     </div>
   </Reveal>
@@ -479,7 +479,7 @@ className="hidden"
 >
                 <Heart className="w-4 h-4 fill-current" />
                 <span className="font-arabic text-sm">
-                  صُنع بحب بواسطة{" "}
+{t("made_by")}
                   <a
                     href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
                     target="_blank"
@@ -487,7 +487,7 @@ className="hidden"
                     className="underline underline-offset-4 transition-colors"
 style={{ color: "#3C2E23" }}
                   >
-                    متجر غيمة
+{t("store")}
                   </a>
                 </span>
               </div>
