@@ -47,6 +47,7 @@ className="hidden"
   className="fixed inset-0 z-0"
   style={{
     background: "#F2EEF6",
+    pointerEvents: "none",
   }}
 />
 
