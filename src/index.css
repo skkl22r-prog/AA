@@ -3,10 +3,7 @@
   src: url("./assets/fonts/Aldhabi-mob.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "IranNastali";
-  src: url("./assets/fonts/IranNastali.ttf") format("truetype");
-}
+
 
 @font-face {
   font-family: "KAHand";
