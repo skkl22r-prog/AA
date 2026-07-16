@@ -61,7 +61,6 @@ className="hidden"
       {lang === "ar" ? "EN" : "AR"}
     </button>
 
-    <section className="flex justify-center relative z-20">
 <section className="flex justify-center relative z-20">
   <div className="relative w-full">
 
