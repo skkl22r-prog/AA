@@ -124,15 +124,15 @@ className="hidden"
         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
     }}
   >
-    <div className="font-tajawal text-lg sm:text-xl">
+    <div className="font-aldhabi text-lg sm:text-xl">
       {t("invite_to")}
     </div>
 
-    <div className="font-tajawal text-lg sm:text-xl">
+    <div className="font-iran text-lg sm:text-xl">
       {t("invite_join")}
     </div>
 
-    <div className="font-tajawal text-lg sm:text-xl">
+    <div className="font-kahand text-lg sm:text-xl">
       {t("invite_day")}
     </div>
 
@@ -156,7 +156,7 @@ className="hidden"
     </div>
 
     <div
-      className="font-nasta text-5xl sm:text-6xl my-4"
+      className="font-font1 text-5xl sm:text-6xl my-4"
     >
       {t("bride_name")}
       <span style={{ fontSize: "0.35em", margin: "0 8px" }}>
