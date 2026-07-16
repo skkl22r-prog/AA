@@ -134,7 +134,7 @@ className="hidden"
 
     <div className="font-sarahhh1 text-4xl sm:text-5xl whitespace-nowrap flex justify-center items-center gap-8">
       <span>{t("mother_name1")}</span>
-      <span>و</span>
+<span>{t("and")}</span>
       <span>{t("mother_name2")}</span>
     </div>
 
