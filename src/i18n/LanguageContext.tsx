@@ -90,57 +90,88 @@ const ar: Dict = {
 };
 
 const en: Dict = {
+  // Invitation
   tap_open: "Tap to open the invitation",
   invite_to: "To Our Dearest Loved Ones",
   invite_join: "It would be our joy to have you share in our happiness",
-  invite_day: "on the day joy embraces our hearts",
+  invite_day: "On the day joy embraces our hearts",
   invite_with_love: "With all love and affection",
-word1: "Mrs.",
-word2: "Mrs.",
-mother_name1: "Fawz Al-Muqati",
-mother_name2: "Samirh Al-Ghamdi",
-  invite_attend: "is honored to invite you to the wedding of her princess",
+  word1: "Mrs.",
+  word2: "Mrs.",
+  mother_name1: "Fawz Al-Muqati",
+  mother_name2: "Samirah Al-Ghamdi",
+  invite_attend: "Cordially invites you to attend the wedding of",
+  invite_before_bride: "her son",
+  invite_before_bride_2: "her daughter",
   bride_name: "Hatem",
-groom_name: "Rawan",
+  groom_name: "Rawan",
   invite_god_willing: "God willing, on Saturday",
-  date_line: "04 . 07 . 2026   |  19 . 01 . 1448 ",
+  date_line: "04 . 07 . 2026 | 19 . 01 . 1448",
+
+  // Countdown
   countdown_title: "Countdown",
   days: "Days",
   hours: "Hours",
   minutes: "Minutes",
   seconds: "Seconds",
+
+  // Details
+  details_title: "Event Details",
+  details_subtitle: "Everything you need to know",
+
+  // Venue
   venue_title: "Our Venue",
   venue_name: "Scheherazade Hall",
   venue_city: "Taif",
+
+  hall_name: "Aroma Hall for Events & Conferences",
+  hall_city: "Aroma Hall - Riyadh",
+  arrival_time: "Arrival at 8:00 PM",
+  open_map: "Open Map",
+  add_calendar: "Add to Calendar",
+
+  // Program
   program_title: "Event Program",
+  program_subtitle: "Our schedule for the special day",
   program_reception: "Reception",
   program_zaffa: "Zaffa",
   program_dinner: "Dinner",
-  details_title: "Event Details",
-  no_kids: "No children, please",
-  no_cameras: "No camera phones permitted",
+  no_cameras: "No camera phones allowed",
+  no_kids: "Children are not permitted",
+  swipe_more: "Swipe to see more",
+
+  // RSVP
   rsvp_title: "Confirm Your Attendance",
-  rsvp_sub: "We are honored by your presence",
+  rsvp_sub: "We would be honored by your presence",
+  rsvp_deadline: "Please respond before July 23, 2026",
+
   name_label: "Full Name",
-  name_placeholder: "Type your name here",
+  name_placeholder: "Enter your name",
   confirm: "Will Attend",
   decline: "Decline",
   send: "Send",
   sending: "Sending...",
-  thanks_attending: "Thank you for confirming",
-  thanks_declined: "We appreciate your reply",
-  redirect_wa: "Redirecting you to WhatsApp to send the reply...",
-  made_by: "Crafted with love by",
-  store: "Ghaimah Store",
-  date_full: "Tuesday, September 22, 2026",
-  cal_day: "Tuesday",
-  cal_month: "September",
-  cal_year: "2026",
+
+  thanks_attending: "Thank you for confirming your attendance",
+  thanks_declined: "We appreciate your response",
+  redirect_wa: "Redirecting you to WhatsApp...",
+
+  // QR
   qr_title: "Your Entry QR Code",
-  qr_sub: "Please present this QR at the entrance",
+  qr_sub: "Please present this QR code at the entrance",
   save_qr: "Save QR Code",
   redirecting_in: "Redirecting to WhatsApp in",
   seconds_short: "s",
+
+  // Footer
+  made_by: "Crafted with love by",
+  store: "Ghaimah Store",
+
+  // Calendar
+  date_full: "Saturday, July 4, 2026",
+  cal_day: "Saturday",
+  cal_month: "July",
+  cal_year: "2026",
 };
 
 const dicts = { ar, en };
