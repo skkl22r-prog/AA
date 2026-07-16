@@ -1,3 +1,37 @@
+@font-face {
+  font-family: "Aldhabi";
+  src: url("./assets/fonts/Aldhabi-mob.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IranNastaliq";
+  src: url("./assets/fonts/IranNastaliq.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "KAHand";
+  src: url("./assets/fonts/KAHandNaskhV2-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SARAhhh1";
+  src: url("./assets/fonts/SARAhhh1.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TajawalMedium";
+  src: url("./assets/fonts/Tajawal-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font1";
+  src: url("./assets/fonts/1.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AMoshref";
+  src: url("./assets/fonts/AMoshref.ttf") format("truetype");
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -107,6 +141,33 @@
   .text-gold-deep {
     color: hsl(var(--gold-deep));
   }
+  .font-aldhabi {
+  font-family: "Aldhabi";
+}
+
+.font-iran {
+  font-family: "IranNastaliq";
+}
+
+.font-kahand {
+  font-family: "KAHand";
+}
+
+.font-sarahhh1 {
+  font-family: "SARAhhh1";
+}
+
+.font-tajawal-medium {
+  font-family: "TajawalMedium";
+}
+
+.font-font1 {
+  font-family: "Font1";
+}
+
+.font-amoshref {
+  font-family: "AMoshref";
+}
 
   /* Heart-shaped strikethrough using mask */
   .heart-strike {
