@@ -59,7 +59,6 @@ className="hidden"
         boxShadow: "var(--shadow-elegant)",
       }}
     />
-</section>
 
 <div
   dir={lang === "ar" ? "rtl" : "ltr"}
