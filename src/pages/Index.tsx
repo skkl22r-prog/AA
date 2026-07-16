@@ -47,6 +47,7 @@ className="hidden"
   <main className="relative z-10">
 
    <div
+ dir="ltr"
   className="fixed top-5 right-5 z-[9999] flex p-1 rounded-xl"
   style={{
     background: "#F2EEF6",
@@ -55,26 +56,26 @@ className="hidden"
   }}
 >
   <button
-    onClick={() => lang !== "ar" && toggle()}
-    className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
-    style={{
-      background: lang === "ar" ? "#A882B8" : "transparent",
-      color: lang === "ar" ? "#fff" : "#7A6A82",
-    }}
-  >
-    AR
-  </button>
+  onClick={() => lang !== "en" && toggle()}
+  className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
+  style={{
+    background: lang === "en" ? "#A882B8" : "transparent",
+    color: lang === "en" ? "#fff" : "#7A6A82",
+  }}
+>
+  EN
+</button>
 
-  <button
-    onClick={() => lang !== "en" && toggle()}
-    className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
-    style={{
-      background: lang === "en" ? "#A882B8" : "transparent",
-      color: lang === "en" ? "#fff" : "#7A6A82",
-    }}
-  >
-    EN
-  </button>
+<button
+  onClick={() => lang !== "ar" && toggle()}
+  className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
+  style={{
+    background: lang === "ar" ? "#A882B8" : "transparent",
+    color: lang === "ar" ? "#fff" : "#7A6A82",
+  }}
+>
+  AR
+</button>
 </div>
 
 <section className="flex justify-center relative z-20">
