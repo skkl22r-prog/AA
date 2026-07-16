@@ -46,36 +46,36 @@ className="hidden"
       {opened && (
   <main className="relative z-10">
 
-   <button
-  onClick={toggle}
-  className="fixed top-5 right-5 z-[9999] flex overflow-hidden rounded-xl border"
+   <div
+  className="fixed top-5 right-5 z-[9999] flex p-1 rounded-xl"
   style={{
-    borderColor: "#D8C8D9",
-    background: "#F8F3FA",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+    background: "#F2EEF6",
+    border: "1px solid #D8C8D9",
+    boxShadow: "0 4px 12px rgba(0,0,0,.08)",
   }}
 >
-  <span
-    className="px-3 py-2 text-xs font-semibold transition-all"
+  <button
+    onClick={() => lang !== "ar" && toggle()}
+    className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
     style={{
       background: lang === "ar" ? "#A882B8" : "transparent",
-      color: lang === "ar" ? "#FFFFFF" : "#A882B8",
+      color: lang === "ar" ? "#fff" : "#7A6A82",
     }}
   >
     AR
-  </span>
+  </button>
 
-  <span
-    className="px-3 py-2 text-xs font-semibold transition-all"
+  <button
+    onClick={() => lang !== "en" && toggle()}
+    className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
     style={{
       background: lang === "en" ? "#A882B8" : "transparent",
-      color: lang === "en" ? "#FFFFFF" : "#A882B8",
-      borderLeft: "1px solid #D8C8D9",
+      color: lang === "en" ? "#fff" : "#7A6A82",
     }}
   >
     EN
-  </span>
-</button>
+  </button>
+</div>
 
 <section className="flex justify-center relative z-20">
   <div className="relative w-full">
