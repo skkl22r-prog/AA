@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import envelopeVideo from "@/assets/video-output-F33084AB-889B-43FF-A197-8E335CE20FA0-1.mp4";
 
 interface EnvelopeProps {
@@ -10,6 +10,15 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
   const [fadeOut, setFadeOut] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
+useEffect(() => {
+  const video = videoRef.current;
+
+  if (video) {
+    video.load();
+
+    video.currentTime = 0;
+  }
+}, []);
 
   const trigger = async () => {
     if (opening) return;
@@ -43,17 +52,15 @@ style={{
       onClick={trigger}
     >
       <video
-        ref={videoRef}
-        src={envelopeVideo}
-        muted
-        playsInline
-        preload="auto"
-        onEnded={handleEnded}
-className="w-full h-full object-cover"
-style={{
-  background: "#F2EEF6",
-}}
-      />
+  ref={videoRef}
+  src={envelopeVideo}
+  muted
+  playsInline
+  preload="auto"
+  poster=""
+  onEnded={handleEnded}
+  className="w-full h-full object-cover"
+/>
 
       {!opening && (
         <div
