@@ -5,59 +5,88 @@ export type Lang = "ar" | "en";
 type Dict = Record<string, string>;
 
 const ar: Dict = {
+  // Invitation
   tap_open: "اضغط لفتح الدعوة",
   invite_to: "إلى كل غــــــــــالي ومحـــــــــب",
   invite_join: "يسعدنا ان تكونوا جزء من فرحتنا",
   invite_day: "يــــَوم تعانق الفرحة قلـــــوبنا",
   invite_with_love: "بكـل الحـب والـود تتـــشرف",
-word1: "السيدة ",
-word2: "السيدة ",
-mother_name1: "فوز المقاطي",
-mother_name2: "سميـرة الغامدي",
-  invite_attend: "بدعوتكم لحضور حفل زفاف ",
-invite_before_bride: "أبنها",
-invite_before_bride_2: "أبنتها",
-  bride_name: "حـاتم",
-groom_name: "روان",
+  word1: "السيدة",
+  word2: "السيدة",
+  mother_name1: "فوز المقاطي",
+  mother_name2: "سميرة الغامدي",
+  invite_attend: "بدعوتكم لحضور حفل زفاف",
+  invite_before_bride: "أبنها",
+  invite_before_bride_2: "ابنتها",
+  bride_name: "حاتم",
+  groom_name: "روان",
   invite_god_willing: "وذلك بمشيئة الله تعالى يوم السبت",
   date_line: "2026 . 07 . 04 | 1448 . 01 . 19",
+
+  // Countdown
   countdown_title: "العدّ التنازلي",
   days: "أيام",
   hours: "ساعات",
   minutes: "دقائق",
   seconds: "ثواني",
-  venue_title: "موقع حفلنا",
-  venue_name: " قاعــة شهرزاد",
-  venue_city: "الطائف",
-  program_title: "برنامج الحفل",
-  program_reception: "الاستقبال",
-  program_zaffa: "الـزفـــــــــــة",
-  program_dinner: "العشـــــاء",
+
+  // Details
   details_title: "تفاصيل الحفل",
-  no_kids: "يمنع اصطحاب الأطفال",
+  details_subtitle: "كل ما تحتاج معرفته",
+
+  // Venue
+  venue_title: "موقع حفلنا",
+  venue_name: "قاعة شهرزاد",
+  venue_city: "الطائف",
+
+  hall_name: "قاعة أروما للمناسبات والمؤتمرات",
+  hall_city: "قاعة أروما - الرياض",
+  arrival_time: "الحضور الساعة 8:00 م",
+  open_map: "افتح في الخريطة",
+  add_calendar: "إضافة إلى التقويم",
+
+  // Program
+  program_title: "برنامج الحفل",
+  program_subtitle: "خطتنا لليوم الكبير",
+  program_reception: "الاستقبال",
+  program_zaffa: "الزفة",
+  program_dinner: "العشاء",
   no_cameras: "يمنع دخول جوالات الكاميرا",
-  rsvp_title: "أكّد حضورك",
+  no_kids: "يمنع اصطحاب الأطفال",
+  swipe_more: "اسحب لرؤية المزيد",
+
+  // RSVP
+  rsvp_title: "أكد حضورك",
   rsvp_sub: "نتشرف بحضوركم",
+  rsvp_deadline: "نرجو الرد قبل 23 يوليو 2026",
+
   name_label: "الاسم الكريم",
   name_placeholder: "اكتب اسمك هنا",
   confirm: "تأكيد الحضور",
   decline: "الاعتذار",
   send: "إرسال",
   sending: "جارٍ الإرسال...",
+
   thanks_attending: "شكراً لتأكيد حضورك",
   thanks_declined: "نقدّر اعتذارك",
   redirect_wa: "سيتم تحويلك إلى الواتساب لإرسال الرد...",
-  made_by: "صُنع بحب بواسطة",
-  store: "متجر غيمة",
-  date_full: "السبت 4 يوليو 2026",
-  cal_day: "Saturday",
-  cal_month: "July",
-  cal_year: "2026",
+
+  // QR
   qr_title: "باركود الدخول الخاص بك",
   qr_sub: "يرجى تقديم هذا الباركود عند البوابة",
   save_qr: "حفظ الباركود",
   redirecting_in: "سيتم تحويلك إلى الواتساب خلال",
   seconds_short: "ث",
+
+  // Footer
+  made_by: "صُنع بحب بواسطة",
+  store: "متجر غيمة",
+
+  // Calendar
+  date_full: "السبت 4 يوليو 2026",
+  cal_day: "Saturday",
+  cal_month: "July",
+  cal_year: "2026",
 };
 
 const en: Dict = {
