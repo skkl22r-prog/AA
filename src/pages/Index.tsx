@@ -125,8 +125,8 @@ className="hidden"
     </div>
   </div>
 </div>
-
-
+</div>
+</div>
 </section>
           {/* Countdown */}
         <section className="px-4 py-16">
