@@ -124,11 +124,11 @@ className="hidden"
         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
     }}
   >
-    <div className="font-aldhabi text-lg sm:text-xl">
+    <div className="font-kahand text-lg sm:text-xl">
       {t("invite_to")}
     </div>
 
-    <div className="font-iran text-lg sm:text-xl">
+    <div className="font-kahand text-lg sm:text-xl">
       {t("invite_join")}
     </div>
 
@@ -136,35 +136,54 @@ className="hidden"
       {t("invite_day")}
     </div>
 
-    <div className="font-tajawal text-lg sm:text-xl mt-2">
+    <div className="font-kahand text-lg sm:text-xl mt-2">
       {t("invite_with_love")}
     </div>
 
-    <div className="flex items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
+    <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
       <span>{t("word1")}</span>
       <span>{t("word2")}</span>
     </div>
 
-    <div className="font-sarahhh1 text-4xl sm:text-5xl whitespace-nowrap flex justify-center items-center gap-8">
-      <span>{t("mother_name1")}</span>
-<span>{t("and")}</span>
-      <span>{t("mother_name2")}</span>
-    </div>
+   <div className="font-iran text-4xl sm:text-5xl whitespace-nowrap flex justify-center items-center gap-8">
+  <span>{t("mother_name1")}</span>
 
-    <div className="font-tajawal text-lg sm:text-xl mt-3">
+  <span className="hidden">{t("and")}</span>
+
+  <span className="hidden">{t("mother_name2")}</span>
+</div>
+
+    <div className="font-kahand text-lg sm:text-xl mt-3">
       {t("invite_attend")}
     </div>
 
-    <div
-      className="font-font1 text-5xl sm:text-6xl my-4"
-    >
-      {t("bride_name")}
-      <span style={{ fontSize: "0.35em", margin: "0 8px" }}>
-        ❤︎
-      </span>
-      {t("groom_name")}
-    </div>
+ <div
+  className="font-iran text-5xl sm:text-6xl my-4"
+>
+  {t("bride_name")}
 
+  <span
+    style={{
+      display: "none",
+      fontSize: "0.35em",
+      margin: "0 8px",
+    }}
+  >
+    ❤︎
+  </span>
+
+  <span
+    className="font-aldhabi"
+    style={{
+      fontSize: "0.45em",
+      margin: "0 12px",
+    }}
+  >
+    {t("and")}
+  </span>
+
+  {t("groom_name")}
+</div>
     <div className="font-tajawal text-lg sm:text-xl">
       {t("date_line")}
     </div>
