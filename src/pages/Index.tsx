@@ -20,7 +20,7 @@ import rsvpIcon from "@/assets/Photoroom_20260705_153052.png";
 import { useLang } from "@/i18n/LanguageContext";
 const Index = () => {
   const [opened, setOpened] = useState(false);
-  const { t, lang } = useLang();
+const { t, lang, toggle } = useLang();
 
   return (
   <div
@@ -44,7 +44,24 @@ className="hidden"
       {!opened && <Envelope onOpen={() => setOpened(true)} />}
 
       {opened && (
-        <main className="relative z-10">
+  <main className="relative z-10">
+
+    <button
+      onClick={toggle}
+      className="fixed top-5 right-5 z-[9999] px-4 py-2 rounded-full"
+      style={{
+        background: "rgba(255,255,255,0.9)",
+        color: "#3C2E23",
+        border: "1px solid #D8C8D9",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        fontWeight: 600,
+      }}
+    >
+      {lang === "ar" ? "EN" : "AR"}
+    </button>
+
+    <section className="flex justify-center relative z-20">
 <section className="flex justify-center relative z-20">
   <div className="relative w-full">
 
