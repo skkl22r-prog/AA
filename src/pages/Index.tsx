@@ -46,20 +46,36 @@ className="hidden"
       {opened && (
   <main className="relative z-10">
 
-    <button
-      onClick={toggle}
-      className="fixed top-5 right-5 z-[9999] px-4 py-2 rounded-full"
-      style={{
-        background: "rgba(255,255,255,0.9)",
-        color: "#3C2E23",
-        border: "1px solid #D8C8D9",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        fontWeight: 600,
-      }}
-    >
-      {lang === "ar" ? "EN" : "AR"}
-    </button>
+   <button
+  onClick={toggle}
+  className="fixed top-5 right-5 z-[9999] flex overflow-hidden rounded-xl border"
+  style={{
+    borderColor: "#D8C8D9",
+    background: "#F8F3FA",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+  }}
+>
+  <span
+    className="px-3 py-2 text-xs font-semibold transition-all"
+    style={{
+      background: lang === "ar" ? "#A882B8" : "transparent",
+      color: lang === "ar" ? "#FFFFFF" : "#A882B8",
+    }}
+  >
+    AR
+  </span>
+
+  <span
+    className="px-3 py-2 text-xs font-semibold transition-all"
+    style={{
+      background: lang === "en" ? "#A882B8" : "transparent",
+      color: lang === "en" ? "#FFFFFF" : "#A882B8",
+      borderLeft: "1px solid #D8C8D9",
+    }}
+  >
+    EN
+  </span>
+</button>
 
 <section className="flex justify-center relative z-20">
   <div className="relative w-full">
