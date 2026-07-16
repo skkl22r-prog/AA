@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import envelopeVideo from "@/assets/video-output-F33084AB-889B-43FF-A197-8E335CE20FA0-1.mp4";
 
 interface EnvelopeProps {
@@ -8,13 +8,8 @@ interface EnvelopeProps {
 const Envelope = ({ onOpen }: EnvelopeProps) => {
   const [opening, setOpening] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-    }
-  }, []);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const trigger = async () => {
     if (opening) return;
@@ -30,16 +25,20 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
   };
 
   const handleEnded = () => {
+    // يبدأ التلاشي
     setFadeOut(true);
 
+    // بعد انتهاء التلاشي يظهر المحتوى
     setTimeout(() => {
       onOpen();
-    }, 700);
+    }, 1200);
   };
 
   return (
     <div
-      className="fixed inset-0 z-40 cursor-pointer overflow-hidden bg-transparent"
+      className={`fixed inset-0 z-40 cursor-pointer overflow-hidden bg-transparent transition-opacity duration-1000 ${
+        fadeOut ? "opacity-0" : "opacity-100"
+      }`}
       onClick={trigger}
     >
       <video
@@ -49,9 +48,7 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
         playsInline
         preload="auto"
         onEnded={handleEnded}
-        className={`w-full h-full object-cover transition-opacity duration-700 ${
-          fadeOut ? "opacity-0" : "opacity-100"
-        }`}
+        className="w-full h-full object-cover"
       />
 
       {!opening && (
