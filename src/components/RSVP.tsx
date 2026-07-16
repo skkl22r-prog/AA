@@ -3,6 +3,7 @@ import { Heart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import Reveal from "./Reveal";
 import { QRCodeCanvas } from "qrcode.react";
+import { useLang } from "@/i18n/LanguageContext";
 
 // 👈 عدّل رقم الواتساب هنا (بصيغة دولية بدون + أو 00). مثال السعودية: 9665XXXXXXXX
 
@@ -14,6 +15,7 @@ type State =
   | { kind: "error"; msg: string }
   | { kind: "qr"; name: string; qr: string };
 const RSVP = () => {
+const { t, lang } = useLang();
   const [name, setName] = useState("");
 const [guestCount, setGuestCount] = useState("");
   const [choice, setChoice] = useState<"attending" | "declined" | null>(null);
@@ -67,7 +69,7 @@ const { data: existing } = await supabase
 if (existing) {
   setState({
     kind: "error",
-    msg: "تم التسجيل مسبقاً من هذا الجهاز",
+msg: t("already_registered"),
   });
   return;
 }
@@ -82,7 +84,7 @@ if (existing) {
 
   if (error) {
   console.log("SUPABASE ERROR:", error);
-  setState({ kind: "error", msg: "حدث خطأ، حاول مرة أخرى" });
+  setState({ kind: "error", msg: t("error_try_again") });
   return;
 }
 await fetch(
@@ -97,7 +99,9 @@ await fetch(
       "entry.911642472": name.trim(),
 "entry.145314951": guestCount,
       "entry.2040087077":
-        choice === "attending" ? "تاكيد الحضور" : "الاعتذار عن الحضور",
+        choice === "attending"
+  ? t("confirm")
+  : t("decline"),
     }),
   }
 );
@@ -151,10 +155,10 @@ await fetch(
             نسعد بحضورك 🌸
           </div>
           <div className="font-arabic text-base text-primary mb-6">
-            أهلاً وسهلاً، {state.name}
+        {t("welcome")} : {state.name}
           </div>
           <p className="font-arabic text-sm text-muted-foreground">
-  تم تسجيل تأكيد حضورك بنجاح.
+{t("thanks_attending")}
           </p>
         </div>
       </Reveal>
@@ -174,9 +178,9 @@ await fetch(
         >
           <Heart className="mx-auto w-10 h-10 mb-3" style={{ color: "hsl(0 70% 55%)", fill: "hsl(0 70% 55%)" }} />
           <p className="font-arabic text-xl text-primary leading-loose">
-            نقدّر اعتذارك يا {state.name} ❤️
+        {t("thanks_declined")} {state.name} ❤️
             <br />
-            ونراك في مناسبة أخرى بإذن الله
+{t("see_you_next_time")}
           </p>
         </div>
       </Reveal>
@@ -199,12 +203,12 @@ if (state.kind === "qr") {
 
           {/* العنوان */}
           <div className="font-arabic text-3xl text-primary mb-2 font-bold">
-            تم تأكيد حضورك بنجاح
+{t("thanks_attending")}
           </div>
 
           {/* الاسم */}
           <div className="font-arabic text-base text-muted-foreground mb-4">
-            اهلاً وسهلاً : {state.name}
+          {t("welcome")} : {state.name}
           </div>
 
           {/* مربع الباركود */}
@@ -232,13 +236,13 @@ if (state.kind === "qr") {
             }}
           >
             <p className="text-red-700 font-bold text-sm">
-              ⚠️ يرجى حفظ الباركود لأنه مطلوب عند الدخول
+⚠️ {t("save_qr_warning")}
             </p>
           </div>
 
           {/* الملاحظة الصغيرة */}
           <div className="text-xs text-muted-foreground mt-2">
-            الرجاء عدم مسح الباركود
+{t("dont_scan_qr")}
           </div>
 
         </div>
@@ -261,27 +265,27 @@ boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
   className="block font-arabic text-sm mb-2 text-right"
   style={{ color: "#3C2E23" }}
 >
-  الاسم الكريم
+{t("name_label")}
 </label>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           maxLength={60}
-          placeholder="اكتب اسمك هنا"
+placeholder={t("name_placeholder")}
           className="w-full px-4 py-3 rounded-xl font-arabic text-right outline-none transition-colors"
           style={{
             background: "#FFFFFF",
 border: "1px solid #D8C8D9",
 color: "#3C2E23",
           }}
-          dir="rtl"
-        />
+          dir={lang === "ar" ? "rtl" : "ltr"}
+/>
 <label
   className="block font-arabic text-sm mb-2 mt-4 text-right"
   style={{ color: "#3C2E23" }}
 >
-  عدد الأشخاص
+{t("guest_count")}
 </label>
 <div className="flex flex-row-reverse gap-2">
   {["5", "4", "3", "2", "1"].map((num) => (
@@ -332,7 +336,7 @@ boxShadow:
     }}
   >
 
-            تأكيد الحضور
+{t("confirm")}
           </button>
           <button
             onClick={() => setChoice("declined")}
@@ -350,7 +354,7 @@ border: "1px solid #D8C8D9",
             }}
           >
 
-            الاعتذار عن الحضور
+{t("decline")}
           </button>
         </div>
 
@@ -365,7 +369,7 @@ boxShadow: "0 4px 18px rgba(168,130,184,.28)",
             fontWeight: 700,
           }}
         >
-          {state.kind === "loading" ? "جارٍ الإرسال..." : "إرسال"}
+          {state.kind === "loading" ? t("sending") : t("send")}
         </button>
 
         {state.kind === "error" && (
