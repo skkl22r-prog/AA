@@ -145,7 +145,7 @@ className="hidden"
       <span>{t("word2")}</span>
     </div>
 
-   <div className="font-IranNastali text-4xl sm:text-5xl whitespace-nowrap flex justify-center items-center gap-8">
+   <div className="font-iran text-4xl sm:text-5xl whitespace-nowrap flex justify-center items-center gap-8">
   <span>{t("mother_name1")}</span>
 
   <span className="hidden">{t("and")}</span>
