@@ -46,7 +46,7 @@ className="hidden"
 <div
   className="fixed inset-0 z-0"
   style={{
-    background: "linear-gradient(180deg, #FCFBFD 0%, #F2EEF6 50%, #FCFBFD 100%)",
+    background: "#F2EEF6",
   }}
 />
 
