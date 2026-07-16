@@ -35,11 +35,11 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
   return (
     <div
       className="fixed inset-0 z-40 cursor-pointer overflow-hidden"
-      style={{
-        background: "#3A2B22",
-        opacity: fadeOut ? 0 : 1,
-        transition: "opacity 1s ease",
-      }}
+style={{
+  background: "#F2EEF6",
+  opacity: fadeOut ? 0 : 1,
+  transition: "opacity 1s ease",
+}}
       onClick={trigger}
     >
       <video
@@ -49,7 +49,10 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
         playsInline
         preload="auto"
         onEnded={handleEnded}
-        className="w-full h-full object-cover"
+className="w-full h-full object-cover"
+style={{
+  background: "#F2EEF6",
+}}
       />
 
       {!opening && (
