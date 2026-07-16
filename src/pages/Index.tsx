@@ -43,9 +43,16 @@ className="hidden"
       <MusicToggle active={opened} />
 <Envelope onOpen={() => setOpened(true)} />
 
+<div
+  className="fixed inset-0 z-0"
+  style={{
+    background: "linear-gradient(180deg, #FCFBFD 0%, #F2EEF6 50%, #FCFBFD 100%)",
+  }}
+/>
+
 {opened && (
   <main
-    className="relative z-10"
+    className="relative z-10 animate-fadeIn"
     style={{
       animation: "fadeIn 0.8s ease forwards",
     }}
@@ -91,9 +98,9 @@ className="hidden"
   muted
   loop
   playsInline
-  className="absolute inset-0 w-full h-full object-cover"
+  className="absolute inset-0 w-full h-full object-cover animate-videoFade"
   style={{
-    boxShadow: "var(--shadow-elegant)",
+    background: "#F2EEF6",
   }}
 />
 
@@ -512,6 +519,19 @@ style={{ color: "#3C2E23" }}
   to {
     opacity: 1;
   }
+}
+
+@keyframes videoFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-videoFade {
+  animation: videoFade 1s ease forwards;
 }
 `}
 </style>
