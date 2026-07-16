@@ -48,6 +48,7 @@ style={{
   background: "#F2EEF6",
   opacity: fadeOut ? 0 : 1,
   transition: "opacity 1s ease",
+  pointerEvents: fadeOut ? "none" : "auto",
 }}
       onClick={trigger}
     >
