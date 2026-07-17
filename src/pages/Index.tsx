@@ -123,30 +123,50 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-   <div
-  className="font-monasabat text-7xl sm:text-8xl leading-none"
+  <div
+  className={`font-monasabat ${
+    lang === "ar"
+      ? "text-7xl sm:text-8xl"
+      : "text-5xl sm:text-6xl"
+  } leading-none`}
 >
   {t("invite_to")}
 </div>
 
-    <div className="font-kahand text-lg sm:text-xl">
-      {t("invite_join")}
-    </div>
+<div className={`font-kahand ${
+  lang === "ar"
+    ? "text-lg sm:text-xl"
+    : "text-base sm:text-lg"
+} whitespace-nowrap`}>
+  {t("invite_join")}
+</div>
 
-    <div className="font-kahand text-lg sm:text-xl">
-      {t("invite_day")}
-    </div>
+<div className={`font-kahand ${
+  lang === "ar"
+    ? "text-lg sm:text-xl"
+    : "text-base sm:text-lg"
+} whitespace-nowrap`}>
+  {t("invite_day")}
+</div>
 
-    <div className="font-kahand text-lg sm:text-xl mt-2">
-      {t("invite_with_love")}
-    </div>
+<div className={`font-kahand ${
+  lang === "ar"
+    ? "text-lg sm:text-xl"
+    : "text-base sm:text-lg"
+} whitespace-nowrap`}>
+  {t("invite_with_love")}
+</div>
 
     <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
       <span>{t("word1")}</span>
       <span>{t("word2")}</span>
     </div>
 
-   <div className="font-iran text-4xl sm:text-5xl whitespace-nowrap flex justify-center items-center gap-8">
+<div className={`font-iran ${
+  lang === "ar"
+    ? "text-4xl sm:text-5xl"
+    : "text-3xl sm:text-4xl"
+} whitespace-nowrap flex justify-center items-center gap-8`}>
   <span>{t("mother_name1")}</span>
 
   <span className="hidden">{t("and")}</span>
@@ -154,12 +174,22 @@ style={{
   <span className="hidden">{t("mother_name2")}</span>
 </div>
 
-    <div className="font-kahand text-lg sm:text-xl mt-3">
+<div className={`font-kahand ${
+  lang === "ar"
+    ? "text-lg sm:text-xl"
+    : "text-base sm:text-lg"
+}`}>
       {t("invite_attend")}
     </div>
 
  <div
-  className="font-iran text-5xl sm:text-6xl my-4"
+<div
+  className={`font-iran ${
+    lang === "ar"
+      ? "text-5xl sm:text-6xl"
+      : "text-4xl sm:text-5xl"
+  } my-4`}
+>
 >
   {t("bride_name")}
 
@@ -177,7 +207,7 @@ style={{
     className="font-goori"
     style={{
       fontSize: "0.45em",
-      margin: "0 12px",
+      margin: "0 18px",
     }}
   >
     {t("and")}
@@ -185,7 +215,11 @@ style={{
 
   {t("groom_name")}
 </div>
-    <div className="font-tajawal text-lg sm:text-xl">
+<div className={`font-tajawal ${
+  lang === "ar"
+    ? "text-lg sm:text-xl"
+    : "text-base sm:text-lg"
+}`}>
       {t("date_line")}
     </div>
   </div>
