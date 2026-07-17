@@ -164,7 +164,7 @@ style={{
 
 <div className={`font-iran ${
   lang === "ar"
-    ? "text-4xl sm:text-5xl"
+      ? "text-6xl sm:text-7xl"
     : "text-3xl sm:text-4xl"
 } whitespace-nowrap flex justify-center items-center gap-8 my-3`}>
   <span>{t("mother_name1")}</span>
@@ -202,14 +202,14 @@ style={{
   </span>
 
   <span
-    className="font-goori"
-    style={{
-      fontSize: "0.30em",
-      margin: "0 25px",
-    }}
-  >
-    {t("and")}
-  </span>
+  className="font-goori"
+  style={{
+    fontSize: lang === "ar" ? "0.35em" : "0.45em",
+    margin: "0 18px",
+  }}
+>
+  {t("and")}
+</span>
 
   {t("groom_name")}
 </div>
