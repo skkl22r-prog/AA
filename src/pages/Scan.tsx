@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import scanSuccess from "@/assets/photo-output.png";
+import scanSuccess from "@/assets/IMG_5043.jpeg";
 
 type State =
   | { kind: "loading" }
