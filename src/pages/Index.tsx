@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock } from "lucide-react";
 import invitationImg from "@/assets/roko.mp4";
 import Envelope from "@/components/Envelope";
@@ -21,7 +22,28 @@ import { useLang } from "@/i18n/LanguageContext";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 const { t, lang, toggle } = useLang();
+const scrollRef = useRef<HTMLDivElement>(null);
 
+useEffect(() => {
+  const el = scrollRef.current;
+  if (!el) return;
+
+  const timer = setTimeout(() => {
+    el.scrollTo({
+      left: 140,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      el.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 900);
+  }, 600);
+
+  return () => clearTimeout(timer);
+}, []);
   return (
   <div
   className="overflow-x-hidden w-full"
@@ -435,8 +457,9 @@ title={t("map_title")}
 </Reveal>
 
   <Reveal delay={150}>
- <div
-  className="overflow-x-auto overflow-y-visible pb-3"
+<div
+  ref={scrollRef}
+  className="overflow-x-auto pb-3"
   style={{
     WebkitOverflowScrolling: "touch",
     scrollbarWidth: "none",
