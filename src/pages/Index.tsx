@@ -136,7 +136,7 @@ style={{
 <div className={`font-kahand ${
   lang === "ar"
     ? "text-lg sm:text-xl"
-    : "text-base sm:text-lg"
+    : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_join")}
 </div>
@@ -144,7 +144,7 @@ style={{
 <div className={`font-kahand ${
   lang === "ar"
     ? "text-lg sm:text-xl"
-    : "text-base sm:text-lg"
+    : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_day")}
 </div>
@@ -152,7 +152,7 @@ style={{
 <div className={`font-kahand ${
   lang === "ar"
     ? "text-lg sm:text-xl"
-    : "text-base sm:text-lg"
+    : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_with_love")}
 </div>
@@ -177,7 +177,7 @@ style={{
 <div className={`font-kahand ${
   lang === "ar"
     ? "text-lg sm:text-xl"
-    : "text-base sm:text-lg"
+    : "text-lg sm:text-xl"
 }`}>
       {t("invite_attend")}
     </div>
@@ -216,7 +216,7 @@ style={{
 <div className={`font-tajawal ${
   lang === "ar"
     ? "text-lg sm:text-xl"
-    : "text-base sm:text-lg"
+    : "text-lg sm:text-xl"
 }`}>
       {t("date_line")}
     </div>
