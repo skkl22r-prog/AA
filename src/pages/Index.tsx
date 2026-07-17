@@ -128,14 +128,14 @@ style={{
     lang === "ar"
       ? "text-[14rem] sm:text-[15rem]"
       : "text-3xl sm:text-4xl"
-  } leading-[0.6]`}
+  } leading-[0.4]`}
 >
   {t("invite_to")}
 </div>
 
 <div className={`font-kahand ${
   lang === "ar"
-  ? "text-xl sm:text-2xl"
+ ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_join")}
@@ -143,7 +143,7 @@ style={{
 
 <div className={`font-kahand ${
   lang === "ar"
-  ? "text-xl sm:text-2xl"
+ ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_day")}
@@ -151,7 +151,7 @@ style={{
 
 <div className={`font-kahand ${
   lang === "ar"
-  ? "text-xl sm:text-2xl"
+ ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_with_love")}
@@ -164,7 +164,7 @@ style={{
 
 <div className={`font-iran ${
   lang === "ar"
-    ? "text-4xl sm:text-5xl"
+      ? "text-6xl sm:text-7xl"
     : "text-3xl sm:text-4xl"
 } whitespace-nowrap flex justify-center items-center gap-8`}>
   <span>{t("mother_name1")}</span>
@@ -176,7 +176,7 @@ style={{
 
 <div className={`font-kahand ${
   lang === "ar"
-  ? "text-xl sm:text-2xl"
+ ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
 }`}>
       {t("invite_attend")}
@@ -185,7 +185,7 @@ style={{
  <div
   className={`font-iran ${
     lang === "ar"
-      ? "text-7xl sm:text-8xl"
+      ? "text-6xl sm:text-7xl"
       : "text-4xl sm:text-5xl"
   } my-4`}
 >
@@ -195,7 +195,7 @@ style={{
     style={{
       display: "none",
       fontSize: "0.35em",
-      margin: "0 8px",
+      margin: "0 18px",
     }}
   >
     ❤︎
@@ -204,7 +204,7 @@ style={{
   <span
     className="font-goori"
     style={{
-      fontSize: "0.45em",
+      fontSize: "0.30em",
       margin: "0 18px",
     }}
   >
@@ -215,7 +215,7 @@ style={{
 </div>
 <div className={`font-tajawal ${
   lang === "ar"
-  ? "text-xl sm:text-2xl"
+ ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
 }`}>
       {t("date_line")}
