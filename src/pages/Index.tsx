@@ -123,7 +123,9 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-   <div className="font-monasabat text-4xl sm:text-5xl">
+   <div
+  className="font-monasabat text-7xl sm:text-8xl leading-none"
+>
   {t("invite_to")}
 </div>
 
