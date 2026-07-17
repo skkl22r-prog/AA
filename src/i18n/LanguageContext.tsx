@@ -91,8 +91,8 @@ dont_scan_qr: "الرجاء عدم مسح الباركود",
   seconds_short: "ث",
 
   // Footer
-  made_by: "صُنع بحب بواسطة",
-  store: "متجر غيمة",
+  made_by: "صُنع بحب بواسطة ",
+  store: " متجر غيمة  ",
 designer_names: "معـاذ & طيف",
 tiktok: "@shim2t.TikTok",
 
