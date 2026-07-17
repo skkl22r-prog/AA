@@ -97,11 +97,11 @@ dont_scan_qr: "الرجاء عدم مسح الباركود",
   cal_day: "Saturday",
   cal_month: "July",
   cal_year: "2026",
-guests_1: "١ (1)",
-  guests_2: "٢ (2)",
-  guests_3: "٣ (3)",
-  guests_4: "٤ (4)",
-  guests_5: "٥ (5)"
+guests_1: "١",
+  guests_2: "٢",
+  guests_3: "٣",
+  guests_4: "٤",
+  guests_5: "٥"
 };
 
 const en: Dict = {
@@ -197,11 +197,11 @@ guest_count: "Number of Companions",
   cal_day: "Monday",
   cal_month: "November",
   cal_year: "2026",
-guests_1: "1 (١)",
-  guests_2: "2 (٢)",
-  guests_3: "3 (٣)",
-  guests_4: "4 (٤)",
-  guests_5: "5 (٥)"
+guests_1: "1",
+  guests_2: "2",
+  guests_3: "3",
+  guests_4: "4",
+  guests_5: "5"
 };
 
 const dicts = { ar, en };
