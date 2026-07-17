@@ -8,19 +8,19 @@ const ar: Dict = {
   // Invitation
   tap_open: "اضغط لفتح الدعوة",
   invite_to: "2",
-  invite_join: "يسعدنا ان تكونوا جزء من فرحتنا",
-  invite_day: "يــــَوم تعانق الفرحة قلـــــوبنا",
+  invite_join: "لمن تكتمل بوجودهم الأفراح وتزهو الليالي",
+  invite_day: "أنتم فرح الزمان وبهجة المكان",
   invite_with_love: "بكـل الحـب والـود تتـــشرف",
   word1: "السيدة",
   word2: "السيدة",
-  mother_name1: "فوز ساره",
+  mother_name1: "أم معـاذ",
 and: "على",
   mother_name2: "سميرة الغامدي",
   invite_attend: "بدعوتكم لحضور حفل زفاف",
   invite_before_bride: "أبنها",
   invite_before_bride_2: "ابنتها",
-  bride_name: "حاتم",
-  groom_name: "روان",
+  bride_name: "معـاذ",
+  groom_name: "طيف",
   invite_god_willing: "وذلك بمشيئة الله تعالى يوم الاثنين",
   date_line: "٢ . ٢ . ١٤٤٨ | ٢٨ . ١١ . ٢٠٢٦",
 
@@ -97,26 +97,31 @@ dont_scan_qr: "الرجاء عدم مسح الباركود",
   cal_day: "Saturday",
   cal_month: "July",
   cal_year: "2026",
+guests_1: "١ (1)",
+  guests_2: "٢ (2)",
+  guests_3: "٣ (3)",
+  guests_4: "٤ (4)",
+  guests_5: "٥ (5)"
 };
 
 const en: Dict = {
   // Invitation
   tap_open: "Tap to open the invitation",
-  invite_to: "To Our Dearest Loved Ones",
-  invite_join: "It would be our joy to have you share in our happiness",
-  invite_day: "On the day joy embraces our hearts",
+  invite_to: "May Allah bless their marriage",
+  invite_join: "To those who complete our joy",
+  invite_day: "You are our joy and delight",
   invite_with_love: "With all love and affection",
   word1: "Mrs.",
   word2: "Mrs.",
-  mother_name1: "Fawz Al-Muqati",
+  mother_name1: "Umm Muadh",
 and: "&",
   mother_name2: "Samirah Al-Ghamdi",
   invite_attend: "Cordially invites you to attend the wedding of",
   invite_before_bride: "her son",
   invite_before_bride_2: "her daughter",
-  bride_name: "Hatem",
-  groom_name: "Rawan",
-  invite_god_willing: "God willing, on Saturday",
+  bride_name: "Muadh",
+  groom_name: "Taif",
+  invite_god_willing: "God willing, on Monday",
   date_line: "28 . 11 . 2026 | 02 . 02 . 1448",
 
   // Countdown
@@ -188,10 +193,15 @@ guest_count: "Number of Companions",
   store: "Ghaimah Store",
 
   // Calendar
-  date_full: "Saturday, July 4, 2026",
-  cal_day: "Saturday",
-  cal_month: "July",
+  date_full: "Monday, November 28, 2026",
+  cal_day: "Monday",
+  cal_month: "November",
   cal_year: "2026",
+guests_1: "1 (١)",
+  guests_2: "2 (٢)",
+  guests_3: "3 (٣)",
+  guests_4: "4 (٤)",
+  guests_5: "5 (٥)"
 };
 
 const dicts = { ar, en };
