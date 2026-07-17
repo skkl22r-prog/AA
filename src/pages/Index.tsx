@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock } from "lucide-react";
 import invitationImg from "@/assets/roko.mp4";
@@ -22,7 +22,6 @@ import { useLang } from "@/i18n/LanguageContext";
 const Index = () => {
   const [opened, setOpened] = useState(false);
 const { t, lang, toggle } = useLang();
-const scrollRef = useRef<HTMLDivElement>(null);
 const scrollRef = useRef<HTMLDivElement>(null);
 
 const startX = useRef(0);
