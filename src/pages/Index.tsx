@@ -124,7 +124,7 @@ className="hidden"
         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
     }}
   >
-    <div className="font-kahand text-lg sm:text-xl">
+    <div className="font-monasabat text-lg sm:text-xl">
       {t("invite_to")}
     </div>
 
@@ -173,7 +173,7 @@ className="hidden"
   </span>
 
   <span
-    className="font-aldhabi"
+    className="font-goori"
     style={{
       fontSize: "0.45em",
       margin: "0 12px",
