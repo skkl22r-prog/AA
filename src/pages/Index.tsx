@@ -23,27 +23,34 @@ const Index = () => {
   const [opened, setOpened] = useState(false);
 const { t, lang, toggle } = useLang();
 const scrollRef = useRef<HTMLDivElement>(null);
+const scrollRef = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
+const startX = useRef(0);
+const startScroll = useRef(0);
+const dragging = useRef(false);
+const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
   const el = scrollRef.current;
   if (!el) return;
 
-  const timer = setTimeout(() => {
-    el.scrollTo({
-      left: 140,
-      behavior: "smooth",
-    });
+  dragging.current = true;
+  startX.current = e.touches[0].pageX;
+  startScroll.current = el.scrollLeft;
+};
 
-    setTimeout(() => {
-      el.scrollTo({
-        left: 0,
-        behavior: "smooth",
-      });
-    }, 900);
-  }, 600);
+const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+  if (!dragging.current) return;
 
-  return () => clearTimeout(timer);
-}, []);
+  const el = scrollRef.current;
+  if (!el) return;
+
+  const walk = e.touches[0].pageX - startX.current;
+  el.scrollLeft = startScroll.current - walk;
+};
+
+const onTouchEnd = () => {
+  dragging.current = false;
+};
+
   return (
  <div
   className="overflow-x-hidden w-full"
@@ -459,13 +466,17 @@ title={t("map_title")}
   <Reveal delay={150}>
 <div
   ref={scrollRef}
+  onTouchStart={onTouchStart}
+  onTouchMove={onTouchMove}
+  onTouchEnd={onTouchEnd}
   className="overflow-x-auto pb-3"
   style={{
     WebkitOverflowScrolling: "touch",
     scrollbarWidth: "none",
+    touchAction: "pan-x",
   }}
 >
-<div className="inline-flex gap-8 px-4">
+<div className="flex w-max gap-8 px-4">
 
       <div className="text-center shrink-0">
         <img
