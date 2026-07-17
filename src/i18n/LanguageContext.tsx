@@ -13,7 +13,7 @@ const ar: Dict = {
   invite_with_love: "بكـل الحـب والـود تتـــشرف",
   word1: "السيدة",
   word2: "السيدة",
-  mother_name1: "فوز المقاطي",
+  mother_name1: "فوز ساره",
 and: "على",
   mother_name2: "سميرة الغامدي",
   invite_attend: "بدعوتكم لحضور حفل زفاف",
