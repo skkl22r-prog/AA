@@ -224,11 +224,10 @@
   }
 }
 
-.animate-textReveal {
-  animation: textReveal 1.2s ease forwards;
-  animation-delay: 0.3s;
+.text-reveal {
+  opacity: 0;
+  animation: textReveal 1.2s ease 0.2s forwards;
 }
-
   .animate-float-slow {
     animation: float-slow 4s ease-in-out infinite;
   }
