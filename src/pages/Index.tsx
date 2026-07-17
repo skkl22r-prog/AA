@@ -577,55 +577,52 @@ title={t("map_title")}
 
           {/* Footer */}
           <footer className="px-4 py-12 text-center">
-            <Reveal>
-<div
-  className="flex items-center justify-center gap-2"
-  style={{ color: "#3C2E23" }}
->
-                <Heart className="w-4 h-4 fill-current" />
-                <span className="font-arabic text-sm">
-{t("made_by")}
-                  <a
-                    href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 transition-colors"
-style={{ color: "#3C2E23" }}
-                  >
-{t("store")}
-                  </a>
-                </span>
-              </div>
-            </Reveal>
+  <Reveal>
+
+    <Heart
+      className="w-5 h-5 fill-current mx-auto mb-3"
+      style={{ color: "#8A6C97" }}
+    />
+
+    <div
+      className="font-iran text-5xl mb-2"
+      style={{ color: "#8A6C97" }}
+    >
+      {t("designer_names")}
+    </div>
+
+    <div
+      className="font-arabic text-sm"
+      style={{ color: "#3C2E23" }}
+    >
+      {t("made_by")}
+      <a
+        href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 transition-colors"
+        style={{ color: "#3C2E23" }}
+      >
+        {t("store")}
+      </a>
+    </div>
+
+    <a
+      href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block mt-2 text-sm underline underline-offset-4"
+      style={{ color: "#8A6C97" }}
+    >
+      @shim2t.TikTok
+    </a>
+
+  </Reveal>
           </footer>
         </main>
       )}
     </div>
   );
 };
-<style>
-{`
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-@keyframes videoFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-videoFade {
-  animation: videoFade 1s ease forwards;
-}
-`}
-</style>
 export default Index;
