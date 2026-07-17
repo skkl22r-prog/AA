@@ -123,19 +123,19 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-  <div
+<div
   className={`font-monasabat ${
     lang === "ar"
-? "text-[10rem] sm:text-[11rem]"
-: "text-3xl sm:text-4xl"
-  } leading-none`}
+      ? "text-[14rem] sm:text-[15rem]"
+      : "text-3xl sm:text-4xl"
+  } leading-[0.6]`}
 >
   {t("invite_to")}
 </div>
 
 <div className={`font-kahand ${
   lang === "ar"
-    ? "text-lg sm:text-xl"
+  ? "text-xl sm:text-2xl"
     : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_join")}
@@ -143,7 +143,7 @@ style={{
 
 <div className={`font-kahand ${
   lang === "ar"
-    ? "text-lg sm:text-xl"
+  ? "text-xl sm:text-2xl"
     : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_day")}
@@ -151,7 +151,7 @@ style={{
 
 <div className={`font-kahand ${
   lang === "ar"
-    ? "text-lg sm:text-xl"
+  ? "text-xl sm:text-2xl"
     : "text-lg sm:text-xl"
 } whitespace-nowrap`}>
   {t("invite_with_love")}
@@ -176,7 +176,7 @@ style={{
 
 <div className={`font-kahand ${
   lang === "ar"
-    ? "text-lg sm:text-xl"
+  ? "text-xl sm:text-2xl"
     : "text-lg sm:text-xl"
 }`}>
       {t("invite_attend")}
@@ -185,7 +185,7 @@ style={{
  <div
   className={`font-iran ${
     lang === "ar"
-      ? "text-5xl sm:text-6xl"
+      ? "text-7xl sm:text-8xl"
       : "text-4xl sm:text-5xl"
   } my-4`}
 >
@@ -215,7 +215,7 @@ style={{
 </div>
 <div className={`font-tajawal ${
   lang === "ar"
-    ? "text-lg sm:text-xl"
+  ? "text-xl sm:text-2xl"
     : "text-lg sm:text-xl"
 }`}>
       {t("date_line")}
