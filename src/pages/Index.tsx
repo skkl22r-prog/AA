@@ -183,7 +183,6 @@ style={{
     </div>
 
  <div
-<div
   className={`font-iran ${
     lang === "ar"
       ? "text-5xl sm:text-6xl"
