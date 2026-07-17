@@ -115,8 +115,7 @@ className="hidden"
   <div
     className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4"
     style={{
-      background:
-        "radial-gradient(ellipse at center, hsla(0,0%,0%,0.18) 0%, hsla(0,0%,0%,0.08) 200%, hsla(0,0%,0%,0) 100%)",
+      background: "transparent",
       backdropFilter: "blur(1.5px)",
       WebkitBackdropFilter: "blur(1.5px)",
       color: "#FFFFFF",
@@ -124,9 +123,9 @@ className="hidden"
         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
     }}
   >
-    <div className="font-monasabat text-lg sm:text-xl">
-      {t("invite_to")}
-    </div>
+   <div className="font-monasabat text-4xl sm:text-5xl">
+  {t("invite_to")}
+</div>
 
     <div className="font-kahand text-lg sm:text-xl">
       {t("invite_join")}
