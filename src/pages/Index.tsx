@@ -141,7 +141,7 @@ className="hidden"
     className=""
   >
 <div
-  className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 animate-textReveal"
+className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
 style={{
   background: "transparent",
   backdropFilter: "none",
