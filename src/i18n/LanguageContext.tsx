@@ -7,7 +7,7 @@ type Dict = Record<string, string>;
 const ar: Dict = {
   // Invitation
   tap_open: "اضغط لفتح الدعوة",
-  invite_to: "إلى كل غــــــــــالي ومحـــــــــب",
+  invite_to: "2",
   invite_join: "يسعدنا ان تكونوا جزء من فرحتنا",
   invite_day: "يــــَوم تعانق الفرحة قلـــــوبنا",
   invite_with_love: "بكـل الحـب والـود تتـــشرف",
