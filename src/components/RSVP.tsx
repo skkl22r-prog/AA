@@ -209,7 +209,7 @@ if (state.kind === "qr") {
   border: "1px solid #D8C8D9",
   boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
 }}
-
+>
           {/* العنوان */}
           <div className="font-arabic text-3xl text-primary mb-2 font-bold">
 {t("thanks_attending")}
@@ -225,12 +225,13 @@ if (state.kind === "qr") {
 </div>
           {/* مربع الباركود */}
           <div
-            className="rounded-xl p-2 mb-4 inline-flex"
-            style={{
-  background: "#FFFFFF",
-  border: "1px solid #D8C8D9",
-}}
-          >
+  className="rounded-xl p-2 mb-4 inline-flex"
+  style={{
+    background: "#FFFFFF",
+    border: "1px solid #D8C8D9",
+  }}
+>
+          
          <QRCodeCanvas
   value={state.qr}
   size={170}
@@ -265,13 +266,13 @@ if (state.kind === "qr") {
   // Form
   return (
     <Reveal>
-      <div
-        className="mx-auto max-w-md rounded-2xl p-8 backdrop-blur-md"
-        style={{
-          background: "#FCFAF8",
-border: "1px solid #D8C8D9",
-boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
-        }}
+<div
+  className="rounded-2xl p-6 text-center backdrop-blur-md"
+  style={{
+    background: "#FCFAF8",
+    border: "1px solid #D8C8D9",
+    boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
+  }}
       >
         <label
   className="block font-arabic text-sm mb-2 text-right"
