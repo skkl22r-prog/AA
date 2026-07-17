@@ -1,4 +1,4 @@
-
+ص
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock } from "lucide-react";
 import invitationImg from "@/assets/roko.mp4";
@@ -140,8 +140,8 @@ className="hidden"
   <div
     className=""
   >
-  <div
-    className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4"
+<div
+  className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 animate-textReveal"
 style={{
   background: "transparent",
   backdropFilter: "none",
@@ -585,7 +585,7 @@ title={t("map_title")}
     />
 
     <div
-      className="font-iran text-3xl mb-2"
+      className="font-iran text-2xl mb-2"
       style={{ color: "#8A6C97" }}
     >
       {t("designer_names")}
