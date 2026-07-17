@@ -46,7 +46,7 @@ useEffect(() => {
 }, []);
   return (
  <div
-  className="w-full"
+  className="overflow-x-hidden w-full"
   style={{
     background: "linear-gradient(180deg, #FCFBFD 0%, #F2EEF6 50%, #FCFBFD 100%)",
     minHeight: "100vh",
@@ -465,7 +465,7 @@ title={t("map_title")}
     scrollbarWidth: "none",
   }}
 >
-    <div className="flex gap-8 px-2 w-max">
+<div className="inline-flex gap-8 px-4">
 
       <div className="text-center shrink-0">
         <img
