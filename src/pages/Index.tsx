@@ -435,13 +435,13 @@ title={t("map_title")}
 </Reveal>
 
   <Reveal delay={150}>
-  <div
-    className="overflow-x-auto pb-3"
-    style={{
-      WebkitOverflowScrolling: "touch",
-      scrollbarWidth: "none",
-    }}
-  >
+ <div
+  className="overflow-x-auto overflow-y-visible pb-3"
+  style={{
+    WebkitOverflowScrolling: "touch",
+    scrollbarWidth: "none",
+  }}
+>
     <div className="flex gap-8 px-2 w-max">
 
       <div className="text-center shrink-0">
