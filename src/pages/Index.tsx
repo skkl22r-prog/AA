@@ -1,4 +1,4 @@
-ص
+
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock } from "lucide-react";
 import invitationImg from "@/assets/roko.mp4";
