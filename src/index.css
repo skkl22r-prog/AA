@@ -29,6 +29,16 @@
 }
 
 @font-face {
+  font-family: "Goori";
+  src: url("./assets/fonts/goori.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Monasabat";
+  src: url("./assets/fonts/Monasabat.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "AMoshref";
   src: url("./assets/fonts/AMoshref.ttf") format("truetype");
 }
