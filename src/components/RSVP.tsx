@@ -10,7 +10,7 @@ import { useLang } from "@/i18n/LanguageContext";
 type State =
   | { kind: "form" }
   | { kind: "loading" }
-  | { kind: "attending"; name: string }
+| { kind: "attending"; name: string; guestCount: string }
   | { kind: "declined"; name: string }
   | { kind: "error"; msg: string }
 | { kind: "qr"; name: string; guestCount: string; qr: string };
@@ -166,11 +166,11 @@ await fetch(
   <br />
   عدد المرافقين : {state.guestCount}
 </div>
-          </div>
-          <p className="font-arabic text-sm text-muted-foreground">
-{t("thanks_attending")}
-          </p>
-        </div>
+
+<p className="font-arabic text-sm text-muted-foreground">
+  {t("thanks_attending")}
+</p>
+</div>
       </Reveal>
     );
   }
