@@ -26,14 +26,14 @@ and: "على",
 
   // Countdown
 countdown_date: "٣٠ نوفمبر ٢٠٢٦",
-  countdown_title: "العدّ التنازلي",
+  countdown_title: "المتبقي حتى فرحتنا ",
   days: "أيام",
   hours: "ساعات",
   minutes: "دقائق",
   seconds: "ثواني",
 
   // Details
-  details_title: "تفاصيل الحفل",
+  details_title: "تفاصيل يوم الفرح",
   details_subtitle: "كل ما تحتاج معرفته",
 
   // Venue
@@ -58,7 +58,7 @@ countdown_date: "٣٠ نوفمبر ٢٠٢٦",
   swipe_more: "اسحب لرؤية المزيد",
 
   // RSVP
-  rsvp_title: "أكد حضورك",
+  rsvp_title: "يشرفنا حضوركم",
   rsvp_sub: "نتشرف بحضوركم",
   rsvp_deadline: "نرجو الرد قبل  ٢٨ نوفمبر ٢٠٢٦",
 
@@ -126,7 +126,7 @@ and: "&",
 
   // Countdown
 countdown_date: "28 November 2026",
-  countdown_title: "Countdown",
+  countdown_title: "Until Our Celebration ",
   days: "Days",
   hours: "Hours",
   minutes: "Minutes",
