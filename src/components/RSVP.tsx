@@ -290,31 +290,31 @@ color: "#3C2E23",
 <div className="flex flex-row-reverse gap-2">
   {["5", "4", "3", "2", "1"].map((num) => (
     <button
-      key={num}
-      type="button"
-      onClick={() => setGuestCount(num)}
-      className="flex-1 py-3 rounded-xl font-arabic transition-all"
-      style={{
-        background:
-  guestCount === num
-    ? "#A882B8"
-    : "#FFFFFF",
-color:
-  guestCount === num
-    ? "#FFFFFF"
-    : "#3C2E23",
-border:
-  guestCount === num
-    ? "1px solid #A882B8"
-    : "1px solid #D8C8D9",
-boxShadow:
-  guestCount === num
-    ? "0 8px 18px rgba(168,130,184,0.25)"
-    : "none",
-      }}
-    >
-      {num}
-    </button>
+  key={num}
+  type="button"
+  onClick={() => setGuestCount(num)}
+  className="flex-1 py-3 rounded-xl font-arabic transition-all"
+  style={{
+    background:
+      guestCount === num
+        ? "#A882B8"
+        : "#FFFFFF",
+    color:
+      guestCount === num
+        ? "#FFFFFF"
+        : "#3C2E23",
+    border:
+      guestCount === num
+        ? "1px solid #A882B8"
+        : "1px solid #D8C8D9",
+    boxShadow:
+      guestCount === num
+        ? "0 8px 18px rgba(168,130,184,0.25)"
+        : "none",
+  }}
+>
+  {t(`guests_${num}`)}
+</button>
   ))}
 </div>
 
