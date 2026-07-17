@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useLang } from "@/i18n/LanguageContext";
 
-const TARGET = new Date("2026-07-30T19:30:00+03:00").getTime();
+const TARGET = new Date("2026-11-28T19:30:00+03:00").getTime();
 
 const Countdown = () => {
+const { t: translate, lang } = useLang();
   const [t, setT] = useState({ d: 0, h: 0, m: 0, s: 0 });
 
   useEffect(() => {
@@ -21,11 +23,11 @@ const Countdown = () => {
   }, []);
 
   const items = [
-    { v: t.d, l: "Days" },
-    { v: t.h, l: "Hours" },
-    { v: t.m, l: "Minutes" },
-    { v: t.s, l: "Seconds" },
-  ];
+  { v: t.d, l: translate("days") },
+  { v: t.h, l: translate("hours") },
+  { v: t.m, l: translate("minutes") },
+  { v: t.s, l: translate("seconds") },
+];
 
   return (
     <div dir="ltr" className="flex justify-center gap-3 sm:gap-6">
@@ -43,7 +45,10 @@ boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
   className="font-display text-3xl sm:text-4xl font-light tabular-nums"
 style={{ color: "#8F79A8" }}
 >
-            {String(it.v).padStart(2, "0")}
+{lang === "ar"
+  ? String(it.v).padStart(2, "0").replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d])
+  : String(it.v).padStart(2, "0")
+}
           </div>
 
           <div
