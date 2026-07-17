@@ -52,7 +52,9 @@ countdown_date: "٣٠ نوفمبر ٢٠٢٦",
   program_subtitle: "خطتنا لليوم الكبير",
   program_reception: "الاستقبال",
   program_zaffa: "الزفة",
+  "zaffa_time": "الساعة ٩:٣٠ مساءً"
   program_dinner: "العشاء",
+ "dinner_time": "الساعة ١١:٠٠ مساءً"
   no_cameras: "يمنع دخول جوالات الكاميرا",
   no_kids: "يمنع اصطحاب الأطفال",
   swipe_more: "اسحب لرؤية المزيد",
@@ -91,6 +93,8 @@ dont_scan_qr: "الرجاء عدم مسح الباركود",
   // Footer
   made_by: "صُنع بحب بواسطة",
   store: "متجر غيمة",
+designer_names: "معاذ & طيف",
+@shim2t.TikTok
 
   // Calendar
   date_full: "الاثنين 28 نوفمبر 2026",
@@ -152,7 +156,9 @@ countdown_date: "28 November 2026",
   program_subtitle: "Our schedule for the special day",
   program_reception: "Reception",
   program_zaffa: "Zaffa",
+ "zaffa_time": "9:30 PM",
   program_dinner: "Dinner",
+ "dinner_time": "11:00 PM"
   no_cameras: "No camera phones allowed",
   no_kids: "Children are not permitted",
   swipe_more: "Swipe to see more",
@@ -191,7 +197,8 @@ guest_count: "Number of Companions",
   // Footer
   made_by: "Crafted with love by",
   store: "Ghaimah Store",
-
+designer_names: "Muath & Taif",
+@shim2t.TikTok
   // Calendar
   date_full: "Monday, November 28, 2026",
   cal_day: "Monday",
