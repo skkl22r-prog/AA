@@ -13,7 +13,7 @@ type State =
   | { kind: "attending"; name: string }
   | { kind: "declined"; name: string }
   | { kind: "error"; msg: string }
-  | { kind: "qr"; name: string; qr: string };
+| { kind: "qr"; name: string; guestCount: string; qr: string };
 const RSVP = () => {
 const { t, lang } = useLang();
   const [name, setName] = useState("");
@@ -26,11 +26,12 @@ useEffect(() => {
 if (savedQr) {
   const data = JSON.parse(savedQr);
 
-  setState({
-    kind: "qr",
-    name: data.name,
-    qr: data.qr,
-  });
+ setState({
+  kind: "qr",
+  name: data.name,
+  guestCount: data.guestCount,
+  qr: data.qr,
+});
   return;
 }
 
@@ -61,7 +62,7 @@ if (!deviceId) {
 const qr_token = crypto.randomUUID();
 
 const { data: existing } = await supabase
-  .from("rsvps")
+  .from("rsvpsRoko")
   .select("id")
   .eq("device_id", deviceId)
   .maybeSingle();
@@ -74,13 +75,14 @@ msg: t("already_registered"),
   return;
 }
 
-  const { error } = await supabase.from("rsvps").insert({
-    name: name.trim(),
-    status: choice,
-    device_id: deviceId,
-    qr_token: qr_token,
-    scanned: false,
-  });
+  const { error } = await supabase.from("rsvpsRoko").insert({
+  name: name.trim(),
+  status: choice,
+  guest_count: guestCount,
+  device_id: deviceId,
+  qr_token: qr_token,
+  scanned: false,
+});
 
   if (error) {
   console.log("SUPABASE ERROR:", error);
@@ -112,18 +114,21 @@ await fetch(
   const qrUrl = `${window.location.origin}/scan/${qr_token}`;
 
   localStorage.setItem(
-    "guest_qr",
-    JSON.stringify({
-      name: name.trim(),
-      qr: qrUrl,
-    })
-  );
+  "guest_qr",
+  JSON.stringify({
+    name: name.trim(),
+    guestCount: guestCount,
+    qr: qrUrl,
+  })
+);
+
 
   setState({
-    kind: "qr",
-    name: name.trim(),
-    qr: qrUrl,
-  });
+  kind: "qr",
+  name: name.trim(),
+  guestCount: guestCount,
+  qr: qrUrl,
+});
 } else {
     localStorage.setItem(
       "guest_declined",
@@ -156,8 +161,11 @@ await fetch(
           <div className="font-arabic text-2xl text-primary mb-4" style={{ fontWeight: 700 }}>
             نسعد بحضورك 🌸
           </div>
-          <div className="font-arabic text-base text-primary mb-6">
-        {t("welcome")} : {state.name}
+         <div className="font-arabic text-base text-muted-foreground mb-4">
+  {t("welcome")} : {state.name}
+  <br />
+  عدد المرافقين : {state.guestCount}
+</div>
           </div>
           <p className="font-arabic text-sm text-muted-foreground">
 {t("thanks_attending")}
