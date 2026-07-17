@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import scanSuccess from "@/assets/scan-success.jpeg";
+import scanSuccess from "@/assets/photo-output.png";
 
 type State =
   | { kind: "loading" }
-  | { kind: "ok"; name: string }
-  | { kind: "already"; name: string }
+  | { kind: "ok"; name: string; guestCount: string }
+| { kind: "already"; name: string; guestCount: string }
   | { kind: "not_found" }
   | { kind: "error" };
 
@@ -28,8 +28,8 @@ const Scan = () => {
     if (isMounted) setState({ kind: "loading" });
 
     const { data, error } = await supabase
-      .from("rsvps")
-      .select("name, scanned")
+     .from("rsvpsRoko")
+.select("name, guest_count, scanned")
       .eq("qr_token", cleanToken)
       .maybeSingle();
 console.log("TOKEN:", cleanToken);
@@ -44,13 +44,17 @@ console.log("ERROR:", error);
     }
 
 if (data.scanned) {
-  setState({ kind: "already", name: data.name });
+  setState({
+    kind: "already",
+    name: data.name,
+    guestCount: data.guest_count,
+  });
   return;
 }
 
 // تحديث scanned
 const { error: updateError } = await supabase
-  .from("rsvps")
+  .from("rsvpsRoko")
   .update({ scanned: true })
   .eq("qr_token", cleanToken);
 
@@ -59,7 +63,11 @@ if (updateError) {
   return;
 }
 
-setState({ kind: "ok", name: data.name });
+setState({
+  kind: "ok",
+  name: data.name,
+  guestCount: data.guest_count,
+});
   };
 
   run();
@@ -97,10 +105,16 @@ setState({ kind: "ok", name: data.name });
         </p>
 
         {state.name && (
-          <p className="text-gray-700 text-base">
-            الاسم: {state.name}
-          </p>
-        )}
+  <>
+    <p className="text-gray-700 text-base">
+      الاسم: {state.name}
+    </p>
+
+    <p className="text-gray-700 text-base mt-2">
+      عدد المرافقين: {state.guestCount}
+    </p>
+  </>
+)}
 
       </div>
     </div>
