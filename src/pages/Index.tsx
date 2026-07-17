@@ -585,7 +585,7 @@ title={t("map_title")}
     />
 
     <div
-      className="font-iran text-5xl mb-2"
+      className="font-iran text-3xl mb-2"
       style={{ color: "#8A6C97" }}
     >
       {t("designer_names")}
