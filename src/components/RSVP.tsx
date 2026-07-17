@@ -88,7 +88,7 @@ msg: t("already_registered"),
   return;
 }
 await fetch(
-"https://docs.google.com/forms/d/e/1FAIpQLSfEfpr7Aatf4Ax0V12255Zc02l1MXpQ5gg38zba2L1GoXqotw/formResponse"
+"https://docs.google.com/forms/d/e/1FAIpQLSfEfpr7Aatf4Ax0V12255Zc02l1MXpQ5gg38zba2L1GoXqotw/formResponse",
   {
     method: "POST",
     mode: "no-cors",
