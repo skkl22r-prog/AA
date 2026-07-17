@@ -114,14 +114,14 @@ className="hidden"
   >
   <div
     className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4"
-    style={{
-      background: "transparent",
-      backdropFilter: "blur(1.5px)",
-      WebkitBackdropFilter: "blur(1.5px)",
-      color: "#FFFFFF",
-      textShadow:
-        "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
-    }}
+style={{
+  background: "transparent",
+  backdropFilter: "none",
+  WebkitBackdropFilter: "none",
+  color: "#FFFFFF",
+  textShadow:
+    "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
+}}
   >
    <div className="font-monasabat text-4xl sm:text-5xl">
   {t("invite_to")}
