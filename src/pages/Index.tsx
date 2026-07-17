@@ -164,9 +164,9 @@ style={{
 
 <div className={`font-iran ${
   lang === "ar"
-      ? "text-6xl sm:text-7xl"
+    ? "text-4xl sm:text-5xl"
     : "text-3xl sm:text-4xl"
-} whitespace-nowrap flex justify-center items-center gap-8`}>
+} whitespace-nowrap flex justify-center items-center gap-8 my-3`}>
   <span>{t("mother_name1")}</span>
 
   <span className="hidden">{t("and")}</span>
@@ -187,7 +187,7 @@ style={{
     lang === "ar"
       ? "text-6xl sm:text-7xl"
       : "text-4xl sm:text-5xl"
-  } my-4`}
+  } my-6`}
 >
   {t("bride_name")}
 
@@ -205,13 +205,20 @@ style={{
     className="font-goori"
     style={{
       fontSize: "0.30em",
-      margin: "0 18px",
+      margin: "0 25px",
     }}
   >
     {t("and")}
   </span>
 
   {t("groom_name")}
+</div>
+<div className={`font-kahand ${
+  lang === "ar"
+ ? "text-2xl sm:text-3xl"
+    : "text-base sm:text-lg"
+}`}>
+  {t("invite_god_willing")}
 </div>
 <div className={`font-tajawal ${
   lang === "ar"
