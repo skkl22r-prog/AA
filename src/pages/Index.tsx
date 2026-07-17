@@ -126,8 +126,8 @@ style={{
   <div
   className={`font-monasabat ${
     lang === "ar"
-      ? "text-7xl sm:text-8xl"
-      : "text-5xl sm:text-6xl"
+? "text-[10rem] sm:text-[11rem]"
+: "text-3xl sm:text-4xl"
   } leading-none`}
 >
   {t("invite_to")}
