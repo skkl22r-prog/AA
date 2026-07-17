@@ -45,8 +45,8 @@ useEffect(() => {
   return () => clearTimeout(timer);
 }, []);
   return (
-  <div
-  className="overflow-x-hidden w-full"
+ <div
+  className="w-full"
   style={{
     background: "linear-gradient(180deg, #FCFBFD 0%, #F2EEF6 50%, #FCFBFD 100%)",
     minHeight: "100vh",
