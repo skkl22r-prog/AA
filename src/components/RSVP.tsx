@@ -205,11 +205,10 @@ if (state.kind === "qr") {
         <div
           className="rounded-2xl p-6 text-center backdrop-blur-md"
           style={{
-            background: "hsla(40, 50%, 95%, 0.55)",
-            border: "1.5px solid hsl(42 75% 55% / 0.4)",
-            boxShadow: "var(--shadow-soft)",
-          }}
-        >
+  background: "#FCFAF8",
+  border: "1px solid #D8C8D9",
+  boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
+}}
 
           {/* العنوان */}
           <div className="font-arabic text-3xl text-primary mb-2 font-bold">
@@ -217,23 +216,26 @@ if (state.kind === "qr") {
           </div>
 
           {/* الاسم */}
-          <div className="font-arabic text-base text-muted-foreground mb-4">
-          {t("welcome")} : {state.name}
-          </div>
+         <div className="font-arabic text-base text-muted-foreground mb-2">
+  {t("welcome")} : {state.name}
+</div>
 
+<div className="font-arabic text-base text-muted-foreground mb-4">
+  {t("guest_count")} : {state.guestCount}
+</div>
           {/* مربع الباركود */}
           <div
             className="rounded-xl p-2 mb-4 inline-flex"
             style={{
-              background: "#ffffff",
-              border: "1.5px solid hsl(42 75% 55% / 0.4)",
-            }}
+  background: "#FFFFFF",
+  border: "1px solid #D8C8D9",
+}}
           >
-          <QRCodeCanvas
+         <QRCodeCanvas
   value={state.qr}
   size={170}
-  fgColor="hsl(30 40% 18%)"
-  bgColor="#ffffff"
+  fgColor="#A882B8"
+  bgColor="#FFFFFF"
 />
           </div>
 
