@@ -189,7 +189,6 @@ style={{
       : "text-4xl sm:text-5xl"
   } my-4`}
 >
->
   {t("bride_name")}
 
   <span
