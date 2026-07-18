@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import scanSuccess from "@/assets/IMG_5043.jpeg";
 
 type State =
   | { kind: "loading" }
@@ -86,12 +85,90 @@ setState({
   }
 
  if (state.kind === "ok") {
-    return (
-      <div className="min-h-screen w-full">
-        <img src={scanSuccess} className="w-full block" />
+  return (
+    <div
+      className="min-h-screen flex items-center justify-center px-6"
+      style={{
+        background:
+          "linear-gradient(180deg,#FCFBFD 0%,#F2EEF6 50%,#FCFBFD 100%)",
+      }}
+    >
+      <div
+        className="w-full max-w-md rounded-[28px] p-8 text-center"
+        style={{
+          background: "#FFFDFB",
+          border: "1px solid #D8C8D9",
+          boxShadow: "0 10px 30px rgba(120,85,140,.12)",
+        }}
+      >
+        <div
+          style={{
+            color: "#A882B8",
+            fontSize: "90px",
+            lineHeight: 1,
+            marginBottom: "20px",
+          }}
+        >
+          ✓
+        </div>
+
+        <h1
+          className="text-3xl font-bold mb-2"
+          style={{ color: "#3C2E23" }}
+        >
+          تم المسح بنجاح
+        </h1>
+
+        <p
+          className="mb-8"
+          style={{ color: "#7A6A82" }}
+        >
+          تم التحقق من الدعوة بنجاح
+        </p>
+
+        <div
+          className="rounded-2xl p-5 text-right"
+          style={{
+            background: "#F8F5FA",
+            border: "1px solid #E5D8EC",
+          }}
+        >
+          <div className="mb-4">
+            <div
+              className="text-sm mb-1"
+              style={{ color: "#7A6A82" }}
+            >
+              الاسم
+            </div>
+
+            <div
+              className="text-lg font-semibold"
+              style={{ color: "#3C2E23" }}
+            >
+              {state.name}
+            </div>
+          </div>
+
+          <div>
+            <div
+              className="text-sm mb-1"
+              style={{ color: "#7A6A82" }}
+            >
+              عدد المرافقين
+            </div>
+
+            <div
+              className="text-lg font-semibold"
+              style={{ color: "#3C2E23" }}
+            >
+              {state.guestCount}
+            </div>
+          </div>
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   if (state.kind === "already") {
   return (
@@ -121,19 +198,51 @@ setState({
   );
 }
 
-  if (state.kind === "not_found") {
+if (state.kind === "not_found") {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f5efe6]">
-      <div className="bg-white border-2 border-red-500 rounded-2xl p-8 text-center max-w-md">
-        <div className="text-red-500 text-5xl mb-4">⛔</div>
+    <div
+      className="min-h-screen flex items-center justify-center px-6"
+      style={{
+        background:
+          "linear-gradient(180deg,#FCFBFD 0%,#F2EEF6 50%,#FCFBFD 100%)",
+      }}
+    >
+      <div
+        className="w-full max-w-md rounded-[28px] p-8 text-center"
+        style={{
+          background: "#FFFDFB",
+          border: "1px solid #D8C8D9",
+          boxShadow: "0 10px 30px rgba(120,85,140,.12)",
+        }}
+      >
+        <div
+          style={{
+            color: "#A882B8",
+            fontSize: "90px",
+            lineHeight: 1,
+            marginBottom: "20px",
+          }}
+        >
+          ✕
+        </div>
 
-        <p className="text-red-600 text-2xl font-bold mb-2">
+        <h1
+          className="text-3xl font-bold mb-2"
+          style={{ color: "#3C2E23" }}
+        >
           الباركود غير صالح
+        </h1>
+
+        <p
+          style={{
+            color: "#7A6A82",
+          }}
+        >
+          يرجى التأكد من صحة الباركود ثم إعادة المحاولة.
         </p>
       </div>
     </div>
   );
 }
-};
 
 export default Scan;
