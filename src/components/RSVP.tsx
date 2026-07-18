@@ -78,7 +78,7 @@ msg: t("already_registered"),
   const { error } = await supabase.from("rsvpsRoko").insert({
   name: name.trim(),
   status: choice,
-  guest_count: guestCount,
+  guest_count: choice === "attending" ? guestCount : "0",
   device_id: deviceId,
   qr_token: qr_token,
   scanned: false,
