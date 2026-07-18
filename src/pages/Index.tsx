@@ -155,7 +155,7 @@ style={{
   className={`font-monasabat ${
     lang === "ar"
       ? "text-[14rem] sm:text-[15rem]"
-: "text-2xl sm:text-3xl"
+: "text-xl sm:text-2xl"
   } leading-[0.4]`}
 >
   {t("invite_to")}
@@ -222,7 +222,7 @@ style={{
   <span
     style={{
       display: "none",
-fontSize: lang === "ar" ? "0.35em" : "0.65em",
+fontSize: lang === "ar" ? "0.35em" : "0.80em",
       margin: "0 18px",
     }}
   >
