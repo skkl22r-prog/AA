@@ -155,7 +155,7 @@ style={{
   className={`font-monasabat ${
     lang === "ar"
       ? "text-[14rem] sm:text-[15rem]"
-    : "text-lg sm:text-xl"
+: "text-2xl sm:text-3xl"
   } leading-[0.4]`}
 >
   {t("invite_to")}
@@ -193,7 +193,7 @@ style={{
 <div className={`font-iran ${
   lang === "ar"
       ? "text-6xl sm:text-7xl"
-    : "text-3xl sm:text-4xl"
+    : "text-5xl sm:text-6xl"
 } whitespace-nowrap flex justify-center items-center gap-8 my-3`}>
   <span>{t("mother_name1")}</span>
 
@@ -214,7 +214,7 @@ style={{
   className={`font-iran ${
     lang === "ar"
       ? "text-6xl sm:text-7xl"
-      : "text-4xl sm:text-5xl"
+      : "text-5xl sm:text-6xl"
   } my-6`}
 >
   {t("bride_name")}
@@ -222,7 +222,7 @@ style={{
   <span
     style={{
       display: "none",
-      fontSize: "0.35em",
+fontSize: lang === "ar" ? "0.35em" : "0.65em",
       margin: "0 18px",
     }}
   >
