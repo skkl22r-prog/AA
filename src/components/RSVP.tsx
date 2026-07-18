@@ -180,15 +180,34 @@ await fetch(
       <Reveal>
         <div
           className="mx-auto max-w-md rounded-2xl p-8 text-center backdrop-blur-md"
-          style={{
-            background: "hsla(40, 50%, 95%, 0.7)",
-            border: "1.5px solid hsl(42 75% 55% / 0.5)",
-            boxShadow: "var(--shadow-soft)",
-          }}
+style={{
+  background: "#FCFAF8",
+  border: "1px solid #D8C8D9",
+  boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
+}}
         >
-          <Heart className="mx-auto w-10 h-10 mb-3" style={{ color: "hsl(0 70% 55%)", fill: "hsl(0 70% 55%)" }} />
-          <p className="font-arabic text-xl text-primary leading-loose">
-        {t("thanks_declined")} {state.name} ❤️
+<Heart
+  className="mx-auto w-10 h-10 mb-4"
+  style={{
+    color: "#A882B8",
+    fill: "#A882B8",
+  }}
+/>
+<p
+  className="font-arabic text-xl leading-loose"
+  style={{ color: "#3C2E23" }}
+>
+{t("thanks_declined")}
+<br />
+
+<span
+  style={{
+    color: "#A882B8",
+    fontWeight: 700,
+  }}
+>
+  {state.name}
+</span>
             <br />
 {t("see_you_next_time")}
           </p>
