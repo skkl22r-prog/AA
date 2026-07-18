@@ -132,6 +132,12 @@ className="hidden"
     background: "#F2EEF6",
   }}
 />
+<div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background: "rgba(0,0,0,0.08)",
+  }}
+/>
 
 <div
   dir={lang === "ar" ? "rtl" : "ltr"}
