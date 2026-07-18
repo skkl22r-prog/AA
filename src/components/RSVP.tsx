@@ -4,7 +4,6 @@ import { supabase } from "@/integrations/supabase/client";
 import Reveal from "./Reveal";
 import { QRCodeCanvas } from "qrcode.react";
 import { useLang } from "@/i18n/LanguageContext";
-import { Sprout } from "lucide-react";
 
 // 👈 عدّل رقم الواتساب هنا (بصيغة دولية بدون + أو 00). مثال السعودية: 9665XXXXXXXX
 
@@ -212,38 +211,33 @@ if (state.kind === "qr") {
   }}
 >
   {/* العنوان */}
-  <div className="flex items-center justify-center gap-4 mb-2">
-    <Sprout
-      size={30}
-      strokeWidth={1.6}
-      style={{
-        color: "#C7A5D9",
-        transform: "scaleX(-1)",
-      }}
-    />
+  <div className="flex items-center justify-center gap-3 mb-2">
+  <span
+    className="text-3xl"
+    style={{ color: "#C7A5D9" }}
+  >
+    ༺
+  </span>
 
-    <div
-      className="font-arabic text-3xl font-bold"
-      style={{
-        color: "#6D2E86",
-      }}
-    >
-      {t("thanks_attending")}
-    </div>
-
-    <Sprout
-      size={30}
-      strokeWidth={1.6}
-      style={{
-        color: "#C7A5D9",
-      }}
-    />
+  <div
+    className="font-arabic text-3xl font-bold"
+    style={{ color: "#1F1A1F" }}
+  >
+    {t("thanks_attending")}
   </div>
+
+  <span
+    className="text-3xl"
+    style={{ color: "#C7A5D9" }}
+  >
+    ༻
+  </span>
+</div>
 
   {/* الاسم */}
   <div
     className="font-arabic text-base mb-2"
-    style={{ color: "#7F5D99" }}
+style={{ color: "#8E73A6" }}
   >
     {t("welcome")} : {state.name}
   </div>
@@ -251,7 +245,7 @@ if (state.kind === "qr") {
   {/* عدد المرافقين */}
   <div
     className="font-arabic text-base mb-4"
-    style={{ color: "#7F5D99" }}
+style={{ color: "#8E73A6" }}
   >
     {t("guest_count")} : {state.guestCount}
   </div>
@@ -267,7 +261,7 @@ if (state.kind === "qr") {
     <QRCodeCanvas
       value={state.qr}
       size={170}
-      fgColor="#5F2D74"
+fgColor="#2F1D38"
       bgColor="#FFFFFF"
     />
   </div>
@@ -286,7 +280,10 @@ if (state.kind === "qr") {
           </div>
 
           {/* الملاحظة الصغيرة */}
-          <div className="text-xs text-muted-foreground mt-2">
+<div
+  className="text-xs mt-2"
+  style={{ color: "#8E73A6" }}
+>
 {t("dont_scan_qr")}
           </div>
 
