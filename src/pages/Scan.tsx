@@ -244,5 +244,6 @@ if (state.kind === "not_found") {
     </div>
   );
 }
+};
 
 export default Scan;
