@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import Reveal from "./Reveal";
 import { QRCodeCanvas } from "qrcode.react";
 import { useLang } from "@/i18n/LanguageContext";
+import { Sprout } from "lucide-react";
 
 // 👈 عدّل رقم الواتساب هنا (بصيغة دولية بدون + أو 00). مثال السعودية: 9665XXXXXXXX
 
@@ -201,44 +202,75 @@ if (state.kind === "qr") {
 <div className="flex justify-center px-6 pt-10">
       <div className="w-full max-w-md">
 
-        {/* المربع الرئيسي */}
-        <div
-          className="rounded-2xl p-6 text-center backdrop-blur-md"
-          style={{
-  background: "#FCFAF8",
-  border: "1px solid #D8C8D9",
-  boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
-}}
->
-          {/* العنوان */}
-          <div className="font-arabic text-3xl text-primary mb-2 font-bold">
-{t("thanks_attending")}
-          </div>
-
-          {/* الاسم */}
-         <div className="font-arabic text-base text-muted-foreground mb-2">
-  {t("welcome")} : {state.name}
-</div>
-
-<div className="font-arabic text-base text-muted-foreground mb-4">
-  {t("guest_count")} : {state.guestCount}
-</div>
-          {/* مربع الباركود */}
-          <div
-  className="rounded-xl p-2 mb-4 inline-flex"
+        {/* المربع الرئيسي */}{/* المربع الرئيسي */}
+<div
+  className="rounded-2xl p-6 text-center backdrop-blur-md"
   style={{
-    background: "#FFFFFF",
+    background: "#FCFAF8",
     border: "1px solid #D8C8D9",
+    boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
   }}
 >
-          
-         <QRCodeCanvas
-  value={state.qr}
-  size={170}
-  fgColor="#A882B8"
-  bgColor="#FFFFFF"
-/>
-          </div>
+  {/* العنوان */}
+  <div className="flex items-center justify-center gap-4 mb-2">
+    <Sprout
+      size={30}
+      strokeWidth={1.6}
+      style={{
+        color: "#C7A5D9",
+        transform: "scaleX(-1)",
+      }}
+    />
+
+    <div
+      className="font-arabic text-3xl font-bold"
+      style={{
+        color: "#6D2E86",
+      }}
+    >
+      {t("thanks_attending")}
+    </div>
+
+    <Sprout
+      size={30}
+      strokeWidth={1.6}
+      style={{
+        color: "#C7A5D9",
+      }}
+    />
+  </div>
+
+  {/* الاسم */}
+  <div
+    className="font-arabic text-base mb-2"
+    style={{ color: "#7F5D99" }}
+  >
+    {t("welcome")} : {state.name}
+  </div>
+
+  {/* عدد المرافقين */}
+  <div
+    className="font-arabic text-base mb-4"
+    style={{ color: "#7F5D99" }}
+  >
+    {t("guest_count")} : {state.guestCount}
+  </div>
+
+  {/* مربع الباركود */}
+  <div
+    className="rounded-xl p-2 mb-4 inline-flex"
+    style={{
+      background: "#FFFFFF",
+      border: "1px solid #D8C8D9",
+    }}
+  >
+    <QRCodeCanvas
+      value={state.qr}
+      size={170}
+      fgColor="#5F2D74"
+      bgColor="#FFFFFF"
+    />
+  </div>
 
           {/* التحذير الأحمر */}
           <div
