@@ -137,13 +137,11 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-<div
-  className={`font-monasabat ${
-    lang === "ar"
-      ? "text-[14rem] sm:text-[15rem]"
-: "text-xl sm:text-2xl"
-  } leading-[0.4]`}
->
+<div className={`font-kahand ${
+  lang === "ar"
+ ? "text-2xl sm:text-3xl"
+    : "text-lg sm:text-xl"
+} whitespace-nowrap`}>
   {t("invite_to")}
 </div>
 
