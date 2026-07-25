@@ -143,7 +143,7 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center">
-                      {/* الأسطر العلوية: تم سحبها لأسفل بـ margin بالسالب لتتجاوز فراغ الخط */}
+                      {/* الأسطر العلوية: سحب لأسفل لتكون قريبة من أسماء العرسان */}
                       <div className="-mb-4 flex flex-col items-center gap-1 relative z-10">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
                           {t("invite_to")}
@@ -171,7 +171,7 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* أسماء العرسان: تم إلغاء ارتفاع السطر الضخم الخاص بالخط عبر leading-none و lineHeight: 0.8 */}
+                      {/* أسماء العرسان */}
                       <div
                         className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl leading-none my-0 py-0`}
                         style={{ lineHeight: 0.85 }}
@@ -201,8 +201,8 @@ const Index = () => {
                         {t("groom_name")}
                       </div>
 
-                      {/* السطرين السفليين: رفعهما/تعديلهما للاقتراب من الاسم مع إلغاء الفراغ */}
-                      <div className="-mt-2 flex flex-col items-center gap-1 relative z-10">
+                      {/* السطران السفليان: تم إنزالهما وتوفير مسافة واضحة بينهما وبين أسماء العرسان */}
+                      <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_god_willing")}
                         </div>
