@@ -358,7 +358,9 @@ style={{color:"#EFE6DE"}}
 
 </div>
   <div
-className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${lang === "ar" ? "font-neirizi" : "font-whitney" text-sm w-[calc(4*68px+3*12px)]`}
+className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
+  lang === "ar" ? "font-neirizi" : "font-whitney"
+} text-sm w-[calc(4*68px+3*12px)]`}
   style={{
     height: "48px",
     background: "#F9E9E6",
