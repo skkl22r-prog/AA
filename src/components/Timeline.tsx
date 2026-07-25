@@ -8,7 +8,6 @@ const events = [
   { time: "12:00 AM", label: "العشاء", icon: UtensilsCrossed },
 ];
 
-// لمعات زوايا الدوائر الصغار
 const CircleSparkles = () => (
   <>
     <Sparkles className="w-2 h-2 absolute top-1 left-1 opacity-50 text-[#F9E9E6]" />
@@ -20,27 +19,21 @@ const CircleSparkles = () => (
 
 const Timeline = () => {
   return (
-    <div className="relative w-full mx-auto py-6 px-4 text-[#F9E9E6]">
-      {/* ------------------------------------------------------------- */}
+    <div className="relative w-full mx-auto py-6 px-2 text-[#F9E9E6]">
       {/* 1. نجمات أركان المربع بوميض خفيف مع مسافات مريحة */}
-      {/* ------------------------------------------------------------- */}
       <Sparkles className="w-3.5 h-3.5 absolute top-3 left-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute top-3 right-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute bottom-3 left-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute bottom-3 right-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
 
-      {/* ------------------------------------------------------------- */}
-      {/* 2. مكان مخصص للزخرفة العلوية (الطيور والفيونكة) */}
-      {/* ------------------------------------------------------------- */}
+      {/* 2. مكان مخصص للزخرفة العلوية */}
       <div className="w-full flex justify-center mb-4 min-h-[35px] items-center">
         <span className="text-[10px] opacity-40 border border-dashed border-[#F9E9E6]/30 px-3 py-1 rounded">
           [ مكان زخرفة الطيور والفيونكة ]
         </span>
       </div>
 
-      {/* ------------------------------------------------------------- */}
       {/* 3. الخط الزمني والأحداث */}
-      {/* ------------------------------------------------------------- */}
       <div className="relative my-2">
         {/* الخط العمودي خلف الدوائر */}
         <div
@@ -57,48 +50,52 @@ const Timeline = () => {
               <React.Fragment key={i}>
                 <Reveal delay={i * 150}>
                   <div className="relative flex items-center justify-center min-h-[55px]">
+                    
                     {/* الدائرة المركزية */}
                     <div
-                      className="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full z-10 flex items-center justify-center bg-[#A77C86] shrink-0"
+                      className="absolute left-1/2 -translate-x-1/2 w-11 h-11 rounded-full z-20 flex items-center justify-center bg-[#A77C86] shrink-0"
                       style={{
                         border: "1px solid rgba(249, 233, 230, 0.8)",
                         boxShadow: "0 0 8px rgba(0, 0, 0, 0.12)",
                       }}
                     >
                       <CircleSparkles />
-                      <IconComponent className="w-5 h-5 text-[#F9E9E6]" />
+                      <IconComponent className="w-4 h-4 text-[#F9E9E6]" />
                     </div>
 
-                    {/* النصوص والوقت مع إزاحة جيدة (pr-16 / pl-16) لمنع التداخل */}
-                    <div className="grid grid-cols-2 w-full gap-2 items-center">
+                    {/* المحتوى مع فصل التنسيق بالكامل لمنع أي تداخل */}
+                    <div className="w-full flex items-center">
                       {isEven ? (
-                        <>
-                          {/* الجهة اليمنى: زيادة المسافة pr-16 لتبتعد عن الدائرة */}
-                          <div className="text-right pr-16 flex flex-col items-end">
-                            <span className="text-[11px] opacity-80 font-light tracking-wide" dir="ltr">
-                              {e.time}
-                            </span>
-                            <span className="text-sm sm:text-base font-neirizi whitespace-nowrap">
-                              {e.label}
-                            </span>
-                          </div>
-                          <div className="pl-16" />
-                        </>
+                        /* الحدث جهة اليمين */
+                        <div className="w-1/2 pr-8 text-right flex flex-col items-end z-10">
+                          <span className="text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                            {e.time}
+                          </span>
+                          <span className="text-xs sm:text-sm font-neirizi leading-tight mt-0.5">
+                            {e.label}
+                          </span>
+                        </div>
                       ) : (
-                        <>
-                          <div className="pr-16" />
-                          {/* الجهة اليسرى: زيادة المسافة pl-16 لتبتعد عن الدائرة */}
-                          <div className="text-left pl-16 flex flex-col items-start">
-                            <span className="text-[11px] opacity-80 font-light tracking-wide" dir="ltr">
-                              {e.time}
-                            </span>
-                            <span className="text-sm sm:text-base font-neirizi whitespace-nowrap">
-                              {e.label}
-                            </span>
-                          </div>
-                        </>
+                        /* مساحة فارغة للجهة اليمنى عندما يكون الحدث يسار */
+                        <div className="w-1/2" />
+                      )}
+
+                      {!isEven ? (
+                        /* الحدث جهة اليسار */
+                        <div className="w-1/2 pl-8 text-left flex flex-col items-start z-10">
+                          <span className="text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                            {e.time}
+                          </span>
+                          <span className="text-xs sm:text-sm font-neirizi leading-tight mt-0.5">
+                            {e.label}
+                          </span>
+                        </div>
+                      ) : (
+                        /* مساحة فارغة للجهة اليسرى عندما يكون الحدث يمين */
+                        <div className="w-1/2" />
                       )}
                     </div>
+
                   </div>
                 </Reveal>
 
@@ -116,9 +113,7 @@ const Timeline = () => {
         </div>
       </div>
 
-      {/* ------------------------------------------------------------- */}
-      {/* 4. مكان مخصص للزخرفة السفلية (الكرستال) */}
-      {/* ------------------------------------------------------------- */}
+      {/* 4. مكان مخصص للزخرفة السفلية */}
       <div className="w-full flex justify-center mt-4 min-h-[30px] items-center">
         <span className="text-[10px] opacity-40 border border-dashed border-[#F9E9E6]/30 px-3 py-1 rounded">
           [ مكان الزخرفة السفلية ]
