@@ -307,7 +307,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
 
 <div
-  className="mx-auto rounded-xl h-[220px] w-[calc(4*68px+3*12px)]"
+  className="mx-auto rounded-xl h-[520px] w-[calc(4*68px+3*12px)]"
   style={{
     background: "transparent",
     border: "1px solid rgba(249,233,230,0.65)",
