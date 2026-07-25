@@ -178,7 +178,6 @@ style={{
     : "text-lg sm:text-xl"
 }`}>
       {t("invite_attend")}
-    </div>
 </div> 
 <div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-0`}>
   {t("bride_name")}
