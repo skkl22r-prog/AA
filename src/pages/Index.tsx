@@ -87,7 +87,7 @@ className="hidden"
   ><div className="fixed top-5 right-5 z-[9999]">
   <button
     onClick={toggle}
-    className="px-5 h-10 rounded-full font-arabic text-sm transition-all"
+    className="px-5 h-8 rounded-full font-arabic text-sm transition-all"
     style={{
       background: "#B78E99",
       border: "1px solid #F9E9E6",
