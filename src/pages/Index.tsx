@@ -326,10 +326,10 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   }}
 >
   <img
-src={newImage}
-    alt=""
-    className="w-full h-full object-cover block"
-  />
+  src={newImage}
+  alt=""
+  className="w-full h-full object-cover object-center block"
+/>
 </div>
 </section>
 <section className="px-4 py-16">
