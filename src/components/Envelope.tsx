@@ -50,7 +50,7 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
         style={{
           left: "50%",
           top: "50%",
-          width: "90px",
+          width: "120px",
           transform: pressed
             ? "translate(-50%, -50%) scale(0.96)"
             : "translate(-50%, -50%) scale(1)",
