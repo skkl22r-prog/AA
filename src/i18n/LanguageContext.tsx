@@ -93,6 +93,8 @@ dont_scan_qr: "الرجاء عدم مسح الباركود",
   seconds_short: "ث",
 
   // Footer
+  section2_title: " 12 . 8 . 2026",
+section2_subtitle: "We can't wait to celebrate with you",
   made_by: "صُنع بحب بواسطة ",
   store: " متجر غيمة  ",
 designer_names: "معـاذ & طيف",
@@ -202,6 +204,8 @@ guest_count: "Number of Companions",
   seconds_short: "s",
 
   // Footer
+  section2_title: " 12 . 8 . 2026",
+section2_subtitle: "We can't wait to celebrate with you",
   made_by: "Crafted with love by",
   store: "Ghaimah Store",
 designer_names: "Muath & Taif",
