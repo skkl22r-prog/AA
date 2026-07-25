@@ -30,6 +30,9 @@ countdown_date: " حتى نلتقي في يومنا السعيد ",
   seconds: "ثواني",
 
   // Details
+  
+  "big_word": "التفاصيل",
+  "small_word": "كل ماتحتاج معرفته عن يومنا السعيد",
   details_title: "تفاصيل يوم الفرح",
   details_subtitle: "كل ما تحتاج معرفته",
 
@@ -138,6 +141,9 @@ countdown_date: "28 November 2026",
   seconds: "Seconds",
 
   // Details
+
+  "big_word": "Big Word",
+  "small_word": "Small Word",
   details_title: "Event Details",
   details_subtitle: "Everything you need to know",
 
