@@ -415,10 +415,10 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   <div
   className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
   style={{
-    background: "#F9E9E6",
-    border: "1px solid rgba(249,233,230,0.65)",
-    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-  }}
+  background: "transparent",
+  border: "1px solid rgba(249,233,230,0.65)",
+  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+}}
 >
   <img
 src={rImg}
