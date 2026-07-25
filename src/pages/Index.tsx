@@ -140,20 +140,20 @@ style={{
   background: "transparent",
   backdropFilter: "none",
   WebkitBackdropFilter: "none",
-  color: "#FFFFFF",
+  color: "#F9E9E6",
   textShadow:
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_to")}
 </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_join")}
 </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -161,7 +161,7 @@ style={{
   {t("invite_day")}
 </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_with_love")}
 </div>
 
@@ -171,7 +171,7 @@ style={{
     </div>
 
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -179,7 +179,7 @@ style={{
       {t("invite_attend")}
     </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-5xl sm:text-6xl my-6`}>
+<div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-6`}>
   {t("bride_name")}
 
   <span
@@ -193,7 +193,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   </span>
 
 <span
-  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"}`}
+  className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"}`}
   style={{
     fontSize: lang === "ar" ? "0.35em" : "0.45em",
     margin: "0 18px",
@@ -204,7 +204,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   {t("groom_name")}
 </div>
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
   lang === "ar"
  ? "text-lg sm:text-xl"
     : "text-lg sm:text-xl"
@@ -227,14 +227,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
         <section className="px-4 py-16">
   <Reveal>
     <h2
-  className="text-center font-kahand text-3xl mb-2"
+className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-center text-3xl mb-2`}
   style={{ color: "#EFE6DE" }}
 >
   {t("countdown_title")}
 </h2>
 
 <p
-  className="text-center font-kahand text-sm mb-10"
+className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-center text-sm mb-10`}
   style={{ color: "#EFE6DE" }}
 >
   {t("countdown_date")}
@@ -250,14 +250,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="text-center mb-8">
     <h2
-  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-3xl mb-2`}
+className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
   style={{ color: "#EFE6DE" }}
 >
   {t("big_word")}
 </h2>
 
 <p
-  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-sm`}
+className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
   style={{ color: "#EFE6DE", opacity: 0.8 }}
 >
   {t("small_word")}
@@ -300,7 +300,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   <div className="flex items-center gap-3 mb-5">
     <MapPin className="w-5 h-5" style={{ color:"#EFE6DE" }} />
     <span 
-className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-sm`}
+className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
 style={{color:"#EFE6DE"}}
 >
   {t("event_location")}
@@ -309,14 +309,14 @@ style={{color:"#EFE6DE"}}
 
   <div className="flex items-center gap-3 mb-5">
     <Clock className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
       {t("arrival_time")}
     </span>
   </div>
 
   <div className="flex items-center gap-3 mb-6">
     <CalendarDays className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
       {t("event_date")}
     </span>
   </div>
@@ -334,7 +334,7 @@ style={{color:"#EFE6DE"}}
 
   <div className="flex items-center gap-3 mb-5">
     <Baby className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
       {t("no_kids")}
     </span>
   </div>
@@ -342,7 +342,8 @@ style={{color:"#EFE6DE"}}
 
   <div className="flex items-center gap-3 mb-5">
     <Camera className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-neirizi
+      text-sm" style={{color:"#EFE6DE"}}>
       {t("no_cameras")}
     </span>
   </div>
@@ -350,14 +351,14 @@ style={{color:"#EFE6DE"}}
 
   <div className="flex items-center gap-3">
     <QrCode className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
       {t("personal_invitation")}
     </span>
   </div>
 
 </div>
   <div
-className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${lang === "ar" ? "font-kahand" : "font-amoshref"} text-sm w-[calc(4*68px+3*12px)]`}
+className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm w-[calc(4*68px+3*12px)]`}
   style={{
     height: "48px",
     background: "#F9E9E6",
@@ -389,14 +390,14 @@ className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${l
 </div>
   <div className="mt-8 text-center">
 <h2
-  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-3xl mb-3`}
+  className={`${lang === "ar" ? "font-neirizi" : "font-a"} text-3xl mb-3`}
     style={{ color: "#F9E9E6" }}
   >
     {t("section2_title")}
   </h2>
 
   <p
-    className="font-kahand text-sm"
+<span className={`${lang === "ar" ? "font-neirizi" : "font-a"} text-sm`}>
     style={{ color: "#F9E9E6", opacity: 0.8 }}
   >
     {t("section2_subtitle")}
