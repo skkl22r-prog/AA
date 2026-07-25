@@ -180,7 +180,7 @@ style={{
       {t("invite_attend")}
     </div>
 </div> 
-<div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-6`}>
+<div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-0`}>
   {t("bride_name")}
 
   <span
