@@ -257,14 +257,17 @@ const Index = () => {
               </p>
             </div>
 
-            <div
-              className="mx-auto rounded-xl h-[320px] w-[calc(4*68px+3*12px)]"
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(249,233,230,0.65)",
-                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-              }}
-            ></div>
+          <div
+  className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
+  style={{
+    background: "transparent",
+    border: "1px solid rgba(249,233,230,0.65)",
+    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+  }}
+>
+  <Timeline />
+</div>
+
 
             <div
               className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
