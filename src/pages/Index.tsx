@@ -117,7 +117,7 @@ className="hidden"
   playsInline
   className="absolute inset-0 w-full h-full object-cover animate-videoFade"
   style={{
-    background: "#F2EEF6",
+background: "#A77C86",
   }}
 />
 <div
