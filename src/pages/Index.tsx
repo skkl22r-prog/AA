@@ -220,6 +220,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
       {t("date_line")}
     </div>
 </div>
+        </div>
 </div>
 </div>
 </section>
