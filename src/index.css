@@ -134,9 +134,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Tajawal', 'Cairo', sans-serif;
-  }
+  background: #A77C86;
+  color: #EFE6DE;
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+}
 }
 
 @layer utilities {
