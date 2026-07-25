@@ -78,11 +78,11 @@ boxShadow: "0 0 10px rgba(249,233,230,0.08)",
 }}
         >
           <div
-  className="font-display text-3xl sm:text-4xl font-light tabular-nums"
+  className="font-display text-3xl sm:text-4xl font-amoshref tabular-nums"
 style={{ color: "#F9E9E6" }}
 >
 {lang === "ar"
-  ? String(it.v).padStart(2, "0").replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d])
+  ? String(it.v).padStart(2, "0").replace(/\d/g, d => "0123456789"[d])
   : String(it.v).padStart(2, "0")
 }
           </div>
