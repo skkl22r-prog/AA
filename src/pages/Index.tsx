@@ -20,14 +20,68 @@ import kidsImg from "@/assets/13.png";
 import rsvpIcon from "@/assets/Photoroom_20260705_153052.png";
 import { useLang } from "@/i18n/LanguageContext";
 
+// مكون السهم الزخرفي المخصص المأخوذ من الصورة
+const ScrollArrowIcon = () => (
+  <svg
+    width="32"
+    height="36"
+    viewBox="0 0 32 36"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+  >
+    {/* القوس العلوي الأول */}
+    <path
+      d="M8 6C12 11 20 11 24 6"
+      stroke="#F9E9E6"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    {/* القوس الثاني */}
+    <path
+      d="M8 12C12 17 20 17 24 12"
+      stroke="#F9E9E6"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    {/* الخط العمودي الأوسط */}
+    <path
+      d="M16 14V26"
+      stroke="#F9E9E6"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    {/* رأس السهم الزخرفي السفلي */}
+    <path
+      d="M8 24C12 28 20 28 24 24L16 34L8 24Z"
+      fill="#F9E9E6"
+    />
+  </svg>
+);
+
 const Index = () => {
   const [opened, setOpened] = useState(false);
+  const [showScrollArrow, setShowScrollArrow] = useState(true);
   const { t, lang, toggle } = useLang();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const startX = useRef(0);
   const startScroll = useRef(0);
   const dragging = useRef(false);
+
+  // إخفاء السهم عند السحب لأسفل
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowScrollArrow(false);
+      } else {
+        setShowScrollArrow(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     const el = scrollRef.current;
@@ -99,7 +153,7 @@ const Index = () => {
               }}
             >
               {lang === "ar" ? (
-                <span className="font-neirizi">العربية</span>
+                <span className="font-kahand">العربية</span>
               ) : (
                 <span className="font-amoshref">ENGLISH</span>
               )}
@@ -171,7 +225,7 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* أسماء العرسان بالإنجليزية وبخط العد التنازلي دائماً */}
+                      {/* أسماء العرسان */}
                       <div
                         className="font-whitney text-4xl sm:text-5xl leading-none my-2 py-0 tracking-wide"
                         style={{ lineHeight: 0.85 }}
@@ -204,6 +258,15 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* السهم الزخرفي أسفل كرت الفيديو مع الحركة والاختفاء عند السحب */}
+              <div
+                className={`absolute bottom-6 left-1/2 -translate-x-1/2 transition-opacity duration-500 z-30 pointer-events-none ${
+                  showScrollArrow ? "opacity-100 animate-bounce" : "opacity-0"
+                }`}
+              >
+                <ScrollArrowIcon />
               </div>
             </div>
           </section>
@@ -273,7 +336,7 @@ const Index = () => {
               />
             </div>
 
-            {/* مربع التفاصيل مع توحيد الخط الإنجليزي لـ font-amoshref */}
+            {/* مربع التفاصيل */}
             <div
               className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
               style={{
@@ -364,7 +427,6 @@ const Index = () => {
             </div>
 
             <div className="mt-8 text-center">
-              {/* تصغير خط التاريخ أسفل الصفحة */}
               <h2
                 className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-xl mb-2 font-medium tracking-widest`}
                 style={{ color: "#F9E9E6" }}
