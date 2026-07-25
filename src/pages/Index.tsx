@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
-import { MapPin, Heart, QrCode, Baby, Camera, Clock } from "lucide-react";
+import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
 import invitationImg from "@/assets/video-output-4FA1F407-4586-4075-A1DA-ACBAC186D153-1.mp4";
 import Envelope from "@/components/Envelope";
 import Reveal from "@/components/Reveal";
@@ -328,6 +328,72 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   alt=""
   className="w-full h-full object-cover object-center block"
 />
+</div>
+  <div
+  className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
+  style={{
+    background: "transparent",
+    border: "1px solid rgba(249,233,230,0.65)",
+    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+  }}
+  dir={lang === "ar" ? "rtl" : "ltr"}
+>
+
+  <div className="flex items-center gap-3 mb-5">
+    <MapPin className="w-5 h-5" style={{ color:"#EFE6DE" }} />
+    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+      {t("event_location")}
+    </span>
+  </div>
+
+  <div className="flex items-center gap-3 mb-5">
+    <Clock className="w-5 h-5" style={{ color:"#EFE6DE" }} />
+    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+      {t("arrival_time")}
+    </span>
+  </div>
+
+  <div className="flex items-center gap-3 mb-6">
+    <CalendarDays className="w-5 h-5" style={{ color:"#EFE6DE" }} />
+    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+      {t("event_date")}
+    </span>
+  </div>
+
+
+  <div
+    className="mx-auto mb-6"
+    style={{
+      width:"90%",
+      height:"1px",
+      background:"rgba(249,233,230,0.65)"
+    }}
+  />
+
+
+  <div className="flex items-center gap-3 mb-5">
+    <Baby className="w-5 h-5" style={{ color:"#EFE6DE" }} />
+    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+      {t("no_kids")}
+    </span>
+  </div>
+
+
+  <div className="flex items-center gap-3 mb-5">
+    <Camera className="w-5 h-5" style={{ color:"#EFE6DE" }} />
+    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+      {t("no_cameras")}
+    </span>
+  </div>
+
+
+  <div className="flex items-center gap-3">
+    <QrCode className="w-5 h-5" style={{ color:"#EFE6DE" }} />
+    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+      {t("personal_invitation")}
+    </span>
+  </div>
+
 </div>
 </section>
 
