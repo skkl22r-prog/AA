@@ -12,6 +12,7 @@ import dividerImg from "@/assets/Photoroom_20260705_140806.png";
 import locationIcon from "@/assets/photo-output.png";
 import flowerDivider from "@/assets/Photoroom_20260705_152753.png";
 import programIcon from "@/assets/Photoroom_20260705_152814.png";
+import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
 import zaffaImg from "@/assets/14.png";
 import dinnerImg from "@/assets/11.png";
 import cameraImg from "@/assets/12.png";
@@ -325,7 +326,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   }}
 >
   <img
-    src={اسم_الصورة}
+src={newImage}
     alt=""
     className="w-full h-full object-cover block"
   />
