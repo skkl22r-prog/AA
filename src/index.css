@@ -17,6 +17,15 @@
   font-family: "KAHand";
   src: url("./assets/fonts/KAHandNaskhV2-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Neirizi";
+  src: url("./assets/fonts/Neirizi.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "A";
+  src: url("./assets/fonts/a.ttf") format("truetype");
+}
 
 @font-face {
   font-family: "SARAhhh1";
@@ -160,7 +169,13 @@
   .font-aldhabi {
   font-family: "Aldhabi";
 }
+.font-neirizi {
+  font-family: "Neirizi";
+}
 
+.font-a {
+  font-family: "A";
+}
 .font-goori {
   font-family: "Goori";
 }
