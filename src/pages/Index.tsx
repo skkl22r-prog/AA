@@ -54,9 +54,9 @@ const onTouchEnd = () => {
  <div
   className="overflow-x-hidden w-full"
   style={{
-    background: "linear-gradient(180deg, #FCFBFD 0%, #F2EEF6 50%, #FCFBFD 100%)",
-    minHeight: "100vh",
-  }}
+  background: "#B78E99",
+  minHeight: "100vh",
+}}
 >
       {/* Ornamental gold damask pattern background */}
       <div
@@ -74,7 +74,7 @@ className="hidden"
 <div
   className="fixed inset-0 z-0"
   style={{
-    background: "#F2EEF6",
+    background: "#B78E99",
     pointerEvents: "none",
   }}
 />
