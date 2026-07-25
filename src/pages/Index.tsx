@@ -409,8 +409,8 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   />
 
   <span>
-    الموقع
-  </span>
+  {t("location_button")}
+</span>
 </div>
 <div
   className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
@@ -426,6 +426,21 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   className="w-full h-auto block"
 />
 </div>
+  <div className="mt-8 text-center">
+  <h2
+    className="font-arabic text-3xl mb-3"
+    style={{ color: "#F9E9E6" }}
+  >
+    {t("section2_title")}
+  </h2>
+
+  <p
+    className="font-arabic text-sm"
+    style={{ color: "#F9E9E6", opacity: 0.8 }}
+  >
+    {t("section2_subtitle")}
+  </p>
+</div>
 </section>
 
     
@@ -439,7 +454,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
       target="_blank"
       rel="noopener noreferrer"
       className="block mt-2 text-sm underline underline-offset-4"
-      style={{ color: "#8A6C97" }}
+      style={{ color: "#B78E99" }}
     >
       @shim2t
     </a>
