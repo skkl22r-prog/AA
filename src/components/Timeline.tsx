@@ -36,7 +36,7 @@ const Timeline = () => {
         </span>
       </div>
 
-      {/* 3. الخط الزمني والأحداث - تثبيت الهيكل لتجنب مشاكل RTL/LTR */}
+      {/* 3. الخط الزمني والأحداث */}
       <div className="relative my-2" dir="ltr">
         {/* الخط العمودي خلف الدوائر */}
         <div
@@ -69,12 +69,12 @@ const Timeline = () => {
                     {/* المحتوى الموزع بدقة على الجانبين */}
                     <div className="w-full flex items-center">
                       {isEven ? (
-                        /* الحدث جهة اليسار بالهيكل (الجهة الأولى) */
+                        /* الحدث جهة اليسار بالهيكل */
                         <div 
                           className="w-1/2 pr-8 text-right flex flex-col items-end z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                          <span className="font-amoshref text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
                             {e.time}
                           </span>
                           <span className={`text-xs sm:text-sm leading-tight mt-0.5 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
@@ -86,12 +86,12 @@ const Timeline = () => {
                       )}
 
                       {!isEven ? (
-                        /* الحدث جهة اليمين بالهيكل (الجهة الثانية) */
+                        /* الحدث جهة اليمين بالهيكل */
                         <div 
                           className="w-1/2 pl-8 text-left flex flex-col items-start z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                          <span className="font-amoshref text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
                             {e.time}
                           </span>
                           <span className={`text-xs sm:text-sm leading-tight mt-0.5 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
