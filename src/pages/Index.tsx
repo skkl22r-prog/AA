@@ -54,7 +54,7 @@ const onTouchEnd = () => {
  <div
   className="overflow-x-hidden w-full"
   style={{
-  background: "#B78E99",
+  background: "#A77C86",
   minHeight: "100vh",
 }}
 >
@@ -73,7 +73,7 @@ className="hidden"
 <div
   className="fixed inset-0 z-0"
   style={{
-    background: "#B78E99",
+    background: "#A77C86",
     pointerEvents: "none",
   }}
 />
@@ -89,7 +89,7 @@ className="hidden"
     onClick={toggle}
     className="px-5 h-8 rounded-full font-arabic text-sm transition-all"
     style={{
-      background: "#B78E99",
+      background: "#A77C86",
       border: "1px solid #F9E9E6",
       color: "#F9E9E6",
     }}
