@@ -1,7 +1,7 @@
 import rImg from "@/assets/r.png";
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
-import invitationImg from "@/assets/f.mp4";
+import invitationImg from "@/assets/video-output-9B5ECA8D-034F-419B-A85A-98CA7DF3D9F9-1.mp4";
 import Envelope from "@/components/Envelope";
 import Reveal from "@/components/Reveal";
 import Countdown from "@/components/Countdown";
@@ -54,7 +54,7 @@ const onTouchEnd = () => {
  <div
   className="overflow-x-hidden w-full"
   style={{
-  background: "#9A7D7D",
+  background: "#B78E99",
   minHeight: "100vh",
 }}
 >
@@ -73,7 +73,7 @@ className="hidden"
 <div
   className="fixed inset-0 z-0"
   style={{
-    background: "#9A7D7D",
+    background: "#B78E99",
     pointerEvents: "none",
   }}
 />
