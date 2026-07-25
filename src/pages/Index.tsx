@@ -1,4 +1,4 @@
-
+import rImg from "@/assets/r.png";
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
 import invitationImg from "@/assets/video-output-4FA1F407-4586-4075-A1DA-ACBAC186D153-1.mp4";
@@ -411,6 +411,20 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   <span>
     الموقع
   </span>
+</div>
+  <div
+  className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
+  style={{
+    background: "#F9E9E6",
+    border: "1px solid rgba(249,233,230,0.65)",
+    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+  }}
+>
+  <img
+    src={r.png}
+    alt=""
+    className="w-full h-full object-contain"
+  />
 </div>
 </section>
 
