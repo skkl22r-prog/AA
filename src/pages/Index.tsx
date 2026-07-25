@@ -132,9 +132,7 @@ className="hidden"
   className="absolute inset-0 flex items-center justify-center px-5 py-6"
 >
   <div
-<div
   className="translate-y-8 scale-90"
->
   >
 <div
 className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
