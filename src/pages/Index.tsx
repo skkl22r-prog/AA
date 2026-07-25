@@ -397,11 +397,11 @@ className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${l
   </h2>
 
   <p
-<span className={`${lang === "ar" ? "font-a" : "font-a"} text-sm`}>
-    style={{ color: "#F9E9E6", opacity: 0.8 }}
-  >
-    {t("section2_subtitle")}
-  </p>
+  className={`${lang === "ar" ? "font-a" : "font-a"} text-sm`}
+  style={{ color: "#F9E9E6", opacity: 0.8 }}
+>
+  {t("section2_subtitle")}
+</p>
 </div>
 </section>
 
