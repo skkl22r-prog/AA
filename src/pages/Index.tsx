@@ -142,33 +142,37 @@ const Index = () => {
                         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
                     }}
                   >
-                    <div className="translate-y-3">
-                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-                        {t("invite_to")}
+                    <div className="translate-y-3 flex flex-col items-center">
+                      {/* الأسطر العلوية: نُزول للأسفل بالقرب من الأسماء */}
+                      <div className="mt-6 flex flex-col items-center gap-1">
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_to")}
+                        </div>
+
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_join")}
+                        </div>
+
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_day")}
+                        </div>
+
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_with_love")}
+                        </div>
+
+                        <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
+                          <span>{t("word1")}</span>
+                          <span>{t("word2")}</span>
+                        </div>
+
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                          {t("invite_attend")}
+                        </div>
                       </div>
 
-                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-                        {t("invite_join")}
-                      </div>
-
-                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-                        {t("invite_day")}
-                      </div>
-
-                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-                        {t("invite_with_love")}
-                      </div>
-
-                      <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
-                        <span>{t("word1")}</span>
-                        <span>{t("word2")}</span>
-                      </div>
-
-                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
-                        {t("invite_attend")}
-                      </div>
-
-                      <div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-0`}>
+                      {/* أسماء العرسان (ثابتة في مكانها) */}
+                      <div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-2`}>
                         {t("bride_name")}
 
                         <span
@@ -194,7 +198,8 @@ const Index = () => {
                         {t("groom_name")}
                       </div>
 
-                      <div className="translate-y-3">
+                      {/* السطرين السفليين: إزاحة خفيفة للأسفل */}
+                      <div className="mt-3 flex flex-col items-center gap-1">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_god_willing")}
                         </div>
