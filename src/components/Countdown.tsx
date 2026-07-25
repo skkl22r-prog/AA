@@ -73,13 +73,13 @@ return (
 className="flex flex-col items-center justify-center rounded-xl w-[68px] sm:w-[84px] py-5 h-[110px] backdrop-blur-md"
           style={{
   background: "transparent",
-  border: "1px solid rgba(239,230,222,0.65)",
-  boxShadow: "0 0 10px rgba(239,230,222,0.08)",
+  border: "1px solid rgba(249,233,230,0.65)",
+boxShadow: "0 0 10px rgba(249,233,230,0.08)",
 }}
         >
           <div
   className="font-display text-3xl sm:text-4xl font-light tabular-nums"
-style={{ color: "#EFE6DE" }}
+style={{ color: "#F9E9E6" }}
 >
 {lang === "ar"
   ? String(it.v).padStart(2, "0").replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d])
@@ -89,7 +89,7 @@ style={{ color: "#EFE6DE" }}
 
           <div
             className="text-xs uppercase tracking-widest mt-1"
-style={{ color: "#EFE6DE",
+style={{ color: "#F9E9E6",
 opacity: 0.8, }}
           >
             {it.l}
