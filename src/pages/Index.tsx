@@ -307,32 +307,19 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
 
   <div
-    className="max-w-sm mx-auto rounded-xl px-6 py-10 backdrop-blur-md flex flex-col items-center justify-center"
+    className="mx-auto rounded-xl px-6 py-12"
     style={{
+      width: "calc(100% - 24px)",
+      maxWidth: "420px",
+      minHeight: "260px",
       background: "transparent",
       border: "1px solid rgba(239,230,222,0.65)",
       boxShadow: "0 0 10px rgba(239,230,222,0.08)",
-      minHeight: "180px",
     }}
   >
-    <div
-      className="font-display text-5xl font-light"
-      style={{ color: "#EFE6DE" }}
-    >
-      النص داخل المربع
-    </div>
-
-    <div
-      className="font-arabic text-sm mt-3"
-      style={{ color: "#EFE6DE", opacity: 0.8 }}
-    >
-      النص الصغير داخل المربع
-    </div>
-
   </div>
 
 </section>
-
 <section className="px-4 py-16">
   <Reveal>
   <div className="text-center mb-8">
