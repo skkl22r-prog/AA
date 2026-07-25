@@ -145,7 +145,7 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-  <div className="translate-y-6">
+  <div className="translate-y-3">
 <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_to")}
 </div>
@@ -205,6 +205,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   {t("groom_name")}
 </div>
+  <div className="translate-y-3">
 <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
   lang === "ar"
  ? "text-lg sm:text-xl"
