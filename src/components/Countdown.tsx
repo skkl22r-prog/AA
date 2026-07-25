@@ -34,16 +34,16 @@ const { t: translate, lang } = useLang();
       {items.map((it) => (
         <div
           key={it.l}
-          className="flex flex-col items-center justify-center rounded-xl px-4 sm:px-6 py-4 min-w-[70px] sm:min-w-[90px] backdrop-blur-md"
+          className="flex flex-col items-center justify-center rounded-xl px-7 sm:px-6 py-4 min-w-[78px] sm:min-w-[95px] backdrop-blur-md"
           style={{
-            background: "#FFFDFB",
-border: "1px solid #D8C8D9",
-boxShadow: "0 10px 30px rgba(120, 85, 140, 0.12)",
-          }}
+  background: "transparent",
+  border: "1px solid rgba(239,230,222,0.65)",
+  boxShadow: "0 0 10px rgba(239,230,222,0.08)",
+}}
         >
           <div
   className="font-display text-3xl sm:text-4xl font-light tabular-nums"
-style={{ color: "#8F79A8" }}
+style={{ color: "#EFE6DE" }}
 >
 {lang === "ar"
   ? String(it.v).padStart(2, "0").replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d])
@@ -53,7 +53,8 @@ style={{ color: "#8F79A8" }}
 
           <div
             className="text-xs uppercase tracking-widest mt-1"
-style={{ color: "#7A6A82" }}
+style={{ color: "#EFE6DE",
+opacity: 0.8, }}
           >
             {it.l}
           </div>
