@@ -143,8 +143,8 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center">
-                      {/* الأسطر العلوية: نُزول للأسفل بالقرب من الأسماء */}
-                      <div className="mt-6 flex flex-col items-center gap-1">
+                      {/* الأسطر العلوية: تم سحبها لأسفل بـ margin بالسالب لتتجاوز فراغ الخط */}
+                      <div className="-mb-4 flex flex-col items-center gap-1 relative z-10">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
                           {t("invite_to")}
                         </div>
@@ -171,8 +171,11 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* أسماء العرسان (ثابتة في مكانها) */}
-                      <div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-2`}>
+                      {/* أسماء العرسان: تم إلغاء ارتفاع السطر الضخم الخاص بالخط عبر leading-none و lineHeight: 0.8 */}
+                      <div
+                        className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl leading-none my-0 py-0`}
+                        style={{ lineHeight: 0.85 }}
+                      >
                         {t("bride_name")}
 
                         <span
@@ -198,8 +201,8 @@ const Index = () => {
                         {t("groom_name")}
                       </div>
 
-                      {/* السطرين السفليين: إزاحة خفيفة للأسفل */}
-                      <div className="mt-3 flex flex-col items-center gap-1">
+                      {/* السطرين السفليين: رفعهما/تعديلهما للاقتراب من الاسم مع إلغاء الفراغ */}
+                      <div className="-mt-2 flex flex-col items-center gap-1 relative z-10">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_god_willing")}
                         </div>
