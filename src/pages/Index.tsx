@@ -267,19 +267,19 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
           {/* Countdown */}
         <section className="px-4 py-16">
   <Reveal>
-    <p
-      className="text-center font-arabic text-sm mb-2"
-      style={{ color: "#8C7A67" }}
-    >
-{t("countdown_date")}
-    </p>
-
     <h2
-      className="text-center font-arabic text-3xl mb-10"
-      style={{ color: "#3C2E23" }}
-    >
-    {t("countdown_title")}
-    </h2>
+  className="text-center font-arabic text-3xl mb-2"
+  style={{ color: "#EFE6DE" }}
+>
+  {t("countdown_title")}
+</h2>
+
+<p
+  className="text-center font-arabic text-sm mb-10"
+  style={{ color: "#EFE6DE" }}
+>
+  {t("countdown_date")}
+</p>
   </Reveal>
 
   <Reveal delay={150}>
