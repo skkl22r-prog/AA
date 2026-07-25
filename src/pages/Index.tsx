@@ -390,14 +390,14 @@ className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${l
 </div>
   <div className="mt-8 text-center">
 <h2
-  className={`${lang === "ar" ? "font-neirizi" : "font-a"} text-3xl mb-3`}
+  className={`${lang === "ar" ? "font-a" : "font-a"} text-3xl mb-3`}
     style={{ color: "#F9E9E6" }}
   >
     {t("section2_title")}
   </h2>
 
   <p
-<span className={`${lang === "ar" ? "font-neirizi" : "font-a"} text-sm`}>
+<span className={`${lang === "ar" ? "font-a" : "font-a"} text-sm`}>
     style={{ color: "#F9E9E6", opacity: 0.8 }}
   >
     {t("section2_subtitle")}
