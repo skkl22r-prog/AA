@@ -349,3 +349,11 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   </Reveal>
 </footer>
+
+        </main>
+      )}
+    </div>
+  );
+};
+
+export default Index;
