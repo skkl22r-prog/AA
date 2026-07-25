@@ -412,19 +412,19 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
     الموقع
   </span>
 </div>
-  <div
-  className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
+<div
+  className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
   style={{
-  background: "transparent",
-  border: "1px solid rgba(249,233,230,0.65)",
-  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-}}
+    background: "transparent",
+    border: "1px solid rgba(249,233,230,0.65)",
+    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+  }}
 >
-  <img
-src={rImg}
-    alt=""
-    className="w-full h-full object-contain"
-  />
+<img
+  src={rImg}
+  alt=""
+  className="w-full h-auto block"
+/>
 </div>
 </section>
 
