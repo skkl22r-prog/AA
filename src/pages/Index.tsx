@@ -99,7 +99,7 @@ const Index = () => {
               }}
             >
               {lang === "ar" ? (
-                <span className="font-kahand">العربية</span>
+                <span className="font-neirizi">العربية</span>
               ) : (
                 <span className="font-amoshref">ENGLISH</span>
               )}
@@ -143,7 +143,7 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center">
-                      {/* الأسطر العلوية: سحب لأسفل لتكون قريبة من أسماء العرسان */}
+                      {/* الأسطر العلوية */}
                       <div className="-mb-4 flex flex-col items-center gap-1 relative z-10">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
                           {t("invite_to")}
@@ -171,37 +171,28 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* أسماء العرسان */}
+                      {/* أسماء العرسان بالإنجليزية وبخط العد التنازلي دائماً */}
                       <div
-                        className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl leading-none my-0 py-0`}
+                        className="font-whitney text-4xl sm:text-5xl leading-none my-2 py-0 tracking-wide"
                         style={{ lineHeight: 0.85 }}
+                        dir="ltr"
                       >
-                        {t("bride_name")}
+                        Sultan
 
                         <span
+                          className="font-whitney"
                           style={{
-                            display: "none",
-                            fontSize: lang === "ar" ? "0.35em" : "0.80em",
-                            margin: "0 18px",
+                            fontSize: "0.45em",
+                            margin: "0 14px",
                           }}
                         >
-                          ❤︎
+                          &
                         </span>
 
-                        <span
-                          className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"}`}
-                          style={{
-                            fontSize: lang === "ar" ? "0.35em" : "0.45em",
-                            margin: "0 18px",
-                          }}
-                        >
-                          {t("and")}
-                        </span>
-
-                        {t("groom_name")}
+                        Haneen
                       </div>
 
-                      {/* السطران السفليان: تم إنزالهما وتوفير مسافة واضحة بينهما وبين أسماء العرسان */}
+                      {/* السطران السفليان */}
                       <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10">
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_god_willing")}
@@ -257,17 +248,16 @@ const Index = () => {
               </p>
             </div>
 
-          <div
-  className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
-  style={{
-    background: "transparent",
-    border: "1px solid rgba(249,233,230,0.65)",
-    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-  }}
->
-  <Timeline />
-</div>
-
+            <div
+              className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(249,233,230,0.65)",
+                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+              }}
+            >
+              <Timeline />
+            </div>
 
             <div
               className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
@@ -283,6 +273,7 @@ const Index = () => {
               />
             </div>
 
+            {/* مربع التفاصيل مع توحيد الخط الإنجليزي لـ font-amoshref */}
             <div
               className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
               style={{
@@ -304,14 +295,14 @@ const Index = () => {
 
               <div className="flex items-center gap-3 mb-5">
                 <Clock className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
                   {t("arrival_time")}
                 </span>
               </div>
 
               <div className="flex items-center gap-3 mb-6">
                 <CalendarDays className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
                   {t("event_date")}
                 </span>
               </div>
@@ -327,21 +318,21 @@ const Index = () => {
 
               <div className="flex items-center gap-3 mb-5">
                 <Baby className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
                   {t("no_kids")}
                 </span>
               </div>
 
               <div className="flex items-center gap-3 mb-5">
                 <Camera className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
                   {t("no_cameras")}
                 </span>
               </div>
 
               <div className="flex items-center gap-3">
                 <QrCode className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
                   {t("personal_invitation")}
                 </span>
               </div>
@@ -373,8 +364,9 @@ const Index = () => {
             </div>
 
             <div className="mt-8 text-center">
+              {/* تصغير خط التاريخ أسفل الصفحة */}
               <h2
-                className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-3xl mb-3`}
+                className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-xl mb-2 font-medium tracking-widest`}
                 style={{ color: "#F9E9E6" }}
               >
                 {t("section2_title")}
