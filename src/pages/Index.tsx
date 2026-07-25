@@ -54,7 +54,7 @@ const onTouchEnd = () => {
  <div
   className="overflow-x-hidden w-full"
   style={{
-  background: "#B78E99",
+  background: "#9A7D7D",
   minHeight: "100vh",
 }}
 >
@@ -73,7 +73,7 @@ className="hidden"
 <div
   className="fixed inset-0 z-0"
   style={{
-    background: "#B78E99",
+    background: "#9A7D7D",
     pointerEvents: "none",
   }}
 />
