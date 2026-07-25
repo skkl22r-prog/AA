@@ -37,6 +37,7 @@ countdown_date: " حتى نلتقي في يومنا السعيد ",
   details_subtitle: "كل ما تحتاج معرفته",
 
   // Venue
+  location_button: "الموقع",
   venue_title: "موقع حفلنا",
   venue_name: "قاعة شهرزاد",
   venue_city: "الطائف",
@@ -143,7 +144,7 @@ countdown_date: "28 November 2026",
   seconds: "Seconds",
 
   // Details
-
+  location_button: "Location",
   "big_word": "Big Word",
   "small_word": "Small Word",
   details_title: "Event Details",
