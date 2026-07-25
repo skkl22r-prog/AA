@@ -287,12 +287,50 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   </Reveal>
 </section>
 
-<section className="-mx-4 py-8">
-  <img
-    src={dividerImg}
-    alt=""
-    className="block w-full h-auto"
-  />
+<section className="px-4 py-12">
+
+  <div className="text-center mb-8">
+    <h2
+      className="font-arabic text-3xl mb-2"
+      style={{ color: "#EFE6DE" }}
+    >
+      الكلمة الكبيرة
+    </h2>
+
+    <p
+      className="font-arabic text-sm"
+      style={{ color: "#EFE6DE", opacity: 0.8 }}
+    >
+      الكلمة الصغيرة
+    </p>
+  </div>
+
+
+  <div
+    className="max-w-sm mx-auto rounded-xl px-6 py-10 backdrop-blur-md flex flex-col items-center justify-center"
+    style={{
+      background: "transparent",
+      border: "1px solid rgba(239,230,222,0.65)",
+      boxShadow: "0 0 10px rgba(239,230,222,0.08)",
+      minHeight: "180px",
+    }}
+  >
+    <div
+      className="font-display text-5xl font-light"
+      style={{ color: "#EFE6DE" }}
+    >
+      النص داخل المربع
+    </div>
+
+    <div
+      className="font-arabic text-sm mt-3"
+      style={{ color: "#EFE6DE", opacity: 0.8 }}
+    >
+      النص الصغير داخل المربع
+    </div>
+
+  </div>
+
 </section>
 
 <section className="px-4 py-16">
