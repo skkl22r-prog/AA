@@ -31,7 +31,41 @@ const { t: translate, lang } = useLang();
   { v: t.s, l: translate("seconds") },
 ];
 
-  return (
+return (
+  <div className="relative">
+
+    {/* النجوم */}
+    <img
+      src={countdownStar}
+      alt=""
+      className="absolute left-8 -top-10 w-7 opacity-80 select-none pointer-events-none animate-pulse"
+      draggable={false}
+    />
+
+    <img
+      src={countdownStar}
+      alt=""
+      className="absolute left-20 top-8 w-4 opacity-60 select-none pointer-events-none animate-pulse"
+      draggable={false}
+      style={{ animationDelay: "0.8s" }}
+    />
+
+    <img
+      src={countdownStar}
+      alt=""
+      className="absolute right-10 -top-8 w-6 opacity-80 select-none pointer-events-none animate-pulse"
+      draggable={false}
+      style={{ animationDelay: "1.5s" }}
+    />
+
+    <img
+      src={countdownStar}
+      alt=""
+      className="absolute right-2 top-12 w-4 opacity-50 select-none pointer-events-none animate-pulse"
+      draggable={false}
+      style={{ animationDelay: "2.2s" }}
+    />
+
     <div dir="ltr" className="flex justify-center gap-3 sm:gap-6">
       {items.map((it) => (
         <div
@@ -62,6 +96,17 @@ opacity: 0.8, }}
           </div>
         </div>
       ))}
+          </div>
+
+    <img
+      src={countdownDivider}
+      alt=""
+      className="mx-auto mt-8 w-44 opacity-80 select-none pointer-events-none"
+      draggable={false}
+    />
+
+  </div>
+);
     </div>
   );
 };
