@@ -222,6 +222,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 </div>
 </div>
 </div>
+    </section>
 </section>
           {/* Countdown */}
         <section className="px-4 py-16">
