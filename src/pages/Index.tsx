@@ -66,7 +66,6 @@ className="hidden"
           backgroundSize: "150px 150px",
         }}
       />
-{opened && <SprayParticles />}
       <MusicToggle active={opened} />
 <Envelope onOpen={() => setOpened(true)} />
 
