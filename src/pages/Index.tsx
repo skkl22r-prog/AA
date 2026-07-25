@@ -174,17 +174,6 @@ style={{
       <span>{t("word2")}</span>
     </div>
 
-<div className={`font-iran ${
-  lang === "ar"
-      ? "text-6xl sm:text-7xl"
-    : "text-5xl sm:text-6xl"
-} whitespace-nowrap flex justify-center items-center gap-8 my-3`}>
-  <span>{t("mother_name1")}</span>
-
-  <span className="hidden">{t("and")}</span>
-
-  <span className="hidden">{t("mother_name2")}</span>
-</div>
 
 <div className={`font-kahand ${
   lang === "ar"
@@ -214,7 +203,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   </span>
 
   <span
-  className="font-goori"
+  className="font-sull"
   style={{
     fontSize: lang === "ar" ? "0.35em" : "0.45em",
     margin: "0 18px",
