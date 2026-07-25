@@ -85,17 +85,25 @@ className="hidden"
       animation: "fadeIn 0.8s ease forwards",
     }}
   ><div className="fixed top-5 right-5 z-[9999]">
-  <button
-    onClick={toggle}
-    className="px-5 h-8 rounded-full font-arabic text-sm transition-all"
-    style={{
-      background: "#A77C86",
-      border: "1px solid #F9E9E6",
-      color: "#F9E9E6",
-    }}
-  >
-    {lang === "ar" ? "العربية" : "ENGLISH"}
-  </button>
+ <button
+  onClick={toggle}
+  className="px-5 h-8 rounded-full text-sm transition-all"
+  style={{
+    background: "#A77C86",
+    border: "1px solid #F9E9E6",
+    color: "#F9E9E6",
+  }}
+>
+  {lang === "ar" ? (
+    <span className="font-kahand">
+      العربية
+    </span>
+  ) : (
+    <span className="font-amoshref">
+      ENGLISH
+    </span>
+  )}
+</button>
 </div>
 
 <section className="flex justify-center relative z-20">
@@ -124,7 +132,9 @@ className="hidden"
   className="absolute inset-0 flex items-center justify-center px-5 py-6"
 >
   <div
-    className=""
+<div
+  className="translate-y-8 scale-90"
+>
   >
 <div
 className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
