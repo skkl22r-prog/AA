@@ -70,7 +70,7 @@ return (
       {items.map((it) => (
       <div
   key={it.l}
-className="flex flex-col items-center justify-center rounded-xl px-4 py-5 min-w-[68px] sm:min-w-[84px] h-[110px] backdrop-blur-md"
+className="flex flex-col items-center justify-center rounded-xl w-[68px] sm:w-[84px] py-5 h-[110px] backdrop-blur-md"
           style={{
   background: "transparent",
   border: "1px solid rgba(239,230,222,0.65)",
