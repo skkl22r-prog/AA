@@ -1,7 +1,7 @@
 import rImg from "@/assets/r.png";
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
-import invitationImg from "@/assets/Video.mp4";
+import invitationImg from "@/assets/f.mp4";
 import Envelope from "@/components/Envelope";
 import Reveal from "@/components/Reveal";
 import Countdown from "@/components/Countdown";
