@@ -94,15 +94,15 @@ className="hidden"
     color: "#F9E9E6",
   }}
 >
-  {lang === "ar" ? (
-    <span className="font-kahand">
-      العربية
-    </span>
-  ) : (
-    <span className="font-amoshref">
-      ENGLISH
-    </span>
-  )}
+{lang === "ar" ? (
+  <span className="font-kahand">
+    العربية
+  </span>
+) : (
+  <span className="font-amoshref">
+    ENGLISH
+  </span>
+)}
 </button>
 </div>
 
@@ -145,7 +145,7 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -153,7 +153,7 @@ style={{
   {t("invite_to")}
 </div>
 
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -161,7 +161,7 @@ style={{
   {t("invite_join")}
 </div>
 
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -169,7 +169,7 @@ style={{
   {t("invite_day")}
 </div>
 
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -183,7 +183,7 @@ style={{
     </div>
 
 
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -191,9 +191,8 @@ style={{
       {t("invite_attend")}
     </div>
 
- <div
-  className={`font-iran ${
-    lang === "ar"
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
+  lang === "ar"
       ? "text-6xl sm:text-7xl"
       : "text-5xl sm:text-6xl"
   } my-6`}
@@ -210,8 +209,8 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
     ❤︎
   </span>
 
-  <span
-  className="font-sull"
+<span
+  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"}`}
   style={{
     fontSize: lang === "ar" ? "0.35em" : "0.45em",
     margin: "0 18px",
@@ -222,14 +221,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   {t("groom_name")}
 </div>
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-base sm:text-lg"
 }`}>
   {t("invite_god_willing")}
 </div>
-<div className={`font-kahand ${
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -268,18 +267,18 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="text-center mb-8">
     <h2
-      className="font-kahand text-3xl mb-2"
-      style={{ color: "#EFE6DE" }}
-    >
-      الكلمة الكبيرة
-    </h2>
+  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-3xl mb-2`}
+  style={{ color: "#EFE6DE" }}
+>
+  {t("big_word")}
+</h2>
 
-    <p
-      className="font-kahand text-sm"
-      style={{ color: "#EFE6DE", opacity: 0.8 }}
-    >
-      الكلمة الصغيرة
-    </p>
+<p
+  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-sm`}
+  style={{ color: "#EFE6DE", opacity: 0.8 }}
+>
+  {t("small_word")}
+</p>
   </div>
 
 
@@ -317,9 +316,12 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="flex items-center gap-3 mb-5">
     <MapPin className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
-      {t("event_location")}
-    </span>
+    <span 
+className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-sm`}
+style={{color:"#EFE6DE"}}
+>
+  {t("event_location")}
+</span>
   </div>
 
   <div className="flex items-center gap-3 mb-5">
@@ -372,7 +374,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
 </div>
   <div
-  className="mx-auto mt-5 rounded-full flex items-center justify-center gap-2 font-arabic text-sm w-[calc(4*68px+3*12px)]"
+className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${lang === "ar" ? "font-kahand" : "font-amoshref"} text-sm w-[calc(4*68px+3*12px)]`}
   style={{
     height: "48px",
     background: "#F9E9E6",
@@ -403,8 +405,8 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 />
 </div>
   <div className="mt-8 text-center">
-  <h2
-    className="font-kahand text-3xl mb-3"
+<h2
+  className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-3xl mb-3`}
     style={{ color: "#F9E9E6" }}
   >
     {t("section2_title")}
