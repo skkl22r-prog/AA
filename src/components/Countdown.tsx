@@ -107,8 +107,6 @@ opacity: 0.8, }}
 
   </div>
 );
-    </div>
-  );
 };
 
 export default Countdown;
