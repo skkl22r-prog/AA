@@ -11,216 +11,121 @@ const ar: Dict = {
   invite_join: "نجتمع على فرحةٍ طال انتظارها وننتظر حضوركم",
   invite_day: "الذي يُزهر به القلب وتكتمل به الحكاية",
   invite_with_love: "نفتح لكم أبواب فرحتنا",
-and: "&",
-  mother_name2: "سميرة الغامدي",
+  and: "&",
   invite_attend: "بدعوتكم لحضور حفل زفاف",
-  invite_before_bride: "أبنها",
-  invite_before_bride_2: "ابنتها",
   bride_name: "سلطـــان",
   groom_name: "حـــنين",
-  invite_god_willing: "وذلك بمشيئة الله تعالى يوم الاربعاء",
+  invite_god_willing: "وذلك بمشيئة الله تعالى يوم الأربعاء",
   date_line: "29 . 02 . 1448 | 12 . 08 . 2026",
 
   // Countdown
-countdown_date: " حتى نلتقي في يومنا السعيد ",
-  countdown_title: "العد التنازلي ",
+  countdown_date: "حتى نلتقي في يومنا السعيد",
+  countdown_title: "العد التنازلي",
   days: "أيام",
   hours: "ساعات",
   minutes: "دقائق",
   seconds: "ثواني",
 
-  // Details
-  
-  "big_word": "التفاصيل",
-  "small_word": "كل ماتحتاج معرفته عن يومنا السعيد",
-  details_title: "تفاصيل يوم الفرح",
-  details_subtitle: "كل ما تحتاج معرفته",
-
-  // Venue
+  // Section Headers & Details
+  big_word: "التفاصيل",
+  small_word: "كل ما تحتاجون معرفته عن يومنا السعيد",
   location_button: "الموقع",
-  venue_title: "موقع حفلنا",
-  venue_name: "قاعة شهرزاد",
-  venue_city: "الطائف",
-event_location: "موقع الحفل",
-event_date: "الاثنين 12 أغسطس 2026",
-personal_invitation: "الدعوة شخصية",
-  hall_name: "قاعة درة النجوم",
-  hall_city: "قاعة درة النجوم",
-  arrival_time: " 8:00 ",
-  open_map: "افتح في الخريطة",
-  add_calendar: "إضافة إلى التقويم",
+  event_location: "موقع الحفل",
+  event_date: "الأربعاء 12 أغسطس 2026",
+  arrival_time: "8:00 مساءً",
+  personal_invitation: "الدعوة شخصية",
 
-  // Program
-  program_title: "برنامج الحفل",
-  program_subtitle: "خطتنا لليوم الكبير",
-  program_reception: "الاستقبال",
-  program_zaffa: "الزفة",
-  "zaffa_time": " 11:30",
-  program_dinner: "العشاء",
- "dinner_time": "1:00",
-  no_cameras: " يمنع احضار الجوالات والتصوير",
-  no_kids: " يمنع حضور الاطفال منعًا باتًا",
-  swipe_more: "اسحب لرؤية المزيد",
+  // Timeline / Program (مفاتيح موحدة للخط الزمني والمشروع)
+  reception: "استقبال الضيوف",
+  zaffa: "الزفة",
+  dinner: "العشاء",
+
+  // Restrictions
+  no_cameras: "يمنع التصوير",
+  no_kids: "يمنع حضور الأطفال",
 
   // RSVP
   rsvp_title: "يشرفنا حضوركم",
   rsvp_sub: "نتشرف بحضوركم",
-  rsvp_deadline: "نرجو الرد قبل  ٢٨ نوفمبر ٢٠٢٦",
-
+  rsvp_deadline: "نرجو الرد قبل الموعد المحدد",
   name_label: "الاسم الكريم",
   name_placeholder: "اكتب اسمك هنا",
   confirm: "تأكيد الحضور",
   decline: "الاعتذار",
   send: "إرسال",
   sending: "جارٍ الإرسال...",
-
-welcome: "أهلاً وسهلاً",
-guest_count: "عدد المرافقين",
-already_registered: "تم التسجيل مسبقاً من هذا الجهاز",
-error_try_again: "حدث خطأ، حاول مرة أخرى",
-see_you_next_time: "ونراك في مناسبة أخرى بإذن الله",
-save_qr_warning: "يرجى حفظ الباركود لأنه مطلوب عند الدخول",
-dont_scan_qr: "الرجاء عدم مسح الباركود",
-
+  welcome: "أهلاً وسهلاً",
   thanks_attending: "شكراً لتأكيد حضورك",
   thanks_declined: "نقدّر اعتذارك",
-  redirect_wa: "سيتم تحويلك إلى الواتساب لإرسال الرد...",
 
-  // QR
+  // QR & Footer
   qr_title: "باركود الدخول الخاص بك",
-  qr_sub: "يرجى تقديم هذا الباركود عند البوابة",
   save_qr: "حفظ الباركود",
-  redirecting_in: "سيتم تحويلك إلى الواتساب خلال",
-  seconds_short: "ث",
-
-  // Footer
-  section2_title: " 12 . 8 . 2026",
-section2_subtitle: "We can't wait to celebrate with you",
-  made_by: "صُنع بحب بواسطة ",
-  store: " متجر غيمة  ",
-designer_names: "معـاذ & طيف",
-tiktok: "@shim2t.TikTok",
-
-  // Calendar
-  date_full: "الاربعاء 8 أغسطس 2026",
-  cal_day: "Saturday",
-  cal_month: "July",
-  cal_year: "2026",
-guests_1: "١",
-  guests_2: "٢",
-  guests_3: "٣",
-  guests_4: "٤",
-  guests_5: "٥"
+  section2_title: "12 . 08 . 2026",
+  section2_subtitle: "We can't wait to celebrate with you",
+  tiktok: "@shim2t",
 };
 
 const en: Dict = {
   // Invitation
-  tap_open: "Tap to open the invitation",
-  invite_to: "May Allah bless their marriage",
-  invite_join: "To those who complete our joy",
-  invite_day: "You are our joy and delight",
-  invite_with_love: "With all love and affection",
-  word1: "Mrs.",
-  word2: "Mrs.",
-  mother_name1: "Umm Muadh",
-and: "&",
-  mother_name2: "Samirah Al-Ghamdi",
-  invite_attend: "Cordially invites you to attend the wedding of",
-  invite_before_bride: "her son",
-  invite_before_bride_2: "her daughter",
-  bride_name: "Muadh",
-  groom_name: "Taif",
-  invite_god_willing: "God willing, on Monday",
-  date_line: "28 . 11 . 2026 | 02 . 02 . 1448",
-event_location: "Event Location",
-event_date: "Monday, Agust 12, 2026",
-personal_invitation: "Personal Invitation",
+  tap_open: "Tap to Open Invitation",
+  invite_to: "A night chosen by Allah for beautiful beginnings",
+  invite_join: "We gather in long-awaited joy & await your presence",
+  invite_day: "Where hearts bloom and our story completes",
+  invite_with_love: "We open our doors with love to welcome you",
+  and: "&",
+  invite_attend: "Cordially invite you to the wedding of",
+  bride_name: "Sultan",
+  groom_name: "Haneen",
+  invite_god_willing: "God willing, on Wednesday",
+  date_line: "12 . 08 . 2026",
+
   // Countdown
-countdown_date: "28 November 2026",
-  countdown_title: "Until Our Celebration ",
+  countdown_date: "Until Our Special Day",
+  countdown_title: "Countdown",
   days: "Days",
   hours: "Hours",
-  minutes: "Minutes",
-  seconds: "Seconds",
+  minutes: "Mins",
+  seconds: "Secs",
 
-  // Details
+  // Section Headers & Details
+  big_word: "Details",
+  small_word: "Everything you need to know about our day",
   location_button: "Location",
-  "big_word": "Big Word",
-  "small_word": "Small Word",
-  details_title: "Event Details",
-  details_subtitle: "Everything you need to know",
+  event_location: "Event Venue",
+  event_date: "Wednesday, Aug 12, 2026",
+  arrival_time: "8:00 PM",
+  personal_invitation: "Personal Invitation",
 
-  // Venue
-  venue_title: "Our Venue",
-  venue_name: "Aroma Hall",
-  venue_city: "Riyadh",
+  // Timeline / Program
+  reception: "Reception",
+  zaffa: "Grand Entrance",
+  dinner: "Dinner",
 
-  hall_name: "Aroma Hall for Events & Conferences",
-  hall_city: "Aroma Hall - Riyadh",
-  arrival_time: "Arrival at 8:00 PM",
-  open_map: "Open Map",
-  add_calendar: "Add to Calendar",
-
-  // Program
-  program_title: "Event Program",
-  program_subtitle: "Our schedule for the special day",
-  program_reception: "Reception",
-  program_zaffa: "Zaffa",
- "zaffa_time": "9:30 PM",
-  program_dinner: "Dinner",
- "dinner_time": "11:00 PM",
-  no_cameras: "No camera phones allowed",
-  no_kids: "Children are not permitted",
-  swipe_more: "Swipe to see more",
+  // Restrictions
+  no_cameras: "No Cameras Allowed",
+  no_kids: "Adults Only",
 
   // RSVP
-  rsvp_title: "Confirm Your Attendance",
+  rsvp_title: "RSVP",
   rsvp_sub: "We would be honored by your presence",
-  rsvp_deadline: "Please respond before November 28, 2026",
-
+  rsvp_deadline: "Please respond before the deadline",
   name_label: "Full Name",
   name_placeholder: "Enter your name",
-  confirm: "Will Attend",
-  decline: "Decline",
+  confirm: "Attending",
+  decline: "Declining",
   send: "Send",
   sending: "Sending...",
-
   welcome: "Welcome",
-guest_count: "Number of Companions",
-  already_registered: "This device has already been registered",
-  error_try_again: "An error occurred, please try again",
-  see_you_next_time: "We hope to see you on another occasion",
-  save_qr_warning: "Please save this QR code. It is required for entry",
-  dont_scan_qr: "Please do not scan the QR code",
-
-  thanks_attending: "Thank you for confirming your attendance",
+  thanks_attending: "Thank you for confirming",
   thanks_declined: "We appreciate your response",
-  redirect_wa: "Redirecting you to WhatsApp...",
 
-  // QR
+  // QR & Footer
   qr_title: "Your Entry QR Code",
-  qr_sub: "Please present this QR code at the entrance",
   save_qr: "Save QR Code",
-  redirecting_in: "Redirecting to WhatsApp in",
-  seconds_short: "s",
-
-  // Footer
-  section2_title: " 12 . 8 . 2026",
-section2_subtitle: "We can't wait to celebrate with you",
-  made_by: "Crafted with love by",
-  store: "Ghaimah Store",
-designer_names: "Muath & Taif",
-tiktok: "@shim2t.TikTok",
-  // Calendar
-  date_full: "Monday, November 28, 2026",
-  cal_day: "Monday",
-  cal_month: "November",
-  cal_year: "2026",
-guests_1: "1",
-  guests_2: "2",
-  guests_3: "3",
-  guests_4: "4",
-  guests_5: "5"
+  section2_title: "12 . 08 . 2026",
+  section2_subtitle: "We can't wait to celebrate with you",
+  tiktok: "@shim2t",
 };
 
 const dicts = { ar, en };
@@ -237,7 +142,7 @@ const Ctx = createContext<LangCtx | null>(null);
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem("lang") : null;
-    return (saved === "en" || saved === "ar") ? saved : "ar";
+    return saved === "en" || saved === "ar" ? saved : "ar";
   });
   const dir = lang === "ar" ? "rtl" : "ltr";
 
