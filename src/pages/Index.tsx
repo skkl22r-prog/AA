@@ -84,37 +84,18 @@ className="hidden"
     style={{
       animation: "fadeIn 0.8s ease forwards",
     }}
-  >
-   <div
- dir="ltr"
-  className="fixed top-5 right-5 z-[9999] flex p-1 rounded-xl"
-  style={{
-    background: "#F2EEF6",
-    border: "1px solid #D8C8D9",
-    boxShadow: "0 4px 12px rgba(0,0,0,.08)",
-  }}
->
+  ><div className="fixed top-5 right-5 z-[9999]">
   <button
-  onClick={() => lang !== "en" && toggle()}
-  className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
-  style={{
-    background: lang === "en" ? "#A882B8" : "transparent",
-    color: lang === "en" ? "#fff" : "#7A6A82",
-  }}
->
-  EN
-</button>
-
-<button
-  onClick={() => lang !== "ar" && toggle()}
-  className="px-3 py-1 rounded-lg text-sm font-semibold transition-all"
-  style={{
-    background: lang === "ar" ? "#A882B8" : "transparent",
-    color: lang === "ar" ? "#fff" : "#7A6A82",
-  }}
->
-  AR
-</button>
+    onClick={toggle}
+    className="px-5 h-10 rounded-full font-arabic text-sm transition-all"
+    style={{
+      background: "#B78E99",
+      border: "1px solid #F9E9E6",
+      color: "#F9E9E6",
+    }}
+  >
+    {lang === "ar" ? "العربية" : "English"}
+  </button>
 </div>
 
 <section className="flex justify-center relative z-20">
