@@ -435,7 +435,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
       target="_blank"
       rel="noopener noreferrer"
       className="block mt-2 text-sm underline underline-offset-4"
-      style={{ color: "#B78E99" }}
+      style={{ color: "#EFE6DE" }}
     >
       @shim2t
     </a>
