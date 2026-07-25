@@ -7,7 +7,12 @@
   font-family: "IranNastali";
   src: url("./assets/fonts/IranNastali.ttf");
 }
-
+@font-face {
+  font-family: "Whitney";
+  src: url("./assets/fonts/Whitney.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "KAHand";
   src: url("./assets/fonts/KAHandNaskhV2-Regular.ttf") format("truetype");
@@ -165,7 +170,9 @@
 .font-iran {
   font-family: "IranNastali";
 }
-
+.font-whitney {
+  font-family: "Whitney", sans-serif;
+}
 .font-kahand {
   font-family: "KAHand";
 }
