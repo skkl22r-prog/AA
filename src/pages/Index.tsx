@@ -396,9 +396,8 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
 </div>
   <div
-  className="mx-auto mt-5 rounded-full flex items-center justify-center gap-2 font-arabic text-sm"
+  className="mx-auto mt-5 rounded-full flex items-center justify-center gap-2 font-arabic text-sm w-[calc(4*68px+3*12px)]"
   style={{
-    width: "calc(4*68px+3*12px)",
     height: "48px",
     background: "#F9E9E6",
     color: "#B78E99",
