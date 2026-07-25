@@ -315,7 +315,21 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   }}
 >
 </div>
-
+<div
+  className="mx-auto mt-8 rounded-xl overflow-hidden"
+  style={{
+    width: "calc(4*68px+3*12px)",
+    height: "220px",
+    border: "1px solid rgba(249,233,230,0.65)",
+    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+  }}
+>
+  <img
+    src={اسم_الصورة}
+    alt=""
+    className="w-full h-full object-cover block"
+  />
+</div>
 </section>
 <section className="px-4 py-16">
   <Reveal>
