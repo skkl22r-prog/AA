@@ -421,7 +421,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   }}
 >
   <img
-    src={r.png}
+src={rImg}
     alt=""
     className="w-full h-full object-contain"
   />
