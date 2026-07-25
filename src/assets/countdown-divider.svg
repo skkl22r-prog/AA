@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="60" viewBox="0 0 420 60" fill="none">
+
+  <path
+    d="M20 30
+       C70 30 90 10 120 10
+       C150 10 165 30 190 30"
+    stroke="#EFE6DE"
+    stroke-width="1.8"
+    stroke-linecap="round"/>
+
+  <path
+    d="M230 30
+       C255 30 270 10 300 10
+       C330 10 350 30 400 30"
+    stroke="#EFE6DE"
+    stroke-width="1.8"
+    stroke-linecap="round"/>
+
+  <circle
+    cx="210"
+    cy="30"
+    r="4"
+    fill="#EFE6DE"/>
+
+</svg>
