@@ -68,9 +68,9 @@ return (
 
     <div dir="ltr" className="flex justify-center gap-3 sm:gap-6">
       {items.map((it) => (
-        <div
-          key={it.l}
-          className="flex flex-col items-center justify-center rounded-xl px-7 sm:px-6 py-4 min-w-[78px] sm:min-w-[95px] backdrop-blur-md"
+      <div
+  key={it.l}
+className="flex flex-col items-center justify-center rounded-xl px-3 py-7 min-w-[62px] sm:min-w-[76px] h-[135px] backdrop-blur-md"
           style={{
   background: "transparent",
   border: "1px solid rgba(239,230,222,0.65)",
