@@ -1,7 +1,7 @@
 import rImg from "@/assets/r.png";
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
-import invitationImg from "@/assets/video_5714345_1784965975.mp4";
+import invitationImg from "@/assets/Video.mp4";
 import Envelope from "@/components/Envelope";
 import Reveal from "@/components/Reveal";
 import Countdown from "@/components/Countdown";
@@ -94,7 +94,7 @@ className="hidden"
       color: "#F9E9E6",
     }}
   >
-    {lang === "ar" ? "العربية" : "English"}
+    {lang === "ar" ? "العربية" : "ENGLISH"}
   </button>
 </div>
 
@@ -221,7 +221,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 }`}>
   {t("invite_god_willing")}
 </div>
-<div className={`font-tajawal ${
+<div className={`font-kahand ${
   lang === "ar"
  ? "text-2xl sm:text-3xl"
     : "text-lg sm:text-xl"
@@ -237,14 +237,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
         <section className="px-4 py-16">
   <Reveal>
     <h2
-  className="text-center font-arabic text-3xl mb-2"
+  className="text-center font-kahand text-3xl mb-2"
   style={{ color: "#EFE6DE" }}
 >
   {t("countdown_title")}
 </h2>
 
 <p
-  className="text-center font-arabic text-sm mb-10"
+  className="text-center font-kahand text-sm mb-10"
   style={{ color: "#EFE6DE" }}
 >
   {t("countdown_date")}
@@ -260,14 +260,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="text-center mb-8">
     <h2
-      className="font-arabic text-3xl mb-2"
+      className="font-kahand text-3xl mb-2"
       style={{ color: "#EFE6DE" }}
     >
       الكلمة الكبيرة
     </h2>
 
     <p
-      className="font-arabic text-sm"
+      className="font-kahand text-sm"
       style={{ color: "#EFE6DE", opacity: 0.8 }}
     >
       الكلمة الصغيرة
@@ -309,21 +309,21 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="flex items-center gap-3 mb-5">
     <MapPin className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
       {t("event_location")}
     </span>
   </div>
 
   <div className="flex items-center gap-3 mb-5">
     <Clock className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
       {t("arrival_time")}
     </span>
   </div>
 
   <div className="flex items-center gap-3 mb-6">
     <CalendarDays className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
       {t("event_date")}
     </span>
   </div>
@@ -341,7 +341,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="flex items-center gap-3 mb-5">
     <Baby className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
       {t("no_kids")}
     </span>
   </div>
@@ -349,7 +349,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="flex items-center gap-3 mb-5">
     <Camera className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
       {t("no_cameras")}
     </span>
   </div>
@@ -357,7 +357,7 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 
   <div className="flex items-center gap-3">
     <QrCode className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-arabic text-sm" style={{color:"#EFE6DE"}}>
+    <span className="font-kahand text-sm" style={{color:"#EFE6DE"}}>
       {t("personal_invitation")}
     </span>
   </div>
@@ -396,14 +396,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 </div>
   <div className="mt-8 text-center">
   <h2
-    className="font-arabic text-3xl mb-3"
+    className="font-kahand text-3xl mb-3"
     style={{ color: "#F9E9E6" }}
   >
     {t("section2_title")}
   </h2>
 
   <p
-    className="font-arabic text-sm"
+    className="font-kahand text-sm"
     style={{ color: "#F9E9E6", opacity: 0.8 }}
   >
     {t("section2_subtitle")}
