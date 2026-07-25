@@ -317,10 +317,8 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 >
 </div>
 <div
-  className="mx-auto mt-8 rounded-xl overflow-hidden"
+  className="mx-auto mt-8 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
   style={{
-    width: "calc(4*68px+3*12px)",
-    height: "220px",
     border: "1px solid rgba(249,233,230,0.65)",
     boxShadow: "0 0 10px rgba(249,233,230,0.08)",
   }}
