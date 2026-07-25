@@ -306,18 +306,15 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
   </div>
 
 
-  <div
-    className="mx-auto rounded-xl px-6 py-12"
-    style={{
-      width: "calc(100% - 24px)",
-      maxWidth: "420px",
-      minHeight: "260px",
-      background: "transparent",
-      border: "1px solid rgba(239,230,222,0.65)",
-      boxShadow: "0 0 10px rgba(239,230,222,0.08)",
-    }}
-  >
-  </div>
+<div
+  className="mx-auto rounded-xl h-[220px] w-[calc(4*68px+3*12px)]"
+  style={{
+    background: "transparent",
+    border: "1px solid rgba(249,233,230,0.65)",
+    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+  }}
+>
+</div>
 
 </section>
 <section className="px-4 py-16">
