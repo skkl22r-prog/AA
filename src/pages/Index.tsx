@@ -19,414 +19,379 @@ import cameraImg from "@/assets/12.png";
 import kidsImg from "@/assets/13.png";
 import rsvpIcon from "@/assets/Photoroom_20260705_153052.png";
 import { useLang } from "@/i18n/LanguageContext";
+
 const Index = () => {
   const [opened, setOpened] = useState(false);
-const { t, lang, toggle } = useLang();
-const scrollRef = useRef<HTMLDivElement>(null);
+  const { t, lang, toggle } = useLang();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-const startX = useRef(0);
-const startScroll = useRef(0);
-const dragging = useRef(false);
-const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-  const el = scrollRef.current;
-  if (!el) return;
+  const startX = useRef(0);
+  const startScroll = useRef(0);
+  const dragging = useRef(false);
 
-  dragging.current = true;
-  startX.current = e.touches[0].pageX;
-  startScroll.current = el.scrollLeft;
-};
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-  if (!dragging.current) return;
+    dragging.current = true;
+    startX.current = e.touches[0].pageX;
+    startScroll.current = el.scrollLeft;
+  };
 
-  const el = scrollRef.current;
-  if (!el) return;
+  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!dragging.current) return;
 
-  const walk = e.touches[0].pageX - startX.current;
-  el.scrollLeft = startScroll.current - walk;
-};
+    const el = scrollRef.current;
+    if (!el) return;
 
-const onTouchEnd = () => {
-  dragging.current = false;
-};
+    const walk = e.touches[0].pageX - startX.current;
+    el.scrollLeft = startScroll.current - walk;
+  };
+
+  const onTouchEnd = () => {
+    dragging.current = false;
+  };
 
   return (
- <div
-  className="overflow-x-hidden w-full"
-  style={{
-  background: "#A77C86",
-  minHeight: "100vh",
-}}
->
+    <div
+      className="overflow-x-hidden w-full"
+      style={{
+        background: "#A77C86",
+        minHeight: "100vh",
+      }}
+    >
       {/* Ornamental gold damask pattern background */}
       <div
         aria-hidden
-className="hidden"
+        className="hidden"
         style={{
           backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%23B8860B' stroke-width='0.7' opacity='0.9'><g transform='translate(30 30)'><circle cx='0' cy='0' r='2.2' fill='%23B8860B'/><path d='M0 0 C -5 -3 -8 -8 -5 -12 C -1 -14 3 -11 4 -7'/><path d='M0 0 C 5 -3 8 -8 5 -12 C 1 -14 -3 -11 -4 -7'/><path d='M0 0 C -7 0 -11 5 -9 10 C -5 12 -1 9 0 5'/><path d='M0 0 C 7 0 11 5 9 10 C 5 12 1 9 0 5'/><path d='M0 5 C -2 9 0 13 3 12'/></g><g transform='translate(90 80)'><circle cx='0' cy='0' r='1.8' fill='%23B8860B'/><path d='M0 0 C -4 -2 -6 -6 -4 -9 C -1 -11 2 -8 3 -5'/><path d='M0 0 C 4 -2 6 -6 4 -9 C 1 -11 -2 -8 -3 -5'/><path d='M0 0 C -5 0 -8 4 -7 8 C -4 9 -1 7 0 4'/><path d='M0 0 C 5 0 8 4 7 8 C 4 9 1 7 0 4'/></g><g transform='translate(75 25)'><circle cx='0' cy='0' r='1.5' fill='%23B8860B'/><path d='M0 -4 C -3 -4 -4 -1 -2 1'/><path d='M0 -4 C 3 -4 4 -1 2 1'/><path d='M-3 2 C -5 4 -3 7 0 6'/><path d='M3 2 C 5 4 3 7 0 6'/></g><g transform='translate(20 95)'><circle cx='0' cy='0' r='1.5' fill='%23B8860B'/><path d='M0 -4 C -3 -4 -4 -1 -2 1'/><path d='M0 -4 C 3 -4 4 -1 2 1'/><path d='M-3 2 C -5 4 -3 7 0 6'/><path d='M3 2 C 5 4 3 7 0 6'/></g><path d='M55 55 q 4 -2 8 0' /><path d='M58 56 q 0 3 -2 5'/></g></svg>")`,
           backgroundSize: "150px 150px",
         }}
       />
       <MusicToggle active={opened} />
-<Envelope onOpen={() => setOpened(true)} />
+      <Envelope onOpen={() => setOpened(true)} />
 
-<div
-  className="fixed inset-0 z-0"
-  style={{
-    background: "#A77C86",
-    pointerEvents: "none",
-  }}
-/>
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          background: "#A77C86",
+          pointerEvents: "none",
+        }}
+      />
 
-{opened && (
-  <main
-    className="relative z-10 animate-fadeIn"
-    style={{
-      animation: "fadeIn 0.8s ease forwards",
-    }}
-  ><div className="fixed top-5 right-5 z-[9999]">
- <button
-  onClick={toggle}
-  className="px-5 h-8 rounded-full text-sm transition-all"
-  style={{
-    background: "#A77C86",
-    border: "1px solid #F9E9E6",
-    color: "#F9E9E6",
-  }}
->
-{lang === "ar" ? (
-  <span className="font-kahand">
-    العربية
-  </span>
-) : (
-  <span className="font-amoshref">
-    ENGLISH
-  </span>
-)}
-</button>
-</div>
+      {opened && (
+        <main
+          className="relative z-10 animate-fadeIn"
+          style={{
+            animation: "fadeIn 0.8s ease forwards",
+          }}
+        >
+          {/* Language Toggle Button */}
+          <div className="fixed top-5 right-5 z-[9999]">
+            <button
+              onClick={toggle}
+              className="px-5 h-8 rounded-full text-sm transition-all"
+              style={{
+                background: "#A77C86",
+                border: "1px solid #F9E9E6",
+                color: "#F9E9E6",
+              }}
+            >
+              {lang === "ar" ? (
+                <span className="font-kahand">العربية</span>
+              ) : (
+                <span className="font-amoshref">ENGLISH</span>
+              )}
+            </button>
+          </div>
 
-<section className="flex justify-center relative z-20">
-<div className="relative w-full aspect-[9/16] overflow-hidden">
+          <section className="flex justify-center relative z-20">
+            <div className="relative w-full aspect-[9/16] overflow-hidden">
+              <video
+                src={invitationImg}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover animate-videoFade"
+                style={{
+                  background: "#A77C86",
+                }}
+              />
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "rgba(0,0,0,0.08)",
+                }}
+              />
 
-<video
-  src={invitationImg}
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="absolute inset-0 w-full h-full object-cover animate-videoFade"
-  style={{
-background: "#A77C86",
-  }}
-/>
-<div
-  className="absolute inset-0 pointer-events-none"
-  style={{
-    background: "rgba(0,0,0,0.08)",
-  }}
-/>
+              <div
+                dir={lang === "ar" ? "rtl" : "ltr"}
+                className="absolute inset-0 flex items-center justify-center px-5 py-6"
+              >
+                <div className="translate-y-8 scale-60">
+                  <div
+                    className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
+                    style={{
+                      background: "transparent",
+                      backdropFilter: "none",
+                      WebkitBackdropFilter: "none",
+                      color: "#F9E9E6",
+                      textShadow:
+                        "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
+                    }}
+                  >
+                    <div className="translate-y-3">
+                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        {t("invite_to")}
+                      </div>
 
-<div
-  dir={lang === "ar" ? "rtl" : "ltr"}
-  className="absolute inset-0 flex items-center justify-center px-5 py-6"
->
-  <div
-  className="translate-y-8 scale-60"
-  >
-<div
-className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
-style={{
-  background: "transparent",
-  backdropFilter: "none",
-  WebkitBackdropFilter: "none",
-  color: "#F9E9E6",
-  textShadow:
-    "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
-}}
-  >
-  <div className="translate-y-3">
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-  {t("invite_to")}
-</div>
+                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        {t("invite_join")}
+                      </div>
 
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-  {t("invite_join")}
-</div>
+                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        {t("invite_day")}
+                      </div>
 
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-lg sm:text-xl"
-    : "text-lg sm:text-xl"
-} whitespace-nowrap`}>
-  {t("invite_day")}
-</div>
+                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        {t("invite_with_love")}
+                      </div>
 
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
-  {t("invite_with_love")}
-</div>
+                      <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
+                        <span>{t("word1")}</span>
+                        <span>{t("word2")}</span>
+                      </div>
 
-    <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
-      <span>{t("word1")}</span>
-      <span>{t("word2")}</span>
-    </div>
+                      <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                        {t("invite_attend")}
+                      </div>
 
+                      <div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-0`}>
+                        {t("bride_name")}
 
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-lg sm:text-xl"
-    : "text-lg sm:text-xl"
-}`}>
-      {t("invite_attend")}
-</div> 
-<div className={`${lang === "ar" ? "font-a" : "font-amoshref"} text-5xl sm:text-6xl my-0`}>
-  {t("bride_name")}
+                        <span
+                          style={{
+                            display: "none",
+                            fontSize: lang === "ar" ? "0.35em" : "0.80em",
+                            margin: "0 18px",
+                          }}
+                        >
+                          ❤︎
+                        </span>
 
-  <span
-    style={{
-      display: "none",
-fontSize: lang === "ar" ? "0.35em" : "0.80em",
-      margin: "0 18px",
-    }}
-  >
-    ❤︎
-  </span>
+                        <span
+                          className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"}`}
+                          style={{
+                            fontSize: lang === "ar" ? "0.35em" : "0.45em",
+                            margin: "0 18px",
+                          }}
+                        >
+                          {t("and")}
+                        </span>
 
-<span
-  className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"}`}
-  style={{
-    fontSize: lang === "ar" ? "0.35em" : "0.45em",
-    margin: "0 18px",
-  }}
->
-  {t("and")}
-</span>
+                        {t("groom_name")}
+                      </div>
 
-  {t("groom_name")}
-</div>
-  <div className="translate-y-3">
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-lg sm:text-xl"
-    : "text-lg sm:text-xl"
-}`}>
-  {t("invite_god_willing")}
-</div>
-<div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-lg sm:text-xl"
-    : "text-lg sm:text-xl"
-}`}>
-      {t("date_line")}
-    </div>
-</div>
-        </div>
-</div>
-</div>
-</section>
+                      <div className="translate-y-3">
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                          {t("invite_god_willing")}
+                        </div>
+                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-lg sm:text-xl`}>
+                          {t("date_line")}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Countdown */}
-        <section className="px-4 py-16">
-  <Reveal>
-    <h2
-className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-center text-3xl mb-2`}
-  style={{ color: "#EFE6DE" }}
->
-  {t("countdown_title")}
-</h2>
+          <section className="px-4 py-16">
+            <Reveal>
+              <h2
+                className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-center text-3xl mb-2`}
+                style={{ color: "#EFE6DE" }}
+              >
+                {t("countdown_title")}
+              </h2>
 
-<p
-className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-center text-sm mb-10`}
-  style={{ color: "#EFE6DE" }}
->
-  {t("countdown_date")}
-</p>
-  </Reveal>
+              <p
+                className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-center text-sm mb-10`}
+                style={{ color: "#EFE6DE" }}
+              >
+                {t("countdown_date")}
+              </p>
+            </Reveal>
 
-  <Reveal delay={150}>
-    <Countdown />
-  </Reveal>
-</section>
+            <Reveal delay={150}>
+              <Countdown />
+            </Reveal>
+          </section>
 
-<section className="px-4 py-12">
+          <section className="px-4 py-12">
+            <div className="text-center mb-8">
+              <h2
+                className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
+                style={{ color: "#EFE6DE" }}
+              >
+                {t("big_word")}
+              </h2>
 
-  <div className="text-center mb-8">
-    <h2
-className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
-  style={{ color: "#EFE6DE" }}
->
-  {t("big_word")}
-</h2>
+              <p
+                className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
+                style={{ color: "#EFE6DE", opacity: 0.8 }}
+              >
+                {t("small_word")}
+              </p>
+            </div>
 
-<p
-className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-  style={{ color: "#EFE6DE", opacity: 0.8 }}
->
-  {t("small_word")}
-</p>
-  </div>
+            <div
+              className="mx-auto rounded-xl h-[320px] w-[calc(4*68px+3*12px)]"
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(249,233,230,0.65)",
+                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+              }}
+            ></div>
 
+            <div
+              className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
+              style={{
+                border: "1px solid rgba(249,233,230,0.65)",
+                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+              }}
+            >
+              <img
+                src={newImage}
+                alt=""
+                className="w-full h-full object-cover object-center block"
+              />
+            </div>
 
-<div
-  className="mx-auto rounded-xl h-[320px] w-[calc(4*68px+3*12px)]"
-  style={{
-    background: "transparent",
-    border: "1px solid rgba(249,233,230,0.65)",
-    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-  }}
->
-</div>
-<div
-  className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
-  style={{
-    border: "1px solid rgba(249,233,230,0.65)",
-    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-  }}
->
-  <img
-  src={newImage}
-  alt=""
-  className="w-full h-full object-cover object-center block"
-/>
-</div>
-  <div
-  className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
-  style={{
-    background: "transparent",
-    border: "1px solid rgba(249,233,230,0.65)",
-    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-  }}
-  dir={lang === "ar" ? "rtl" : "ltr"}
->
+            <div
+              className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(249,233,230,0.65)",
+                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+              }}
+              dir={lang === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                <span
+                  className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
+                  style={{ color: "#EFE6DE" }}
+                >
+                  {t("event_location")}
+                </span>
+              </div>
 
-  <div className="flex items-center gap-3 mb-5">
-    <MapPin className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span 
-className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-style={{color:"#EFE6DE"}}
->
-  {t("event_location")}
-</span>
-  </div>
+              <div className="flex items-center gap-3 mb-5">
+                <Clock className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                  {t("arrival_time")}
+                </span>
+              </div>
 
-  <div className="flex items-center gap-3 mb-5">
-    <Clock className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
-      {t("arrival_time")}
-    </span>
-  </div>
+              <div className="flex items-center gap-3 mb-6">
+                <CalendarDays className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                  {t("event_date")}
+                </span>
+              </div>
 
-  <div className="flex items-center gap-3 mb-6">
-    <CalendarDays className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
-      {t("event_date")}
-    </span>
-  </div>
+              <div
+                className="mx-auto mb-6"
+                style={{
+                  width: "90%",
+                  height: "1px",
+                  background: "rgba(249,233,230,0.65)",
+                }}
+              />
 
+              <div className="flex items-center gap-3 mb-5">
+                <Baby className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                  {t("no_kids")}
+                </span>
+              </div>
 
-  <div
-    className="mx-auto mb-6"
-    style={{
-      width:"90%",
-      height:"1px",
-      background:"rgba(249,233,230,0.65)"
-    }}
-  />
+              <div className="flex items-center gap-3 mb-5">
+                <Camera className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                  {t("no_cameras")}
+                </span>
+              </div>
 
+              <div className="flex items-center gap-3">
+                <QrCode className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                <span className="font-neirizi text-sm" style={{ color: "#EFE6DE" }}>
+                  {t("personal_invitation")}
+                </span>
+              </div>
+            </div>
 
-  <div className="flex items-center gap-3 mb-5">
-    <Baby className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
-      {t("no_kids")}
-    </span>
-  </div>
+            <div
+              className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
+                lang === "ar" ? "font-neirizi" : "font-whitney"
+              } text-sm w-[calc(4*68px+3*12px)]`}
+              style={{
+                height: "48px",
+                background: "#F9E9E6",
+                color: "#B78E99",
+              }}
+            >
+              <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
+              <span>{t("location_button")}</span>
+            </div>
 
+            <div
+              className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(249,233,230,0.65)",
+                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+              }}
+            >
+              <img src={rImg} alt="" className="w-full h-auto block" />
+            </div>
 
-  <div className="flex items-center gap-3 mb-5">
-    <Camera className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-neirizi
-      text-sm" style={{color:"#EFE6DE"}}>
-      {t("no_cameras")}
-    </span>
-  </div>
+            <div className="mt-8 text-center">
+              <h2
+                className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-3xl mb-3`}
+                style={{ color: "#F9E9E6" }}
+              >
+                {t("section2_title")}
+              </h2>
 
+              <p
+                className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-sm`}
+                style={{ color: "#F9E9E6", opacity: 0.8 }}
+              >
+                {t("section2_subtitle")}
+              </p>
+            </div>
+          </section>
 
-  <div className="flex items-center gap-3">
-    <QrCode className="w-5 h-5" style={{ color:"#EFE6DE" }} />
-    <span className="font-neirizi text-sm" style={{color:"#EFE6DE"}}>
-      {t("personal_invitation")}
-    </span>
-  </div>
-
-</div>
-  <div
-className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
-  lang === "ar" ? "font-neirizi" : "font-whitney"
-} text-sm w-[calc(4*68px+3*12px)]`}
-  style={{
-    height: "48px",
-    background: "#F9E9E6",
-    color: "#B78E99",
-  }}
->
-  <MapPin
-    className="w-5 h-5"
-    style={{ color: "#B78E99" }}
-  />
-
-  <span>
-  {t("location_button")}
-</span>
-</div>
-<div
-  className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
-  style={{
-    background: "transparent",
-    border: "1px solid rgba(249,233,230,0.65)",
-    boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-  }}
->
-<img
-  src={rImg}
-  alt=""
-  className="w-full h-auto block"
-/>
-</div>
-  <div className="mt-8 text-center">
-<h2
-  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-3xl mb-3`}
-    style={{ color: "#F9E9E6" }}
-  >
-    {t("section2_title")}
-  </h2>
-
-  <p
-  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-sm`}
-  style={{ color: "#F9E9E6", opacity: 0.8 }}
->
-  {t("section2_subtitle")}
-</p>
-</div>
-</section>
-
-    
-
-   {/* Footer */}
-<footer className="px-4 py-12 text-center">
-  <Reveal>
-
-    <a
-      href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block mt-2 text-sm underline underline-offset-4"
-      style={{ color: "#EFE6DE" }}
-    >
-      @shim2t
-    </a>
-
-  </Reveal>
-</footer>
-
+          {/* Footer */}
+          <footer className="px-4 py-12 text-center">
+            <Reveal>
+              <a
+                href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-2 text-sm underline underline-offset-4"
+                style={{ color: "#EFE6DE" }}
+              >
+                @shim2t
+              </a>
+            </Reveal>
+          </footer>
         </main>
       )}
     </div>
