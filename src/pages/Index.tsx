@@ -145,19 +145,11 @@ style={{
     "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
 }}
   >
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-2xl sm:text-3xl"
-    : "text-lg sm:text-xl"
-} whitespace-nowrap`}>
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_to")}
 </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-2xl sm:text-3xl"
-    : "text-lg sm:text-xl"
-} whitespace-nowrap`}>
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_join")}
 </div>
 
@@ -169,11 +161,7 @@ style={{
   {t("invite_day")}
 </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
-  lang === "ar"
- ? "text-2xl sm:text-3xl"
-    : "text-lg sm:text-xl"
-} whitespace-nowrap`}>
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
   {t("invite_with_love")}
 </div>
 
@@ -191,12 +179,7 @@ style={{
       {t("invite_attend")}
     </div>
 
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
-  lang === "ar"
-      ? "text-6xl sm:text-7xl"
-      : "text-5xl sm:text-6xl"
-  } my-6`}
->
+<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} text-5xl sm:text-6xl my-6`}>
   {t("bride_name")}
 
   <span
@@ -223,14 +206,14 @@ fontSize: lang === "ar" ? "0.35em" : "0.80em",
 </div>
 <div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
   lang === "ar"
- ? "text-2xl sm:text-3xl"
-    : "text-base sm:text-lg"
+ ? "text-lg sm:text-xl"
+    : "text-lg sm:text-xl"
 }`}>
   {t("invite_god_willing")}
 </div>
-<div className={`${lang === "ar" ? "font-kahand" : "font-amoshref"} ${
+<div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} ${
   lang === "ar"
- ? "text-2xl sm:text-3xl"
+ ? "text-lg sm:text-xl"
     : "text-lg sm:text-xl"
 }`}>
       {t("date_line")}
