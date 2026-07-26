@@ -446,7 +446,6 @@ const Index = () => {
                 style={{ color: "#EFE6DE" }}
               >
                                {t("tiktok")}
-};
 
               </a>
             </Reveal>
