@@ -181,7 +181,7 @@ const Index = () => {
               />
 
               <div
-                dir={lang === "ar" ? "rtl" : "ltr"}
+                dir="ltr"
                 className="absolute inset-0 flex items-center justify-center px-5 py-6"
               >
                 <div className="translate-y-8 scale-60">
@@ -196,9 +196,9 @@ const Index = () => {
                         "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
                     }}
                   >
-                    <div className="translate-y-3 flex flex-col items-center">
+                    <div className="translate-y-3 flex flex-col items-center w-full">
                       {/* الأسطر العلوية */}
-                      <div className="-mb-4 flex flex-col items-center gap-1 relative z-10">
+                      <div className="-mb-4 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
                           {t("invite_to")}
                         </div>
@@ -225,29 +225,19 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* أسماء العرسان */}
-                      <div
-                        className="font-whitney text-4xl sm:text-5xl leading-none my-2 py-0 tracking-wide"
-                        style={{ lineHeight: 0.85 }}
-                        dir="ltr"
-                      >
-                        Sultan
-
-                        <span
-                          className="font-whitney"
-                          style={{
-                            fontSize: "0.45em",
-                            margin: "0 14px",
-                          }}
+                      {/* أسماء العرسان (ثابتة الاتجاه والمكان باللغتين) */}
+                      <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
+                        <div
+                          className={`${lang === "ar" ? "font-a" : "font-whitney"} text-4xl sm:text-5xl tracking-wide leading-none text-center`}
+                          style={{ lineHeight: 0.85 }}
+                          dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          &
-                        </span>
-
-                        Haneen
+                          {t("couples_names")}
+                        </div>
                       </div>
 
                       {/* السطران السفليان */}
-                      <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10">
+                      <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_god_willing")}
                         </div>
