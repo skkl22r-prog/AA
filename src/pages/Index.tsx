@@ -11,7 +11,7 @@ import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
 import starSvg from "@/assets/countdown-star.svg";
 import { useLang } from "@/i18n/LanguageContext";
 
-// رابط خرائط جوجل المحدث ومعالج لترميز النصوص العربية بشكل آمن
+// رابط خرائط جوجل المحدث خارج المكون لتفادي أخطاء الـ JSX
 const LOCATION_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("قاعة درة النجوم الطائف")}`;
 
 // مكون السهم الزخرفي المخصص
@@ -308,7 +308,6 @@ const Index = () => {
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
-                {/* النجوم في مواضعها */}
                 <img
                   src={starSvg}
                   alt=""
