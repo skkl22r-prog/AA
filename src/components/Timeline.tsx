@@ -33,14 +33,15 @@ const Timeline = () => {
       <Sparkles className="w-3.5 h-3.5 absolute bottom-3 left-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute bottom-3 right-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
 
-      {/* 2. الزخرفة العلوية (25.svg) */}
-      <div className="w-full flex justify-center mb-4 min-h-[35px] items-center">
-        <img
-          src={topDivider}
-          alt="زخرفة علوية"
-          className="h-10 w-auto opacity-95 drop-shadow-sm pointer-events-none"
-        />
-      </div>
+    {/* 2. الزخرفة العلوية (25.svg) */}
+<div className="w-full flex justify-center mb-3 min-h-[60px] items-center">
+  <img
+    src={topDivider}
+    alt="زخرفة علوية"
+    className="w-48 sm:w-56 h-auto max-h-16 object-contain opacity-95 drop-shadow-sm pointer-events-none"
+  />
+</div>
+
 
       {/* 3. الخط الزمني والأحداث */}
       <div className="relative my-2" dir="ltr">
@@ -124,14 +125,15 @@ const Timeline = () => {
         </div>
       </div>
 
-      {/* 4. الزخرفة السفلية (26.svg) */}
-      <div className="w-full flex justify-center mt-4 min-h-[30px] items-center">
-        <img
-          src={bottomDivider}
-          alt="زخرفة سفلية"
-          className="h-8 w-auto opacity-95 drop-shadow-sm pointer-events-none"
-        />
-      </div>
+      {{/* 4. الزخرفة السفلية (26.svg) */}
+<div className="w-full flex justify-center mt-3 min-h-[50px] items-center">
+  <img
+    src={bottomDivider}
+    alt="زخرفة سفلية"
+    className="w-40 sm:w-48 h-auto max-h-14 object-contain opacity-95 drop-shadow-sm pointer-events-none"
+  />
+</div>
+
     </div>
   );
 };
