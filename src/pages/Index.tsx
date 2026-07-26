@@ -170,10 +170,10 @@ const Index = () => {
                         </div>
 
                         {/* سطر الدعوة - لمنع نزول الكلمات وتمكين العرض في سطر واحد فقط */}
-<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}>
-  {t("invite_attend")}
-</div>
-
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}>
+                          {t("invite_attend")}
+                        </div>
+                      </div>
 
                       {/* أسماء العرسان */}
                       <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
