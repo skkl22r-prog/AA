@@ -169,11 +169,11 @@ const Index = () => {
                           {t("invite_with_love")}
                         </div>
 
-                        {/* سطر الدعوة - تم إضافة مسافة فوقية وتحتية تفصله عن بقية العناصر */}
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3`}>
-                          {t("invite_attend")}
-                        </div>
-                      </div>
+                        {/* سطر الدعوة - لمنع نزول الكلمات وتمكين العرض في سطر واحد فقط */}
+<div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}>
+  {t("invite_attend")}
+</div>
+
 
                       {/* أسماء العرسان */}
                       <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
