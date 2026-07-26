@@ -138,7 +138,8 @@ const Index = () => {
                 dir="ltr"
                 className="absolute inset-0 flex items-center justify-center px-5 py-6"
               >
-                <div className="translate-y-8 scale-60">
+                {/* تم تعديل translate-y-8 إلى translate-y-16 لتنزيل المحتوى بالكامل لأسفل */}
+                <div className="translate-y-16 scale-60">
                   <div
                     className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
                     style={{
@@ -169,7 +170,7 @@ const Index = () => {
                           {t("invite_with_love")}
                         </div>
 
-                        {/* سطر الدعوة - لمنع نزول الكلمات وتمكين العرض في سطر واحد فقط */}
+                        {/* سطر الدعوة */}
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}>
                           {t("invite_attend")}
                         </div>
