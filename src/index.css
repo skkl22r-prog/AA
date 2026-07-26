@@ -51,6 +51,10 @@
   font-family: "Monasabat";
   src: url("./assets/fonts/Monasabat.ttf") format("truetype");
 }
+@font-face {
+  font-family: "sull";
+  src: url("./assets/fonts/sull.ttf") format("truetype");
+}
 
 @font-face {
   font-family: "AMoshref";
@@ -203,6 +207,9 @@
 
 .font-font1 {
   font-family: "Font1";
+}
+  .font-font1 {
+  font-family: "sull";
 }
 
 .font-amoshref {
