@@ -1,23 +1,13 @@
 import rImg from "@/assets/r.png";
 import { useEffect, useRef, useState } from "react";
-import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays, Sparkles } from "lucide-react";
+import { MapPin, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
 import invitationImg from "@/assets/video-output-9B5ECA8D-034F-419B-A85A-98CA7DF3D9F9-1.mp4";
 import Envelope from "@/components/Envelope";
 import Reveal from "@/components/Reveal";
 import Countdown from "@/components/Countdown";
 import Timeline from "@/components/Timeline";
-import RSVP from "@/components/RSVP";
 import MusicToggle from "@/components/MusicToggle";
-import dividerImg from "@/assets/Photoroom_20260705_140806.png";
-import locationIcon from "@/assets/photo-output.png";
-import flowerDivider from "@/assets/Photoroom_20260705_152753.png";
-import programIcon from "@/assets/Photoroom_20260705_152814.png";
 import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
-import zaffaImg from "@/assets/14.png";
-import dinnerImg from "@/assets/11.png";
-import cameraImg from "@/assets/12.png";
-import kidsImg from "@/assets/13.png";
-import rsvpIcon from "@/assets/Photoroom_20260705_153052.png";
 import { useLang } from "@/i18n/LanguageContext";
 
 // مكون السهم الزخرفي المخصص المأخوذ من الصورة
@@ -30,28 +20,24 @@ const ScrollArrowIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
   >
-    {/* القوس العلوي الأول */}
     <path
       d="M8 6C12 11 20 11 24 6"
       stroke="#F9E9E6"
       strokeWidth="2"
       strokeLinecap="round"
     />
-    {/* القوس الثاني */}
     <path
       d="M8 12C12 17 20 17 24 12"
       stroke="#F9E9E6"
       strokeWidth="2"
       strokeLinecap="round"
     />
-    {/* الخط العمودي الأوسط */}
     <path
       d="M16 14V26"
       stroke="#F9E9E6"
       strokeWidth="2"
       strokeLinecap="round"
     />
-    {/* رأس السهم الزخرفي السفلي */}
     <path
       d="M8 24C12 28 20 28 24 24L16 34L8 24Z"
       fill="#F9E9E6"
@@ -63,11 +49,6 @@ const Index = () => {
   const [opened, setOpened] = useState(false);
   const [showScrollArrow, setShowScrollArrow] = useState(true);
   const { t, lang, toggle } = useLang();
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const startX = useRef(0);
-  const startScroll = useRef(0);
-  const dragging = useRef(false);
 
   // إخفاء السهم عند السحب لأسفل
   useEffect(() => {
@@ -83,29 +64,6 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    dragging.current = true;
-    startX.current = e.touches[0].pageX;
-    startScroll.current = el.scrollLeft;
-  };
-
-  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!dragging.current) return;
-
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const walk = e.touches[0].pageX - startX.current;
-    el.scrollLeft = startScroll.current - walk;
-  };
-
-  const onTouchEnd = () => {
-    dragging.current = false;
-  };
-
   return (
     <div
       className="overflow-x-hidden w-full"
@@ -114,15 +72,6 @@ const Index = () => {
         minHeight: "100vh",
       }}
     >
-      {/* Ornamental gold damask pattern background */}
-      <div
-        aria-hidden
-        className="hidden"
-        style={{
-          backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%23B8860B' stroke-width='0.7' opacity='0.9'><g transform='translate(30 30)'><circle cx='0' cy='0' r='2.2' fill='%23B8860B'/><path d='M0 0 C -5 -3 -8 -8 -5 -12 C -1 -14 3 -11 4 -7'/><path d='M0 0 C 5 -3 8 -8 5 -12 C 1 -14 -3 -11 -4 -7'/><path d='M0 0 C -7 0 -11 5 -9 10 C -5 12 -1 9 0 5'/><path d='M0 0 C 7 0 11 5 9 10 C 5 12 1 9 0 5'/><path d='M0 5 C -2 9 0 13 3 12'/></g><g transform='translate(90 80)'><circle cx='0' cy='0' r='1.8' fill='%23B8860B'/><path d='M0 0 C -4 -2 -6 -6 -4 -9 C -1 -11 2 -8 3 -5'/><path d='M0 0 C 4 -2 6 -6 4 -9 C 1 -11 -2 -8 -3 -5'/><path d='M0 0 C -5 0 -8 4 -7 8 C -4 9 -1 7 0 4'/><path d='M0 0 C 5 0 8 4 7 8 C 4 9 1 7 0 4'/></g><g transform='translate(75 25)'><circle cx='0' cy='0' r='1.5' fill='%23B8860B'/><path d='M0 -4 C -3 -4 -4 -1 -2 1'/><path d='M0 -4 C 3 -4 4 -1 2 1'/><path d='M-3 2 C -5 4 -3 7 0 6'/><path d='M3 2 C 5 4 3 7 0 6'/></g><g transform='translate(20 95)'><circle cx='0' cy='0' r='1.5' fill='%23B8860B'/><path d='M0 -4 C -3 -4 -4 -1 -2 1'/><path d='M0 -4 C 3 -4 4 -1 2 1'/><path d='M-3 2 C -5 4 -3 7 0 6'/><path d='M3 2 C 5 4 3 7 0 6'/></g><path d='M55 55 q 4 -2 8 0' /><path d='M58 56 q 0 3 -2 5'/></g></svg>")`,
-          backgroundSize: "150px 150px",
-        }}
-      />
       <MusicToggle active={opened} />
       <Envelope onOpen={() => setOpened(true)} />
 
@@ -160,6 +109,7 @@ const Index = () => {
             </button>
           </div>
 
+          {/* Section 1: Video and Main Card */}
           <section className="flex justify-center relative z-20">
             <div className="relative w-full aspect-[9/16] overflow-hidden">
               <video
@@ -197,7 +147,6 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center w-full">
-                      {/* الأسطر العلوية */}
                       <div className="-mb-4 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
                           {t("invite_to")}
@@ -215,17 +164,11 @@ const Index = () => {
                           {t("invite_with_love")}
                         </div>
 
-                        <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
-                          <span>{t("word1")}</span>
-                          <span>{t("word2")}</span>
-                        </div>
-
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_attend")}
                         </div>
                       </div>
 
-                      {/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
                       <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
                         <div
                           className={`${
@@ -253,7 +196,6 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* السطران السفليان */}
                       <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
                           {t("invite_god_willing")}
@@ -267,7 +209,6 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* السهم الزخرفي أسفل كرت الفيديو مع الحركة والاختفاء عند السحب */}
               <div
                 className={`absolute bottom-6 left-1/2 -translate-x-1/2 transition-opacity duration-500 z-30 pointer-events-none ${
                   showScrollArrow ? "opacity-100 animate-bounce" : "opacity-0"
@@ -278,7 +219,7 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Countdown */}
+          {/* Section 2: Countdown */}
           <section className="px-4 py-16">
             <Reveal>
               <h2
@@ -301,58 +242,61 @@ const Index = () => {
             </Reveal>
           </section>
 
+          {/* Section 3: Timeline & Details */}
           <section className="px-4 py-12">
-            <div className="text-center mb-8">
-              <h2
-                className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
-                style={{ color: "#EFE6DE" }}
-              >
-                {t("big_word")}
-              </h2>
+            <Reveal>
+              <div className="text-center mb-8">
+                <h2
+                  className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
+                  style={{ color: "#EFE6DE" }}
+                >
+                  {t("big_word")}
+                </h2>
 
-              <p
-                className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-                style={{ color: "#EFE6DE", opacity: 0.8 }}
-              >
-                {t("small_word")}
-              </p>
-            </div>
+                <p
+                  className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
+                  style={{ color: "#EFE6DE", opacity: 0.8 }}
+                >
+                  {t("small_word")}
+                </p>
+              </div>
+            </Reveal>
 
-            <div
-              className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(249,233,230,0.65)",
-                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-              }}
-            >
-              <Timeline />
-            </div>
-
-            <div
-              className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
-              style={{
-                border: "1px solid rgba(249,233,230,0.65)",
-                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-              }}
-            >
-              <img
-                src={newImage}
-                alt=""
-                className="w-full h-full object-cover object-center block"
-              />
-            </div>
-
-            {/* مربع التفاصيل المحاط بالنجوم المتلألئة */}
-            <div className="relative mx-auto mt-12 w-[calc(4*68px+3*12px)]">
-              {/* 🌟 النجوم التي تومض حول الأركان والأطراف */}
-              <Sparkles className="w-3.5 h-3.5 absolute -top-3 -left-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
-              <Sparkles className="w-3.5 h-3.5 absolute -top-3 -right-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
-              <Sparkles className="w-3.5 h-3.5 absolute -bottom-3 -left-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
-              <Sparkles className="w-3.5 h-3.5 absolute -bottom-3 -right-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
-
+            {/* حركة ظهور مربع Timeline */}
+            <Reveal delay={100}>
               <div
-                className="rounded-xl p-6 relative z-10"
+                className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba(249,233,230,0.65)",
+                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                }}
+              >
+                <Timeline />
+              </div>
+            </Reveal>
+
+            {/* حركة ظهور الصورة وسط الصفحة */}
+            <Reveal delay={150}>
+              <div
+                className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
+                style={{
+                  border: "1px solid rgba(249,233,230,0.65)",
+                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                }}
+              >
+                <img
+                  src={newImage}
+                  alt=""
+                  className="w-full h-full object-cover object-center block"
+                />
+              </div>
+            </Reveal>
+
+            {/* حركة ظهور مربع التفاصيل السفلية */}
+            <Reveal delay={200}>
+              <div
+                className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
                 style={{
                   background: "transparent",
                   border: "1px solid rgba(249,233,230,0.65)",
@@ -414,48 +358,57 @@ const Index = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div
-              className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
-                lang === "ar" ? "font-neirizi" : "font-whitney"
-              } text-sm w-[calc(4*68px+3*12px)]`}
-              style={{
-                height: "48px",
-                background: "#F9E9E6",
-                color: "#B78E99",
-              }}
-            >
-              <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
-              <span>{t("location_button")}</span>
-            </div>
-
-            <div
-              className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(249,233,230,0.65)",
-                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-              }}
-            >
-              <img src={rImg} alt="" className="w-full h-auto block" />
-            </div>
-
-            <div className="mt-8 text-center">
-              <h2
-                className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-xl mb-2 font-medium tracking-widest`}
-                style={{ color: "#F9E9E6" }}
+            {/* حركة ظهور زر الموقع */}
+            <Reveal delay={250}>
+              <div
+                className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
+                  lang === "ar" ? "font-neirizi" : "font-whitney"
+                } text-sm w-[calc(4*68px+3*12px)]`}
+                style={{
+                  height: "48px",
+                  background: "#F9E9E6",
+                  color: "#B78E99",
+                }}
               >
-                {t("section2_title")}
-              </h2>
+                <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
+                <span>{t("location_button")}</span>
+              </div>
+            </Reveal>
 
-              <p
-                className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-sm`}
-                style={{ color: "#F9E9E6", opacity: 0.8 }}
+            {/* حركة ظهور الصورة الأخيرة */}
+            <Reveal delay={150}>
+              <div
+                className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba(249,233,230,0.65)",
+                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
+                }}
               >
-                {t("section2_subtitle")}
-              </p>
-            </div>
+                <img src={rImg} alt="" className="w-full h-auto block" />
+              </div>
+            </Reveal>
+
+            {/* حركة ظهور النص الختامي */}
+            <Reveal delay={200}>
+              <div className="mt-8 text-center">
+                <h2
+                  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-xl mb-2 font-medium tracking-widest`}
+                  style={{ color: "#F9E9E6" }}
+                >
+                  {t("section2_title")}
+                </h2>
+
+                <p
+                  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-sm`}
+                  style={{ color: "#F9E9E6", opacity: 0.8 }}
+                >
+                  {t("section2_subtitle")}
+                </p>
+              </div>
+            </Reveal>
           </section>
 
           {/* Footer */}
