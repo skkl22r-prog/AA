@@ -63,7 +63,7 @@ const ar: Dict = {
   save_qr: "حفظ الباركود",
   section2_title: "Mohammed | Hanee",
   section2_subtitle: "12 . 08 . 2026",
-  tiktok: "@shim2t",
+  tiktok: "غيمة",
 };
 
 const en: Dict = {
