@@ -226,30 +226,34 @@ const Index = () => {
                       </div>
 
                   {/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
+{/* أسماء العرسان محذية وموزونة باللغتين */}
 <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
   <div
-className={`${lang === "ar" ? "font-a text-[2.7rem] sm:text-[3.4rem]" : "font-whitney text-4xl sm:text-5xl"} tracking-wide leading-none text-center flex items-center justify-center gap-3`}
+    className={`${
+      lang === "ar"
+        ? "font-a text-[3.2rem] sm:text-[4rem] -translate-y-3"
+        : "font-whitney text-4xl sm:text-5xl translate-y-0"
+    } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
     style={{ lineHeight: 0.85 }}
     dir={lang === "ar" ? "rtl" : "ltr"}
   >
-    <span>{t("bride_name")}</span>
+    <span className="inline-flex items-center">{t("bride_name")}</span>
     <span
-  className={`${
-    lang === "ar"
-      ? "font-amoshref text-3xl sm:text-4xl"
-      : "font-whitney text-2xl sm:text-3xl"
-  } opacity-80 px-1`}
-  style={{
-    position: "relative",
-    top: lang === "ar" ? "4px" : "0px",
-    alignSelf: "center",
-  }}
->
-  {t("and")}
-</span>
-    <span>{t("groom_name")}</span>
+      className={`${
+        lang === "ar"
+          ? "font-amoshref text-3xl sm:text-4xl"
+          : "font-whitney text-2xl sm:text-3xl"
+      } opacity-80 px-1 inline-flex items-center self-center`}
+      style={{
+        transform: lang === "ar" ? "translateY(2px)" : "translateY(0px)",
+      }}
+    >
+      {t("and")}
+    </span>
+    <span className="inline-flex items-center">{t("groom_name")}</span>
   </div>
 </div>
+
 
 
                       {/* السطران السفليان */}
