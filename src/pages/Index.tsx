@@ -435,21 +435,20 @@ const Index = () => {
             </Reveal>
           </section>
 
-          {/* Footer */}
-          <footer className="px-4 py-12 text-center">
-            <Reveal>
-              <a
-                href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mt-2 text-sm underline underline-offset-4"
-                style={{ color: "#EFE6DE" }}
-              >
-                               {t("tiktok")}
-
-              </a>
-            </Reveal>
-          </footer>
+         {/* Footer */}
+<footer className="px-4 py-12 text-center">
+  <Reveal>
+    <a
+      href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block mt-2 text-sm underline underline-offset-4"
+      style={{ color: "#EFE6DE" }}
+    >
+      {t("tiktok")}
+    </a>
+  </Reveal>
+</footer>
         </main>
       )}
     </div>
