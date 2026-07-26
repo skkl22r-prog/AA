@@ -445,7 +445,9 @@ const Index = () => {
                 className="block mt-2 text-sm underline underline-offset-4"
                 style={{ color: "#EFE6DE" }}
               >
-                @shim2t
+                               {t("tiktok")}
+};
+
               </a>
             </Reveal>
           </footer>
