@@ -3,6 +3,10 @@ import Reveal from "./Reveal";
 import { Users, Star, UtensilsCrossed, Heart, Sparkles } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
+// استيراد زخارف הـ SVG المخصصة من مجلد assets
+import topDivider from "@/assets/25.svg";
+import bottomDivider from "@/assets/26.svg";
+
 const CircleSparkles = () => (
   <>
     <Sparkles className="w-2 h-2 absolute top-1 left-1 opacity-50 text-[#F9E9E6]" />
@@ -29,11 +33,13 @@ const Timeline = () => {
       <Sparkles className="w-3.5 h-3.5 absolute bottom-3 left-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute bottom-3 right-3 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
 
-      {/* 2. مكان مخصص للزخرفة العلوية */}
+      {/* 2. الزخرفة العلوية (25.svg) */}
       <div className="w-full flex justify-center mb-4 min-h-[35px] items-center">
-        <span className="text-[10px] opacity-40 border border-dashed border-[#F9E9E6]/30 px-3 py-1 rounded">
-          [ مكان زخرفة الطيور والفيونكة ]
-        </span>
+        <img
+          src={topDivider}
+          alt="زخرفة علوية"
+          className="h-10 w-auto opacity-95 drop-shadow-sm pointer-events-none"
+        />
       </div>
 
       {/* 3. الخط الزمني والأحداث */}
@@ -53,7 +59,6 @@ const Timeline = () => {
               <React.Fragment key={i}>
                 <Reveal delay={i * 150}>
                   <div className="relative flex items-center justify-center min-h-[55px]">
-                    
                     {/* الدائرة المركزية */}
                     <div
                       className="absolute left-1/2 -translate-x-1/2 w-11 h-11 rounded-full z-20 flex items-center justify-center bg-[#A77C86] shrink-0"
@@ -69,12 +74,12 @@ const Timeline = () => {
                     {/* المحتوى الموزع بدقة على الجانبين */}
                     <div className="w-full flex items-center">
                       {isEven ? (
-                        /* الحدث جهة اليسار بالهيكل */
-                        <div 
+                        /* الحدث جهة اليسار بالهيكل (الجهة الأولى) */
+                        <div
                           className="w-1/2 pr-8 text-right flex flex-col items-end z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="font-amoshref text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                          <span className="text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
                             {e.time}
                           </span>
                           <span className={`text-xs sm:text-sm leading-tight mt-0.5 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
@@ -86,12 +91,12 @@ const Timeline = () => {
                       )}
 
                       {!isEven ? (
-                        /* الحدث جهة اليمين بالهيكل */
-                        <div 
+                        /* الحدث جهة اليمين بالهيكل (الجهة الثانية) */
+                        <div
                           className="w-1/2 pl-8 text-left flex flex-col items-start z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="font-amoshref text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                          <span className="text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
                             {e.time}
                           </span>
                           <span className={`text-xs sm:text-sm leading-tight mt-0.5 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
@@ -102,7 +107,6 @@ const Timeline = () => {
                         <div className="w-1/2" />
                       )}
                     </div>
-
                   </div>
                 </Reveal>
 
@@ -120,11 +124,13 @@ const Timeline = () => {
         </div>
       </div>
 
-      {/* 4. مكان مخصص للزخرفة السفلية */}
+      {/* 4. الزخرفة السفلية (26.svg) */}
       <div className="w-full flex justify-center mt-4 min-h-[30px] items-center">
-        <span className="text-[10px] opacity-40 border border-dashed border-[#F9E9E6]/30 px-3 py-1 rounded">
-          [ مكان الزخرفة السفلية ]
-        </span>
+        <img
+          src={bottomDivider}
+          alt="زخرفة سفلية"
+          className="h-8 w-auto opacity-95 drop-shadow-sm pointer-events-none"
+        />
       </div>
     </div>
   );
