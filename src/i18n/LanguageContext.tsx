@@ -12,7 +12,7 @@ const ar: Dict = {
   invite_day: "الذي يُزهر به القلب وتكتمل به الحكاية",
   invite_with_love: " ",
   and: "&",
-  invite_attend:  "نفتح لكم أبواب فرحتنابدعوتكم لحضور حفل زفاف",
+  invite_attend:  "نفتح لكم أبواب فرحتنا بدعوتكم لحضور حفل زفاف",
   bride_name: "سلطـــان",
   groom_name: "حـــنين",
   invite_god_willing: "وذلك بمشيئة الله ",
