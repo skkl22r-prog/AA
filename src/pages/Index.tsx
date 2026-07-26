@@ -1,5 +1,5 @@
 import rImg from "@/assets/r.png";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { MapPin, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
 import invitationImg from "@/assets/video-output-9B5ECA8D-034F-419B-A85A-98CA7DF3D9F9-1.mp4";
 import Envelope from "@/components/Envelope";
@@ -11,8 +11,8 @@ import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
 import starSvg from "@/assets/countdown-star.svg";
 import { useLang } from "@/i18n/LanguageContext";
 
-// رابط خرائط جوجل المحدث مباشرة للزر
-const LOCATION_MAP_URL = "https://www.google.com/maps/search/?api=1&query=قاعة+درة+النجوم+الطائف";
+// رابط خرائط جوجل المحدث ومعالج لترميز النصوص العربية بشكل آمن
+const LOCATION_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("قاعة درة النجوم الطائف")}`;
 
 // مكون السهم الزخرفي المخصص
 const ScrollArrowIcon = () => (
@@ -297,7 +297,7 @@ const Index = () => {
               </div>
             </Reveal>
 
-            {/* حركة ظهور مربع التفاصيل السفلية مع النجوم في أماكن الدوائر */}
+            {/* حركة ظهور مربع التفاصيل السفلية مع النجوم */}
             <Reveal delay={200}>
               <div
                 className="relative mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
@@ -308,21 +308,17 @@ const Index = () => {
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
-                {/* 1. نجمة الدائرة الأولى (يمين الأعلى بجانب أيقونة الموقع) */}
+                {/* النجوم في مواضعها */}
                 <img
                   src={starSvg}
                   alt=""
                   className="absolute top-5 right-2 w-5 h-5 pointer-events-none opacity-90"
                 />
-
-                {/* 2. نجمة الدائرة الثانية (يسار المنتصف) */}
                 <img
                   src={starSvg}
                   alt=""
                   className="absolute top-16 left-6 w-5 h-5 pointer-events-none opacity-90"
                 />
-
-                {/* 3. نجمة الدائرة الثالثة (أسفل اليسار) */}
                 <img
                   src={starSvg}
                   alt=""
@@ -385,7 +381,7 @@ const Index = () => {
               </div>
             </Reveal>
 
-            {/* زر الموقع بالرابط المطلوب مباشرة */}
+            {/* زر الموقع */}
             <Reveal delay={250}>
               <a
                 href={LOCATION_MAP_URL}
