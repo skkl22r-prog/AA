@@ -10,7 +10,10 @@ import MusicToggle from "@/components/MusicToggle";
 import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
 import { useLang } from "@/i18n/LanguageContext";
 
-// مكون السهم الزخرفي المخصص المأخوذ من الصورة
+// رابط خرائط جوجل المحدث
+const LOCATION_MAP_URL = "Https://maps.app.goo.gl/4gvwcjrx4sjcF4Rf7?g_st=ic";
+
+// مكون السهم الزخرفي المخصص
 const ScrollArrowIcon = () => (
   <svg
     width="32"
@@ -360,21 +363,25 @@ const Index = () => {
               </div>
             </Reveal>
 
-            {/* حركة ظهور زر الموقع */}
+            {/* زر الموقع المحدث بالرابط الجديد */}
             <Reveal delay={250}>
-              <div
+              <a
+                href={LOCATION_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
                   lang === "ar" ? "font-neirizi" : "font-whitney"
-                } text-sm w-[calc(4*68px+3*12px)]`}
+                } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
                 style={{
                   height: "48px",
                   background: "#F9E9E6",
                   color: "#B78E99",
+                  textDecoration: "none",
                 }}
               >
                 <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
                 <span>{t("location_button")}</span>
-              </div>
+              </a>
             </Reveal>
 
             {/* حركة ظهور الصورة الأخيرة */}
