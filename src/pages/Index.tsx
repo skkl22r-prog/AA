@@ -378,7 +378,8 @@ const Index = () => {
             {/* زر الموقع المحدث بالرابط الجديد */}
             <Reveal delay={250}>
               <a
-                href={LOCATION_MAP_URL}
+const LOCATION_MAP_URL =
+  "https://www.google.com/maps/search/?api=1&query=قاعة+درة+النجوم+الطائف";
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
