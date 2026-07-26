@@ -126,7 +126,7 @@ date_line_hijri: "29 . 02 . 1448",
   // QR & Footer
   qr_title: "Your Entry QR Code",
   save_qr: "Save QR Code",
-  section2_title: "Mohammed | Hanee",
+  section2_title: "Mohammed | Haneen",
   section2_subtitle: "12 . 08 . 2026",
   tiktok: "@shim2t",
 };
