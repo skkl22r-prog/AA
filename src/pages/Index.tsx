@@ -232,7 +232,7 @@ const Index = () => {
     className={`${
       lang === "ar"
         ? "font-a text-[3.2rem] sm:text-[4rem] -translate-y-3"
-        : "font-whitney text-4xl sm:text-5xl translate-y-0"
+        : "font-whitney text-4xl sm:text-5xl translate-y-2"
     } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
     style={{ lineHeight: 0.85 }}
     dir={lang === "ar" ? "rtl" : "ltr"}
@@ -245,7 +245,7 @@ const Index = () => {
           : "font-whitney text-2xl sm:text-3xl"
       } opacity-80 px-1 inline-flex items-center self-center`}
       style={{
-        transform: lang === "ar" ? "translateY(2px)" : "translateY(0px)",
+        transform: lang === "ar" ? "translateY(8px)" : "translateY(0px)",
       }}
     >
       {t("and")}
@@ -253,6 +253,7 @@ const Index = () => {
     <span className="inline-flex items-center">{t("groom_name")}</span>
   </div>
 </div>
+
 
 
 
