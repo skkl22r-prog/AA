@@ -16,7 +16,10 @@ const ar: Dict = {
   bride_name: "سلطـــان",
   groom_name: "حـــنين",
   invite_god_willing: "وذلك بمشيئة الله ",
-  date_line: "29 . 02 . 1448 | 12 . 08 . 2026",
+  date_line: "12 . 08 . 2026",
+  // اضف هذا السطر للقاموس العربي:
+date_line_hijri: "١٤٤٧/٠٢/٠١ هـ",
+
 
   // Countdown
   countdown_date: "حتى نلتقي في يومنا السعيد",
