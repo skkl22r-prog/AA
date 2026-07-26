@@ -240,7 +240,7 @@ const Index = () => {
     <span
       className={`${
         lang === "ar"
-          ? "font-SARAhhh1 text-3xl sm:text-4xl"
+          ? "font-sull text-3xl sm:text-4xl"
           : "font-whitney text-2xl sm:text-3xl"
       } opacity-80 px-1 inline-flex items-center self-center`}
       style={{
