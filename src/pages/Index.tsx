@@ -228,14 +228,25 @@ const Index = () => {
                   {/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
 <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
   <div
-    className={`${lang === "ar" ? "font-a" : "font-whitney"} text-4xl sm:text-5xl tracking-wide leading-none text-center flex items-center justify-center gap-3`}
+className={`${lang === "ar" ? "font-a text-[2.7rem] sm:text-[3.4rem]" : "font-whitney text-4xl sm:text-5xl"} tracking-wide leading-none text-center flex items-center justify-center gap-3`}
     style={{ lineHeight: 0.85 }}
     dir={lang === "ar" ? "rtl" : "ltr"}
   >
     <span>{t("bride_name")}</span>
-    <span className="font-whitney text-2xl sm:text-3xl opacity-80 px-1">
-      {lang === "ar" ? "و" : "and"}
-    </span>
+    <span
+  className={`${
+    lang === "ar"
+      ? "font-amoshref text-3xl sm:text-4xl"
+      : "font-whitney text-2xl sm:text-3xl"
+  } opacity-80 px-1`}
+  style={{
+    position: "relative",
+    top: lang === "ar" ? "4px" : "0px",
+    alignSelf: "center",
+  }}
+>
+  {t("and")}
+</span>
     <span>{t("groom_name")}</span>
   </div>
 </div>
