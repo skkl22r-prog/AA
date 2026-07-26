@@ -29,9 +29,9 @@ const Timeline = () => {
   const { t, lang } = useLang();
 
   const events = [
-    { time: "8:30 PM", labelKey: "reception", icon: Users },
-    { time: "10:30 PM", labelKey: "zaffa", icon: Star },
-    { time: "12:00 AM", labelKey: "dinner", icon: UtensilsCrossed },
+    { time: "8:00 PM", labelKey: "reception", icon: Users },
+    { time: "11:00 PM", labelKey: "zaffa", icon: Star },
+    { time: "1:00 AM", labelKey: "dinner", icon: UtensilsCrossed },
   ];
 
   return (
