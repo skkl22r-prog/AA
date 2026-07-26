@@ -1,6 +1,6 @@
 import rImg from "@/assets/r.png";
 import { useEffect, useRef, useState } from "react";
-import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
+import { MapPin, Heart, QrCode, Baby, Camera, Clock, CalendarDays, Sparkles } from "lucide-react";
 import invitationImg from "@/assets/video-output-9B5ECA8D-034F-419B-A85A-98CA7DF3D9F9-1.mp4";
 import Envelope from "@/components/Envelope";
 import Reveal from "@/components/Reveal";
@@ -225,39 +225,33 @@ const Index = () => {
                         </div>
                       </div>
 
-                  {/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
-<div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
-  <div
-    className={`${
-      lang === "ar"
-        ? "font-a text-[3.2rem] sm:text-[4rem] -translate-y-3"
-        : "font-whitney text-4xl sm:text-5xl translate-y-7"
-    } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
-    style={{ lineHeight: 0.85 }}
-    dir={lang === "ar" ? "rtl" : "ltr"}
-  >
-    <span className="inline-flex items-center">{t("bride_name")}</span>
-    <span
-      className={`${
-        lang === "ar"
-          ? "font-sull text-5xl sm:text-6xl"
-          : "font-whitney text-2xl sm:text-3xl"
-      } opacity-80 px-1 inline-flex items-center self-center`}
-      style={{
-        transform: lang === "ar" ? "translateY(24px)" : "translateY(0px)",
-      }}
-    >
-      {t("and")}
-    </span>
-    <span className="inline-flex items-center">{t("groom_name")}</span>
-  </div>
-</div>
-
-
-
-
-
-
+                      {/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
+                      <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
+                        <div
+                          className={`${
+                            lang === "ar"
+                              ? "font-a text-[3.2rem] sm:text-[4rem] -translate-y-3"
+                              : "font-whitney text-4xl sm:text-5xl translate-y-7"
+                          } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
+                          style={{ lineHeight: 0.85 }}
+                          dir={lang === "ar" ? "rtl" : "ltr"}
+                        >
+                          <span className="inline-flex items-center">{t("bride_name")}</span>
+                          <span
+                            className={`${
+                              lang === "ar"
+                                ? "font-sull text-5xl sm:text-6xl"
+                                : "font-whitney text-2xl sm:text-3xl"
+                            } opacity-80 px-1 inline-flex items-center self-center`}
+                            style={{
+                              transform: lang === "ar" ? "translateY(24px)" : "translateY(0px)",
+                            }}
+                          >
+                            {t("and")}
+                          </span>
+                          <span className="inline-flex items-center">{t("groom_name")}</span>
+                        </div>
+                      </div>
 
                       {/* السطران السفليان */}
                       <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
@@ -349,68 +343,76 @@ const Index = () => {
               />
             </div>
 
-            {/* مربع التفاصيل */}
-            <div
-              className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(249,233,230,0.65)",
-                boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-              }}
-              dir={lang === "ar" ? "rtl" : "ltr"}
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span
-                  className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-                  style={{ color: "#EFE6DE" }}
-                >
-                  {t("event_location")}
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3 mb-5">
-                <Clock className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                  {t("arrival_time")}
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3 mb-6">
-                <CalendarDays className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                  {t("event_date")}
-                </span>
-              </div>
+            {/* مربع التفاصيل المحاط بالنجوم المتلألئة */}
+            <div className="relative mx-auto mt-12 w-[calc(4*68px+3*12px)]">
+              {/* 🌟 النجوم التي تومض حول الأركان والأطراف */}
+              <Sparkles className="w-3.5 h-3.5 absolute -top-3 -left-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
+              <Sparkles className="w-3.5 h-3.5 absolute -top-3 -right-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
+              <Sparkles className="w-3.5 h-3.5 absolute -bottom-3 -left-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
+              <Sparkles className="w-3.5 h-3.5 absolute -bottom-3 -right-3 text-[#F9E9E6] opacity-70 animate-pulse pointer-events-none" />
 
               <div
-                className="mx-auto mb-6"
+                className="rounded-xl p-6 relative z-10"
                 style={{
-                  width: "90%",
-                  height: "1px",
-                  background: "rgba(249,233,230,0.65)",
+                  background: "transparent",
+                  border: "1px solid rgba(249,233,230,0.65)",
+                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
                 }}
-              />
+                dir={lang === "ar" ? "rtl" : "ltr"}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <span
+                    className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
+                    style={{ color: "#EFE6DE" }}
+                  >
+                    {t("event_location")}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-3 mb-5">
-                <Baby className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                  {t("no_kids")}
-                </span>
-              </div>
+                <div className="flex items-center gap-3 mb-5">
+                  <Clock className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                    {t("arrival_time")}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-3 mb-5">
-                <Camera className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                  {t("no_cameras")}
-                </span>
-              </div>
+                <div className="flex items-center gap-3 mb-6">
+                  <CalendarDays className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                    {t("event_date")}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-3">
-                <QrCode className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                  {t("personal_invitation")}
-                </span>
+                <div
+                  className="mx-auto mb-6"
+                  style={{
+                    width: "90%",
+                    height: "1px",
+                    background: "rgba(249,233,230,0.65)",
+                  }}
+                />
+
+                <div className="flex items-center gap-3 mb-5">
+                  <Baby className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                    {t("no_kids")}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 mb-5">
+                  <Camera className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                    {t("no_cameras")}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <QrCode className="w-5 h-5" style={{ color: "#EFE6DE" }} />
+                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
+                    {t("personal_invitation")}
+                  </span>
+                </div>
               </div>
             </div>
 
