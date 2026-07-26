@@ -151,8 +151,8 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center w-full">
-                      {/* النصوص الترحيبية - تم تصغير حجمها إلى text-sm sm:text-base */}
-                      <div className="-mb-4 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
+                      {/* الأسطر العلويّة */}
+                      <div className="flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
                           {t("invite_to")}
                         </div>
@@ -169,12 +169,13 @@ const Index = () => {
                           {t("invite_with_love")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base`}>
+                        {/* سطر الدعوة - تم إضافة مسافة فوقية وتحتية تفصله عن بقية العناصر */}
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3`}>
                           {t("invite_attend")}
                         </div>
                       </div>
 
-                      {/* أسماء العرسان - تم تصغير الحجم */}
+                      {/* أسماء العرسان */}
                       <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
                         <div
                           className={`${
@@ -202,13 +203,17 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {/* التاريخ والعبارات السفلية فوق الفيديو - تم تصغير الحجم */}
+                      {/* التاريخ والسَطر الجديد المضاف تحت التاريخ الحالي */}
                       <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
                         <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base`}>
                           {t("invite_god_willing")}
                         </div>
                         <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base`}>
                           {t("date_line")}
+                        </div>
+                        {/* التاريخ الثاني المضاف */}
+                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base opacity-90`}>
+                          {t("date_line_hijri" as any)}
                         </div>
                       </div>
                     </div>
