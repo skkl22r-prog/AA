@@ -30,7 +30,7 @@ const Timeline = () => {
 
   const events = [
     { time: "8:00 PM", labelKey: "reception", icon: Users },
-    { time: "11:00 PM", labelKey: "zaffa", icon: Star },
+    { time: "11:30 PM", labelKey: "zaffa", icon: Star },
     { time: "1:00 AM", labelKey: "dinner", icon: UtensilsCrossed },
   ];
 
