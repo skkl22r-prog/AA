@@ -55,7 +55,10 @@
   font-family: "wa";
   src: url("./assets/fonts/wa.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "sull";
+  src: url("./assets/fonts/sull.ttf") format("truetype");
+}
 @font-face {
   font-family: "AMoshref";
   src: url("./assets/fonts/AMoshref.ttf") format("truetype");
@@ -211,7 +214,9 @@
   .font-wa {
   font-family: "wa";
 }
-
+  .font-sull {
+  font-family: "sull";
+    
 .font-amoshref {
   font-family: "AMoshref";
 }
