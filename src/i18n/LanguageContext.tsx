@@ -18,7 +18,7 @@ const ar: Dict = {
   invite_god_willing: "وذلك بمشيئة الله ",
   date_line: "12 . 08 . 2026",
   // اضف هذا السطر للقاموس العربي:
-date_line_hijri: "١٤٤٧/٠٢/٠١ هـ",
+date_line_hijri: "١٤٤٨/٠٢/٢٩ هـ",
 
 
   // Countdown
@@ -108,7 +108,7 @@ const en: Dict = {
   // Restrictions
   no_cameras: "No Cameras Allowed",
   no_kids: "Adults Only",
-
+date_line_hijri: "29 . 02 . 1448",
   // RSVP
   rsvp_title: "RSVP",
   rsvp_sub: "We would be honored by your presence",
