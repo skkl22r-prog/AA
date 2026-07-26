@@ -3,10 +3,6 @@ import Reveal from "./Reveal";
 import { Users, Star, UtensilsCrossed, Heart, Sparkles } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
-// استيراد صور الـ SVG
-import topDivider from "@/assets/25.svg";
-import bottomDivider from "@/assets/26.svg";
-
 const CircleSparkles = () => (
   <>
     <Sparkles className="w-2 h-2 absolute top-1 left-1 opacity-50 text-[#F9E9E6]" />
@@ -14,6 +10,19 @@ const CircleSparkles = () => (
     <Sparkles className="w-2 h-2 absolute bottom-1 left-1 opacity-50 text-[#F9E9E6]" />
     <Sparkles className="w-2 h-2 absolute bottom-1 right-1 opacity-50 text-[#F9E9E6]" />
   </>
+);
+
+// فاصل ناعم عبارة عن خط بعرض محدد ويتوسطه قلب صغير
+const HeartDivider = () => (
+  <div className="relative w-full flex items-center justify-center my-2">
+    <div
+      className="w-2/3 h-px"
+      style={{ background: "rgba(249, 233, 230, 0.35)" }}
+    />
+    <div className="absolute bg-[#A77C86] px-1 rounded-full">
+      <Heart className="w-3 h-3 text-[#F9E9E6]/80 fill-[#F9E9E6]/30" />
+    </div>
+  </div>
 );
 
 const Timeline = () => {
@@ -26,24 +35,18 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="relative w-full mx-auto py-2 px-2 text-[#F9E9E6]">
+    <div className="relative w-full mx-auto py-3 px-2 text-[#F9E9E6]">
       {/* 1. نجمات أركان المربع */}
       <Sparkles className="w-3.5 h-3.5 absolute top-2 left-2 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute top-2 right-2 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute bottom-2 left-2 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
       <Sparkles className="w-3.5 h-3.5 absolute bottom-2 right-2 text-[#F9E9E6] opacity-60 animate-pulse pointer-events-none" />
 
-      {/* 2. الزخرفة العلوية (25.svg) - تم قص الفراغ الداخلي بسحب المكون */}
-      <div className="w-full flex justify-center items-center h-10 overflow-hidden my-1">
-        <img
-          src={topDivider}
-          alt="زخرفة علوية"
-          className="w-[90%] max-w-[260px] h-auto object-contain scale-125 opacity-95 pointer-events-none"
-        />
-      </div>
+      {/* 2. الفاصل العلوي (خط مع قلب صغير) */}
+      <HeartDivider />
 
       {/* 3. الخط الزمني والأحداث */}
-      <div className="relative my-2" dir="ltr">
+      <div className="relative my-3" dir="ltr">
         {/* الخط العمودي خلف الدوائر */}
         <div
           className="absolute top-2 bottom-2 left-1/2 -translate-x-1/2 w-px pointer-events-none"
@@ -124,14 +127,8 @@ const Timeline = () => {
         </div>
       </div>
 
-      {/* 4. الزخرفة السفلية (26.svg) - قص الفراغ مع تكبير الرسمة بـ scale */}
-      <div className="w-full flex justify-center items-center h-8 overflow-hidden my-1">
-        <img
-          src={bottomDivider}
-          alt="زخرفة سفلية"
-          className="w-[85%] max-w-[240px] h-auto object-contain scale-125 opacity-95 pointer-events-none"
-        />
-      </div>
+      {/* 4. الفاصل السفلي (خط مع قلب صغير) */}
+      <HeartDivider />
     </div>
   );
 };
