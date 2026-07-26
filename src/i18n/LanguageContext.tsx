@@ -30,7 +30,7 @@ const ar: Dict = {
   big_word: "التفاصيل",
   small_word: "كل ما تحتاجون معرفته عن يومنا السعيد",
   location_button: "الموقع",
-  event_location: "موقع الحفل",
+  event_location: "قاعة درة النجوم",
   event_date: "الأربعاء 12 أغسطس 2026",
   arrival_time: "8:00 مساءً",
   personal_invitation: "الدعوة شخصية",
@@ -61,8 +61,8 @@ const ar: Dict = {
   // QR & Footer
   qr_title: "باركود الدخول الخاص بك",
   save_qr: "حفظ الباركود",
-  section2_title: "12 . 08 . 2026",
-  section2_subtitle: "We can't wait to celebrate with you",
+  section2_title: "Mohammed | Hanee",
+  section2_subtitle: "12 . 08 . 2026",
   tiktok: "@shim2t",
 };
 
@@ -92,7 +92,7 @@ const en: Dict = {
   big_word: "Details",
   small_word: "Everything you need to know about our day",
   location_button: "Location",
-  event_location: "Event Venue",
+  event_location: "Durat Al Nujoom Hall",
   event_date: "Wednesday, Aug 12, 2026",
   arrival_time: "8:00 PM",
   personal_invitation: "Personal Invitation",
@@ -123,8 +123,8 @@ const en: Dict = {
   // QR & Footer
   qr_title: "Your Entry QR Code",
   save_qr: "Save QR Code",
-  section2_title: "12 . 08 . 2026",
-  section2_subtitle: "We can't wait to celebrate with you",
+  section2_title: "Mohammed | Hanee",
+  section2_subtitle: "12 . 08 . 2026",
   tiktok: "@shim2t",
 };
 
