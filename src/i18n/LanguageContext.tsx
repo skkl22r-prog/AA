@@ -10,12 +10,12 @@ const ar: Dict = {
   invite_to: "في ليلةٍ اختارها الله لتكون أجمل البدايات",
   invite_join: "نجتمع على فرحةٍ طال انتظارها وننتظر حضوركم",
   invite_day: "الذي يُزهر به القلب وتكتمل به الحكاية",
-  invite_with_love: "نفتح لكم أبواب فرحتنابدعوتكم لحضور حفل زفاف",
+  invite_with_love: " ",
   and: "&",
-  invite_attend: "  ",
+  invite_attend:  "نفتح لكم أبواب فرحتنابدعوتكم لحضور حفل زفاف",
   bride_name: "سلطـــان",
   groom_name: "حـــنين",
-  invite_god_willing: "وذلك بمشيئة الله تعالى يوم الأربعاء",
+  invite_god_willing: "وذلك بمشيئة الله ",
   date_line: "29 . 02 . 1448 | 12 . 08 . 2026",
 
   // Countdown
