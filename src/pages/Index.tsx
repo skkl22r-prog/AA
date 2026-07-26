@@ -297,10 +297,21 @@ const Index = () => {
               </div>
             </Reveal>
 
-            {/* حركة ظهور مربع التفاصيل السفلية مع نجوم countdown-star.svg */}
+            {/* النجمة في الأعلى مستقلة تماماً ومطابقة لترتيب العد التنازلي */}
+            <Reveal delay={180}>
+              <div className="flex justify-center mt-12 mb-3">
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="w-6 h-6 object-contain"
+                />
+              </div>
+            </Reveal>
+
+            {/* حركة ظهور مربع التفاصيل السفلية */}
             <Reveal delay={200}>
               <div
-                className="relative mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
+                className="mx-auto rounded-xl w-[calc(4*68px+3*12px)] p-6"
                 style={{
                   background: "transparent",
                   border: "1px solid rgba(249,233,230,0.65)",
@@ -308,28 +319,6 @@ const Index = () => {
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
-                {/* نجوم زخرفية مضافة حول وفي أعلى المربع */}
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute -top-3 -right-3 w-6 h-6 pointer-events-none opacity-90 animate-pulse"
-                />
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute -top-3 -left-3 w-6 h-6 pointer-events-none opacity-90 animate-pulse"
-                />
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute -bottom-3 -right-3 w-5 h-5 pointer-events-none opacity-80"
-                />
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute -bottom-3 -left-3 w-5 h-5 pointer-events-none opacity-80"
-                />
-
                 <div className="flex items-center gap-3 mb-5">
                   <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
                   <span
