@@ -180,66 +180,85 @@ const Index = () => {
                 }}
               />
 
-           <div
-  dir={lang === "ar" ? "rtl" : "ltr"}
-  className="absolute inset-0 flex items-center justify-center px-5 py-6"
->
-  <div className="translate-y-4 scale-90 w-full flex justify-center">
-    <div
-      className="flex flex-col items-center text-center px-4 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-3 text-reveal"
-      style={{
-        background: "transparent",
-        color: "#F9E9E6",
-        textShadow: "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
-      }}
-    >
-      {/* 1. السطور العلوية */}
-      <div className="flex flex-col items-center gap-1 relative z-10 mb-2">
-        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("invite_to")}
-        </div>
-        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("invite_join")}
-        </div>
-        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("invite_day")}
-        </div>
-        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("invite_with_love")}
-        </div>
-        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("invite_attend")}
-        </div>
-      </div>
+              <div
+                dir={lang === "ar" ? "rtl" : "ltr"}
+                className="absolute inset-0 flex items-center justify-center px-5 py-6"
+              >
+                <div className="translate-y-8 scale-60">
+                  <div
+                    className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
+                    style={{
+                      background: "transparent",
+                      backdropFilter: "none",
+                      WebkitBackdropFilter: "none",
+                      color: "#F9E9E6",
+                      textShadow:
+                        "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
+                    }}
+                  >
+                    <div className="translate-y-3 flex flex-col items-center">
+                      {/* الأسطر العلوية */}
+                      <div className="-mb-4 flex flex-col items-center gap-1 relative z-10">
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_to")}
+                        </div>
 
-      {/* 2. أسماء العرسان - مساحة ثابتة ومحاذاة محكمة تمنع التداخل */}
-      <div className="my-3 py-2 flex items-center justify-center gap-3 w-full min-h-[60px]">
-        <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-4xl sm:text-5xl leading-none`}>
-          {t("bride_name")}
-        </span>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_join")}
+                        </div>
 
-        <span className="font-amoshref text-2xl sm:text-3xl opacity-90 px-1">
-          {t("and")}
-        </span>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_day")}
+                        </div>
 
-        <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-4xl sm:text-5xl leading-none`}>
-          {t("groom_name")}
-        </span>
-      </div>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                          {t("invite_with_love")}
+                        </div>
 
-      {/* 3. السطور السفلية */}
-      <div className="mt-2 flex flex-col items-center gap-1 relative z-10">
-        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("invite_god_willing")}
-        </div>
-        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-base sm:text-lg whitespace-nowrap`}>
-          {t("date_line")}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                        <div className="hidden items-center justify-center gap-20 font-tajawal text-lg sm:text-xl">
+                          <span>{t("word1")}</span>
+                          <span>{t("word2")}</span>
+                        </div>
 
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                          {t("invite_attend")}
+                        </div>
+                      </div>
+
+                      {/* أسماء العرسان */}
+                      <div
+                        className="font-whitney text-4xl sm:text-5xl leading-none my-2 py-0 tracking-wide"
+                        style={{ lineHeight: 0.85 }}
+                        dir="ltr"
+                      >
+                        Sultan
+
+                        <span
+                          className="font-whitney"
+                          style={{
+                            fontSize: "0.45em",
+                            margin: "0 14px",
+                          }}
+                        >
+                          &
+                        </span>
+
+                        Haneen
+                      </div>
+
+                      {/* السطران السفليان */}
+                      <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10">
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                          {t("invite_god_willing")}
+                        </div>
+                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-lg sm:text-xl`}>
+                          {t("date_line")}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* السهم الزخرفي أسفل كرت الفيديو مع الحركة والاختفاء عند السحب */}
               <div
