@@ -151,34 +151,36 @@ const Index = () => {
                     }}
                   >
                     <div className="translate-y-3 flex flex-col items-center w-full">
+                      {/* النصوص الترحيبية - تم تصغير حجمها إلى text-sm sm:text-base */}
                       <div className="-mb-4 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
                           {t("invite_to")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
                           {t("invite_join")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
                           {t("invite_day")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl whitespace-nowrap`}>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
                           {t("invite_with_love")}
                         </div>
 
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base`}>
                           {t("invite_attend")}
                         </div>
                       </div>
 
+                      {/* أسماء العرسان - تم تصغير الحجم */}
                       <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
                         <div
                           className={`${
                             lang === "ar"
-                              ? "font-a text-[3.2rem] sm:text-[4rem] -translate-y-3"
-                              : "font-whitney text-4xl sm:text-5xl translate-y-7"
+                              ? "font-a text-[2.4rem] sm:text-[3rem] -translate-y-3"
+                              : "font-whitney text-3xl sm:text-4xl translate-y-7"
                           } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
                           style={{ lineHeight: 0.85 }}
                           dir={lang === "ar" ? "rtl" : "ltr"}
@@ -187,8 +189,8 @@ const Index = () => {
                           <span
                             className={`${
                               lang === "ar"
-                                ? "font-sull text-5xl sm:text-6xl"
-                                : "font-whitney text-2xl sm:text-3xl"
+                                ? "font-sull text-4xl sm:text-5xl"
+                                : "font-whitney text-xl sm:text-2xl"
                             } opacity-80 px-1 inline-flex items-center self-center`}
                             style={{
                               transform: lang === "ar" ? "translateY(24px)" : "translateY(0px)",
@@ -200,11 +202,12 @@ const Index = () => {
                         </div>
                       </div>
 
+                      {/* التاريخ والعبارات السفلية فوق الفيديو - تم تصغير الحجم */}
                       <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-lg sm:text-xl`}>
+                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base`}>
                           {t("invite_god_willing")}
                         </div>
-                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-lg sm:text-xl`}>
+                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base`}>
                           {t("date_line")}
                         </div>
                       </div>
@@ -435,20 +438,20 @@ const Index = () => {
             </Reveal>
           </section>
 
-         {/* Footer */}
-<footer className="px-4 py-12 text-center">
-  <Reveal>
-    <a
-      href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block mt-2 text-sm underline underline-offset-4"
-      style={{ color: "#EFE6DE" }}
-    >
-      {t("tiktok")}
-    </a>
-  </Reveal>
-</footer>
+          {/* Footer */}
+          <footer className="px-4 py-12 text-center">
+            <Reveal>
+              <a
+                href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-2 text-sm underline underline-offset-4"
+                style={{ color: "#EFE6DE" }}
+              >
+                {t("tiktok")}
+              </a>
+            </Reveal>
+          </footer>
         </main>
       )}
     </div>
