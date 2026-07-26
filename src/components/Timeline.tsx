@@ -77,9 +77,9 @@ const Timeline = () => {
                     {/* المحتوى الموزع بدقة على الجانبين */}
                     <div className="w-full flex items-center">
                       {isEven ? (
-                        /* الحدث جهة اليسار بالهيكل */
+                        /* الحدث جهة اليسار - محاذاة للسنتر */
                         <div
-                          className="w-1/2 pr-7 text-right flex flex-col items-end z-10"
+                          className="w-1/2 pr-6 flex flex-col items-center justify-center text-center z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
                           <span className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight" dir="ltr">
@@ -94,9 +94,9 @@ const Timeline = () => {
                       )}
 
                       {!isEven ? (
-                        /* الحدث جهة اليمين بالهيكل */
+                        /* الحدث جهة اليمين - محاذاة للسنتر */
                         <div
-                          className="w-1/2 pl-7 text-left flex flex-col items-start z-10"
+                          className="w-1/2 pl-6 flex flex-col items-center justify-center text-center z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
                           <span className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight" dir="ltr">
