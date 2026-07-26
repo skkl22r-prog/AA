@@ -77,7 +77,7 @@ const en: Dict = {
   invite_day: "Where hearts bloom and our story completes",
   invite_with_love: "  ",
   and: "&",
-  invite_attend: "We open our doors with love to welcome you",
+  invite_attend: "We warmly invite you to celebrate our wedding",
   bride_name: "Sultan",
   groom_name: "Haneen",
   invite_god_willing: "God willing, on Wednesday",
