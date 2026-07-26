@@ -8,6 +8,7 @@ import Countdown from "@/components/Countdown";
 import Timeline from "@/components/Timeline";
 import MusicToggle from "@/components/MusicToggle";
 import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
+import starSvg from "@/assets/countdown-star.svg";
 import { useLang } from "@/i18n/LanguageContext";
 
 // رابط خرائط جوجل المحدث
@@ -296,10 +297,10 @@ const Index = () => {
               </div>
             </Reveal>
 
-            {/* حركة ظهور مربع التفاصيل السفلية */}
+            {/* حركة ظهور مربع التفاصيل السفلية مع نجوم countdown-star.svg */}
             <Reveal delay={200}>
               <div
-                className="mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
+                className="relative mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
                 style={{
                   background: "transparent",
                   border: "1px solid rgba(249,233,230,0.65)",
@@ -307,6 +308,28 @@ const Index = () => {
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
+                {/* نجوم زخرفية مضافة حول وفي أعلى المربع */}
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute -top-3 -right-3 w-6 h-6 pointer-events-none opacity-90 animate-pulse"
+                />
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute -top-3 -left-3 w-6 h-6 pointer-events-none opacity-90 animate-pulse"
+                />
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute -bottom-3 -right-3 w-5 h-5 pointer-events-none opacity-80"
+                />
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute -bottom-3 -left-3 w-5 h-5 pointer-events-none opacity-80"
+                />
+
                 <div className="flex items-center gap-3 mb-5">
                   <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
                   <span
