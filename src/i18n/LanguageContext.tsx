@@ -42,7 +42,7 @@ const ar: Dict = {
 
   // Restrictions
   no_cameras: "يمنع التصوير",
-  no_kids: "يمنع حضور الأطفال",
+  no_kids: "يمنع حضور الأطفال منعاً باتاً",
 
   // RSVP
   rsvp_title: "يشرفنا حضوركم",
