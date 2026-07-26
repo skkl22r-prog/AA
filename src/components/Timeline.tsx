@@ -82,11 +82,11 @@ const Timeline = () => {
                           className="w-1/2 pr-7 text-right flex flex-col items-end z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="font-amoshref text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                          <span className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight" dir="ltr">
                             {e.time}
                           </span>
-                          <span className={`text-xs sm:text-sm leading-tight mt-0.5 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
-                            {t(e.labelKey)}
+                          <span className={`text-base sm:text-lg font-semibold leading-tight mt-1 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
+                            {t(e.labelKey as any)}
                           </span>
                         </div>
                       ) : (
@@ -99,11 +99,11 @@ const Timeline = () => {
                           className="w-1/2 pl-7 text-left flex flex-col items-start z-10"
                           dir={lang === "ar" ? "rtl" : "ltr"}
                         >
-                          <span className="font-amoshref text-[11px] opacity-80 font-light tracking-wide leading-tight" dir="ltr">
+                          <span className="font-amoshref text-xs opacity-90 font-medium tracking-wide leading-tight" dir="ltr">
                             {e.time}
                           </span>
-                          <span className={`text-xs sm:text-sm leading-tight mt-0.5 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
-                            {t(e.labelKey)}
+                          <span className={`text-base sm:text-lg font-semibold leading-tight mt-1 ${lang === "ar" ? "font-neirizi" : "font-amoshref"}`}>
+                            {t(e.labelKey as any)}
                           </span>
                         </div>
                       ) : (
