@@ -11,8 +11,8 @@ import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
 import starSvg from "@/assets/countdown-star.svg";
 import { useLang } from "@/i18n/LanguageContext";
 
-// رابط خرائط جوجل المحدث
-const LOCATION_MAP_URL = "Https://maps.app.goo.gl/4gvwcjrx4sjcF4Rf7?g_st=ic";
+// رابط خرائط جوجل المحدث مباشرة للزر
+const LOCATION_MAP_URL = "https://www.google.com/maps/search/?api=1&query=قاعة+درة+النجوم+الطائف";
 
 // مكون السهم الزخرفي المخصص
 const ScrollArrowIcon = () => (
@@ -297,21 +297,10 @@ const Index = () => {
               </div>
             </Reveal>
 
-            {/* النجمة في الأعلى مستقلة تماماً ومطابقة لترتيب العد التنازلي */}
-            <Reveal delay={180}>
-              <div className="flex justify-center mt-12 mb-3">
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="w-6 h-6 object-contain"
-                />
-              </div>
-            </Reveal>
-
-            {/* حركة ظهور مربع التفاصيل السفلية */}
+            {/* حركة ظهور مربع التفاصيل السفلية مع النجوم في أماكن الدوائر */}
             <Reveal delay={200}>
               <div
-                className="mx-auto rounded-xl w-[calc(4*68px+3*12px)] p-6"
+                className="relative mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
                 style={{
                   background: "transparent",
                   border: "1px solid rgba(249,233,230,0.65)",
@@ -319,6 +308,27 @@ const Index = () => {
                 }}
                 dir={lang === "ar" ? "rtl" : "ltr"}
               >
+                {/* 1. نجمة الدائرة الأولى (يمين الأعلى بجانب أيقونة الموقع) */}
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute top-5 right-2 w-5 h-5 pointer-events-none opacity-90"
+                />
+
+                {/* 2. نجمة الدائرة الثانية (يسار المنتصف) */}
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute top-16 left-6 w-5 h-5 pointer-events-none opacity-90"
+                />
+
+                {/* 3. نجمة الدائرة الثالثة (أسفل اليسار) */}
+                <img
+                  src={starSvg}
+                  alt=""
+                  className="absolute bottom-10 left-12 w-5 h-5 pointer-events-none opacity-90"
+                />
+
                 <div className="flex items-center gap-3 mb-5">
                   <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
                   <span
@@ -374,26 +384,28 @@ const Index = () => {
                 </div>
               </div>
             </Reveal>
-{/* زر الموقع المحدث بالرابط الجديد */}
-<Reveal delay={250}>
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=قاعة+درة+النجوم+الطائف"
-    target="_blank"
-    rel="noopener noreferrer"
-    className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
-      lang === "ar" ? "font-neirizi" : "font-whitney"
-    } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
-    style={{
-      height: "48px",
-      background: "#F9E9E6",
-      color: "#B78E99",
-      textDecoration: "none",
-    }}
-  >
-    <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
-    <span>{t("location_button")}</span>
-  </a>
-</Reveal>
+
+            {/* زر الموقع بالرابط المطلوب مباشرة */}
+            <Reveal delay={250}>
+              <a
+                href={LOCATION_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
+                  lang === "ar" ? "font-neirizi" : "font-whitney"
+                } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
+                style={{
+                  height: "48px",
+                  background: "#F9E9E6",
+                  color: "#B78E99",
+                  textDecoration: "none",
+                }}
+              >
+                <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
+                <span>{t("location_button")}</span>
+              </a>
+            </Reveal>
+
             {/* حركة ظهور الصورة الأخيرة */}
             <Reveal delay={150}>
               <div
