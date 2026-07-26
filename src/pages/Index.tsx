@@ -374,29 +374,26 @@ const Index = () => {
                 </div>
               </div>
             </Reveal>
-
-            {/* زر الموقع المحدث بالرابط الجديد */}
-            <Reveal delay={250}>
-              <a
-const LOCATION_MAP_URL =
-  "https://www.google.com/maps/search/?api=1&query=قاعة+درة+النجوم+الطائف";
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
-                  lang === "ar" ? "font-neirizi" : "font-whitney"
-                } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
-                style={{
-                  height: "48px",
-                  background: "#F9E9E6",
-                  color: "#B78E99",
-                  textDecoration: "none",
-                }}
-              >
-                <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
-                <span>{t("location_button")}</span>
-              </a>
-            </Reveal>
-
+{/* زر الموقع المحدث بالرابط الجديد */}
+<Reveal delay={250}>
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=قاعة+درة+النجوم+الطائف"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
+      lang === "ar" ? "font-neirizi" : "font-whitney"
+    } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
+    style={{
+      height: "48px",
+      background: "#F9E9E6",
+      color: "#B78E99",
+      textDecoration: "none",
+    }}
+  >
+    <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
+    <span>{t("location_button")}</span>
+  </a>
+</Reveal>
             {/* حركة ظهور الصورة الأخيرة */}
             <Reveal delay={150}>
               <div
