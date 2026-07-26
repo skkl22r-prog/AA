@@ -225,7 +225,7 @@ const Index = () => {
                         </div>
                       </div>
 
-                      {{/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
+                  {/* أسماء العرسان باستعمال المفتاحين المنفصلين */}
 <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
   <div
     className={`${lang === "ar" ? "font-a" : "font-whitney"} text-4xl sm:text-5xl tracking-wide leading-none text-center flex items-center justify-center gap-3`}
@@ -233,7 +233,9 @@ const Index = () => {
     dir={lang === "ar" ? "rtl" : "ltr"}
   >
     <span>{t("bride_name")}</span>
-    <span className="font-whitney text-3xl opacity-80">&</span>
+    <span className="font-whitney text-2xl sm:text-3xl opacity-80 px-1">
+      {lang === "ar" ? "و" : "and"}
+    </span>
     <span>{t("groom_name")}</span>
   </div>
 </div>
