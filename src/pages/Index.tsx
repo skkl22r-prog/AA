@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Envelope from "@/components/Envelope";
+// استيراد صورة العريس بالطريقة الصحيحة
+import groomImg from "@/assets/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +53,7 @@ export default function WeddingInvitation() {
           
           {/* صورة العريس الدائرية مع الإطار الذهبي الفاخر */}
           <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden border-[3px] border-[#c5a059] shadow-[0_0_25px_rgba(197,160,89,0.3)] mb-6 bg-[#1A2840]">
-            <img src="/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png" alt="العريس علي شيخ" className="w-full h-full object-cover" />
+            <img src={groomImg} alt="العريس علي شيخ" className="w-full h-full object-cover" />
           </div>
 
           <div className="text-xs sm:text-sm space-y-1 text-[#c5a059] font-medium mb-6">
