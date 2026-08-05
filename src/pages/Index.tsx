@@ -37,20 +37,20 @@ export default function WeddingInvitation() {
   };
 
   return (
-    <div className="min-h-screen bg-[#11221b] text-[#f4ecd8] font-arabic relative overflow-x-hidden select-none">
+    <div className="min-h-screen bg-[#111C2E] text-[#f4ecd8] font-arabic relative overflow-x-hidden select-none">
       {/* شاشة الظرف */}
       {!isOpen && <Envelope onOpen={() => setIsOpen(true)} />}
 
-      {/* محتوى الموقع من جوه (مطابق تماماً للفيديو) */}
+      {/* محتوى الموقع من جوه */}
       <div className={`transition-opacity duration-1000 ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
         {/* البانر العلوي مع صورة العريس والعد التنازلي */}
-        <header className="bg-[#11221b] text-center pt-12 pb-10 px-4 relative border-b border-[#c5a059]/20">
+        <header className="bg-[#111C2E] text-center pt-12 pb-10 px-4 relative border-b border-[#c5a059]/20">
           <p className="text-xs sm:text-sm text-[#c5a059] tracking-[0.2em] mb-2 uppercase">دعوة حفل زفاف</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#c5a059] mb-8 tracking-wider font-serif">عَلِي شَيْخ</h1>
           
           {/* صورة العريس الدائرية مع الإطار الذهبي الفاخر */}
-          <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden border-[3px] border-[#c5a059] shadow-[0_0_25px_rgba(197,160,89,0.3)] mb-6 bg-[#1a3328]">
+          <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden border-[3px] border-[#c5a059] shadow-[0_0_25px_rgba(197,160,89,0.3)] mb-6 bg-[#1A2840]">
             <img src="/path-to-groom-photo.jpg" alt="العريس علي شيخ" className="w-full h-full object-cover" />
           </div>
 
@@ -68,7 +68,7 @@ export default function WeddingInvitation() {
               { label: "ساعة", value: timeLeft.hours },
               { label: "يوم", value: timeLeft.days },
             ].map((item, idx) => (
-              <div key={idx} className="bg-[#162d24] border border-[#c5a059]/30 rounded-xl py-2 px-3 w-16 text-center shadow-inner">
+              <div key={idx} className="bg-[#18263E] border border-[#c5a059]/30 rounded-xl py-2 px-3 w-16 text-center shadow-inner">
                 <span className="block text-base font-bold text-[#c5a059]">{item.value}</span>
                 <span className="block text-[9px] text-white/60">{item.label}</span>
               </div>
@@ -83,12 +83,12 @@ export default function WeddingInvitation() {
             <p className="text-xl text-[#c5a059] mb-6 font-serif">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
             
             <p className="text-xs text-gray-500 mb-1">يشرّف</p>
-            <h2 className="text-base font-bold text-[#1a2e26] mb-1">الشيخ: حسين بن علي شيخ حكي</h2>
+            <h2 className="text-base font-bold text-[#1e293b] mb-1">الشيخ: حسين بن علي شيخ حكي</h2>
             <p className="text-[11px] text-gray-500 mb-5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
             
             <h3 className="text-xl sm:text-2xl font-bold text-[#c5a059] mb-1 font-serif">علي بن حسين شيخ حكي</h3>
             <p className="text-[11px] text-gray-500 mb-1">على كريمة</p>
-            <h4 className="text-sm font-bold text-[#1a2e26] mb-5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            <h4 className="text-sm font-bold text-[#1e293b] mb-5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
             
             <div className="w-16 h-[1px] bg-[#c5a059]/40 mx-auto my-5"></div>
             
@@ -102,7 +102,7 @@ export default function WeddingInvitation() {
             </div>
 
             <div className="border-t border-gray-200 pt-4 mt-4">
-              <p className="text-xs font-bold text-[#1a2e26]">وحضوركم يمنحنا لنا الفرح والسرور</p>
+              <p className="text-xs font-bold text-[#1e293b]">وحضوركم يمنحنا لنا الفرح والسرور</p>
               <p className="text-[10px] text-gray-400 mt-0.5">Your presence brings us honor and great joy</p>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function WeddingInvitation() {
             <div className="space-y-4">
               
               <div className="flex items-start gap-3 border-b border-gray-100 pb-3">
-                <div className="text-lg bg-[#11221b] text-[#c5a059] p-2.5 rounded-xl">📅</div>
+                <div className="text-lg bg-[#111C2E] text-[#c5a059] p-2.5 rounded-xl">📅</div>
                 <div>
                   <h4 className="text-[10px] text-gray-400 font-semibold">التاريخ</h4>
                   <p className="text-xs font-bold text-gray-800">الجمعة ٢١ / ١١ / ١٤٤٧ هـ</p>
@@ -122,7 +122,7 @@ export default function WeddingInvitation() {
               </div>
 
               <div className="flex items-start gap-3 border-b border-gray-100 pb-3">
-                <div className="text-lg bg-[#11221b] text-[#c5a059] p-2.5 rounded-xl">⏰</div>
+                <div className="text-lg bg-[#111C2E] text-[#c5a059] p-2.5 rounded-xl">⏰</div>
                 <div>
                   <h4 className="text-[10px] text-gray-400 font-semibold">الزمن</h4>
                   <p className="text-xs font-bold text-gray-800">الساعة الثامنة والنصف - 8:30 م</p>
@@ -131,7 +131,7 @@ export default function WeddingInvitation() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="text-lg bg-[#11221b] text-[#c5a059] p-2.5 rounded-xl">📍</div>
+                <div className="text-lg bg-[#111C2E] text-[#c5a059] p-2.5 rounded-xl">📍</div>
                 <div>
                   <h4 className="text-[10px] text-gray-400 font-semibold">الموقع</h4>
                   <p className="text-xs font-bold text-gray-800">نادي وزارة الداخلية — جيزان</p>
@@ -222,7 +222,7 @@ export default function WeddingInvitation() {
 
               <button
                 type="submit"
-                className="w-full bg-[#11221b] text-[#c5a059] font-bold py-3 rounded-xl transition-all hover:bg-[#1a3328] shadow-md flex items-center justify-center gap-2 text-xs mt-3 border border-[#c5a059]/30"
+                className="w-full bg-[#111C2E] text-[#c5a059] font-bold py-3 rounded-xl transition-all hover:bg-[#1a2840] shadow-md flex items-center justify-center gap-2 text-xs mt-3 border border-[#c5a059]/30"
               >
                 <span>إرسال التأكيد عبر واتساب</span>
                 <span>✈️</span>
