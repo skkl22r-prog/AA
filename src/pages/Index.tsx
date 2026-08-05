@@ -1,467 +1,237 @@
-import rImg from "@/assets/r.png";
-import { useEffect, useState } from "react";
-import { MapPin, QrCode, Baby, Camera, Clock, CalendarDays } from "lucide-react";
-import invitationImg from "@/assets/video-output-9B5ECA8D-034F-419B-A85A-98CA7DF3D9F9-1.mp4";
+import { useState, useEffect } from "react";
 import Envelope from "@/components/Envelope";
-import Reveal from "@/components/Reveal";
-import Countdown from "@/components/Countdown";
-import Timeline from "@/components/Timeline";
-import MusicToggle from "@/components/MusicToggle";
-import newImage from "@/assets/b706a6d8-920f-4356-9f82-145878965c17.jpeg";
-import starSvg from "@/assets/countdown-star.svg";
-import { useLang } from "@/i18n/LanguageContext";
 
-// رابط خرائط جوجل المحدث خارج المكون لتفادي أخطاء الـ JSX
-const LOCATION_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("قاعة درة النجوم الطائف")}`;
+export default function WeddingInvitation() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [guests, setGuests] = useState("");
 
-// مكون السهم الزخرفي المخصص
-const ScrollArrowIcon = () => (
-  <svg
-    width="32"
-    height="36"
-    viewBox="0 0 32 36"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
-  >
-    <path
-      d="M8 6C12 11 20 11 24 6"
-      stroke="#F9E9E6"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M8 12C12 17 20 17 24 12"
-      stroke="#F9E9E6"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M16 14V26"
-      stroke="#F9E9E6"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M8 24C12 28 20 28 24 24L16 34L8 24Z"
-      fill="#F9E9E6"
-    />
-  </svg>
-);
+  // عداد تنازلي حتى تاريخ الزفاف (8 مايو 2026)
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-const Index = () => {
-  const [opened, setOpened] = useState(false);
-  const [showScrollArrow, setShowScrollArrow] = useState(true);
-  const { t, lang, toggle } = useLang();
-
-  // إخفاء السهم عند السحب لأسفل
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setShowScrollArrow(false);
-      } else {
-        setShowScrollArrow(true);
-      }
-    };
+    const targetDate = new Date("2026-05-08T20:30:00");
+    const interval = setInterval(() => {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
 
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const adminPhone = "966500000000"; // استبدله برقم جوالك لاستقبال التأكيدات
+    const message = `السلام عليكم، تأكيد حضور دعوة زفاف علي شيخ حكي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
+    const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <div
-      className="overflow-x-hidden w-full"
-      style={{
-        background: "#A77C86",
-        minHeight: "100vh",
-      }}
-    >
-      <MusicToggle active={opened} />
-      <Envelope onOpen={() => setOpened(true)} />
+    <div className="min-h-screen bg-[#11221b] text-[#f4ecd8] font-arabic relative overflow-x-hidden select-none">
+      {/* شاشة الظرف */}
+      {!isOpen && <Envelope onOpen={() => setIsOpen(true)} />}
 
-      <div
-        className="fixed inset-0 z-0"
-        style={{
-          background: "#A77C86",
-          pointerEvents: "none",
-        }}
-      />
-
-      {opened && (
-        <main
-          className="relative z-10 animate-fadeIn"
-          style={{
-            animation: "fadeIn 0.8s ease forwards",
-          }}
-        >
-          {/* Language Toggle Button */}
-          <div className="fixed top-5 right-5 z-[9999]">
-            <button
-              onClick={toggle}
-              className="px-5 h-8 rounded-full text-sm transition-all"
-              style={{
-                background: "#A77C86",
-                border: "1px solid #F9E9E6",
-                color: "#F9E9E6",
-              }}
-            >
-              {lang === "ar" ? (
-                <span className="font-kahand">العربية</span>
-              ) : (
-                <span className="font-amoshref">ENGLISH</span>
-              )}
-            </button>
+      {/* محتوى الموقع من جوه (مطابق تماماً للفيديو) */}
+      <div className={`transition-opacity duration-1000 ${isOpen ? "opacity-100" : "opacity-0"}`}>
+        
+        {/* البانر العلوي مع صورة العريس والعد التنازلي */}
+        <header className="bg-[#11221b] text-center pt-12 pb-10 px-4 relative border-b border-[#c5a059]/20">
+          <p className="text-xs sm:text-sm text-[#c5a059] tracking-[0.2em] mb-2 uppercase">دعوة حفل زفاف</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#c5a059] mb-8 tracking-wider font-serif">عَلِي شَيْخ</h1>
+          
+          {/* صورة العريس الدائرية مع الإطار الذهبي الفاخر */}
+          <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden border-[3px] border-[#c5a059] shadow-[0_0_25px_rgba(197,160,89,0.3)] mb-6 bg-[#1a3328]">
+            <img src="/path-to-groom-photo.jpg" alt="العريس علي شيخ" className="w-full h-full object-cover" />
           </div>
 
-          {/* Section 1: Video and Main Card */}
-          <section className="flex justify-center relative z-20">
-            <div className="relative w-full aspect-[9/16] overflow-hidden">
-              <video
-                src={invitationImg}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover animate-videoFade"
-                style={{
-                  background: "#A77C86",
-                }}
-              />
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: "rgba(0,0,0,0.08)",
-                }}
-              />
+          <div className="text-xs sm:text-sm space-y-1 text-[#c5a059] font-medium mb-6">
+            <p>٢١ / ١١ / ١٤٤٧ هـ</p>
+            <p>08 / May / 2026</p>
+            <p className="text-white/70 text-[11px] pt-1">8:30 مساءً — 8:30 PM</p>
+          </div>
 
-              <div
-                dir="ltr"
-                className="absolute inset-0 flex items-center justify-center px-5 py-6"
-              >
-                {/* تم تعديل translate-y-8 إلى translate-y-16 لتنزيل المحتوى بالكامل لأسفل */}
-                <div className="translate-y-16 scale-60">
-                  <div
-                    className="flex flex-col items-center text-center px-5 py-6 rounded-2xl w-[98%] sm:w-[92%] gap-4 text-reveal"
-                    style={{
-                      background: "transparent",
-                      backdropFilter: "none",
-                      WebkitBackdropFilter: "none",
-                      color: "#F9E9E6",
-                      textShadow:
-                        "0 1px 2px hsla(0,0%,0%,0.6), 0 0 10px hsla(0,0%,100%,0.35)",
-                    }}
-                  >
-                    <div className="translate-y-3 flex flex-col items-center w-full">
-                      {/* الأسطر العلويّة */}
-                      <div className="flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
-                          {t("invite_to")}
-                        </div>
-
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
-                          {t("invite_join")}
-                        </div>
-
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
-                          {t("invite_day")}
-                        </div>
-
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base whitespace-nowrap`}>
-                          {t("invite_with_love")}
-                        </div>
-
-                        {/* سطر الدعوة */}
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base mt-4 mb-3 whitespace-nowrap`}>
-                          {t("invite_attend")}
-                        </div>
-                      </div>
-
-                      {/* أسماء العرسان */}
-                      <div className="w-full my-2 py-0 h-12 flex items-center justify-center relative z-20">
-                        <div
-                          className={`${
-                            lang === "ar"
-                              ? "font-a text-[2.4rem] sm:text-[3rem] -translate-y-3"
-                              : "font-whitney text-2xl sm:text-3xl translate-y-7"
-                          } tracking-wide leading-none text-center flex items-baseline justify-center gap-3 transition-transform duration-200`}
-                          style={{ lineHeight: 0.85 }}
-                          dir={lang === "ar" ? "rtl" : "ltr"}
-                        >
-                          <span className="inline-flex items-center">{t("bride_name")}</span>
-                          <span
-                            className={`${
-                              lang === "ar"
-                                ? "font-sull text-4xl sm:text-5xl"
-                                : "font-whitney text-xl sm:text-2xl"
-                            } opacity-80 px-1 inline-flex items-center self-center`}
-                            style={{
-                              transform: lang === "ar" ? "translateY(24px)" : "translateY(0px)",
-                            }}
-                          >
-                            {t("and")}
-                          </span>
-                          <span className="inline-flex items-center">{t("groom_name")}</span>
-                        </div>
-                      </div>
-
-                      {/* التاريخ والسَطر الجديد المضاف تحت التاريخ الحالي */}
-                      <div className="mt-6 pt-2 flex flex-col items-center gap-1 relative z-10 w-full" dir={lang === "ar" ? "rtl" : "ltr"}>
-                        <div className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm sm:text-base`}>
-                          {t("invite_god_willing")}
-                        </div>
-                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base`}>
-                          {t("date_line")}
-                        </div>
-                        {/* التاريخ الثاني المضاف */}
-                        <div className={`${lang === "ar" ? "font-amoshref" : "font-amoshref"} text-sm sm:text-base opacity-90`}>
-                          {t("date_line_hijri" as any)}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          {/* العداد التنازلي */}
+          <div className="flex justify-center gap-3 mt-4">
+            {[
+              { label: "ثانية", value: timeLeft.seconds },
+              { label: "دقيقة", value: timeLeft.minutes },
+              { label: "ساعة", value: timeLeft.hours },
+              { label: "يوم", value: timeLeft.days },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-[#162d24] border border-[#c5a059]/30 rounded-xl py-2 px-3 w-16 text-center shadow-inner">
+                <span className="block text-base font-bold text-[#c5a059]">{item.value}</span>
+                <span className="block text-[9px] text-white/60">{item.label}</span>
               </div>
+            ))}
+          </div>
+        </header>
 
-              <div
-                className={`absolute bottom-6 left-1/2 -translate-x-1/2 transition-opacity duration-500 z-30 pointer-events-none ${
-                  showScrollArrow ? "opacity-100 animate-bounce" : "opacity-0"
-                }`}
-              >
-                <ScrollArrowIcon />
-              </div>
-            </div>
-          </section>
-
-          {/* Section 2: Countdown */}
-          <section className="px-4 py-16">
-            <Reveal>
-              <h2
-                className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-center text-3xl mb-2`}
-                style={{ color: "#EFE6DE" }}
-              >
-                {t("countdown_title")}
-              </h2>
-
-              <p
-                className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-center text-sm mb-10`}
-                style={{ color: "#EFE6DE" }}
-              >
-                {t("countdown_date")}
+        {/* محتوى الدعوة النصي (البطاقة الكريمة) */}
+        <main className="max-w-xl mx-auto px-4 py-8 space-y-6">
+          
+          <div className="bg-[#faf8f5] text-[#2c2c2c] py-8 px-6 text-center rounded-2xl shadow-xl border border-[#c5a059]/30">
+            <p className="text-xl text-[#c5a059] mb-6 font-serif">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            
+            <p className="text-xs text-gray-500 mb-1">يشرّف</p>
+            <h2 className="text-base font-bold text-[#1a2e26] mb-1">الشيخ: حسين بن علي شيخ حكي</h2>
+            <p className="text-[11px] text-gray-500 mb-5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+            
+            <h3 className="text-xl sm:text-2xl font-bold text-[#c5a059] mb-1 font-serif">علي بن حسين شيخ حكي</h3>
+            <p className="text-[11px] text-gray-500 mb-1">على كريمة</p>
+            <h4 className="text-sm font-bold text-[#1a2e26] mb-5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            
+            <div className="w-16 h-[1px] bg-[#c5a059]/40 mx-auto my-5"></div>
+            
+            <p className="text-[11px] text-[#c5a059] font-semibold mb-4">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
+            
+            <div className="text-[11px] text-gray-600 space-y-1.5 leading-relaxed mb-5">
+              <p className="font-medium">
+                Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, Ali bin Hussein Sheikh Hakami, to the daughter of Dr. Majid bin Ibrahim Al-Jawhari
               </p>
-            </Reveal>
+              <p className="text-[#c5a059]">Friday 08 . May . 2026</p>
+            </div>
 
-            <Reveal delay={150}>
-              <Countdown />
-            </Reveal>
-          </section>
+            <div className="border-t border-gray-200 pt-4 mt-4">
+              <p className="text-xs font-bold text-[#1a2e26]">وحضوركم يمنحنا لنا الفرح والسرور</p>
+              <p className="text-[10px] text-gray-400 mt-0.5">Your presence brings us honor and great joy</p>
+            </div>
+          </div>
 
-          {/* Section 3: Timeline & Details */}
-          <section className="px-4 py-12">
-            <Reveal>
-              <div className="text-center mb-8">
-                <h2
-                  className={`${lang === "ar" ? "font-neirizi" : "font-whitney"} text-3xl mb-2`}
-                  style={{ color: "#EFE6DE" }}
-                >
-                  {t("big_word")}
-                </h2>
-
-                <p
-                  className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-                  style={{ color: "#EFE6DE", opacity: 0.8 }}
-                >
-                  {t("small_word")}
-                </p>
+          {/* تفاصيل الحفل */}
+          <div className="bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-xl border border-[#c5a059]/30">
+            <h3 className="text-center text-[#c5a059] text-base font-bold mb-5 tracking-wide">تَفَاصِيلِ الحَفْل</h3>
+            <div className="space-y-4">
+              
+              <div className="flex items-start gap-3 border-b border-gray-100 pb-3">
+                <div className="text-lg bg-[#11221b] text-[#c5a059] p-2.5 rounded-xl">📅</div>
+                <div>
+                  <h4 className="text-[10px] text-gray-400 font-semibold">التاريخ</h4>
+                  <p className="text-xs font-bold text-gray-800">الجمعة ٢١ / ١١ / ١٤٤٧ هـ</p>
+                  <p className="text-[10px] text-gray-500">Friday, May 8, 2026</p>
+                </div>
               </div>
-            </Reveal>
 
-            {/* حركة ظهور مربع Timeline */}
-            <Reveal delay={100}>
-              <div
-                className="mx-auto rounded-xl p-4 w-[calc(4*68px+3*12px)]"
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-                }}
-              >
-                <Timeline />
+              <div className="flex items-start gap-3 border-b border-gray-100 pb-3">
+                <div className="text-lg bg-[#11221b] text-[#c5a059] p-2.5 rounded-xl">⏰</div>
+                <div>
+                  <h4 className="text-[10px] text-gray-400 font-semibold">الزمن</h4>
+                  <p className="text-xs font-bold text-gray-800">الساعة الثامنة والنصف - 8:30 م</p>
+                  <p className="text-[10px] text-gray-500">Half past eight - 8:30 PM</p>
+                </div>
               </div>
-            </Reveal>
 
-            {/* حركة ظهور الصورة وسط الصفحة */}
-            <Reveal delay={150}>
-              <div
-                className="mx-auto mt-12 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)] h-[220px]"
-                style={{
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-                }}
-              >
-                <img
-                  src={newImage}
-                  alt=""
-                  className="w-full h-full object-cover object-center block"
-                />
-              </div>
-            </Reveal>
-
-            {/* حركة ظهور مربع التفاصيل السفلية مع النجوم */}
-            <Reveal delay={200}>
-              <div
-                className="relative mx-auto mt-12 rounded-xl w-[calc(4*68px+3*12px)] p-6"
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-                }}
-                dir={lang === "ar" ? "rtl" : "ltr"}
-              >
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute top-5 right-2 w-5 h-5 pointer-events-none opacity-90"
-                />
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute top-16 left-6 w-5 h-5 pointer-events-none opacity-90"
-                />
-                <img
-                  src={starSvg}
-                  alt=""
-                  className="absolute bottom-10 left-12 w-5 h-5 pointer-events-none opacity-90"
-                />
-
-                <div className="flex items-center gap-3 mb-5">
-                  <MapPin className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span
-                    className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`}
-                    style={{ color: "#EFE6DE" }}
+              <div className="flex items-start gap-3">
+                <div className="text-lg bg-[#11221b] text-[#c5a059] p-2.5 rounded-xl">📍</div>
+                <div>
+                  <h4 className="text-[10px] text-gray-400 font-semibold">الموقع</h4>
+                  <p className="text-xs font-bold text-gray-800">نادي وزارة الداخلية — جيزان</p>
+                  <p className="text-[10px] text-gray-500 mb-1.5">Ministry of Interior Club, Jizan</p>
+                  <a 
+                    href="https://maps.google.com" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-[11px] text-[#c5a059] font-semibold underline inline-block"
                   >
-                    {t("event_location")}
-                  </span>
+                    افتتح في الخرائط | Open in Maps
+                  </a>
                 </div>
+              </div>
 
-                <div className="flex items-center gap-3 mb-5">
-                  <Clock className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                    {t("arrival_time")}
-                  </span>
+            </div>
+          </div>
+
+          {/* برنامج الحفل */}
+          <div className="bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-xl border border-[#c5a059]/30">
+            <h3 className="text-center text-[#c5a059] text-base font-bold mb-5 tracking-wide">بَرْنَامَج الحَفْل</h3>
+            <div className="space-y-4 relative border-r-2 border-[#c5a059]/30 pr-3 mr-1">
+              {[
+                { time: "8:30 PM - ٨:٣٠ م", title: "استقبال الضيوف وبداية العرضة السعودية", desc: "Guest Reception & Start of the Saudi Ardah" },
+                { time: "9:15 PM - ٩:١٥ م", title: "دخول العريس وبدء الزفة", desc: "Groom Entrance & Wedding Zaffa" },
+                { time: "9:30 PM - ٩:٣٠ م", title: "السلام العام واستقبال المهنئين", desc: "General Greetings & Congratulations" },
+                { time: "10:15 PM - ١٠:١٥ م", title: "حباكم العشاء", desc: "Dinner" },
+                { time: "10:45 PM - ١٠:٤٥ م", title: "احتفال", desc: "Celebration" },
+              ].map((item, idx) => (
+                <div key={idx} className="relative">
+                  <div className="absolute -right-[17px] top-1.5 w-2 h-2 rounded-full bg-[#c5a059] border-2 border-white"></div>
+                  <span className="text-[10px] font-bold text-[#c5a059]">{item.time}</span>
+                  <h4 className="font-bold text-gray-800 text-xs mt-0.5">{item.title}</h4>
+                  <p className="text-[10px] text-gray-500">{item.desc}</p>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                <div className="flex items-center gap-3 mb-6">
-                  <CalendarDays className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                    {t("event_date")}
-                  </span>
-                </div>
+          {/* تأكيد الحضور */}
+          <div className="bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-xl border border-[#c5a059]/30 mb-12">
+            <h3 className="text-center text-[#c5a059] text-base font-bold mb-1">تأكيد الحضور</h3>
+            <h4 className="text-center text-[10px] font-semibold text-gray-600 mb-1">CONFIRM ATTENDANCE</h4>
+            <p className="text-center text-[10px] text-gray-400 mb-5">
+              عبي البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة
+            </p>
 
-                <div
-                  className="mx-auto mb-6"
-                  style={{
-                    width: "90%",
-                    height: "1px",
-                    background: "rgba(249,233,230,0.65)",
-                  }}
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-3.5 text-right" dir="rtl">
+              <div>
+                <label className="block text-[11px] font-bold text-gray-700 mb-1">الاسم الكامل Full Name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="اكتب اسمك"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
                 />
-
-                <div className="flex items-center gap-3 mb-5">
-                  <Baby className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                    {t("no_kids")}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3 mb-5">
-                  <Camera className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                    {t("no_cameras")}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <QrCode className="w-5 h-5" style={{ color: "#EFE6DE" }} />
-                  <span className={`${lang === "ar" ? "font-neirizi" : "font-amoshref"} text-sm`} style={{ color: "#EFE6DE" }}>
-                    {t("personal_invitation")}
-                  </span>
-                </div>
               </div>
-            </Reveal>
 
-            {/* زر الموقع */}
-            <Reveal delay={250}>
-              <a
-                href={LOCATION_MAP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mx-auto mt-5 rounded-full flex items-center justify-center gap-2 ${
-                  lang === "ar" ? "font-neirizi" : "font-whitney"
-                } text-sm w-[calc(4*68px+3*12px)] active:scale-95 transition-transform duration-200 cursor-pointer block`}
-                style={{
-                  height: "48px",
-                  background: "#F9E9E6",
-                  color: "#B78E99",
-                  textDecoration: "none",
-                }}
-              >
-                <MapPin className="w-5 h-5" style={{ color: "#B78E99" }} />
-                <span>{t("location_button")}</span>
-              </a>
-            </Reveal>
-
-            {/* حركة ظهور الصورة الأخيرة */}
-            <Reveal delay={150}>
-              <div
-                className="mx-auto mt-20 rounded-xl overflow-hidden w-[calc(4*68px+3*12px)]"
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba(249,233,230,0.65)",
-                  boxShadow: "0 0 10px rgba(249,233,230,0.08)",
-                }}
-              >
-                <img src={rImg} alt="" className="w-full h-auto block" />
+              <div>
+                <label className="block text-[11px] font-bold text-gray-700 mb-1">رقم الجوال Phone Number</label>
+                <input
+                  type="tel"
+                  required
+                  placeholder="05xxxxxxxx"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
+                />
               </div>
-            </Reveal>
 
-            {/* حركة ظهور النص الختامي */}
-            <Reveal delay={200}>
-              <div className="mt-8 text-center">
-                <h2
-                  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-xl mb-2 font-medium tracking-widest`}
-                  style={{ color: "#F9E9E6" }}
+              <div>
+                <label className="block text-[11px] font-bold text-gray-700 mb-1">عدد المرافقين Number of Guests</label>
+                <select
+                  required
+                  value={guests}
+                  onChange={(e) => setGuests(e.target.value)}
+                  className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059] text-gray-700"
                 >
-                  {t("section2_title")}
-                </h2>
-
-                <p
-                  className={`${lang === "ar" ? "font-whitney" : "font-whitney"} text-sm`}
-                  style={{ color: "#F9E9E6", opacity: 0.8 }}
-                >
-                  {t("section2_subtitle")}
-                </p>
+                  <option value="" disabled>اختر</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
               </div>
-            </Reveal>
-          </section>
 
-          {/* Footer */}
-          <footer className="px-4 py-12 text-center">
-            <Reveal>
-              <a
-                href="https://www.tiktok.com/@shim2t?_r=1&_t=ZS-95w0d8f7vnk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mt-2 text-sm underline underline-offset-4"
-                style={{ color: "#EFE6DE" }}
+              <button
+                type="submit"
+                className="w-full bg-[#11221b] text-[#c5a059] font-bold py-3 rounded-xl transition-all hover:bg-[#1a3328] shadow-md flex items-center justify-center gap-2 text-xs mt-3 border border-[#c5a059]/30"
               >
-                {t("tiktok")}
-              </a>
-            </Reveal>
-          </footer>
+                <span>إرسال التأكيد عبر واتساب</span>
+                <span>✈️</span>
+              </button>
+            </form>
+          </div>
+
         </main>
-      )}
+      </div>
     </div>
   );
-};
-
-export default Index;
+}
