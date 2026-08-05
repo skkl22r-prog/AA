@@ -1,6 +1,6 @@
 import { useState } from "react";
 import envelopeImg from "@/assets/photo-output.png";
-import sealImg from "@/assets/D5AF34F6-1CB4-4C61-8F99-E5FDF2A24F22.png";
+import sealImg from "@/assets/F932F3DB-D354-43A3-9F95-B96ECBAB3745.png";
 
 interface EnvelopeProps {
   onOpen: () => void;
