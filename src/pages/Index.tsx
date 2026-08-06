@@ -47,7 +47,6 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الأولى ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] overflow-hidden">
           
-          {/* رأس الصفحة: الثلاث سطور نزلت مع بعضها لمسافة أريح بدون أي تأثير على الصورة أو العداد */}
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
             <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زفاف</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md my-2.5">عَلِي شَيْخ</h1>
@@ -58,10 +57,7 @@ export default function WeddingInvitation() {
             </div>
           </div>
 
-          {/* حاوية تجمع صورة العريس والتاريخ والعداد (محفوظة في مكانها تماماً وبدون أي تغيير) */}
           <div className="w-full flex-1 relative z-20 flex items-center justify-center -mt-2">
-            
-            {/* صورة العريس مع تدرج الاختفاء من الأسفل */}
             <img 
               src={groomImg} 
               alt="العريس علي شيخ" 
@@ -72,9 +68,7 @@ export default function WeddingInvitation() {
               }}
             />
 
-            {/* التاريخ والعداد بحجم كبير وبارز */}
             <div className="absolute bottom-1 z-30 w-full flex flex-col items-center pointer-events-none">
-              
               <div className="text-sm sm:text-base space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                 <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
                 <p className="tracking-wide text-[#c5a059]">08 . May . 2026</p>
@@ -94,52 +88,53 @@ export default function WeddingInvitation() {
                   </div>
                 ))}
               </div>
-
             </div>
-
           </div>
 
-          {/* مؤشر السحب السفلي */}
           <div className="w-full shrink-0 relative z-30 pb-0.5 mt-1">
             <span className="text-[10px] text-[#c5a059] font-medium animate-bounce block">اسحب لأسفل للتفاصيل ↓</span>
           </div>
         </section>
 
-        {/* ================= الصفحة الثانية (بطاقة الدعوة الكريمة) ================= */}
-        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
-          <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] py-6 px-5 text-center rounded-2xl shadow-2xl border border-[#c5a059]/30">
-            <p className="text-lg text-[#c5a059] mb-4 font-serif">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        {/* ================= الصفحة الثانية (بطاقة الدعوة الكريمة - مطابقة للأولى ومرفوعة للأعلى) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-center items-center px-4 bg-[#111C2E] pt-2 pb-2">
+          <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] py-5 px-5 text-center rounded-2xl shadow-2xl border border-[#c5a059]/30 my-auto">
+            {/* البسملة باللون الأزرق الجديد */}
+            <p className="text-base sm:text-lg text-[#23385e] mb-3 font-serif font-bold">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
             
             <p className="text-[11px] text-gray-500 mb-0.5">يشرّف</p>
             <h2 className="text-sm font-bold text-[#1e293b] mb-0.5">الشيخ: حسين بن علي شيخ حكي</h2>
-            <p className="text-[10px] text-gray-500 mb-3">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+            <p className="text-[10px] text-gray-500 mb-2.5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
             
-            <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-0.5 font-serif">علي بن حسين شيخ حكي</h3>
+            <h3 className="text-base sm:text-lg font-bold text-[#c5a059] mb-0.5 font-serif">علي بن حسين شيخ حكي</h3>
             <p className="text-[10px] text-gray-500 mb-0.5">على كريمة</p>
-            <h4 className="text-xs font-bold text-[#1e293b] mb-3">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            <h4 className="text-xs font-bold text-[#1e293b] mb-2.5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
             
-            <div className="w-12 h-[1px] bg-[#c5a059]/40 mx-auto my-3"></div>
+            <p className="text-[10px] text-[#c5a059] font-semibold mb-2.5">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
             
-            <p className="text-[10px] text-[#c5a059] font-semibold mb-2">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
+            <div className="w-12 h-[1px] bg-[#c5a059]/40 mx-auto my-2.5"></div>
             
-            <div className="text-[10px] text-gray-600 space-y-1 leading-relaxed mb-3">
+            <div className="text-[10px] text-gray-600 space-y-1 leading-relaxed mb-2.5">
               <p className="font-medium">
-                Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son...
+                Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, <span className="text-[#c5a059] font-bold">Ali bin Hussein Sheikh Hakami</span>, to the daughter of <span className="text-[#1e293b] font-bold">Dr. Majid bin Ibrahim Al-Jawhari</span>
               </p>
+              <p className="text-[9px] text-[#c5a059] font-semibold pt-1">Friday 08 . May . 2026</p>
             </div>
 
-            <div className="border-t border-gray-200 pt-3">
-              <p className="text-[11px] font-bold text-[#1e293b]">وحضوركم يمنحنا لنا الفرح والسرور</p>
+            <div className="w-12 h-[1px] bg-[#c5a059]/40 mx-auto my-2.5"></div>
+
+            <div className="space-y-0.5">
+              <p className="text-[11px] font-bold text-[#1e293b]">وبحضوركم يتم لنا الفرح والسرور</p>
+              <p className="text-[9px] text-gray-500">Your presence brings us honor and great joy</p>
             </div>
           </div>
         </section>
 
         {/* ================= الصفحة الثالثة (تفاصيل الحفل) ================= */}
-        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+        <section className="min-h-[88vh] w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
           <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-2xl border border-[#c5a059]/30">
             <h3 className="text-center text-[#c5a059] text-base font-bold mb-4 tracking-wide">تَفَاصِيلِ الحَفْل</h3>
             <div className="space-y-3">
-              
               <div className="flex items-start gap-3 border-b border-gray-100 pb-2.5">
                 <div className="text-base bg-[#111C2E] text-[#c5a059] p-2 rounded-xl">📅</div>
                 <div>
@@ -171,13 +166,12 @@ export default function WeddingInvitation() {
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
         {/* ================= الصفحة الرابعة (برنامج الحفل) ================= */}
-        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+        <section className="min-h-[88vh] w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
           <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-2xl border border-[#c5a059]/30">
             <h3 className="text-center text-[#c5a059] text-base font-bold mb-4 tracking-wide">بَرْنَامَج الحَفْل</h3>
             <div className="space-y-3 relative border-r-2 border-[#c5a059]/30 pr-3 mr-1">
@@ -199,7 +193,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الخامسة (تأكيد الحضور عبر الواتساب) ================= */}
-        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+        <section className="min-h-[88vh] w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
           <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-5 shadow-2xl border border-[#c5a059]/30">
             <h3 className="text-center text-[#c5a059] text-sm font-bold mb-0.5">تأكيد الحضور</h3>
             <p className="text-center text-[9px] text-gray-400 mb-3">
@@ -225,7 +219,7 @@ export default function WeddingInvitation() {
                   type="tel"
                   required
                   placeholder="05xxxxxxxx"
-                  value={phone}
+                  value= {phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
                 />
