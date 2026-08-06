@@ -97,15 +97,15 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثانية ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 py-3 bg-[#faf8f5]">
-          <div className="pt-2">
-            {/* تم تكبير حجم البسملة لتكون أوضح ومريحة */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]">
+          <div className="pt-3">
+            {/* نزلت البسملة قليلاً للأسفل */}
             <p className="text-5xl sm:text-6xl font-besm text-[#23385e] drop-shadow-sm text-center" dir="rtl">
               +
             </p>
           </div>
 
-          {/* تقليل ارتفاع المربع قليلاً من الأسفل ليكون متناسقاً تماماً */}
+          {/* نزل المربع مع البسملة والسهم ثابت لا يُمس */}
           <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 sm:py-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[66vh]">
             <div>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">يشرّف</p>
@@ -148,6 +148,7 @@ export default function WeddingInvitation() {
             </div>
           </div>
 
+          {/* السهم ثابت تماماً في مكانه */}
           <div className="pb-1 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
