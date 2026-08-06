@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Envelope from "@/components/Envelope";
-// استيراد صورة العريس بالطريقة الصحيحة
 import groomImg from "@/assets/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png";
 
 export default function WeddingInvitation() {
@@ -39,110 +38,114 @@ export default function WeddingInvitation() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111C2E] text-[#f4ecd8] font-arabic relative overflow-x-hidden select-none">
+    <div className="h-screen w-screen bg-[#111C2E] text-[#f4ecd8] font-arabic overflow-y-scroll snap-y snap-mandatory scrollbar-none select-none relative">
       {/* شاشة الظرف */}
       {!isOpen && <Envelope onOpen={() => setIsOpen(true)} />}
 
-      {/* محتوى الموقع من جوه */}
-      <div className={`transition-opacity duration-1000 ${isOpen ? "opacity-100" : "opacity-0"}`}>
+      {/* محتوى الموقع مقسم كصفحات كاملة (Snap Sections) */}
+      <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
-        {/* البانر العلوي مع صورة العريس والعد التنازلي */}
-        <header className="bg-[#111C2E] text-center pt-12 pb-10 px-4 relative border-b border-[#c5a059]/20">
-          <p className="text-xs sm:text-sm text-[#c5a059] tracking-[0.2em] mb-2 uppercase">دعوة حفل زفاف</p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#c5a059] mb-8 tracking-wider font-serif">عَلِي شَيْخ</h1>
-          
-          {/* صورة العريس الدائرية مع الإطار الذهبي الفاخر */}
-          <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden border-[3px] border-[#c5a059] shadow-[0_0_25px_rgba(197,160,89,0.3)] mb-6 bg-[#1A2840]">
-            <img src={groomImg} alt="العريس علي شيخ" className="w-full h-full object-cover" />
+        {/* ================= الصفحة الأولى (مقاس 9:16 مع صورة العريس والخط الذهبي بالنهاية) ================= */}
+        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center text-center pt-8 pb-4 px-4 bg-[#111C2E] relative border-b border-[#c5a059]/20">
+          <div className="w-full">
+            <p className="text-xs sm:text-sm text-[#c5a059] tracking-[0.2em] mb-1 uppercase">دعوة حفل زفاف</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#c5a059] mb-4 tracking-wider font-serif">عَلِي شَيْخ</h1>
+            
+            {/* صورة العريس الدائرية بمقاس متناسق */}
+            <div className="w-36 h-36 sm:w-44 sm:h-44 mx-auto rounded-full overflow-hidden border-[3px] border-[#c5a059] shadow-[0_0_25px_rgba(197,160,89,0.3)] mb-4 bg-[#1A2840]">
+              <img src={groomImg} alt="العريس علي شيخ" className="w-full h-full object-cover" />
+            </div>
+
+            <div className="text-xs space-y-1 text-[#c5a059] font-medium mb-4">
+              <p>٢١ / ١١ / ١٤٤٧ هـ</p>
+              <p>08 / May / 2026</p>
+              <p className="text-white/70 text-[10px]">8:30 مساءً — 8:30 PM</p>
+            </div>
+
+            {/* العداد التنازلي */}
+            <div className="flex justify-center gap-2">
+              {[
+                { label: "ثانية", value: timeLeft.seconds },
+                { label: "دقيقة", value: timeLeft.minutes },
+                { label: "ساعة", value: timeLeft.hours },
+                { label: "يوم", value: timeLeft.days },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-[#18263E] border border-[#c5a059]/30 rounded-xl py-1.5 px-2.5 w-14 text-center shadow-inner">
+                  <span className="block text-sm font-bold text-[#c5a059]">{item.value}</span>
+                  <span className="block text-[8px] text-white/60">{item.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="text-xs sm:text-sm space-y-1 text-[#c5a059] font-medium mb-6">
-            <p>٢١ / ١١ / ١٤٤٧ هـ</p>
-            <p>08 / May / 2026</p>
-            <p className="text-white/70 text-[11px] pt-1">8:30 مساءً — 8:30 PM</p>
+          {/* مؤشر السحب للأسفل + الخط الذهبي الفاصل بنهاية الشاشة الأولى */}
+          <div className="w-full pb-2 flex flex-col items-center">
+            <span className="text-[10px] text-[#c5a059]/70 mb-1 animate-bounce">اسحب للأفل للتفاصيل ↓</span>
+            <div className="w-24 h-[2px] bg-[#c5a059] mx-auto rounded-full shadow-[0_0_10px_#c5a059]"></div>
           </div>
+        </section>
 
-          {/* العداد التنازلي */}
-          <div className="flex justify-center gap-3 mt-4">
-            {[
-              { label: "ثانية", value: timeLeft.seconds },
-              { label: "دقيقة", value: timeLeft.minutes },
-              { label: "ساعة", value: timeLeft.hours },
-              { label: "يوم", value: timeLeft.days },
-            ].map((item, idx) => (
-              <div key={idx} className="bg-[#18263E] border border-[#c5a059]/30 rounded-xl py-2 px-3 w-16 text-center shadow-inner">
-                <span className="block text-base font-bold text-[#c5a059]">{item.value}</span>
-                <span className="block text-[9px] text-white/60">{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </header>
-
-        {/* محتوى الدعوة النصي (البطاقة الكريمة) */}
-        <main className="max-w-xl mx-auto px-4 py-8 space-y-6">
-          
-          <div className="bg-[#faf8f5] text-[#2c2c2c] py-8 px-6 text-center rounded-2xl shadow-xl border border-[#c5a059]/30">
-            <p className="text-xl text-[#c5a059] mb-6 font-serif">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        {/* ================= الصفحة الثانية (بطاقة الدعوة الكريمة) ================= */}
+        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+          <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] py-6 px-5 text-center rounded-2xl shadow-2xl border border-[#c5a059]/30">
+            <p className="text-lg text-[#c5a059] mb-4 font-serif">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
             
-            <p className="text-xs text-gray-500 mb-1">يشرّف</p>
-            <h2 className="text-base font-bold text-[#1e293b] mb-1">الشيخ: حسين بن علي شيخ حكي</h2>
-            <p className="text-[11px] text-gray-500 mb-5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+            <p className="text-[11px] text-gray-500 mb-0.5">يشرّف</p>
+            <h2 className="text-sm font-bold text-[#1e293b] mb-0.5">الشيخ: حسين بن علي شيخ حكي</h2>
+            <p className="text-[10px] text-gray-500 mb-3">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
             
-            <h3 className="text-xl sm:text-2xl font-bold text-[#c5a059] mb-1 font-serif">علي بن حسين شيخ حكي</h3>
-            <p className="text-[11px] text-gray-500 mb-1">على كريمة</p>
-            <h4 className="text-sm font-bold text-[#1e293b] mb-5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-0.5 font-serif">علي بن حسين شيخ حكي</h3>
+            <p className="text-[10px] text-gray-500 mb-0.5">على كريمة</p>
+            <h4 className="text-xs font-bold text-[#1e293b] mb-3">الدكتور: ماجد بن ابراهيم الجوهري</h4>
             
-            <div className="w-16 h-[1px] bg-[#c5a059]/40 mx-auto my-5"></div>
+            <div className="w-12 h-[1px] bg-[#c5a059]/40 mx-auto my-3"></div>
             
-            <p className="text-[11px] text-[#c5a059] font-semibold mb-4">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
+            <p className="text-[10px] text-[#c5a059] font-semibold mb-2">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
             
-            <div className="text-[11px] text-gray-600 space-y-1.5 leading-relaxed mb-5">
+            <div className="text-[10px] text-gray-600 space-y-1 leading-relaxed mb-3">
               <p className="font-medium">
-                Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, Ali bin Hussein Sheikh Hakami, to the daughter of Dr. Majid bin Ibrahim Al-Jawhari
+                Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son...
               </p>
-              <p className="text-[#c5a059]">Friday 08 . May . 2026</p>
             </div>
 
-            <div className="border-t border-gray-200 pt-4 mt-4">
-              <p className="text-xs font-bold text-[#1e293b]">وحضوركم يمنحنا لنا الفرح والسرور</p>
-              <p className="text-[10px] text-gray-400 mt-0.5">Your presence brings us honor and great joy</p>
+            <div className="border-t border-gray-200 pt-3">
+              <p className="text-[11px] font-bold text-[#1e293b]">وحضوركم يمنحنا لنا الفرح والسرور</p>
             </div>
           </div>
+        </section>
 
-          {/* تفاصيل الحفل */}
-          <div className="bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-xl border border-[#c5a059]/30">
-            <h3 className="text-center text-[#c5a059] text-base font-bold mb-5 tracking-wide">تَفَاصِيلِ الحَفْل</h3>
-            <div className="space-y-4">
+        {/* ================= الصفحة الثالثة (تفاصيل الحفل) ================= */}
+        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+          <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-2xl border border-[#c5a059]/30">
+            <h3 className="text-center text-[#c5a059] text-base font-bold mb-4 tracking-wide">تَفَاصِيلِ الحَفْل</h3>
+            <div className="space-y-3">
               
-              <div className="flex items-start gap-3 border-b border-gray-100 pb-3">
-                <div className="text-lg bg-[#111C2E] text-[#c5a059] p-2.5 rounded-xl">📅</div>
+              <div className="flex items-start gap-3 border-b border-gray-100 pb-2.5">
+                <div className="text-base bg-[#111C2E] text-[#c5a059] p-2 rounded-xl">📅</div>
                 <div>
-                  <h4 className="text-[10px] text-gray-400 font-semibold">التاريخ</h4>
+                  <h4 className="text-[9px] text-gray-400 font-semibold">التاريخ</h4>
                   <p className="text-xs font-bold text-gray-800">الجمعة ٢١ / ١١ / ١٤٤٧ هـ</p>
-                  <p className="text-[10px] text-gray-500">Friday, May 8, 2026</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 border-b border-gray-100 pb-3">
-                <div className="text-lg bg-[#111C2E] text-[#c5a059] p-2.5 rounded-xl">⏰</div>
+              <div className="flex items-start gap-3 border-b border-gray-100 pb-2.5">
+                <div className="text-base bg-[#111C2E] text-[#c5a059] p-2 rounded-xl">⏰</div>
                 <div>
-                  <h4 className="text-[10px] text-gray-400 font-semibold">الزمن</h4>
+                  <h4 className="text-[9px] text-gray-400 font-semibold">الزمن</h4>
                   <p className="text-xs font-bold text-gray-800">الساعة الثامنة والنصف - 8:30 م</p>
-                  <p className="text-[10px] text-gray-500">Half past eight - 8:30 PM</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="text-lg bg-[#111C2E] text-[#c5a059] p-2.5 rounded-xl">📍</div>
+                <div className="text-base bg-[#111C2E] text-[#c5a059] p-2 rounded-xl">📍</div>
                 <div>
-                  <h4 className="text-[10px] text-gray-400 font-semibold">الموقع</h4>
+                  <h4 className="text-[9px] text-gray-400 font-semibold">الموقع</h4>
                   <p className="text-xs font-bold text-gray-800">نادي وزارة الداخلية — جيزان</p>
-                  <p className="text-[10px] text-gray-500 mb-1.5">Ministry of Interior Club, Jizan</p>
                   <a 
                     href="https://maps.google.com" 
                     target="_blank" 
                     rel="noreferrer"
-                    className="text-[11px] text-[#c5a059] font-semibold underline inline-block"
+                    className="text-[10px] text-[#c5a059] font-semibold underline inline-block mt-1"
                   >
                     افتتح في الخرائط | Open in Maps
                   </a>
@@ -151,68 +154,70 @@ export default function WeddingInvitation() {
 
             </div>
           </div>
+        </section>
 
-          {/* برنامج الحفل */}
-          <div className="bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-xl border border-[#c5a059]/30">
-            <h3 className="text-center text-[#c5a059] text-base font-bold mb-5 tracking-wide">بَرْنَامَج الحَفْل</h3>
-            <div className="space-y-4 relative border-r-2 border-[#c5a059]/30 pr-3 mr-1">
+        {/* ================= الصفحة الرابعة (برنامج الحفل) ================= */}
+        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+          <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-2xl border border-[#c5a059]/30">
+            <h3 className="text-center text-[#c5a059] text-base font-bold mb-4 tracking-wide">بَرْنَامَج الحَفْل</h3>
+            <div className="space-y-3 relative border-r-2 border-[#c5a059]/30 pr-3 mr-1">
               {[
-                { time: "8:30 PM - ٨:٣٠ م", title: "استقبال الضيوف وبداية العرضة السعودية", desc: "Guest Reception & Start of the Saudi Ardah" },
-                { time: "9:15 PM - ٩:١٥ م", title: "دخول العريس وبدء الزفة", desc: "Groom Entrance & Wedding Zaffa" },
-                { time: "9:30 PM - ٩:٣٠ م", title: "السلام العام واستقبال المهنئين", desc: "General Greetings & Congratulations" },
-                { time: "10:15 PM - ١٠:١٥ م", title: "حباكم العشاء", desc: "Dinner" },
-                { time: "10:45 PM - ١٠:٤٥ م", title: "احتفال", desc: "Celebration" },
+                { time: "8:30 PM - ٨:٣٠ م", title: "استقبال الضيوف وبداية العرضة السعودية" },
+                { time: "9:15 PM - ٩:١٥ م", title: "دخول العريس وبدء الزفة" },
+                { time: "9:30 PM - ٩:٣٠ م", title: "السلام العام واستقبال المهنئين" },
+                { time: "10:15 PM - ١٠:١٥ م", title: "حباكم العشاء" },
+                { time: "10:45 PM - ١٠:٤٥ م", title: "احتفال" },
               ].map((item, idx) => (
                 <div key={idx} className="relative">
                   <div className="absolute -right-[17px] top-1.5 w-2 h-2 rounded-full bg-[#c5a059] border-2 border-white"></div>
-                  <span className="text-[10px] font-bold text-[#c5a059]">{item.time}</span>
+                  <span className="text-[9px] font-bold text-[#c5a059]">{item.time}</span>
                   <h4 className="font-bold text-gray-800 text-xs mt-0.5">{item.title}</h4>
-                  <p className="text-[10px] text-gray-500">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
+        </section>
 
-          {/* تأكيد الحضور */}
-          <div className="bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-6 shadow-xl border border-[#c5a059]/30 mb-12">
-            <h3 className="text-center text-[#c5a059] text-base font-bold mb-1">تأكيد الحضور</h3>
-            <h4 className="text-center text-[10px] font-semibold text-gray-600 mb-1">CONFIRM ATTENDANCE</h4>
-            <p className="text-center text-[10px] text-gray-400 mb-5">
+        {/* ================= الصفحة الخامسة (تأكيد الحضور عبر الواتساب) ================= */}
+        <section className="h-screen w-screen snap-start flex items-center justify-center px-4 bg-[#111C2E]">
+          <div className="w-full max-w-md bg-[#faf8f5] text-[#2c2c2c] rounded-2xl p-5 shadow-2xl border border-[#c5a059]/30">
+            <h3 className="text-center text-[#c5a059] text-sm font-bold mb-0.5">تأكيد الحضور</h3>
+            <p className="text-center text-[9px] text-gray-400 mb-3">
               عبي البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة
             </p>
 
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-3.5 text-right" dir="rtl">
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-2.5 text-right" dir="rtl">
               <div>
-                <label className="block text-[11px] font-bold text-gray-700 mb-1">الاسم الكامل Full Name</label>
+                <label className="block text-[10px] font-bold text-gray-700 mb-1">الاسم الكامل Full Name</label>
                 <input
                   type="text"
                   required
                   placeholder="اكتب اسمك"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
+                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-gray-700 mb-1">رقم الجوال Phone Number</label>
+                <label className="block text-[10px] font-bold text-gray-700 mb-1">رقم الجوال Phone Number</label>
                 <input
                   type="tel"
                   required
                   placeholder="05xxxxxxxx"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
+                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-gray-700 mb-1">عدد المرافقين Number of Guests</label>
+                <label className="block text-[10px] font-bold text-gray-700 mb-1">عدد المرافقين Number of Guests</label>
                 <select
                   required
                   value={guests}
                   onChange={(e) => setGuests(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059] text-gray-700"
+                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059] text-gray-700"
                 >
                   <option value="" disabled>اختر</option>
                   <option value="1">1</option>
@@ -224,15 +229,15 @@ export default function WeddingInvitation() {
 
               <button
                 type="submit"
-                className="w-full bg-[#111C2E] text-[#c5a059] font-bold py-3 rounded-xl transition-all hover:bg-[#1a2840] shadow-md flex items-center justify-center gap-2 text-xs mt-3 border border-[#c5a059]/30"
+                className="w-full bg-[#111C2E] text-[#c5a059] font-bold py-2.5 rounded-xl transition-all hover:bg-[#1a2840] shadow-md flex items-center justify-center gap-2 text-xs mt-2 border border-[#c5a059]/30"
               >
                 <span>إرسال التأكيد عبر واتساب</span>
                 <span>✈️</span>
               </button>
             </form>
           </div>
+        </section>
 
-        </main>
       </div>
     </div>
   );
