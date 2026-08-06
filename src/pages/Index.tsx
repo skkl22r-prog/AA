@@ -97,14 +97,14 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثانية ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-start items-center px-4 bg-[#faf8f5] pt-10 pb-6">
-          {/* علامة الزائد (+) المخطوطة تم تكبير حجمها ونزلت لأسفل بمقدار تكتين */}
-          <p className="text-5xl sm:text-6xl font-besm text-[#23385e] mb-4 mt-6 drop-shadow-sm text-center" dir="rtl">
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-start items-center px-4 bg-[#faf8f5] pt-1 pb-4">
+          {/* تم رفع السطر الأول (المخطوطة) للأعلى */}
+          <p className="text-5xl sm:text-6xl font-besm text-[#23385e] mb-1 mt-1 drop-shadow-sm text-center" dir="rtl">
 +
           </p>
 
-          {/* المربع تم تعلية ارتفاعه (زيادة حشو الـ py) وتكبر الخط بداخله */}
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] p-7 sm:p-8 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 mt-3">
+          {/* تم رفع المربع للأعلى */}
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] p-7 sm:p-8 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 mt-1">
             <p className="text-sm sm:text-base text-gray-500 mb-1.5">يشرّف</p>
             <h2 className="text-lg sm:text-xl font-bold text-[#1e293b] mb-2">الشيخ: حسين بن علي شيخ حكي</h2>
             <p className="text-sm text-gray-500 mb-4">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
@@ -138,6 +138,11 @@ export default function WeddingInvitation() {
               <p className="text-sm sm:text-base font-bold text-[#1e293b]">وبحضوركم يتم لنا الفرح والسرور</p>
               <p className="text-xs sm:text-sm text-gray-500" dir="ltr">Your presence brings us honor and great joy</p>
             </div>
+          </div>
+
+          {/* سهم ذهبي متحرك تحت المربع تماماً */}
+          <div className="mt-3 flex justify-center">
+            <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
 
