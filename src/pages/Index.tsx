@@ -97,53 +97,56 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثانية ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 bg-[#faf8f5] pt-4 pb-3">
-          {/* تم ضبط المسافة العلوية للـ البسملة لتأخذ مكاناً مريحاً وغير مزحوم */}
-          <div className="pt-2">
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 py-3 bg-[#faf8f5]">
+          <div className="pt-1">
             <p className="text-4xl sm:text-5xl font-besm text-[#23385e] drop-shadow-sm text-center" dir="rtl">
               +
             </p>
           </div>
 
-          {/* المربع في منتصف المساحة المتاحة بشكل متوازن تماماً */}
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] p-4 sm:p-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 my-auto">
-            <p className="text-xs sm:text-sm text-gray-500 mb-1">يشرّف</p>
-            <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1.5">الشيخ: حسين بن علي شيخ حكي</h2>
-            <p className="text-xs sm:text-sm text-gray-500 mb-2.5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-5 sm:py-6 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[72vh]">
+            <div>
+              <p className="text-xs sm:text-sm text-gray-500 mb-1">يشرّف</p>
+              <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1.5">الشيخ: حسين بن علي شيخ حكي</h2>
+              <p className="text-xs sm:text-sm text-gray-500 mb-2">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+            </div>
             
-            <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1.5 font-serif">علي بن حسين شيخ حكي</h3>
-            <p className="text-xs sm:text-sm text-gray-500 mb-1">على كريمة</p>
-            <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-2.5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            <div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1 font-serif">علي بن حسين شيخ حكي</h3>
+              <p className="text-xs sm:text-sm text-gray-500 mb-1">على كريمة</p>
+              <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-2">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            </div>
             
-            <div className="flex items-center justify-center gap-2 my-2">
+            <div className="flex items-center justify-center gap-2 my-1">
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
               <span className="w-2 h-2 rounded-full bg-[#23385e]"></span>
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#c5a059] font-bold mb-2.5">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
-            
-            <div className="text-xs sm:text-sm text-gray-700 space-y-1.5 leading-relaxed mb-2.5 font-medium" dir="ltr">
-              <p>
-                Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, <span className="text-[#c5a059] font-bold">Ali bin Hussein Sheikh Hakami</span>, to the daughter of <span className="text-[#c5a059] font-bold">Dr. Majid bin Ibrahim Al-Jawhari</span>
-              </p>
-              <p className="text-[#c5a059] font-bold pt-0.5">Friday 08 . May . 2026</p>
+            <div>
+              <p className="text-xs sm:text-sm text-[#c5a059] font-bold mb-2">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
+              
+              <div className="text-[11px] sm:text-xs text-gray-700 space-y-1 leading-relaxed font-medium" dir="ltr">
+                <p>
+                  Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, <span className="text-[#c5a059] font-bold">Ali bin Hussein Sheikh Hakami</span>, to the daughter of <span className="text-[#c5a059] font-bold">Dr. Majid bin Ibrahim Al-Jawhari</span>
+                </p>
+                <p className="text-[#c5a059] font-bold pt-0.5">Friday 08 . May . 2026</p>
+              </div>
             </div>
 
-            <div className="flex items-center justify-center gap-2 my-2">
+            <div className="flex items-center justify-center gap-2 my-1">
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
               <span className="w-2 h-2 rounded-full bg-[#23385e]"></span>
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
             </div>
 
-            <div className="space-y-1" dir="rtl">
+            <div className="space-y-0.5" dir="rtl">
               <p className="text-xs sm:text-sm font-bold text-[#1e293b]">وبحضوركم يتم لنا الفرح والسرور</p>
-              <p className="text-[11px] sm:text-xs text-gray-500" dir="ltr">Your presence brings us honor and great joy</p>
+              <p className="text-[10px] sm:text-xs text-gray-500" dir="ltr">Your presence brings us honor and great joy</p>
             </div>
           </div>
 
-          {/* سهم ذهبي متحرك تحت المربع بمسافة مريحة */}
-          <div className="pb-2 flex justify-center">
+          <div className="pb-1 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
