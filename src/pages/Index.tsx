@@ -242,13 +242,11 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الرابعة (برنامج الحفل - تعديل قرب العنوان من المربع) ================= */}
+        {/* ================= الصفحة الرابعة ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5]" dir="rtl">
           
-          {/* عنصر حاوي يضم العنوان والمربع معاً لضمان تقاربهما وعدم تشتتهما */}
           <div className="w-full max-w-md flex flex-col items-center my-auto">
             
-            {/* العنوان قريب ومترابط مع المربع */}
             <div className="text-center mb-3">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
                 بَرْنَامَج الحَفْل
@@ -257,7 +255,6 @@ export default function WeddingInvitation() {
               <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
             </div>
 
-            {/* المربع الداخلي */}
             <div className="w-full bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 flex flex-col justify-around max-h-[72vh]">
               {[
                 {
@@ -297,7 +294,6 @@ export default function WeddingInvitation() {
                     {item.titleEn}
                   </p>
 
-                  {/* الفاصل الذهبي بين الفقرات */}
                   {idx < arr.length - 1 && (
                     <div className="flex items-center justify-center gap-2 my-1.5">
                       <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
@@ -316,63 +312,115 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور عبر الواتساب) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex items-center justify-center px-4 bg-[#faf8f5]">
-          <div className="w-full max-w-md bg-white rounded-2xl p-6 shadow-lg border border-gray-200/70">
-            <h3 className="text-center text-[#c5a059] text-sm font-bold mb-1">تأكيد الحضور</h3>
-            <p className="text-center text-[9px] text-gray-400 mb-4">
-              عبي البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة
+        {/* ================= الصفحة الخامسة (تأكيد الحضور - مطابقة تماماً للصورة مع الهوية والألوان الأزرق والذهبي) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
+          
+          <div className="w-full max-w-md flex flex-col items-center my-auto">
+            
+            {/* العنوان */}
+            <div className="text-center mb-3">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
+                تَأْكِيد الحُضُور
+              </h3>
+              <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">CONFIRM ATTENDANCE</p>
+              <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
+            </div>
+
+            {/* النص التوضيحي */}
+            <p className="text-center text-[11px] text-gray-600 mb-4 px-2 leading-relaxed">
+              عبّي البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة.<br />
+              <span className="text-[9px] text-gray-400">Fill in the details and press send — WhatsApp will open with a ready message.</span>
             </p>
 
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-3 text-right" dir="rtl">
-              <div>
-                <label className="block text-[10px] font-bold text-gray-700 mb-1">الاسم الكامل Full Name</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="اكتب اسمك"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-3 py-2 bg-[#faf8f5] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
-                />
+            {/* النموذج وتأكيد الألوان (أزرق وهوية متناسقة مع حدود ذهبية) */}
+            <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-3">
+              
+              {/* حقل الاسم الكامل */}
+              <div className="bg-white px-4 py-2.5 rounded-2xl shadow-sm border-2 border-[#c5a059]/60 text-right">
+                <div className="flex justify-between items-center mb-1">
+                  <label className="text-xs font-bold text-[#23385e]">الاسم الكامل</label>
+                  <span className="text-[10px] text-gray-400">Full Name</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  <input
+                    type="text"
+                    required
+                    placeholder="اكتب اسمك"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="w-full bg-transparent text-xs text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label className="block text-[10px] font-bold text-gray-700 mb-1">رقم الجوال Phone Number</label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="05xxxxxxxx"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-3 py-2 bg-[#faf8f5] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059]"
-                />
+              {/* حقل رقم الجوال */}
+              <div className="bg-white px-4 py-2.5 rounded-2xl shadow-sm border-2 border-[#c5a059]/60 text-right" dir="rtl">
+                <div className="flex justify-between items-center mb-1">
+                  <label className="text-xs font-bold text-[#23385e]">رقم الجوال</label>
+                  <span className="text-[10px] text-gray-400">Phone Number</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="05xxxxxxxx"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full bg-transparent text-xs text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
+                    dir="ltr"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label className="block text-[10px] font-bold text-gray-700 mb-1">عدد المرافقين Number of Guests</label>
-                <select
-                  required
-                  value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
-                  className="w-full px-3 py-2 bg-[#faf8f5] border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-[#c5a059] text-gray-700"
+              {/* حقل عدد المرافقين */}
+              <div className="bg-white px-4 py-2.5 rounded-2xl shadow-sm border-2 border-[#c5a059]/60 text-right">
+                <div className="flex justify-between items-center mb-1">
+                  <label className="text-xs font-bold text-[#23385e]">عدد المرافقين</label>
+                  <span className="text-[10px] text-gray-400">Number of Guests</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  </svg>
+                  <select
+                    required
+                    value={guests}
+                    onChange={(e) => setGuests(e.target.value)}
+                    className="w-full bg-transparent text-xs text-[#2c2c2c] focus:outline-none text-right cursor-pointer"
+                  >
+                    <option value="" disabled>اختر</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* ملاحظة بسيطة وزر الإرسال */}
+              <div className="pt-2 text-center">
+                <p className="text-[10px] text-gray-500 mb-2">سيتم فتح واتساب — اضغط "إرسال" لتأكيد حضورك.</p>
+                <button
+                  type="submit"
+                  className="w-full bg-[#c5a059] text-white font-bold py-3 rounded-2xl transition-all hover:bg-[#b08c48] shadow-lg flex items-center justify-center gap-2 text-xs border border-white/20"
                 >
-                  <option value="" disabled>اختر</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
+                  <span>إرسال التأكيد عبر واتساب</span>
+                  <span>✈️</span>
+                </button>
+                <p className="text-[9px] text-gray-400 mt-1">Confirm via WhatsApp</p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#111C2E] text-[#c5a059] font-bold py-2.5 rounded-xl transition-all hover:bg-[#1a2840] shadow-md flex items-center justify-center gap-2 text-xs mt-3 border border-[#c5a059]/30"
-              >
-                <span>إرسال التأكيد عبر واتساب</span>
-                <span>✈️</span>
-              </button>
             </form>
+          </div>
+
+          <div className="pb-1 opacity-0 pointer-events-none">
+            <span className="text-xl">⌄</span>
           </div>
         </section>
 
