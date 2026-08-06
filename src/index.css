@@ -149,11 +149,16 @@
     @apply border-border;
   }
 
-  body {
-  background: #A77C86;
-  color: #EFE6DE;
-  font-family: 'Tajawal', 'Cairo', sans-serif;
-}
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #A77C86;
+    color: #EFE6DE;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+  }
 }
 
 @layer utilities {
@@ -174,53 +179,47 @@
     color: hsl(var(--gold-deep));
   }
   .font-aldhabi {
-  font-family: "Aldhabi";
-}
-.font-neirizi {
-  font-family: "Neirizi";
-}
-
-.font-a {
-  font-family: "A";
-}
-.font-goori {
-  font-family: "Goori";
-}
-
-.font-monasabat {
-  font-family: "Monasabat";
-}
-.font-iran {
-  font-family: "IranNastali";
-}
-.font-whitney {
-  font-family: "Whitney", sans-serif;
-}
-.font-kahand {
-  font-family: "KAHand";
-}
-
-.font-sarahhh1 {
-  font-family: "SARAhhh1";
-}
-
-.font-tajawal-medium {
-  font-family: "TajawalMedium";
-}
-
-.font-font1 {
-  font-family: "Font1";
-}
+    font-family: "Aldhabi";
+  }
+  .font-neirizi {
+    font-family: "Neirizi";
+  }
+  .font-a {
+    font-family: "A";
+  }
+  .font-goori {
+    font-family: "Goori";
+  }
+  .font-monasabat {
+    font-family: "Monasabat";
+  }
+  .font-iran {
+    font-family: "IranNastali";
+  }
+  .font-whitney {
+    font-family: "Whitney", sans-serif;
+  }
+  .font-kahand {
+    font-family: "KAHand";
+  }
+  .font-sarahhh1 {
+    font-family: "SARAhhh1";
+  }
+  .font-tajawal-medium {
+    font-family: "TajawalMedium";
+  }
+  .font-font1 {
+    font-family: "Font1";
+  }
   .font-wa {
-  font-family: "wa";
-}
+    font-family: "wa";
+  }
   .font-sull {
-  font-family: "sull";
-}
-
-.font-amoshref {
-  font-family: "AMoshref";
-}
+    font-family: "sull";
+  }
+  .font-amoshref {
+    font-family: "AMoshref";
+  }
 
   /* Heart-shaped strikethrough using mask */
   .heart-strike {
@@ -247,23 +246,22 @@
     100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
   }
   @keyframes textReveal {
-  from {
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .text-reveal {
     opacity: 0;
-    transform: translateY(35px);
-    filter: blur(6px);
+    animation: textReveal 1.2s ease 0.2s forwards;
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-.text-reveal {
-  opacity: 0;
-  animation: textReveal 1.2s ease 0.2s forwards;
-}
   .animate-float-slow {
     animation: float-slow 4s ease-in-out infinite;
   }
