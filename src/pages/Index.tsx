@@ -45,9 +45,9 @@ export default function WeddingInvitation() {
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
         {/* ================= الصفحة الأولى ================= */}
-        <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-4 px-3 bg-[#111C2E] overflow-hidden">
+        <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] overflow-hidden">
           
-          {/* رأس الصفحة (تم إنزال العنوان واسم العريس والزخرفة للأسفل قليلاً بشكل مستقل) */}
+          {/* رأس الصفحة (دعوة حفل زفاف + اسم العريس + الزخرفة) */}
           <div className="w-full relative z-30 shrink-0 mt-5 sm:mt-6">
             <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-1">دعوة حفل زفاف</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
@@ -58,7 +58,7 @@ export default function WeddingInvitation() {
             </div>
           </div>
 
-          {/* حاوية تجمع صورة العريس والتاريخ والعداد (مرفوعة تكה خفيفة للأعلى لتفادي شريط الجوال) */}
+          {/* حاوية تجمع صورة العريس والتاريخ والعداد */}
           <div className="w-full flex-1 relative z-20 flex items-center justify-center -mt-2">
             
             {/* صورة العريس مع تدرج الاختفاء من الأسفل */}
@@ -72,17 +72,15 @@ export default function WeddingInvitation() {
               }}
             />
 
-            {/* التاريخ والعداد بحجم أكبر وأبرز فوق أسفل الصورة */}
+            {/* التاريخ والعداد بحجم كبير وبارز */}
             <div className="absolute bottom-1 z-30 w-full flex flex-col items-center pointer-events-none">
               
-              {/* التاريخ والكلام بحجم كبير وواضح */}
               <div className="text-sm sm:text-base space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                 <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
                 <p className="tracking-wide text-[#c5a059]">08 . May . 2026</p>
                 <p className="text-white/90 text-xs">8:30 مساءً</p>
               </div>
 
-              {/* العد التنازلي بحجم كبير وبارز جداً */}
               <div className="flex justify-center gap-2.5">
                 {[
                   { label: "ثانية", value: timeLeft.seconds },
@@ -101,8 +99,8 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* مؤشر السحب السفلي (مرتفع وواضح فوق شريط الجوال) */}
-          <div className="w-full shrink-0 relative z-30 pb-2">
+          {/* مؤشر السحب السفلي (تم إنزاله تكة بسيطة لتحت لاستغلال الفراغ وظهوره بشكل مثالي) */}
+          <div className="w-full shrink-0 relative z-30 pb-0.5 mt-1">
             <span className="text-[10px] text-[#c5a059] font-medium animate-bounce block">اسحب لأسفل للتفاصيل ↓</span>
           </div>
         </section>
