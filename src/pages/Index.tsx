@@ -99,13 +99,11 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الثانية ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]">
           <div className="pt-3">
-            {/* نزلت البسملة قليلاً للأسفل */}
             <p className="text-5xl sm:text-6xl font-besm text-[#23385e] drop-shadow-sm text-center" dir="rtl">
               +
             </p>
           </div>
 
-          {/* نزل المربع مع البسملة والسهم ثابت لا يُمس */}
           <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 sm:py-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[66vh]">
             <div>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">يشرّف</p>
@@ -148,49 +146,61 @@ export default function WeddingInvitation() {
             </div>
           </div>
 
-          {/* السهم ثابت تماماً في مكانه */}
           <div className="pb-1 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
 
-        {/* ================= الصفحة الثالثة (تفاصيل الحفل) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex items-center justify-center px-4 bg-[#faf8f5]">
-          <div className="w-full max-w-md bg-white rounded-2xl p-6 shadow-lg border border-gray-200/70">
-            <h3 className="text-center text-[#c5a059] text-base font-bold mb-5 tracking-wide">تَفَاصِيلِ الحَفْل</h3>
-            <div className="space-y-4 text-right" dir="rtl">
-              <div className="flex items-start gap-3 border-b border-gray-100 pb-4">
-                <div className="text-base bg-[#faf8f5] text-[#23385e] p-2.5 rounded-xl">📅</div>
-                <div>
-                  <h4 className="text-[10px] text-gray-400 font-semibold">التاريخ</h4>
-                  <p className="text-xs font-bold text-gray-800">الجمعة ٢١ / ١١ / ١٤٤٧ هـ</p>
-                </div>
-              </div>
+        {/* ================= الصفحة الثالثة (تفاصيل الحفل المحدثة) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center justify-between px-4 py-4 bg-[#faf8f5]" dir="rtl">
+          
+          <div className="w-full text-center pt-6">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">تَفَاصِيلِ الحَفْل</h1>
+            <p className="text-xs text-gray-500 tracking-[0.2em] mt-1">EVENT DETAILS</p>
+            <div className="w-16 h-[1px] bg-[#c5a059] mx-auto mt-2"></div>
+          </div>
 
-              <div className="flex items-start gap-3 border-b border-gray-100 pb-4">
-                <div className="text-base bg-[#faf8f5] text-[#23385e] p-2.5 rounded-xl">⏰</div>
-                <div>
-                  <h4 className="text-[10px] text-gray-400 font-semibold">الزمن</h4>
-                  <p className="text-xs font-bold text-gray-800">الساعة الثامنة والنصف - 8:30 م</p>
-                </div>
+          <div className="w-full max-w-md space-y-2.5 my-auto">
+            
+            <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-[#c5a059] text-xl">📅</span>
+                <h4 className="text-[10px] font-semibold text-gray-400 tracking-widest">التاريخ</h4>
               </div>
-
-              <div className="flex items-start gap-3">
-                <div className="text-base bg-[#faf8f5] text-[#23385e] p-2.5 rounded-xl">📍</div>
-                <div>
-                  <h4 className="text-[10px] text-gray-400 font-semibold">الموقع</h4>
-                  <p className="text-xs font-bold text-gray-800">نادي وزارة الداخلية — جيزان</p>
-                  <a 
-                    href="https://maps.google.com" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="text-[10px] text-[#c5a059] font-semibold underline inline-block mt-1.5"
-                  >
-                    افتتح في الخرائط | Open in Maps
-                  </a>
-                </div>
-              </div>
+              <p className="text-base sm:text-lg font-bold text-[#23385e]">الجمعة ٢١ / ١١ / ١٤٤٧هـ</p>
+              <p className="text-[11px] text-gray-500 mt-1 font-medium" dir="ltr">Friday, May 8, 2026</p>
             </div>
+
+            <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-[#c5a059] text-xl">⏰</span>
+                <h4 className="text-[10px] font-semibold text-gray-400 tracking-widest">الزمن</h4>
+              </div>
+              <p className="text-base sm:text-lg font-bold text-[#23385e]">الساعة الثامنة والنصف - ٨:٣٠ م</p>
+              <p className="text-[11px] text-gray-500 mt-1 font-medium" dir="ltr">Half past eight - 8:30 PM</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-[#c5a059] text-xl">📍</span>
+                <h4 className="text-[10px] font-semibold text-gray-400 tracking-widest">الموقع</h4>
+              </div>
+              <p className="text-base sm:text-lg font-bold text-[#23385e]">نادي وزارة الداخلية — جيزان</p>
+              <p className="text-[11px] text-gray-500 mt-1 font-medium">Ministry of Interior Club, Jizan</p>
+              <a 
+                href="https://maps.google.com" 
+                target="_blank" 
+                rel="noreferrer"
+                className="text-[11px] text-[#c5a059] font-semibold underline mt-2 inline-block"
+              >
+                افتتح في الخرائط | Open in Maps
+              </a>
+            </div>
+
+          </div>
+
+          <div className="w-full pb-1 flex justify-center">
+            <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
 
