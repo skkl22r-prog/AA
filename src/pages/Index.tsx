@@ -242,68 +242,73 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الرابعة (معالجة الترتيب والتناسق العام للمحتوى) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-5 pb-3 bg-[#faf8f5]" dir="rtl">
+        {/* ================= الصفحة الرابعة (برنامج الحفل - تعديل قرب العنوان من المربع) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5]" dir="rtl">
           
-          {/* العنوان مع توسيط متناسق ومسافة علوية مريحة */}
-          <div className="pt-2 text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
-              بَرْنَامَج الحَفْل
-            </h3>
-            <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">EVENT PROGRAM</p>
-            <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
-          </div>
+          {/* عنصر حاوي يضم العنوان والمربع معاً لضمان تقاربهما وعدم تشتتهما */}
+          <div className="w-full max-w-md flex flex-col items-center my-auto">
+            
+            {/* العنوان قريب ومترابط مع المربع */}
+            <div className="text-center mb-3">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
+                بَرْنَامَج الحَفْل
+              </h3>
+              <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">EVENT PROGRAM</p>
+              <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
+            </div>
 
-          {/* المربع مع توزيع داخلي متزن وبدون فراغات مبالغ فيها */}
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3.5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-auto flex flex-col justify-around max-h-[72vh]">
-            {[
-              {
-                timeAr: "٨:٣٠ م - PM 8:30",
-                titleAr: "استقبال الضيوف وبداية العرضة السعودية",
-                titleEn: "Guest Reception & Start of the Saudi Ardah"
-              },
-              {
-                timeAr: "٩:١٠ م - PM 9:10",
-                titleAr: "دخول العريس وبدء الزفة",
-                titleEn: "Groom Entrance & Wedding Zaffa"
-              },
-              {
-                timeAr: "٩:٣٠ م - PM 9:30",
-                titleAr: "السلام العام واستقبال المهنئين",
-                titleEn: "General Greetings & Congratulations"
-              },
-              {
-                timeAr: "١٠:١٥ م - PM 10:15",
-                titleAr: "حباكم عالدشاء",
-                titleEn: "Dinner"
-              },
-              {
-                timeAr: "١٠:٤٥ م - PM 10:45",
-                titleAr: "احتفال",
-                titleEn: "Celebration"
-              }
-            ].map((item, idx, arr) => (
-              <div key={idx} className="py-1">
-                <p className="text-xs sm:text-sm font-bold text-[#c5a059]" dir="ltr">
-                  {item.timeAr}
-                </p>
-                <h4 className="text-sm sm:text-base font-bold text-[#23385e] mt-0.5">
-                  {item.titleAr}
-                </h4>
-                <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5" dir="ltr">
-                  {item.titleEn}
-                </p>
+            {/* المربع الداخلي */}
+            <div className="w-full bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 flex flex-col justify-around max-h-[72vh]">
+              {[
+                {
+                  timeAr: "٨:٣٠ م - PM 8:30",
+                  titleAr: "استقبال الضيوف وبداية العرضة السعودية",
+                  titleEn: "Guest Reception & Start of the Saudi Ardah"
+                },
+                {
+                  timeAr: "٩:١٠ م - PM 9:10",
+                  titleAr: "دخول العريس وبدء الزفة",
+                  titleEn: "Groom Entrance & Wedding Zaffa"
+                },
+                {
+                  timeAr: "٩:٣٠ م - PM 9:30",
+                  titleAr: "السلام العام واستقبال المهنئين",
+                  titleEn: "General Greetings & Congratulations"
+                },
+                {
+                  timeAr: "١٠:١٥ م - PM 10:15",
+                  titleAr: "حباكم عالدشاء",
+                  titleEn: "Dinner"
+                },
+                {
+                  timeAr: "١٠:٤٥ م - PM 10:45",
+                  titleAr: "احتفال",
+                  titleEn: "Celebration"
+                }
+              ].map((item, idx, arr) => (
+                <div key={idx} className="py-1">
+                  <p className="text-xs sm:text-sm font-bold text-[#c5a059]" dir="ltr">
+                    {item.timeAr}
+                  </p>
+                  <h4 className="text-sm sm:text-base font-bold text-[#23385e] mt-0.5">
+                    {item.titleAr}
+                  </h4>
+                  <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5" dir="ltr">
+                    {item.titleEn}
+                  </p>
 
-                {/* الفاصل الذهبي بين الفقرات */}
-                {idx < arr.length - 1 && (
-                  <div className="flex items-center justify-center gap-2 my-1.5">
-                    <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
-                    <span className="text-[#c5a059] text-[10px]">✦</span>
-                    <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
-                  </div>
-                )}
-              </div>
-            ))}
+                  {/* الفاصل الذهبي بين الفقرات */}
+                  {idx < arr.length - 1 && (
+                    <div className="flex items-center justify-center gap-2 my-1.5">
+                      <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                      <span className="text-[#c5a059] text-[10px]">✦</span>
+                      <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
           </div>
 
           <div className="pb-1 flex justify-center">
