@@ -44,61 +44,59 @@ export default function WeddingInvitation() {
       {/* محتوى الموقع مقسم كصفحات كاملة ثابتة بحجم الشاشة */}
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
-        {/* ================= الصفحة الأولى (مضغوطة بالكامل ومثبتة لتظهر تفاصيلها بدون سكرول) ================= */}
-        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center text-center pt-3 pb-2 px-3 bg-[#111C2E] relative overflow-hidden">
+        {/* ================= الصفحة الأولى (صورة العريس في الخلفية والكتابة فوقها بالكامل بدون سكرول) ================= */}
+        <section className="h-screen w-screen snap-start relative flex flex-col justify-between items-center text-center py-4 px-3 bg-[#111C2E] overflow-hidden">
           
-          {/* رأس الصفحة: دعوة حفل زفاف + اسم العريس */}
-          <div className="w-full relative z-20 shrink-0">
-            <p className="text-[9px] sm:text-xs text-[#c5a059] font-light tracking-[0.2em] mb-0 uppercase opacity-90">دعوة حفل زفاف</p>
-            <h1 className="text-xl sm:text-2xl font-bold text-white mb-0.5 tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
-            <div className="flex items-center justify-center gap-1.5">
+          {/* صورة العريس كخلفية مطلقة تملأ الشاشة وتتوسطها دون أن تؤثر على توزيع النصوص */}
+          <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+            <img 
+              src={groomImg} 
+              alt="العريس علي شيخ" 
+              className="w-full h-full object-contain object-bottom opacity-90 drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]" 
+            />
+          </div>
+
+          {/* طبقة تدرج لضمان وضوح النصوص فوق الصورة وخلفيتها */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#111C2E]/80 via-transparent to-[#111C2E]/90 pointer-events-none z-10"></div>
+
+          {/* رأس الصفحة (فوق الصورة) */}
+          <div className="w-full relative z-20 pt-1">
+            <p className="text-[10px] text-[#c5a059] font-light tracking-[0.25em] uppercase opacity-90 mb-0.5">دعوة حفل زفاف</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
+            <div className="flex items-center justify-center gap-1.5 mt-0.5">
               <span className="w-5 h-[1px] bg-[#c5a059]/60"></span>
               <span className="text-[#c5a059] text-[9px]">✦</span>
               <span className="w-5 h-[1px] bg-[#c5a059]/60"></span>
             </div>
           </div>
 
-          {/* حاوية صورة العريس والكتابات المتداخلة لتأخذ المساحة المتبقية بمرونة فائقة */}
-          <div className="w-full flex-1 relative z-20 flex items-end justify-center overflow-hidden min-h-0 my-0.5">
+          {/* الجزء السفلي: التاريخ والعداد (فوق الصورة مباشرة في الأسفل) */}
+          <div className="w-full relative z-20 pb-2 flex flex-col items-center">
             
-            {/* صورة العريس تملأ المساحة وملاصقة للأسفل تماماً */}
-            <img 
-              src={groomImg} 
-              alt="العريس علي شيخ" 
-              className="w-full h-full object-contain object-bottom absolute inset-0 z-10 drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]" 
-            />
-
-            {/* الطبقة النصية المتداخلة فوق صورة العريس (التاريخ والعداد) */}
-            <div className="relative z-30 w-full pb-2 flex flex-col items-center bg-gradient-to-t from-[#111C2E] via-[#111C2E]/70 to-transparent pt-8">
-              
-              {/* التاريخ والكلام متداخلين على العريس */}
-              <div className="text-[10px] space-y-0 text-[#c5a059] font-semibold mb-1.5 drop-shadow">
-                <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
-                <p className="tracking-wide text-[#c5a059]">08 . May . 2026</p>
-                <p className="text-white/80 text-[9px]">8:30 مساءً</p>
-              </div>
-
-              {/* العد التنازلي فوق الصورة بحجم مضغوط ومناسب لكل الشاشات */}
-              <div className="flex justify-center gap-1">
-                {[
-                  { label: "ثانية", value: timeLeft.seconds },
-                  { label: "دقيقة", value: timeLeft.minutes },
-                  { label: "ساعة", value: timeLeft.hours },
-                  { label: "يوم", value: timeLeft.days },
-                ].map((item, idx) => (
-                  <div key={idx} className="bg-[#111C2E]/95 backdrop-blur-sm border border-[#c5a059]/40 rounded-md py-1 px-1.5 w-11 text-center shadow-lg">
-                    <span className="block text-[11px] font-bold text-[#c5a059]">{item.value}</span>
-                    <span className="block text-[6px] text-white/70">{item.label}</span>
-                  </div>
-                ))}
-              </div>
+            {/* التاريخ */}
+            <div className="text-[10px] space-y-0 text-[#c5a059] font-semibold mb-2 drop-shadow-md">
+              <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
+              <p className="tracking-wide text-[#c5a059]">08 . May . 2026</p>
+              <p className="text-white/80 text-[9px]">8:30 مساءً</p>
             </div>
 
-          </div>
+            {/* العد التنازلي */}
+            <div className="flex justify-center gap-1.5 mb-1">
+              {[
+                { label: "ثانية", value: timeLeft.seconds },
+                { label: "دقيقة", value: timeLeft.minutes },
+                { label: "ساعة", value: timeLeft.hours },
+                { label: "يوم", value: timeLeft.days },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-[#111C2E]/90 backdrop-blur-md border border-[#c5a059]/40 rounded-lg py-1 px-1.5 w-11 text-center shadow-xl">
+                  <span className="block text-[11px] font-bold text-[#c5a059]">{item.value}</span>
+                  <span className="block text-[6px] text-white/70">{item.label}</span>
+                </div>
+              ))}
+            </div>
 
-          {/* مؤشر السحب السفلي */}
-          <div className="w-full shrink-0 pt-0.5 pb-0.5">
-            <span className="text-[8px] text-[#c5a059]/70 animate-bounce block">اسحب لأسفل للتفاصيل ↓</span>
+            {/* مؤشر السحب السفلي */}
+            <span className="text-[8px] text-[#c5a059]/80 animate-bounce block mt-1">اسحب لأسفل للتفاصيل ↓</span>
           </div>
         </section>
 
