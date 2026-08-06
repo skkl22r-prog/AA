@@ -242,11 +242,11 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الرابعة (برنامج الحفل المعدلة تماماً حسب طلبك) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-6 pb-3 bg-[#faf8f5]" dir="rtl">
+        {/* ================= الصفحة الرابعة (معالجة الترتيب والتناسق العام للمحتوى) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-5 pb-3 bg-[#faf8f5]" dir="rtl">
           
-          {/* عنوان البرنامج متمركز في المسافة العلوية بدقة */}
-          <div className="my-auto text-center">
+          {/* العنوان مع توسيط متناسق ومسافة علوية مريحة */}
+          <div className="pt-2 text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
               بَرْنَامَج الحَفْل
             </h3>
@@ -254,8 +254,8 @@ export default function WeddingInvitation() {
             <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
           </div>
 
-          {/* مربع البرنامج مع تقليص الفراغات الداخلية وتكبير النصوص بشكل متناسق وثابت من الأسفل */}
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-1 flex flex-col justify-between max-h-[72vh] overflow-y-auto scrollbar-none">
+          {/* المربع مع توزيع داخلي متزن وبدون فراغات مبالغ فيها */}
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3.5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-auto flex flex-col justify-around max-h-[72vh]">
             {[
               {
                 timeAr: "٨:٣٠ م - PM 8:30",
@@ -294,9 +294,9 @@ export default function WeddingInvitation() {
                   {item.titleEn}
                 </p>
 
-                {/* فاصل ذهبي بنجمة بين الفقرات (ما عدا الأخيرة) */}
+                {/* الفاصل الذهبي بين الفقرات */}
                 {idx < arr.length - 1 && (
-                  <div className="flex items-center justify-center gap-2 my-2">
+                  <div className="flex items-center justify-center gap-2 my-1.5">
                     <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
                     <span className="text-[#c5a059] text-[10px]">✦</span>
                     <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
