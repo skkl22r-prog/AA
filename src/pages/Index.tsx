@@ -47,8 +47,8 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الأولى ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] overflow-hidden">
           
-          {/* رأس الصفحة: (دعوة حفل زفاف ثابته فوق) + (سطر علي شيخ والزخرفة أخذوا مسافة فوق وتحت بدقة) */}
-          <div className="w-full relative z-30 shrink-0 mt-3 sm:mt-4">
+          {/* رأس الصفحة: الثلاث سطور نزلت مع بعضها لمسافة أريح بدون أي تأثير على الصورة أو العداد */}
+          <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
             <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زفاف</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md my-2.5">عَلِي شَيْخ</h1>
             <div className="flex items-center justify-center gap-2.5 mt-2.5">
@@ -58,7 +58,7 @@ export default function WeddingInvitation() {
             </div>
           </div>
 
-          {/* حاوية تجمع صورة العريس والتاريخ والعداد (كما هي تماماً بدون أي تغيير أو نزول) */}
+          {/* حاوية تجمع صورة العريس والتاريخ والعداد (محفوظة في مكانها تماماً وبدون أي تغيير) */}
           <div className="w-full flex-1 relative z-20 flex items-center justify-center -mt-2">
             
             {/* صورة العريس مع تدرج الاختفاء من الأسفل */}
