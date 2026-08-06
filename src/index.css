@@ -63,6 +63,17 @@
   font-family: "AMoshref";
   src: url("./assets/fonts/AMoshref.ttf") format("truetype");
 }
+
+/* الخطان الجديدان */
+@font-face {
+  font-family: "Daw";
+  src: url("./assets/fonts/Daw.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Besm";
+  src: url("./assets/fonts/besm.ttf") format("truetype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -219,6 +230,12 @@
   }
   .font-amoshref {
     font-family: "AMoshref";
+  }
+  .font-daw {
+    font-family: "Daw";
+  }
+  .font-besm {
+    font-family: "Besm";
   }
 
   /* Heart-shaped strikethrough using mask */
