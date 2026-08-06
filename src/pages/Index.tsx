@@ -97,51 +97,51 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثانية ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-start items-center px-4 bg-[#faf8f5] pt-2 pb-3">
-          {/* المخطوطة في الأعلى بمسافة مريحة */}
-          <p className="text-4xl sm:text-5xl font-besm text-[#23385e] mb-2 mt-2 drop-shadow-sm text-center" dir="rtl">
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-start items-center px-4 bg-[#faf8f5] pt-1 pb-4">
+          {/* تم رفع السطر الأول (المخطوطة) للأعلى */}
+          <p className="text-5xl sm:text-6xl font-besm text-[#23385e] mb-1 mt-1 drop-shadow-sm text-center" dir="rtl">
 +
           </p>
 
-          {/* تم تصغير الحشو الداخلي للمربع (p-4 sm:p-5) وتعديل تباعد النصوص لتكون مريحة وغير مزحومة */}
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] p-4 sm:p-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 mt-1">
-            <p className="text-xs sm:text-sm text-gray-500 mb-1">يشرّف</p>
-            <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1.5">الشيخ: حسين بن علي شيخ حكي</h2>
-            <p className="text-xs sm:text-sm text-gray-500 mb-2.5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+          {/* تم رفع المربع للأعلى */}
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] p-7 sm:p-8 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 mt-1">
+            <p className="text-sm sm:text-base text-gray-500 mb-1.5">يشرّف</p>
+            <h2 className="text-lg sm:text-xl font-bold text-[#1e293b] mb-2">الشيخ: حسين بن علي شيخ حكي</h2>
+            <p className="text-sm text-gray-500 mb-4">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
             
-            <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1.5 font-serif">علي بن حسين شيخ حكي</h3>
-            <p className="text-xs sm:text-sm text-gray-500 mb-1">على كريمة</p>
-            <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-2.5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+            <h3 className="text-xl sm:text-2xl font-bold text-[#c5a059] mb-2 font-serif">علي بن حسين شيخ حكي</h3>
+            <p className="text-sm text-gray-500 mb-1.5">على كريمة</p>
+            <h4 className="text-base sm:text-lg font-bold text-[#1e293b] mb-4">الدكتور: ماجد بن ابراهيم الجوهري</h4>
             
-            <div className="flex items-center justify-center gap-2 my-2">
+            <div className="flex items-center justify-center gap-2 my-3">
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
               <span className="w-2 h-2 rounded-full bg-[#23385e]"></span>
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#c5a059] font-bold mb-2.5">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
+            <p className="text-sm sm:text-base text-[#c5a059] font-bold mb-4">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
             
-            <div className="text-xs sm:text-sm text-gray-700 space-y-1.5 leading-relaxed mb-2.5 font-medium" dir="ltr">
+            <div className="text-sm sm:text-base text-gray-700 space-y-2.5 leading-relaxed mb-4 font-medium" dir="ltr">
               <p>
                 Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, <span className="text-[#c5a059] font-bold">Ali bin Hussein Sheikh Hakami</span>, to the daughter of <span className="text-[#c5a059] font-bold">Dr. Majid bin Ibrahim Al-Jawhari</span>
               </p>
-              <p className="text-[#c5a059] font-bold pt-0.5">Friday 08 . May . 2026</p>
+              <p className="text-[#c5a059] font-bold pt-1">Friday 08 . May . 2026</p>
             </div>
 
-            <div className="flex items-center justify-center gap-2 my-2">
+            <div className="flex items-center justify-center gap-2 my-3">
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
               <span className="w-2 h-2 rounded-full bg-[#23385e]"></span>
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
             </div>
 
-            <div className="space-y-1" dir="rtl">
-              <p className="text-xs sm:text-sm font-bold text-[#1e293b]">وبحضوركم يتم لنا الفرح والسرور</p>
-              <p className="text-[11px] sm:text-xs text-gray-500" dir="ltr">Your presence brings us honor and great joy</p>
+            <div className="space-y-1.5" dir="rtl">
+              <p className="text-sm sm:text-base font-bold text-[#1e293b]">وبحضوركم يتم لنا الفرح والسرور</p>
+              <p className="text-xs sm:text-sm text-gray-500" dir="ltr">Your presence brings us honor and great joy</p>
             </div>
           </div>
 
-          {/* سهم ذهبي متحرك تحت المربع */}
-          <div className="mt-2.5 flex justify-center">
+          {/* سهم ذهبي متحرك تحت المربع تماماً */}
+          <div className="mt-3 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
