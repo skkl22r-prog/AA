@@ -98,23 +98,25 @@ export default function WeddingInvitation() {
 
         {/* ================= الصفحة الثانية ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 py-3 bg-[#faf8f5]">
-          <div className="pt-1">
-            <p className="text-4xl sm:text-5xl font-besm text-[#23385e] drop-shadow-sm text-center" dir="rtl">
+          <div className="pt-2">
+            {/* تم تكبير حجم البسملة لتكون أوضح ومريحة */}
+            <p className="text-5xl sm:text-6xl font-besm text-[#23385e] drop-shadow-sm text-center" dir="rtl">
               +
             </p>
           </div>
 
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-5 sm:py-6 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[72vh]">
+          {/* تقليل ارتفاع المربع قليلاً من الأسفل ليكون متناسقاً تماماً */}
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 sm:py-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[66vh]">
             <div>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">يشرّف</p>
-              <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1.5">الشيخ: حسين بن علي شيخ حكي</h2>
-              <p className="text-xs sm:text-sm text-gray-500 mb-2">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
+              <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1">الشيخ: حسين بن علي شيخ حكي</h2>
+              <p className="text-xs sm:text-sm text-gray-500 mb-1.5">بدعونكم وتشريفكم لحضور حفل زواج نجله</p>
             </div>
             
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1 font-serif">علي بن حسين شيخ حكي</h3>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">على كريمة</p>
-              <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-2">الدكتور: ماجد بن ابراهيم الجوهري</h4>
+              <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-1.5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
             </div>
             
             <div className="flex items-center justify-center gap-2 my-1">
@@ -124,7 +126,7 @@ export default function WeddingInvitation() {
             </div>
 
             <div>
-              <p className="text-xs sm:text-sm text-[#c5a059] font-bold mb-2">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
+              <p className="text-xs sm:text-sm text-[#c5a059] font-bold mb-1.5">يوم الجمعة الموافق ٢١ . ١١ . ١٤٤٧ هـ</p>
               
               <div className="text-[11px] sm:text-xs text-gray-700 space-y-1 leading-relaxed font-medium" dir="ltr">
                 <p>
