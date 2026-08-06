@@ -99,8 +99,8 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الثانية (مرفوعة لأعلى، بسم الله زرقاء، حدود ذهبي، خطوط أكبر وأوضح) ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-start items-center px-4 bg-[#faf8f5] pt-3 pb-4">
           {/* بسم الله في أعلى الصفحة باللون الأزرق */}
-          <p className="text-2xl sm:text-3xl font-serif text-[#23385e] mb-2 mt-1 drop-shadow-sm text-center" dir="rtl">
-            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          <p className="text-2xl sm:text-3xl font-besm text-[#23385e] mb-2 mt-1 drop-shadow-sm text-center" dir="rtl">
++
           </p>
 
           {/* المربع مرتفع للأعلى، بحدود ذهبية، وخطوط مكبرة وواضحة */}
