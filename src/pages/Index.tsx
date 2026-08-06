@@ -243,9 +243,10 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الرابعة (برنامج الحفل المعدلة تماماً حسب طلبك) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-6 pb-3 bg-[#faf8f5]" dir="rtl">
           
-          <div className="pt-2 text-center">
+          {/* عنوان البرنامج متمركز في المسافة العلوية بدقة */}
+          <div className="my-auto text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
               بَرْنَامَج الحَفْل
             </h3>
@@ -253,7 +254,8 @@ export default function WeddingInvitation() {
             <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
           </div>
 
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-1 flex-1 flex flex-col justify-between max-h-[72vh] overflow-y-auto scrollbar-none">
+          {/* مربع البرنامج مع تقليص الفراغات الداخلية وتكبير النصوص بشكل متناسق وثابت من الأسفل */}
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-1 flex flex-col justify-between max-h-[72vh] overflow-y-auto scrollbar-none">
             {[
               {
                 timeAr: "٨:٣٠ م - PM 8:30",
@@ -282,19 +284,19 @@ export default function WeddingInvitation() {
               }
             ].map((item, idx, arr) => (
               <div key={idx} className="py-1">
-                <p className="text-[11px] sm:text-xs font-bold text-[#23385e]" dir="ltr">
+                <p className="text-xs sm:text-sm font-bold text-[#c5a059]" dir="ltr">
                   {item.timeAr}
                 </p>
-                <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mt-0.5">
+                <h4 className="text-sm sm:text-base font-bold text-[#23385e] mt-0.5">
                   {item.titleAr}
                 </h4>
-                <p className="text-[10px] text-gray-400 mt-0.5" dir="ltr">
+                <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5" dir="ltr">
                   {item.titleEn}
                 </p>
 
                 {/* فاصل ذهبي بنجمة بين الفقرات (ما عدا الأخيرة) */}
                 {idx < arr.length - 1 && (
-                  <div className="flex items-center justify-center gap-2 my-2.5">
+                  <div className="flex items-center justify-center gap-2 my-2">
                     <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
                     <span className="text-[#c5a059] text-[10px]">✦</span>
                     <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
