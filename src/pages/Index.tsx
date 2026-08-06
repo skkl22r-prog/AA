@@ -242,40 +242,69 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الرابعة (برنامج الحفل المعدلة والمنسقة) ================= */}
+        {/* ================= الصفحة الرابعة (برنامج الحفل المعدلة تماماً حسب طلبك) ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
           
-          <div className="pt-2 text-center mb-3">
+          <div className="pt-2 text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
               بَرْنَامَج الحَفْل
             </h3>
             <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">EVENT PROGRAM</p>
-            <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-2"></div>
+            <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
           </div>
 
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-1 flex-1 flex flex-col justify-center max-h-[70vh] overflow-hidden">
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-1 flex-1 flex flex-col justify-between max-h-[72vh] overflow-y-auto scrollbar-none">
             {[
-              { timeAr: "٨:٣٠ م - PM 8:30", titleAr: "استقبال الضيوف وبداية العرضة السعودية", titleEn: "Guest Reception & Start of the Saudi Ardah" },
-              { timeAr: "٩:١٠ م - PM 9:10", titleAr: "دخول العريس وبدء الزفة", titleEn: "Groom Entrance & Wedding Zaffa" },
-              { timeAr: "٩:٣٠ م - PM 9:30", titleAr: "السلام العام واستقبال المهنئين", titleEn: "General Greetings & Congratulations" },
-              { timeAr: "١٠:١٥ م - PM 10:15", titleAr: "حباكم عالدشاء", titleEn: "Dinner" },
-              { timeAr: "١٠:٤٥ م - PM 10:45", titleAr: "احتفال", titleEn: "Celebration" }
+              {
+                timeAr: "٨:٣٠ م - PM 8:30",
+                titleAr: "استقبال الضيوف وبداية العرضة السعودية",
+                titleEn: "Guest Reception & Start of the Saudi Ardah"
+              },
+              {
+                timeAr: "٩:١٠ م - PM 9:10",
+                titleAr: "دخول العريس وبدء الزفة",
+                titleEn: "Groom Entrance & Wedding Zaffa"
+              },
+              {
+                timeAr: "٩:٣٠ م - PM 9:30",
+                titleAr: "السلام العام واستقبال المهنئين",
+                titleEn: "General Greetings & Congratulations"
+              },
+              {
+                timeAr: "١٠:١٥ م - PM 10:15",
+                titleAr: "حباكم عالدشاء",
+                titleEn: "Dinner"
+              },
+              {
+                timeAr: "١٠:٤٥ م - PM 10:45",
+                titleAr: "احتفال",
+                titleEn: "Celebration"
+              }
             ].map((item, idx, arr) => (
-              <div key={idx} className="py-1.5 border-b border-gray-100 last:border-0">
-                <p className="text-[10px] sm:text-[11px] font-bold text-[#c5a059]" dir="ltr">
+              <div key={idx} className="py-1">
+                <p className="text-[11px] sm:text-xs font-bold text-[#23385e]" dir="ltr">
                   {item.timeAr}
                 </p>
-                <h4 className="text-sm sm:text-base font-bold text-[#23385e] my-0.5">
+                <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mt-0.5">
                   {item.titleAr}
                 </h4>
-                <p className="text-[9px] sm:text-[10px] text-gray-400" dir="ltr">
+                <p className="text-[10px] text-gray-400 mt-0.5" dir="ltr">
                   {item.titleEn}
                 </p>
+
+                {/* فاصل ذهبي بنجمة بين الفقرات (ما عدا الأخيرة) */}
+                {idx < arr.length - 1 && (
+                  <div className="flex items-center justify-center gap-2 my-2.5">
+                    <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                    <span className="text-[#c5a059] text-[10px]">✦</span>
+                    <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
-          <div className="pb-1 flex justify-center mt-2">
+          <div className="pb-1 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
