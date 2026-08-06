@@ -44,55 +44,55 @@ export default function WeddingInvitation() {
       {/* محتوى الموقع مقسم كصفحات كاملة ثابتة بحجم الشاشة */}
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
-        {/* ================= الصفحة الأولى (صورة العريس مع تدرج اختفاء سفلي + عد تنازلي كبير جداً وفوقها) ================= */}
-        <section className="min-h-[90vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-4 pb-6 px-3 bg-[#111C2E] overflow-hidden">
+        {/* ================= الصفحة الأولى ================= */}
+        <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-4 px-3 bg-[#111C2E] overflow-hidden">
           
-          {/* رأس الصفحة (العنوان في الأعلى) */}
-          <div className="w-full relative z-30 shrink-0">
-            <p className="text-[11px] text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-0.5">دعوة حفل زفاف</p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
-            <div className="flex items-center justify-center gap-2 mt-1">
-              <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
-              <span className="text-[#c5a059] text-[10px]">✦</span>
-              <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
+          {/* رأس الصفحة (تم إنزال العنوان واسم العريس والزخرفة للأسفل قليلاً بشكل مستقل) */}
+          <div className="w-full relative z-30 shrink-0 mt-5 sm:mt-6">
+            <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-1">دعوة حفل زفاف</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
+            <div className="flex items-center justify-center gap-2.5 mt-1.5">
+              <span className="w-8 h-[1px] bg-[#c5a059]/70"></span>
+              <span className="text-[#c5a059] text-xs">✦</span>
+              <span className="w-8 h-[1px] bg-[#c5a059]/70"></span>
             </div>
           </div>
 
-          {/* حاوية تجمع صورة العريس والتاريخ والعداد */}
-          <div className="w-full flex-1 relative z-20 flex items-center justify-center my-1">
+          {/* حاوية تجمع صورة العريس والتاريخ والعداد (مرفوعة تكה خفيفة للأعلى لتفادي شريط الجوال) */}
+          <div className="w-full flex-1 relative z-20 flex items-center justify-center -mt-2">
             
-            {/* صورة العريس مع تأثير التلاشي والاختفاء التدريجي من الأسفل (mask-image) لكي لا تبدو مقصوصة */}
+            {/* صورة العريس مع تدرج الاختفاء من الأسفل */}
             <img 
               src={groomImg} 
               alt="العريس علي شيخ" 
-              className="w-full h-full max-h-[72vh] object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)]" 
+              className="w-full h-full max-h-[68vh] object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)]" 
               style={{
-                maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-                WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)"
+                maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100%)",
+                WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100%)"
               }}
             />
 
-            {/* التاريخ والعداد بحجم أكبر وواضح فوق أسفل الصورة */}
+            {/* التاريخ والعداد بحجم أكبر وأبرز فوق أسفل الصورة */}
             <div className="absolute bottom-1 z-30 w-full flex flex-col items-center pointer-events-none">
               
-              {/* التاريخ بخط أكبر وواضح */}
-              <div className="text-xs sm:text-sm space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+              {/* التاريخ والكلام بحجم كبير وواضح */}
+              <div className="text-sm sm:text-base space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                 <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
                 <p className="tracking-wide text-[#c5a059]">08 . May . 2026</p>
-                <p className="text-white/90 text-[10px]">8:30 مساءً</p>
+                <p className="text-white/90 text-xs">8:30 مساءً</p>
               </div>
 
               {/* العد التنازلي بحجم كبير وبارز جداً */}
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center gap-2.5">
                 {[
                   { label: "ثانية", value: timeLeft.seconds },
                   { label: "دقيقة", value: timeLeft.minutes },
                   { label: "ساعة", value: timeLeft.hours },
                   { label: "يوم", value: timeLeft.days },
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-[#111C2E]/95 backdrop-blur-md border border-[#c5a059]/60 rounded-xl py-1.5 px-2.5 w-14 sm:w-16 text-center shadow-2xl">
-                    <span className="block text-base sm:text-lg font-bold text-[#c5a059]">{item.value}</span>
-                    <span className="block text-[9px] text-white/90 font-medium">{item.label}</span>
+                  <div key={idx} className="bg-[#111C2E]/95 backdrop-blur-md border border-[#c5a059]/70 rounded-xl py-2 px-3 w-16 sm:w-20 text-center shadow-2xl">
+                    <span className="block text-lg sm:text-xl font-bold text-[#c5a059]">{item.value}</span>
+                    <span className="block text-[10px] sm:text-xs text-white/90 font-medium">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -101,9 +101,9 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* مؤشر السحب السفلي */}
-          <div className="w-full shrink-0 relative z-30 pt-1">
-            <span className="text-[9px] text-[#c5a059]/80 animate-bounce block">اسحب لأسفل للتفاصيل ↓</span>
+          {/* مؤشر السحب السفلي (مرتفع وواضح فوق شريط الجوال) */}
+          <div className="w-full shrink-0 relative z-30 pb-2">
+            <span className="text-[10px] text-[#c5a059] font-medium animate-bounce block">اسحب لأسفل للتفاصيل ↓</span>
           </div>
         </section>
 
