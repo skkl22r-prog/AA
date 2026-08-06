@@ -151,10 +151,8 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الثالثة (تفاصيل الحفل المُعدلة بدقة حسب طلبك) ================= */}
+        {/* ================= الصفحة الثالثة ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
-          
-          {/* عنوان تفاصيل الحفل بنفس المكان والحجم تماماً */}
           <div className="pt-2">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm text-center font-serif">
               تَفَاصِيلِ الحَفْل
@@ -163,10 +161,8 @@ export default function WeddingInvitation() {
             <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
           </div>
 
-          {/* المربعات الثلاثة مرفوعة للأعلى وقريبة من العنوان، بحدود ذهبية وتصميمك الدقيق */}
           <div className="w-full max-w-md space-y-2.5 my-1 flex-1 flex flex-col justify-start pt-2 max-h-[70vh] overflow-y-auto scrollbar-none">
             
-            {/* مربع التاريخ */}
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <svg className="w-5 h-5 text-[#c5a059] mb-1" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -183,7 +179,6 @@ export default function WeddingInvitation() {
               <p className="text-[11px] text-gray-500 font-medium" dir="ltr">Friday, May 8, 2026</p>
             </div>
 
-            {/* مربع الزمن */}
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <svg className="w-5 h-5 text-[#c5a059] mb-1" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="9"></circle>
@@ -201,7 +196,6 @@ export default function WeddingInvitation() {
               <p className="text-[11px] text-gray-500 font-medium" dir="ltr">Half past eight - 8:30 PM</p>
             </div>
 
-            {/* مربع الموقع والخريطة المصغرة */}
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <svg className="w-5 h-5 text-[#c5a059] mb-1" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -227,7 +221,6 @@ export default function WeddingInvitation() {
                 افتتح في الخرائط | Open in Maps
               </a>
 
-              {/* خريطة مصغرة متناسبة مع حجم الصفحة */}
               <div className="w-full h-24 sm:h-28 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative mt-1">
                 <iframe
                   title="موقع نادي وزارة الداخلية جيزان"
@@ -244,31 +237,75 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* السهم المتحرك أسفل الصفحة الثالثة */}
           <div className="pb-1 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
 
-        {/* ================= الصفحة الرابعة (برنامج الحفل) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex items-center justify-center px-4 bg-[#faf8f5]">
-          <div className="w-full max-w-md bg-white rounded-2xl p-6 shadow-lg border border-gray-200/70">
-            <h3 className="text-center text-[#c5a059] text-base font-bold mb-5 tracking-wide">بَرْنَامَج الحَفْل</h3>
-            <div className="space-y-4 relative border-r-2 border-[#23385e]/20 pr-4 mr-2 text-right" dir="rtl">
-              {[
-                { time: "8:30 PM - ٨:٣٠ م", title: "استقبال الضيوف وبداية العرضة السعودية" },
-                { time: "9:15 PM - ٩:١٥ م", title: "دخول العريس وبدء الزفة" },
-                { time: "9:30 PM - ٩:٣٠ م", title: "السلام العام واستقبال المهنئين" },
-                { time: "10:15 PM - ١٠:١٥ م", title: "حباكم العشاء" },
-                { time: "10:45 PM - ١٠:٤٥ م", title: "احتفال" },
-              ].map((item, idx) => (
-                <div key={idx} className="relative">
-                  <div className="absolute -right-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-[#23385e] border-2 border-white"></div>
-                  <span className="text-[9px] font-bold text-[#c5a059]">{item.time}</span>
-                  <h4 className="font-bold text-gray-800 text-xs mt-0.5">{item.title}</h4>
-                </div>
-              ))}
-            </div>
+        {/* ================= الصفحة الرابعة (برنامج الحفل المعدلة تماماً حسب طلبك) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
+          
+          <div className="pt-2 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
+              بَرْنَامَج الحَفْل
+            </h3>
+            <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">EVENT PROGRAM</p>
+            <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
+          </div>
+
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 my-1 flex-1 flex flex-col justify-between max-h-[72vh] overflow-y-auto scrollbar-none">
+            {[
+              {
+                timeAr: "٨:٣٠ م - PM 8:30",
+                titleAr: "استقبال الضيوف وبداية العرضة السعودية",
+                titleEn: "Guest Reception & Start of the Saudi Ardah"
+              },
+              {
+                timeAr: "٩:١٠ م - PM 9:10",
+                titleAr: "دخول العريس وبدء الزفة",
+                titleEn: "Groom Entrance & Wedding Zaffa"
+              },
+              {
+                timeAr: "٩:٣٠ م - PM 9:30",
+                titleAr: "السلام العام واستقبال المهنئين",
+                titleEn: "General Greetings & Congratulations"
+              },
+              {
+                timeAr: "١٠:١٥ م - PM 10:15",
+                titleAr: "حباكم عالدشاء",
+                titleEn: "Dinner"
+              },
+              {
+                timeAr: "١٠:٤٥ م - PM 10:45",
+                titleAr: "احتفال",
+                titleEn: "Celebration"
+              }
+            ].map((item, idx, arr) => (
+              <div key={idx} className="py-1">
+                <p className="text-[11px] sm:text-xs font-bold text-[#23385e]" dir="ltr">
+                  {item.timeAr}
+                </p>
+                <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mt-0.5">
+                  {item.titleAr}
+                </h4>
+                <p className="text-[10px] text-gray-400 mt-0.5" dir="ltr">
+                  {item.titleEn}
+                </p>
+
+                {/* فاصل ذهبي بنجمة بين الفقرات (ما عدا الأخيرة) */}
+                {idx < arr.length - 1 && (
+                  <div className="flex items-center justify-center gap-2 my-2.5">
+                    <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                    <span className="text-[#c5a059] text-[10px]">✦</span>
+                    <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="pb-1 flex justify-center">
+            <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
 
