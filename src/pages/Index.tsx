@@ -41,54 +41,62 @@ export default function WeddingInvitation() {
       {/* شاشة الظرف */}
       {!isOpen && <Envelope onOpen={() => setIsOpen(true)} />}
 
-      {/* محتوى الموقع مقسم كصفحات كاملة (Snap Sections) */}
+      {/* محتوى الموقع مقسم كصفحات كاملة ثابتة بحجم الشاشة */}
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
-        {/* ================= الصفحة الأولى ================= */}
-        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center text-center pt-5 pb-0 px-4 bg-[#111C2E] relative overflow-hidden">
+        {/* ================= الصفحة الأولى (صورة العريس والكتابة متداخلة فوقها تماماً) ================= */}
+        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center text-center pt-6 pb-2 px-4 bg-[#111C2E] relative overflow-hidden">
           
-          {/* محتوى العنوان، التاريخ، والعد التنازلي فوق صورة العريس */}
-          <div className="w-full relative z-20 pt-2">
+          {/* رأس الصفحة: دعوة حفل زفاف + اسم العريس بالابيض والزخرفة */}
+          <div className="w-full relative z-20">
             <p className="text-[11px] sm:text-xs text-[#c5a059] font-light tracking-[0.25em] mb-1 uppercase opacity-90">دعوة حفل زفاف</p>
-            
-            {/* اسم العريس باللون الأبيض مع زخرفة فخمة تحته */}
             <h1 className="text-3xl sm:text-4xl font-bold text-white mb-1 tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
-            <div className="flex items-center justify-center gap-2 mb-2">
+            <div className="flex items-center justify-center gap-2">
               <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
               <span className="text-[#c5a059] text-xs">✦</span>
               <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
             </div>
-
-            <div className="text-[11px] space-y-0.5 text-[#c5a059] font-medium mb-2">
-              <p>٢١ . ١١ . ١٤٤٧ هـ</p>
-              <p>08 . May . 2026</p>
-              <p className="text-white/80 text-[10px]">8:30 مساءً</p>
-            </div>
-
-            {/* العداد التنازلي المصغر */}
-            <div className="flex justify-center gap-1.5">
-              {[
-                { label: "ثانية", value: timeLeft.seconds },
-                { label: "دقيقة", value: timeLeft.minutes },
-                { label: "ساعة", value: timeLeft.hours },
-                { label: "يوم", value: timeLeft.days },
-              ].map((item, idx) => (
-                <div key={idx} className="bg-[#18263E]/90 border border-[#c5a059]/30 rounded-lg py-1 px-2 w-12 text-center shadow-inner">
-                  <span className="block text-xs font-bold text-[#c5a059]">{item.value}</span>
-                  <span className="block text-[7px] text-white/60">{item.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* صورة العريس مكبرة وملاصقة لخط الصفحة السفلي تماماً */}
-          <div className="w-72 sm:w-80 h-[55vh] sm:h-[60vh] relative z-10 flex items-end justify-center mt-auto">
-            <img src={groomImg} alt="العريس علي شيخ" className="w-full h-full object-contain object-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]" />
-          </div>
+          {/* الحاوية التي تحتضن صورة العريس والكتابات فوقها تماماً مثل الصورة المطلوبة */}
+          <div className="w-full h-[78vh] relative z-20 flex items-end justify-center mt-auto">
+            
+            {/* صورة العريس تملأ المساحة وملاصقة للأسفل */}
+            <img 
+              src={groomImg} 
+              alt="العريس علي شيخ" 
+              className="w-full h-full object-contain object-bottom absolute inset-0 z-10 drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]" 
+            />
 
-          {/* مؤشر السحب الخفيف بأسفل الشاشة فوق حافة الصفحة مباشرة */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
-            <span className="text-[8px] text-[#c5a059]/60 animate-bounce">اسحب لأسفل ↓</span>
+            {/* الطبقة النصية المتداخلة فوق صورة العريس مباشرة */}
+            <div className="relative z-30 w-full pb-6 flex flex-col items-center bg-gradient-to-t from-[#111C2E]/90 via-[#111C2E]/40 to-transparent pt-16">
+              
+              {/* التاريخ والكلام بتنسيق الصورة */}
+              <div className="text-xs space-y-1 text-[#c5a059] font-semibold mb-3 drop-shadow">
+                <p className="tracking-wide">٢١ . ١١ . ١٤٤٧ هـ</p>
+                <p className="tracking-wide text-white/90">08 . May . 2026</p>
+                <p className="text-white/80 text-[11px]">8:30 مساءً</p>
+              </div>
+
+              {/* العد التنازلي فوق الصورة */}
+              <div className="flex justify-center gap-2">
+                {[
+                  { label: "ثانية", value: timeLeft.seconds },
+                  { label: "دقيقة", value: timeLeft.minutes },
+                  { label: "ساعة", value: timeLeft.hours },
+                  { label: "يوم", value: timeLeft.days },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-[#111C2E]/80 backdrop-blur-sm border border-[#c5a059]/40 rounded-xl py-1.5 px-2.5 w-14 text-center shadow-lg">
+                    <span className="block text-sm font-bold text-[#c5a059]">{item.value}</span>
+                    <span className="block text-[8px] text-white/70">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* مؤشر السحب */}
+              <span className="text-[9px] text-[#c5a059]/80 mt-3 animate-bounce">اسحب لأسفل للتفاصيل ↓</span>
+            </div>
+
           </div>
         </section>
 
