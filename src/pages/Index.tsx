@@ -47,18 +47,18 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الأولى ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] overflow-hidden">
           
-          {/* رأس الصفحة (دعوة حفل زفاف + اسم العريس + الزخرفة) */}
-          <div className="w-full relative z-30 shrink-0 mt-5 sm:mt-6">
-            <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-1">دعوة حفل زفاف</p>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md">عَلِي شَيْخ</h1>
-            <div className="flex items-center justify-center gap-2.5 mt-1.5">
+          {/* رأس الصفحة: (دعوة حفل زفاف ثابته فوق) + (سطر علي شيخ والزخرفة أخذوا مسافة فوق وتحت بدقة) */}
+          <div className="w-full relative z-30 shrink-0 mt-3 sm:mt-4">
+            <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زفاف</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md my-2.5">عَلِي شَيْخ</h1>
+            <div className="flex items-center justify-center gap-2.5 mt-2.5">
               <span className="w-8 h-[1px] bg-[#c5a059]/70"></span>
               <span className="text-[#c5a059] text-xs">✦</span>
               <span className="w-8 h-[1px] bg-[#c5a059]/70"></span>
             </div>
           </div>
 
-          {/* حاوية تجمع صورة العريس والتاريخ والعداد */}
+          {/* حاوية تجمع صورة العريس والتاريخ والعداد (كما هي تماماً بدون أي تغيير أو نزول) */}
           <div className="w-full flex-1 relative z-20 flex items-center justify-center -mt-2">
             
             {/* صورة العريس مع تدرج الاختفاء من الأسفل */}
@@ -99,7 +99,7 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* مؤشر السحب السفلي (تم إنزاله تكة بسيطة لتحت لاستغلال الفراغ وظهوره بشكل مثالي) */}
+          {/* مؤشر السحب السفلي */}
           <div className="w-full shrink-0 relative z-30 pb-0.5 mt-1">
             <span className="text-[10px] text-[#c5a059] font-medium animate-bounce block">اسحب لأسفل للتفاصيل ↓</span>
           </div>
