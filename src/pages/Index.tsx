@@ -208,12 +208,12 @@ export default function WeddingInvitation() {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور - معدلة) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
-          <div className="w-full max-w-md flex flex-col items-center my-auto">
+        {/* ================= الصفحة الخامسة (تأكيد الحضور - معدلة بالكامل) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-center items-center px-4 py-6 bg-[#faf8f5]" dir="rtl">
+          <div className="w-full max-w-md flex flex-col items-center justify-center my-auto">
             
             {/* العنوان */}
-            <div className="text-center mb-3">
+            <div className="text-center mb-4">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
                 تَأْكِيد الحُضُور
               </h3>
@@ -227,14 +227,14 @@ export default function WeddingInvitation() {
               <span className="text-[9px] text-gray-400">Fill in the details and press send — WhatsApp will open with a ready message.</span>
             </p>
 
-            {/* النموذج بالمطابقة الدقيقة للصورة */}
-            <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-4">
+            {/* النموذج بالمطابقة الدقيقة للتعديلات */}
+            <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-3.5">
               
               {/* حقل الاسم الكامل */}
               <div className="w-full">
-                <div className="flex justify-between items-end mb-1.5 px-1">
-                  <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
+                <div className="flex justify-between items-end mb-1 px-1">
                   <label className="text-sm font-bold text-[#23385e]">الاسم الكامل</label>
+                  <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
                 </div>
                 <div className="bg-white border-2 border-[#c5a059]/60 rounded-2xl p-2.5 flex items-center shadow-sm">
                   <svg className="w-5 h-5 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
@@ -253,9 +253,9 @@ export default function WeddingInvitation() {
 
               {/* حقل رقم الجوال */}
               <div className="w-full">
-                <div className="flex justify-between items-end mb-1.5 px-1">
-                  <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
+                <div className="flex justify-between items-end mb-1 px-1">
                   <label className="text-sm font-bold text-[#23385e]">رقم الجوال</label>
+                  <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
                 </div>
                 <div className="bg-white border-2 border-[#c5a059]/60 rounded-2xl p-2.5 flex items-center shadow-sm">
                   <svg className="w-5 h-5 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
@@ -275,9 +275,9 @@ export default function WeddingInvitation() {
 
               {/* حقل عدد المرافقين */}
               <div className="w-full">
-                <div className="flex justify-between items-end mb-1.5 px-1">
-                  <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
+                <div className="flex justify-between items-end mb-1 px-1">
                   <label className="text-sm font-bold text-[#23385e]">عدد المرافقين</label>
+                  <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
                 </div>
                 <div className="bg-white border-2 border-[#c5a059]/60 rounded-2xl p-2.5 flex items-center shadow-sm">
                   <svg className="w-5 h-5 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
@@ -314,10 +314,6 @@ export default function WeddingInvitation() {
               </div>
 
             </form>
-          </div>
-
-          <div className="pb-1 opacity-0 pointer-events-none">
-            <span className="text-xl">⌄</span>
           </div>
         </section>
 
