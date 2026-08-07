@@ -145,8 +145,8 @@ export default function WeddingInvitation() {
 
         {/* ================= الصفحة الثالثة ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-2 bg-[#faf8f5]" dir="rtl">
-          {/* تم نزول العنوان بمسافة مدروسة (pt-3) ليكون متوسظاً وقريباً من المربع الأول بدون لمس المربعات أو الخريطة */}
-          <div className="pt-3 mb-1">
+          {/* تم زيادة المسافة العلوية هنا بوضوح (pt-10) لكي تنزل كلمة تفاصيل الحفل للأسفل وتكون قريبة من المربع الأول تماماً */}
+          <div className="pt-10 mb-1">
             <h3 className="text-xl sm:text-2xl font-bold text-[#23385e] drop-shadow-sm text-center font-serif">تَفَاصِيلِ الحَفْل</h3>
             <p className="text-[9px] text-gray-500 tracking-[0.25em] text-center mt-0.5">EVENT DETAILS</p>
             <div className="w-10 h-[1px] bg-[#c5a059]/60 mx-auto mt-1"></div>
