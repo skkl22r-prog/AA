@@ -42,7 +42,7 @@ export default function WeddingInvitation() {
 
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
-        {/* ================= الصفحة الأولى ================= */}
+        {/* ================= الصفحة الأولى (تم رفع التاريخ والعداد قليلاً للأعلى) ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
             <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زفاف</p>
@@ -65,7 +65,8 @@ export default function WeddingInvitation() {
               }}
             />
 
-            <div className="absolute bottom-1 z-30 w-full flex flex-col items-center pointer-events-none">
+            {/* تم رفع هذه الحاوية (التاريخ والعداد) قليلاً للأعلى */}
+            <div className="absolute bottom-6 z-30 w-full flex flex-col items-center pointer-events-none">
               <div className="text-sm sm:text-base space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                 <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
                 <p className="tracking-wide text-[#c5a059]">08 . May . 2026</p>
@@ -208,11 +209,10 @@ export default function WeddingInvitation() {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور - الزر أزرق) ================= */}
+        {/* ================= الصفحة الخامسة ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center">
             
-            {/* العنوان */}
             <div className="text-center mb-4">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
                 تَأْكِيد الحُضُور
@@ -221,7 +221,6 @@ export default function WeddingInvitation() {
               <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-2"></div>
             </div>
 
-            {/* النص التوضيحي المطابق للصورة الثانية */}
             <div className="text-center mb-6 px-2">
               <p className="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed">
                 عبّي البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة.
@@ -231,10 +230,8 @@ export default function WeddingInvitation() {
               </p>
             </div>
 
-            {/* النموذج */}
             <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-4">
               
-              {/* حقل الاسم الكامل */}
               <div className="w-full">
                 <div className="flex justify-between items-end mb-1.5 px-1">
                   <label className="text-sm font-bold text-[#23385e]">الاسم الكامل</label>
@@ -255,7 +252,6 @@ export default function WeddingInvitation() {
                 </div>
               </div>
 
-              {/* حقل رقم الجوال */}
               <div className="w-full">
                 <div className="flex justify-between items-end mb-1.5 px-1">
                   <label className="text-sm font-bold text-[#23385e]">رقم الجوال</label>
@@ -277,7 +273,6 @@ export default function WeddingInvitation() {
                 </div>
               </div>
 
-              {/* حقل عدد المرافقين */}
               <div className="w-full">
                 <div className="flex justify-between items-end mb-1.5 px-1">
                   <label className="text-sm font-bold text-[#23385e]">عدد المرافقين</label>
@@ -302,7 +297,6 @@ export default function WeddingInvitation() {
                 </div>
               </div>
 
-              {/* النص فوق الزر وزر الإرسال (أزرق) ونصه بالأسفل تماماً */}
               <div className="pt-2 flex flex-col items-center">
                 <span className="text-xs text-gray-600 mb-2 font-medium">سيتم فتح واتساب — اضغط "إرسال" لتأكيد حضورك.</span>
                 <button
