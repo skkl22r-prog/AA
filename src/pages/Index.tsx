@@ -143,9 +143,10 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الثالثة (مع تعديل ارتفاع الخريطة لملء الفراغ السفلي باحترافية) ================= */}
+        {/* ================= الصفحة الثالثة ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-2 bg-[#faf8f5]" dir="rtl">
-          <div className="pt-1 mb-1">
+          {/* تم نزول العنوان بمسافة مدروسة (pt-3) ليكون متوسظاً وقريباً من المربع الأول بدون لمس المربعات أو الخريطة */}
+          <div className="pt-3 mb-1">
             <h3 className="text-xl sm:text-2xl font-bold text-[#23385e] drop-shadow-sm text-center font-serif">تَفَاصِيلِ الحَفْل</h3>
             <p className="text-[9px] text-gray-500 tracking-[0.25em] text-center mt-0.5">EVENT DETAILS</p>
             <div className="w-10 h-[1px] bg-[#c5a059]/60 mx-auto mt-1"></div>
@@ -199,7 +200,6 @@ export default function WeddingInvitation() {
               <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-[10px] text-[#c5a059] font-bold underline mb-1.5 inline-block">
                 افتتح في الخرائط | Open in Maps
               </a>
-              {/* تعديل ارتفاع الخريطة ليصبح متوازناً ويمتلئ الفراغ السفلي بدون مبالغة */}
               <div className="w-full h-36 sm:h-40 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
                 <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3829.123!2d42.55!3d16.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUzJzI0LjAiTiA0MsKwMzMnMDAuMCJF!5e0!3m2!1sar!2ssa!4v1650000000000" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={false} loading="lazy" className="w-full h-full object-cover"></iframe>
               </div>
