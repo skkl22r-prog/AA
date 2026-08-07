@@ -42,7 +42,7 @@ export default function WeddingInvitation() {
 
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
-        {/* ================= الصفحة الأولى (تم رفع التاريخ والعداد قليلاً للأعلى) ================= */}
+        {/* ================= الصفحة الأولى ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
             <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زفاف</p>
@@ -65,7 +65,6 @@ export default function WeddingInvitation() {
               }}
             />
 
-            {/* تم رفع هذه الحاوية (التاريخ والعداد) قليلاً للأعلى */}
             <div className="absolute bottom-6 z-30 w-full flex flex-col items-center pointer-events-none">
               <div className="text-sm sm:text-base space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                 <p className="tracking-wide text-white">٢١ . ١١ . ١٤٤٧ هـ</p>
@@ -113,9 +112,10 @@ export default function WeddingInvitation() {
               <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-1.5">الدكتور: ماجد بن ابراهيم الجوهري</h4>
             </div>
             
-            <div className="flex items-center justify-center gap-2 my-1">
+            {/* التعديل الأول في الصفحة الثانية */}
+            <div className="flex items-center justify-center gap-2.5 my-1">
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
-              <span className="w-2 h-2 rounded-full bg-[#23385e]"></span>
+              <span className="text-[#23385e] text-xs">✦</span>
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
             </div>
 
@@ -127,9 +127,10 @@ export default function WeddingInvitation() {
               </div>
             </div>
 
-            <div className="flex items-center justify-center gap-2 my-1">
+            {/* التعديل الثاني في الصفحة الثانية */}
+            <div className="flex items-center justify-center gap-2.5 my-1">
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
-              <span className="w-2 h-2 rounded-full bg-[#23385e]"></span>
+              <span className="text-[#23385e] text-xs">✦</span>
               <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
             </div>
 
@@ -156,19 +157,37 @@ export default function WeddingInvitation() {
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-1">التاريخ</span>
               <h4 className="text-sm sm:text-base font-bold text-[#23385e]">الجمعة ٢١ / ١١ / ١٤٤٧هـ</h4>
-              <p className="text-[11px] text-gray-500 font-medium mt-1" dir="ltr">Friday, May 8, 2026</p>
+              <p className="text-[11px] text-gray-500 font-medium mt-1 mb-2" dir="ltr">Friday, May 8, 2026</p>
+              {/* التعديل الأول في الصفحة الثالثة */}
+              <div className="flex items-center justify-center gap-2.5 mt-1">
+                <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+                <span className="text-[#c5a059] text-xs">✦</span>
+                <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+              </div>
             </div>
 
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-1">الزمن</span>
               <h4 className="text-sm sm:text-base font-bold text-[#23385e]">الساعة الثامنة والنصف - ٨:٣٠ م</h4>
-              <p className="text-[11px] text-gray-500 font-medium mt-1" dir="ltr">Half past eight - 8:30 PM</p>
+              <p className="text-[11px] text-gray-500 font-medium mt-1 mb-2" dir="ltr">Half past eight - 8:30 PM</p>
+              {/* التعديل الثاني في الصفحة الثالثة */}
+              <div className="flex items-center justify-center gap-2.5 mt-1">
+                <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+                <span className="text-[#c5a059] text-xs">✦</span>
+                <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+              </div>
             </div>
 
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-1">الموقع</span>
               <h4 className="text-sm sm:text-base font-bold text-[#23385e]">نادي وزارة الداخلية — جيزان</h4>
-              <p className="text-[11px] text-gray-500 font-medium mb-2">Ministry of Interior Club, Jizan</p>
+              <p className="text-[11px] text-gray-500 font-medium mb-1">Ministry of Interior Club, Jizan</p>
+              {/* التعديل الثالث في الصفحة الثالثة */}
+              <div className="flex items-center justify-center gap-2.5 my-1.5">
+                <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+                <span className="text-[#c5a059] text-xs">✦</span>
+                <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+              </div>
               <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-[11px] text-[#c5a059] font-bold underline mb-2 inline-block">
                 افتتح في الخرائط | Open in Maps
               </a>
@@ -201,7 +220,13 @@ export default function WeddingInvitation() {
                   <p className="text-xs sm:text-sm font-bold text-[#c5a059]" dir="ltr">{item.timeAr}</p>
                   <h4 className="text-sm sm:text-base font-bold text-[#23385e] mt-0.5">{item.titleAr}</h4>
                   <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5" dir="ltr">{item.titleEn}</p>
-                  {idx < arr.length - 1 && <div className="w-8 h-[1px] bg-[#c5a059]/40 mx-auto my-1.5"></div>}
+                  {idx < arr.length - 1 && (
+                    <div className="flex items-center justify-center gap-2.5 my-1.5">
+                      <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                      <span className="text-[#c5a059] text-[10px]">✦</span>
+                      <span className="w-8 h-[1px] bg-[#c5a059]/40"></span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
