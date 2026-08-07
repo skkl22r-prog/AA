@@ -43,7 +43,7 @@ export default function WeddingInvitation() {
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
         {/* ================= الصفحة الأولى ================= */}
-        <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
+        <section className="h-screen w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
             <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زفاف</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md my-2.5">عَلِي شَيْخ</h1>
@@ -94,7 +94,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثانية ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]">
+        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]">
           <div className="pt-3">
             <p className="text-5xl sm:text-6xl font-besm text-[#23385e] drop-shadow-sm text-center" dir="rtl">+</p>
           </div>
@@ -144,14 +144,14 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثالثة ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
+        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]" dir="rtl">
           <div className="pt-2">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm text-center font-serif">تَفَاصِيلِ الحَفْل</h3>
             <p className="text-[10px] text-gray-500 tracking-[0.25em] text-center mt-1">EVENT DETAILS</p>
             <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
           </div>
 
-          <div className="w-full max-w-md space-y-2.5 my-1 flex-1 flex flex-col justify-start pt-2 max-h-[70vh] overflow-y-auto scrollbar-none">
+          <div className="w-full max-w-md space-y-2.5 my-auto flex flex-col justify-center">
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-1">التاريخ</span>
               <h4 className="text-sm sm:text-base font-bold text-[#23385e]">الجمعة ٢١ / ١١ / ١٤٤٧هـ</h4>
@@ -167,11 +167,11 @@ export default function WeddingInvitation() {
             <div className="bg-white text-[#2c2c2c] px-3 py-3 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-1">الموقع</span>
               <h4 className="text-sm sm:text-base font-bold text-[#23385e]">نادي وزارة الداخلية — جيزان</h4>
-              <p className="text-[11px] text-gray-500 font-medium mb-2">Ministry of Interior Club, Jizan</p>
-              <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-[11px] text-[#c5a059] font-bold underline mb-2 inline-block">
+              <p className="text-[11px] text-gray-500 font-medium mb-1">Ministry of Interior Club, Jizan</p>
+              <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-[11px] text-[#c5a059] font-bold underline mb-1 inline-block">
                 افتتح في الخرائط | Open in Maps
               </a>
-              <div className="w-full h-24 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative mt-1">
+              <div className="w-full h-20 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
                 <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3829.123!2d42.55!3d16.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUzJzI0LjAiTiA0MsKwMzMnMDAuMCJF!5e0!3m2!1sar!2ssa!4v1650000000000" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={false} loading="lazy" className="w-full h-full object-cover"></iframe>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الرابعة ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5]" dir="rtl">
+        <section className="h-screen w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5]" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center my-auto">
             <div className="text-center mb-3">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">بَرْنَامَج الحَفْل</h3>
@@ -208,12 +208,12 @@ export default function WeddingInvitation() {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور - التعديلات النهائية) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
+        {/* ================= الصفحة الخامسة (تأكيد الحضور - الأخيرة بدون أي أسهم) ================= */}
+        <section className="h-screen w-screen snap-start flex flex-col justify-center items-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center">
             
             {/* العنوان */}
-            <div className="text-center mb-6">
+            <div className="text-center mb-5">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
                 تَأْكِيد الحُضُور
               </h3>
@@ -222,7 +222,7 @@ export default function WeddingInvitation() {
             </div>
 
             {/* النص التوضيحي المكبر */}
-            <div className="text-center mb-6 px-2">
+            <div className="text-center mb-5 px-2">
               <p className="text-sm text-gray-700 font-medium leading-relaxed">
                 عبّي البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة.
               </p>
@@ -232,7 +232,7 @@ export default function WeddingInvitation() {
             </div>
 
             {/* النموذج */}
-            <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-4">
+            <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-3.5">
               
               {/* حقل الاسم الكامل */}
               <div className="w-full">
@@ -240,7 +240,7 @@ export default function WeddingInvitation() {
                   <label className="text-sm font-bold text-[#23385e]">الاسم الكامل</label>
                   <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
                 </div>
-                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3 px-4 flex items-center shadow-sm">
                   <input
                     type="text"
                     required
@@ -258,7 +258,7 @@ export default function WeddingInvitation() {
                   <label className="text-sm font-bold text-[#23385e]">رقم الجوال</label>
                   <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
                 </div>
-                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3 px-4 flex items-center shadow-sm">
                   <input
                     type="tel"
                     required
@@ -277,7 +277,7 @@ export default function WeddingInvitation() {
                   <label className="text-sm font-bold text-[#23385e]">عدد المرافقين</label>
                   <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
                 </div>
-                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3 px-4 flex items-center shadow-sm">
                   <select
                     required
                     value={guests}
@@ -294,12 +294,13 @@ export default function WeddingInvitation() {
               </div>
 
               {/* زر الإرسال */}
-              <div className="pt-4">
+              <div className="pt-3">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-3 text-sm"
+                  className="w-full bg-gradient-to-r from-[#23385e] via-[#2d4775] to-[#3a5a94] text-white font-bold py-3.5 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-3 text-sm relative overflow-hidden"
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-0 bg-white/10 opacity-50 pointer-events-none"></div>
+                  <svg className="w-4 h-4 rotate-180" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
                   </svg>
                   <span>إرسال التأكيد عبر واتساب</span>
