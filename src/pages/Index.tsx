@@ -208,7 +208,7 @@ export default function WeddingInvitation() {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور - مرتبة حسب الصورة الثانية) ================= */}
+        {/* ================= الصفحة الخامسة (تأكيد الحضور - الزر أزرق) ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center">
             
@@ -302,12 +302,12 @@ export default function WeddingInvitation() {
                 </div>
               </div>
 
-              {/* النص فوق الزر وزر الإرسال ونصه بالأسفل تماماً كما في الصورة الثانية */}
+              {/* النص فوق الزر وزر الإرسال (أزرق) ونصه بالأسفل تماماً */}
               <div className="pt-2 flex flex-col items-center">
                 <span className="text-xs text-gray-600 mb-2 font-medium">سيتم فتح واتساب — اضغط "إرسال" لتأكيد حضورك.</span>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#c5a059] to-[#d4af37] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                  className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
