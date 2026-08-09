@@ -41,7 +41,7 @@ export default function WeddingInvitation() {
       <style>{`
         @font-face {
           font-family: "Daw";
-          src: url("./assets/fonts/Daw.ttf") format("truetype");
+          src: url("/assets/fonts/Daw.ttf") format("truetype");
         }
       `}</style>
 
