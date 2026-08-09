@@ -103,7 +103,7 @@ export default function WeddingInvitation() {
             
             <p className="text-sm sm:text-base text-gray-500 mt-2 mb-2">يتــشرف</p>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1e293b] my-2 font-sarahhh1">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1e293b] my-2 font-sarahhh1">
               عبدالعزيز بن سلمان العطاوي
             </h2>
 
@@ -111,7 +111,7 @@ export default function WeddingInvitation() {
               بدعوتكم لحضور حفل زواج ابنه
             </p>
 
-            <h3 className="text-3xl sm:text-4xl font-bold text-[#c5a059] my-3 font-sarahhh1">
+            <h3 className="text-4xl sm:text-5xl font-bold text-[#c5a059] my-3 font-sarahhh1">
               متعب بن عبدالعزيز العطاوي
             </h3>
 
@@ -119,7 +119,7 @@ export default function WeddingInvitation() {
               على كريمة
             </p>
 
-            <h4 className="text-2xl sm:text-3xl font-bold text-[#1e293b] my-2 font-sarahhh1">
+            <h4 className="text-3xl sm:text-4xl font-bold text-[#1e293b] my-2 font-sarahhh1">
               سلطان بن عيد الشمري
             </h4>
 
