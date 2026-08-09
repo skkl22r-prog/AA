@@ -102,14 +102,14 @@ export default function WeddingInvitation() {
           <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 sm:py-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[66vh]">
             <div>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">يتــشرف</p>
-              <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1 font-sarahhh1">عبدالعزيز بن سلمان العطاوي</h2>
-              <p className="text-xs sm:text-sm text-gray-500 mb-1.5">بدعوتكم لحضور حفل زواج ابنه</p>
+              <h2 className="text-lg sm:text-xl font-bold text-[#1e293b] mb-1 font-sarahhh1">عبدالعزيز بن سلمان العطاوي</h2>
+              <p className="text-xs sm:text-sm text-gray-500 mb-1">بدعوتكم لحضور حفل زواج ابنه</p>
             </div>
             
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1 font-sarahhh1">متعب بن عبدالعزيز العطاوي</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#c5a059] mb-1 font-sarahhh1">متعب بن عبدالعزيز العطاوي</h3>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">على كريمة</p>
-              <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-1.5 font-sarahhh1">سلطان بن عيد الشمري</h4>
+              <h4 className="text-lg sm:text-xl font-bold text-[#1e293b] mb-1 font-sarahhh1">سلطان بن عيد الشمري</h4>
             </div>
             
             <div className="flex items-center justify-center gap-2.5 my-1">
@@ -121,7 +121,7 @@ export default function WeddingInvitation() {
             <div>
               <p className="text-xs sm:text-sm text-[#c5a059] font-bold mb-1.5">يوم الثلاثاء الموافق ٢٥ . ٤ . ١٤٤٨ هـ</p>
               <div className="text-[11px] sm:text-xs text-gray-700 space-y-1 leading-relaxed font-medium" dir="ltr">
-                <p>Sheikh: Hussein bin Ali Sheikh Hakami has the honor of inviting you to attend the wedding celebration of his son, <span className="text-[#c5a059] font-bold">Ali bin Hussein Sheikh Hakami</span>, to the daughter of <span className="text-[#c5a059] font-bold">Dr. Majid bin Ibrahim Al-Jawhari</span></p>
+                <p>Abdulaziz bin Salman Al-Atawi has the honor of inviting you to attend the wedding celebration of his son, <span className="text-[#c5a059] font-bold">Miteb bin Abdulaziz Al-Atawi</span>, to the daughter of <span className="text-[#c5a059] font-bold">Sultan bin Eid Al-Shammari</span></p>
                 <p className="text-[#c5a059] font-bold pt-0.5">Friday 14 . Agust . 2026</p>
               </div>
             </div>
@@ -145,7 +145,6 @@ export default function WeddingInvitation() {
 
         {/* ================= الصفحة الثالثة ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-2 bg-[#faf8f5]" dir="rtl">
-          {/* تم زيادة المسافة العلوية هنا بوضوح (pt-10) لكي تنزل كلمة تفاصيل الحفل للأسفل وتكون قريبة من المربع الأول تماماً */}
           <div className="pt-10 mb-1">
             <h3 className="text-xl sm:text-2xl font-bold text-[#23385e] drop-shadow-sm text-center font-serif">تفاصيـل الحفـل</h3>
             <p className="text-[9px] text-gray-500 tracking-[0.25em] text-center mt-0.5">EVENT DETAILS</p>
@@ -154,7 +153,6 @@ export default function WeddingInvitation() {
 
           <div className="w-full max-w-md space-y-2 my-1 flex flex-col justify-start">
             
-            {/* مربع التاريخ */}
             <div className="bg-white text-[#2c2c2c] px-3 py-2 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <div className="mb-1">
                 <svg className="w-5 h-5 text-[#c5a059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -169,7 +167,6 @@ export default function WeddingInvitation() {
               <p className="text-[10px] text-gray-500 font-medium" dir="ltr">Friday, Agust 14, 2026</p>
             </div>
 
-            {/* مربع الزمن */}
             <div className="bg-white text-[#2c2c2c] px-3 py-2 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <div className="mb-1">
                 <svg className="w-5 h-5 text-[#c5a059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -184,7 +181,6 @@ export default function WeddingInvitation() {
               <p className="text-[10px] text-gray-500 font-medium" dir="ltr">Half past eight - 8:00 PM</p>
             </div>
 
-            {/* مربع الموقع */}
             <div className="bg-white text-[#2c2c2c] px-3 py-2 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <div className="mb-1">
                 <svg className="w-5 h-5 text-[#c5a059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
