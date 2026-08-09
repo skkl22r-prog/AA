@@ -53,11 +53,11 @@ export default function WeddingInvitation() {
           {/* ================= الصفحة الأولى ================= */}
           <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
             
-            {/* الحرف R في الخلفية خلف جميع المحتويات وبشفافيه */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 -translate-y-12">
+            {/* الحرف R في الخلفية خلف جميع المحتويات وبشفافية */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 -translate-y-16">
               <span 
                 style={{ fontFamily: '"Daw", sans-serif' }} 
-                className="text-[28vw] sm:text-[22vw] text-[#c5a059] opacity-15 select-none leading-none"
+                className="text-[45vw] sm:text-[35vw] text-[#c5a059] opacity-10 select-none leading-none"
               >
                 R
               </span>
