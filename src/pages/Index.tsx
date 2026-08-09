@@ -11,7 +11,7 @@ export default function WeddingInvitation() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const targetDate = new Date("2026-05-08T20:30:00");
+    const targetDate = new Date("2026-10-16T20:30:00");
     const interval = setInterval(() => {
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
@@ -30,8 +30,8 @@ export default function WeddingInvitation() {
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const adminPhone = "966500000000";
-    const message = `السلام عليكم، تأكيد حضور دعوة زفاف متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
+    const adminPhone = "966554129943";
+    const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
     const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
@@ -68,7 +68,7 @@ export default function WeddingInvitation() {
             <div className="absolute bottom-6 z-30 w-full flex flex-col items-center pointer-events-none">
               <div className="text-sm sm:text-base space-y-0.5 text-[#c5a059] font-semibold mb-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                 <p className="tracking-wide text-white">٢٥ . ٤ . ١٤٤٨ هـ</p>
-                <p className="tracking-wide text-[#c5a059]">14 . Agust . 2026</p>
+                <p className="tracking-wide text-[#c5a059]">16 . Oct . 2026</p>
                 <p className="text-white/90 text-xs">8:00 مساءً</p>
               </div>
 
@@ -130,7 +130,7 @@ export default function WeddingInvitation() {
             </div>
 
             <p className="text-sm sm:text-base text-[#c5a059] font-bold my-1">
-              يوم الثلاثاء الموافق ٢٥ . ٤ . ١٤٤٨ هـ
+              يوم الجمعة الموافق ٢٥ . ٤ . ١٤٤٨ هـ
             </p>
 
             <div className="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium mt-2" dir="ltr">
@@ -141,7 +141,7 @@ export default function WeddingInvitation() {
                 to the daughter of{" "}
                 <span className="text-[#c5a059] font-bold">Sultan bin Eid Al-Shammari</span>
               </p>
-              <p className="text-[#c5a059] font-bold mt-1">Friday 14 . Agust . 2026</p>
+              <p className="text-[#c5a059] font-bold mt-1">Friday 16 . Oct . 2026</p>
             </div>
 
             <div className="mt-auto pt-4 pb-2">
@@ -174,13 +174,13 @@ export default function WeddingInvitation() {
                 <svg className="w-5 h-5 text-[#c5a059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
               </div>
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-1">التاريخ</span>
-              <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mb-1">الثلاثاء ٢٥ / ٤ / ١٤٤٨هـ</h4>
+              <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mb-1">الجمعة ٢٥ / ٤ / ١٤٤٨هـ</h4>
               <div className="flex items-center justify-center gap-2 mb-1">
                 <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
                 <span className="text-[#c5a059] text-[10px]">✦</span>
                 <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
               </div>
-              <p className="text-[10px] text-gray-500 font-medium" dir="ltr">Friday, Agust 14, 2026</p>
+              <p className="text-[10px] text-gray-500 font-medium" dir="ltr">Friday, 16 , October , 2026</p>
             </div>
 
             <div className="bg-white text-[#2c2c2c] px-3 py-2 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
@@ -194,7 +194,7 @@ export default function WeddingInvitation() {
                 <span className="text-[#c5a059] text-[10px]">✦</span>
                 <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
               </div>
-              <p className="text-[10px] text-gray-500 font-medium" dir="ltr">Half past eight - 8:00 PM</p>
+              <p className="text-[10px] text-gray-500 font-medium" dir="ltr">8:00 PM</p>
             </div>
 
             <div className="bg-white text-[#2c2c2c] px-3 py-2 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
@@ -202,19 +202,34 @@ export default function WeddingInvitation() {
                 <svg className="w-5 h-5 text-[#c5a059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
               </div>
               <span className="text-[10px] text-[#c5a059] font-medium tracking-wide mb-0.5">الموقع</span>
-              <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mb-0.5">قاعــة الدبلوماسي — الرياض</h4>
-              <p className="text-[10px] text-gray-500 font-medium mb-1">Ministry of Interior Club, Jizan</p>
+              <h4 className="text-xs sm:text-sm font-bold text-[#23385e] mb-0.5">قاعة الامير سلطان الكبرى — فندق الفيصلية</h4>
+              <p className="text-[10px] text-gray-500 font-medium mb-1">Prince Sultan Grand Hall — Al Faisaliah Hotel</p>
               <div className="flex items-center justify-center gap-2 mb-1">
                 <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
                 <span className="text-[#c5a059] text-[10px]">✦</span>
                 <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
               </div>
-              <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-[10px] text-[#c5a059] font-bold underline mb-1.5 inline-block">
-                افتتح في الخرائط | Open in Maps
-              </a>
-              <div className="w-full h-36 sm:h-40 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
-                <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3829.123!2d42.55!3d16.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUzJzI0LjAiTiA0MsKwMzMnMDAuMCJF!5e0!3m2!1sar!2ssa!4v1650000000000" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={false} loading="lazy" className="w-full h-full object-cover"></iframe>
-              </div>
+              <a
+  href="https://www.google.com/maps/search/?api=1&query=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض"
+  target="_blank"
+  rel="noreferrer"
+  className="text-[10px] text-[#c5a059] font-bold underline mb-1.5 inline-block"
+>
+  افتتح في الخرائط | Open in Maps
+</a>
+
+<div className="w-full h-36 sm:h-40 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
+  <iframe
+    title="Prince Sultan Grand Hall - Al Faisaliah Hotel"
+    src="https://www.google.com/maps?q=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen={false}
+    loading="lazy"
+    className="w-full h-full object-cover"
+  ></iframe>
+</div>
             </div>
 
           </div>
@@ -232,11 +247,11 @@ export default function WeddingInvitation() {
 
             <div className="w-full bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 flex flex-col justify-around max-h-[72vh]">
               {[
-                { timeAr: "٨:٠٠ م - PM 8:00", titleAr: "استقبال الضيوف", titleEn: "Guest Reception & Start of the Saudi Ardah" },
-                { timeAr: "٨:٣٠ م - PM 8:30", titleAr: "بداية العرضة السعودية", titleEn: "Groom Entrance & Wedding Zaffa" },
-                { timeAr: "٩:٣٠ م - PM 9:30", titleAr: "دخول العريس وبدء الزفة", titleEn: "General Greetings & Congratulations" },
-                { timeAr: "١٠:٠٠ م - PM 10:00", titleAr: "السلام العام واستقبال المهنئين", titleEn: "Dinner" },
-                { timeAr: "١١:٣٠ م - PM 11:30", titleAr: "العشاء", titleEn: "Celebration" }
+                { timeAr: "٨:٠٠ م - PM 8:00", titleAr: "استقبال الضيوف", titleEn: "Guest Reception" },
+                { timeAr: "٨:٣٠ م - PM 8:30", titleAr: "بداية العرضة السعودية", titleEn: "Beginning of the Saudi Ardah" },
+                { timeAr: "٩:٣٠ م - PM 9:30", titleAr: "دخول العريس وبدء الزفة", titleEn: "Groom's Entrance & Wedding Zaffa" },
+                { timeAr: "١٠:٠٠ م - PM 10:00", titleAr: "السلام العام واستقبال المهنئين", titleEn: "General Greetings & Welcoming Guests" },
+                { timeAr: "١١:٣٠ م - PM 11:30", titleAr: "العشاء", titleEn: "Dinner" }
               ].map((item, idx, arr) => (
                 <div key={idx} className="py-1">
                   <p className="text-xs sm:text-sm font-bold text-[#c5a059]" dir="ltr">{item.timeAr}</p>
