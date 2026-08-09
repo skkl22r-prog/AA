@@ -45,8 +45,8 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الأولى ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
-            <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2 font-tajawal-medium">دعوة حفل زواج</p>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-sarahhh1 drop-shadow-md my-2.5">متعب بن عبدالعزيز العطاوي</h1>
+            <p className="text-xs text-[#c5a059] font-light uppercase opacity-90 mb-2 font-tajawal-medium">دعوة حفل زواج</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white font-sarahhh1 drop-shadow-md my-2.5">متعب بن عبدالعزيز العطاوي</h1>
             <div className="flex items-center justify-center gap-2.5 mt-2.5">
               <span className="w-8 h-[1px] bg-[#c5a059]/70"></span>
               <span className="text-[#c5a059] text-xs">✦</span>
