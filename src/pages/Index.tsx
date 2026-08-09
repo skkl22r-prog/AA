@@ -45,8 +45,8 @@ export default function WeddingInvitation() {
         {/* ================= الصفحة الأولى ================= */}
         <section className="min-h-[88vh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
-            <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2">دعوة حفل زواج</p>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-serif drop-shadow-md my-2.5">متعب بن عبدالعزيز العطاوي</h1>
+            <p className="text-xs text-[#c5a059] font-light tracking-[0.3em] uppercase opacity-90 mb-2 font-tajawal-medium">دعوة حفل زواج</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-wider font-sarahhh1 drop-shadow-md my-2.5">متعب بن عبدالعزيز العطاوي</h1>
             <div className="flex items-center justify-center gap-2.5 mt-2.5">
               <span className="w-8 h-[1px] bg-[#c5a059]/70"></span>
               <span className="text-[#c5a059] text-xs">✦</span>
@@ -102,14 +102,14 @@ export default function WeddingInvitation() {
           <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-4 sm:py-5 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-2 flex-1 max-h-[66vh]">
             <div>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">يتــشرف</p>
-              <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1">عبدالعزيز بن سلمان العطاوي</h2>
+              <h2 className="text-base sm:text-lg font-bold text-[#1e293b] mb-1 font-sarahhh1">عبدالعزيز بن سلمان العطاوي</h2>
               <p className="text-xs sm:text-sm text-gray-500 mb-1.5">بدعوتكم لحضور حفل زواج ابنه</p>
             </div>
             
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1 font-serif">متعب بن عبدالعزيز العطاوي</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-[#c5a059] mb-1 font-sarahhh1">متعب بن عبدالعزيز العطاوي</h3>
               <p className="text-xs sm:text-sm text-gray-500 mb-1">على كريمة</p>
-              <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-1.5">سلطان بن عيد الشمري</h4>
+              <h4 className="text-sm sm:text-base font-bold text-[#1e293b] mb-1.5 font-sarahhh1">سلطان بن عيد الشمري</h4>
             </div>
             
             <div className="flex items-center justify-center gap-2.5 my-1">
