@@ -197,16 +197,17 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الثانية (المعدلة والمريحة للعين) ================= */}
+        {/* ================= الصفحة الثانية (المخطوطة الأصلية قريبة جداً من الكارد) ================= */}
         <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 py-4 bg-[#faf8f5] overflow-hidden">
           
-          <div className="pt-2 shrink-0">
+          {/* تم إرجاع المخطوطة (+) ونقلها لأسفل بالقرب من الحد العلوي للكارد */}
+          <div className="mt-auto mb-1 shrink-0">
             <p className="text-3xl sm:text-4xl font-besm text-[#23385e] text-center" dir="rtl">
-              بسم الله الرحمن الرحيم
+              +
             </p>
           </div>
 
-          <div className="w-full max-w-md bg-white/90 backdrop-blur-sm text-[#2c2c2c] px-6 py-6 text-center rounded-3xl shadow-lg border border-[#c5a059]/40 flex flex-col justify-center space-y-3.5 my-auto">
+          <div className="w-full max-w-md bg-white/90 backdrop-blur-sm text-[#2c2c2c] px-6 py-6 text-center rounded-3xl shadow-lg border border-[#c5a059]/40 flex flex-col justify-center space-y-3.5 mb-auto">
             
             <p className="text-xs sm:text-sm text-gray-500 font-medium">يتــشرف</p>
 
