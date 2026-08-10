@@ -52,11 +52,7 @@ const message = `تأكيد حضوري - لحفل زواج متعب العطاو
 
 الاسم : ${fullName}
 عدد المرافقين: ${guests}
-التاريخ : الجمعة ٢٥ / ٤ / ١٤٤٨هـ - 16 October 2026
-الموقع : https://www.google.com/maps/search/?api=1&query=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض
-
-كرت الدعوة:
-${invitationUrl}`;
+التاريخ : الجمعة ٢٥ / ٤ / 
 
 const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
 window.location.href = url;
