@@ -46,9 +46,19 @@ export default function WeddingInvitation() {
       }, 1000);
     } else if (isRedirecting && !isRedirectedDone && countdown === 0) {
       const adminPhone = "966554129943";
-      const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
-      const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
-      
+const invitationUrl = "https://aa-sarah22.vercel.app";
+
+const message = `تأكيد حضوري - لحفل زواج متعب العطاوي
+
+الاسم : ${fullName}
+عدد المرافقين: ${guests}
+التاريخ : الجمعة ٢٥ / ٤ / ١٤٤٨هـ - 16 October 2026
+الموقع : https://www.google.com/maps/search/?api=1&query=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض
+
+كرت الدعوة:
+${invitationUrl}`;
+
+const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
       window.open(url, "_blank");
       setIsRedirectedDone(true);
     }
