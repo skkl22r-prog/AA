@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Envelope from "@/components/Envelope";
-import groomImg from "@/assets/Photoroom_20260810_091731.png";
+import groomImg from "@/assets/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png";
+import bottomImg from "@/assets/Photoroom_20260810_091623.png";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -405,33 +406,33 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center justify-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
-          <div className="w-full max-w-md flex flex-col items-center">
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center justify-between px-4 pt-4 pb-0 bg-[#faf8f5] relative overflow-hidden" dir="rtl">
+          <div className="w-full max-w-md flex flex-col items-center my-auto z-10">
             
             {!isRedirecting ? (
               <>
-                <div className="text-center mb-4">
+                <div className="text-center mb-3">
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
                     تأكـيد الحضـور
                   </h3>
                   <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">CONFIRM ATTENDANCE</p>
-                  <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-2"></div>
+                  <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-1.5"></div>
                 </div>
 
-                <div className="text-center mb-6 px-2">
+                <div className="text-center mb-4 px-2">
                   <p className="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed">
                     اكمل البيانات ثم اضغط إرسال.
                   </p>
                 </div>
 
-                <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-4">
+                <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-3">
                   
                   <div className="w-full">
-                    <div className="flex justify-between items-end mb-1.5 px-1">
-                      <label className="text-sm font-bold text-[#23385e]">الاسم الكامل</label>
+                    <div className="flex justify-between items-end mb-1 px-1">
+                      <label className="text-xs sm:text-sm font-bold text-[#23385e]">الاسم الكامل</label>
                       <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
                     </div>
-                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2.5 sm:py-3 px-4 flex items-center shadow-sm">
                       <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
@@ -447,11 +448,11 @@ export default function WeddingInvitation() {
                   </div>
 
                   <div className="w-full">
-                    <div className="flex justify-between items-end mb-1.5 px-1">
-                      <label className="text-sm font-bold text-[#23385e]">رقم الجوال</label>
+                    <div className="flex justify-between items-end mb-1 px-1">
+                      <label className="text-xs sm:text-sm font-bold text-[#23385e]">رقم الجوال</label>
                       <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
                     </div>
-                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2.5 sm:py-3 px-4 flex items-center shadow-sm">
                       <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                       </svg>
@@ -468,11 +469,11 @@ export default function WeddingInvitation() {
                   </div>
 
                   <div className="w-full">
-                    <div className="flex justify-between items-end mb-1.5 px-1">
-                      <label className="text-sm font-bold text-[#23385e]">عدد المرافقين</label>
+                    <div className="flex justify-between items-end mb-1 px-1">
+                      <label className="text-xs sm:text-sm font-bold text-[#23385e]">عدد المرافقين</label>
                       <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
                     </div>
-                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2.5 sm:py-3 px-4 flex items-center shadow-sm">
                       <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                       </svg>
@@ -491,10 +492,10 @@ export default function WeddingInvitation() {
                     </div>
                   </div>
 
-                  <div className="pt-2 flex flex-col items-center">
+                  <div className="pt-1 flex flex-col items-center">
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                      className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3.5 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
@@ -506,53 +507,49 @@ export default function WeddingInvitation() {
                 </form>
               </>
             ) : (
-              /* الشاشة الوسيطة بعد الضغط على إرسال (بدون مربعات، بدون دائرة عد تنازلي، وبدون مكان الصورة) */
-              <div className="w-full text-center flex flex-col items-center py-6 px-2">
+              /* الشاشة الوسيطة بعد الضغط على إرسال */
+              <div className="w-full text-center flex flex-col items-center py-2 px-2">
                 
-                {/* 1. المخطوطة الكبيرة في الأعلى */}
-                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] mb-3 font-sarahhh1">
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] mb-2 font-sarahhh1">
                   أفراحنا تزدان بحضوركم
                 </h3>
-                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-6 uppercase">Our weddings are graced by your presence</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-4 uppercase">Our weddings are graced by your presence</p>
 
-                {/* 2. شكراً لتأكيد حضورك مع الترجمة */}
-                <p className="text-lg sm:text-xl font-bold text-[#1e293b] mb-1">
+                <p className="text-base sm:text-lg font-bold text-[#1e293b] mb-1">
                   شكراً لتأكيد حضورك
                 </p>
-                <p className="text-xs text-gray-500 mb-6 font-sans">
+                <p className="text-xs text-gray-500 mb-4 font-sans">
                   Thank you for confirming your attendance
                 </p>
 
-                {/* 3. حالة العد التنازلي أو حالة فتح الواتساب (بدون أي دوائر) */}
                 {!isRedirectedDone ? (
-                  <div className="mb-8 w-full">
-                    <p className="text-sm font-semibold text-[#23385e] mb-1">
+                  <div className="mb-6 w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-[#23385e] mb-1">
                       سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
                     </p>
-                    <p className="text-xs text-gray-400 font-sans">
+                    <p className="text-[11px] text-gray-400 font-sans">
                       You will be redirected to WhatsApp in {countdown} seconds ...
                     </p>
                   </div>
                 ) : (
-                  <div className="mb-8 w-full flex flex-col items-center">
+                  <div className="mb-6 w-full flex flex-col items-center">
                     <div className="flex items-center justify-center gap-2 mb-1">
-                      <span className="text-blue-600 text-xl font-bold">✓</span>
-                      <p className="text-sm sm:text-base font-bold text-[#23385e]">
+                      <span className="text-blue-600 text-lg font-bold">✓</span>
+                      <p className="text-xs sm:text-sm font-bold text-[#23385e]">
                         تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
                       </p>
                     </div>
-                    <p className="text-xs text-gray-400 font-sans">
+                    <p className="text-[11px] text-gray-400 font-sans">
                       WhatsApp opened - Press "Send" to confirm your attendance
                     </p>
                   </div>
                 )}
 
-                {/* 4. زر العودة بنفس تنسيق زر الإرسال تماماً */}
-                <div className="w-full pt-4">
+                <div className="w-full pt-2">
                   <button
                     type="button"
                     onClick={handleResetForm}
-                    className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                    className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3.5 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
                   >
                     <span>العودة للصفحة الرئيسية | Return Home</span>
                   </button>
@@ -561,6 +558,15 @@ export default function WeddingInvitation() {
               </div>
             )}
 
+          </div>
+
+          {/* الصورة المضافة في نهاية الصفحة (ملاصقة للحافة تماماً ومرتفعة) */}
+          <div className="w-full flex justify-center z-0 -mb-2 pointer-events-none">
+            <img 
+              src={bottomImg} 
+              alt="تزيين أسفل الصفحة" 
+              className="w-full max-w-lg object-contain opacity-95" 
+            />
           </div>
         </section>
 
