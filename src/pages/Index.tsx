@@ -231,68 +231,70 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الثانية ================= */}
-        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5] overflow-hidden">
-          <div className="pt-3">
-            <p className="text-5xl sm:text-6xl font-besm text-[#23385e] text-center" dir="rtl">+</p>
+        {/* ================= الصفحة الثانية المعدلة بالكامل ================= */}
+        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5] overflow-hidden">
+          <div className="pt-2 shrink-0">
+            <p className="text-4xl sm:text-5xl font-besm text-[#23385e] text-center" dir="rtl">+</p>
           </div>
 
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-2 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-start my-1 flex-1 max-h-[66vh]">
+          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-auto flex-1 max-h-[72vh] overflow-y-auto scrollbar-none">
             
-            <p className="text-sm sm:text-base text-gray-500 mt-2 mb-2">يتــشرف</p>
+            <div>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1 mb-1">يتــشرف</p>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1e293b] my-2 font-sarahhh1">
-              عبدالعزيز بن سلمان العطاوي
-            </h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#1e293b] my-1 font-sarahhh1">
+                عبدالعزيز بن سلمان العطاوي
+              </h2>
 
-            <p className="text-sm sm:text-base text-gray-500 my-2">
-              بدعوتكم لحضور حفل زواج ابنه
-            </p>
-
-            <h3 className="text-3xl sm:text-4xl font-bold text-[#c5a059] my-3 font-sarahhh1">
-              متعب بن عبدالعزيز العطاوي
-            </h3>
-
-            <p className="text-sm sm:text-base text-gray-500 my-2">
-              على كريمة
-            </p>
-
-            <h4 className="text-2xl sm:text-3xl font-bold text-[#1e293b] my-2 font-sarahhh1">
-              سلطان بن عيد الشمري
-            </h4>
-
-            <div className="flex items-center justify-center gap-2.5 my-3">
-              <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
-              <span className="text-[#23385e] text-xs">✦</span>
-              <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
-            </div>
-
-            <p className="text-sm sm:text-base text-[#c5a059] font-bold my-1">
-              يوم الجمعة الموافق ٢٥ . ٤ . ١٤٤٨ هـ
-            </p>
-
-            <div className="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium mt-2" dir="ltr">
-              <p>
-                Abdulaziz bin Salman Al-Atawi has the honor of inviting you to attend
-                the wedding celebration of his son,{" "}
-                <span className="text-[#c5a059] font-bold">Miteb bin Abdulaziz Al-Atawi</span>, 
-                to the daughter of{" "}
-                <span className="text-[#c5a059] font-bold">Sultan bin Eid Al-Shammari</span>
+              <p className="text-xs sm:text-sm text-gray-500 my-1">
+                بدعوتكم لحضور حفل زواج ابنه
               </p>
-              <p className="text-[#c5a059] font-bold mt-1">Friday 16 . Oct . 2026</p>
+
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#c5a059] my-1.5 font-sarahhh1">
+                متعب بن عبدالعزيز العطاوي
+              </h3>
+
+              <p className="text-xs sm:text-sm text-gray-500 my-1">
+                على كريمة
+              </p>
+
+              <h4 className="text-xl sm:text-2xl font-bold text-[#1e293b] my-1 font-sarahhh1">
+                سلطان بن عيد الشمري
+              </h4>
+
+              <div className="flex items-center justify-center gap-2.5 my-2">
+                <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
+                <span className="text-[#23385e] text-xs">✦</span>
+                <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
+              </div>
+
+              <p className="text-xs sm:text-sm text-[#c5a059] font-bold my-1">
+                يوم الجمعة الموافق ٢٥ . ٤ . ١٤٤٨ هـ
+              </p>
+
+              <div className="text-[11px] sm:text-xs text-gray-700 leading-tight font-medium mt-1.5" dir="ltr">
+                <p>
+                  Abdulaziz bin Salman Al-Atawi has the honor of inviting you to attend
+                  the wedding celebration of his son,{" "}
+                  <span className="text-[#c5a059] font-bold">Miteb bin Abdulaziz Al-Atawi</span>, 
+                  to the daughter of{" "}
+                  <span className="text-[#c5a059] font-bold">Sultan bin Eid Al-Shammari</span>
+                </p>
+                <p className="text-[#c5a059] font-bold mt-1">Friday 16 . Oct . 2026</p>
+              </div>
             </div>
 
-            <div className="mt-auto pt-4 pb-2">
-              <p className="text-sm sm:text-base font-bold text-[#1e293b] my-1">
+            <div className="pt-2 pb-1 border-t border-gray-100 mt-2">
+              <p className="text-xs sm:text-sm font-bold text-[#1e293b]">
                 وبحضوركم يتم لنا الفرح والسرور
               </p>
-              <p className="text-xs sm:text-sm text-gray-500 mt-1" dir="ltr">
+              <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5" dir="ltr">
                 Your presence brings us honor and great joy
               </p>
             </div>
           </div>
 
-          <div className="pb-1 flex justify-center">
+          <div className="pb-1 shrink-0 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
