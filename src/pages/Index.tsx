@@ -481,10 +481,10 @@ export default function WeddingInvitation() {
               </form>
             </div>
           ) : (
-            <div className="w-full h-full flex flex-col justify-between items-center relative pt-6 pb-0 overflow-hidden">
+            <div className="w-full h-full flex flex-col justify-between items-center relative pt-4 pb-0 overflow-hidden">
               
-              {/* حاوية العناصر العلوية المرتفعة تلقائياً مع المحافظة على الترتيب والمسافات */}
-              <div className="w-full max-w-md px-4 text-center z-10 flex-1 flex flex-col justify-end space-y-3 mb-3">
+              {/* النصوص المرتفعة تلقائياً بحسب الحجم المتاح */}
+              <div className="w-full max-w-md px-4 text-center z-10 flex-1 flex flex-col justify-center space-y-2 sm:space-y-3">
                 
                 <div className="space-y-1">
                   <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
@@ -539,12 +539,12 @@ export default function WeddingInvitation() {
 
               </div>
 
-              {/* حاوية الصورة المرفوعة مع الحفاظ على ملاصقة الحافة السفلى */}
-              <div className="w-full shrink-0 z-0 leading-none flex items-end justify-center h-[38vh] sm:h-[42vh]">
+              {/* الصورة المكبرة الممتدة للأعلى والمثبتة من الأسفل */}
+              <div className="w-full shrink-0 z-0 flex items-end justify-center h-[48vh] sm:h-[52vh] overflow-hidden">
                 <img 
                   src={bottomImg} 
                   alt="شخصيات الحفل" 
-                  className="w-full h-full object-contain object-bottom block pointer-events-none" 
+                  className="w-full h-full object-cover object-top sm:object-contain sm:object-bottom scale-110 origin-bottom block pointer-events-none" 
                 />
               </div>
 
