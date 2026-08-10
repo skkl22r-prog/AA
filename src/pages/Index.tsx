@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Envelope from "@/components/Envelope";
 import groomImg from "@/assets/Photoroom_20260810_091731.png";
-import bottomImg from "@/assets/Photoroom_20260810_091623.png";
+import bottomImg from "@/assets/D42AA215-E1FD-4E15-B7D1-1BBE425B197E.png";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
