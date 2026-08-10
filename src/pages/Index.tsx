@@ -113,12 +113,14 @@ export default function WeddingInvitation() {
       {isOpen && (
         <div className="fixed bottom-5 left-5 z-[100]">
           {showSoundBubble && (
-            <div className="absolute bottom-full left-0 mb-3 whitespace-nowrap">
-              <div className="relative bg-white text-[#8b7650] px-5 py-3 rounded-full shadow-lg border border-[#d8c8a8] text-sm font-medium">
-                <span className="mr-1">♪</span>
-                دعوة زواج متعب
+            <div className="absolute bottom-full left-0 mb-2 whitespace-nowrap">
+              <div className="relative bg-[#faf8f5] text-[#8b7650] px-3.5 py-1.5 rounded-full shadow-md border border-[#c5a059]/60 text-xs font-medium flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#c5a059] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <span>دعوة زواج متعب</span>
 
-                <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r border-b border-[#d8c8a8] rotate-45"></div>
+                <div className="absolute -bottom-1.5 left-6 w-3 h-3 bg-[#faf8f5] border-r border-b border-[#c5a059]/60 rotate-45"></div>
               </div>
             </div>
           )}
@@ -127,7 +129,7 @@ export default function WeddingInvitation() {
             type="button"
             onClick={toggleAudio}
             aria-label={isPlaying ? "إيقاف الصوت" : "تشغيل الصوت"}
-            className="w-14 h-14 rounded-full bg-[#e8dfcd] text-[#8b7650] shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            className="w-14 h-14 rounded-full bg-[#faf8f5]/80 backdrop-blur-md text-[#c5a059] border-2 border-[#c5a059] shadow-lg flex items-center justify-center active:scale-95 transition-transform"
           >
             {isPlaying ? (
               <svg
@@ -504,23 +506,31 @@ export default function WeddingInvitation() {
               </form>
             </div>
           ) : (
-            /* ================= شاشة النجاح الجديدة ================= */
+            /* ================= شاشة النجاح المعدلة ================= */
             (() => {
-              // 👈 الرقم التالي هو المسؤول عن التحكم بحجم الصورة (غيري قيمته للتكبير والتصغير)
               const bottomImgScale = 125;
 
               return (
-                <div className="w-full h-full flex flex-col justify-end items-center relative pt-8 pb-0">
+                <div className="w-full h-full flex flex-col justify-end items-center relative pt-4 pb-0">
                   
                   {/* النصوص والزر ترتفع تلقائياً فوق الصورة بنفس المسافة والتناسق */}
                   <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mb-2 space-y-2">
                     
-                    <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
-                      أفراحنا تزدان بحضوركم
-                    </h3>
-                    <p className="text-[10px] sm:text-xs text-gray-400 tracking-[0.2em] uppercase font-sans -mt-1">
-                      OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
-                    </p>
+                    <div className="w-full flex flex-col items-center">
+                      <h3 className="text-4xl sm:text-5xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
+                        أفراحنا تزدان بحضوركم
+                      </h3>
+                      <p className="text-[10px] sm:text-xs text-gray-400 uppercase font-sans mt-0.5 tracking-[0.27em] sm:tracking-[0.38em] whitespace-nowrap">
+                        OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
+                      </p>
+                      
+                      {/* الزخرفة: خطين بينهما نجمة باللون الذهبي */}
+                      <div className="flex items-center justify-center gap-2.5 mt-2">
+                        <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+                        <span className="text-[#c5a059] text-xs">✦</span>
+                        <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
+                      </div>
+                    </div>
 
                     <div className="pt-1">
                       <p className="text-base sm:text-lg font-bold text-[#1e293b]">
