@@ -125,15 +125,17 @@ export default function WeddingInvitation() {
             </div>
           )}
 
+          {/* زر الصوت المحدث بإحساس واقعي ومصغر */}
           <button
             type="button"
             onClick={toggleAudio}
             aria-label={isPlaying ? "إيقاف الصوت" : "تشغيل الصوت"}
-            className="w-14 h-14 rounded-full bg-[#faf8f5]/80 backdrop-blur-md text-[#c5a059] border-2 border-[#c5a059] shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            className="w-11 h-11 rounded-full text-[#c5a059] border-[1px] border-[#c5a059]/50 flex items-center justify-center active:scale-95 transition-transform bg-gradient-to-b from-[#ffffff] via-[#faf8f5] to-[#f0e8d8] shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(197,160,89,0.2),0_4px_12px_rgba(0,0,0,0.12)] relative"
           >
+            <div className="absolute inset-[2px] rounded-full border border-white/60 pointer-events-none"></div>
             {isPlaying ? (
               <svg
-                className="w-7 h-7"
+                className="w-5 h-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -153,7 +155,7 @@ export default function WeddingInvitation() {
               </svg>
             ) : (
               <svg
-                className="w-7 h-7"
+                className="w-5 h-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -230,7 +232,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثانية ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5]">
+        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-4 pb-3 bg-[#faf8f5] overflow-hidden">
           <div className="pt-3">
             <p className="text-5xl sm:text-6xl font-besm text-[#23385e] text-center" dir="rtl">+</p>
           </div>
@@ -296,7 +298,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الثالثة ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-2 bg-[#faf8f5]" dir="rtl">
+        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-2 bg-[#faf8f5] overflow-hidden" dir="rtl">
           <div className="pt-10 mb-1">
             <h3 className="text-xl sm:text-2xl font-bold text-[#23385e] drop-shadow-sm text-center font-serif">تفاصيـل الحفـل</h3>
             <p className="text-[9px] text-gray-500 tracking-[0.25em] text-center mt-0.5">EVENT DETAILS</p>
@@ -373,7 +375,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الرابعة ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5]" dir="rtl">
+        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5] overflow-hidden" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center my-auto">
             <div className="text-center mb-3">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">برنـامج الحفـل</h3>
@@ -386,7 +388,7 @@ export default function WeddingInvitation() {
                 { timeAr: "٨:٠٠ م - PM 8:00", titleAr: "استقبال الضيوف", titleEn: "Guest Reception" },
                 { timeAr: "٨:٣٠ م - PM 8:30", titleAr: "بداية العرضة السعودية", titleEn: "Beginning of the Saudi Ardah" },
                 { timeAr: "٩:٣٠ م - PM 9:30", titleAr: "دخول العريس وبدء الزفة", titleEn: "Groom's Entrance & Wedding Zaffa" },
-                { timeAr: "١٠:٠٠ م - PM 10:00", titleAr: "السلام العام واستقبال المهنئين", titleEn: "General Greetings & Welcoming Guests" },
+                { timeAr: "١٠:٠0 م - PM 10:00", titleAr: "السلام العام واستقبال المهنئين", titleEn: "General Greetings & Welcoming Guests" },
                 { timeAr: "١١:٣٠ م - PM 11:30", titleAr: "العشاء", titleEn: "Dinner" }
               ].map((item, idx, arr) => (
                 <div key={idx} className="py-1">
@@ -408,7 +410,7 @@ export default function WeddingInvitation() {
         </section>
 
         {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
-        <section className="h-screen w-screen snap-start flex flex-col items-center justify-between bg-[#faf8f5] relative overflow-hidden" dir="rtl">
+        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col items-center justify-between bg-[#faf8f5] relative overflow-hidden" dir="rtl">
           
           {!isRedirecting ? (
             <div className="w-full max-w-md flex flex-col items-center my-auto px-4 pt-4 pb-3 z-10">
@@ -506,14 +508,13 @@ export default function WeddingInvitation() {
               </form>
             </div>
           ) : (
-            /* ================= شاشة النجاح المعدلة ================= */
+            /* ================= شاشة النجاح ================= */
             (() => {
               const bottomImgScale = 125;
 
               return (
                 <div className="w-full h-full flex flex-col justify-end items-center relative pt-4 pb-0">
                   
-                  {/* النصوص والزر ترتفع تلقائياً فوق الصورة بنفس المسافة والتناسق */}
                   <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mb-2 space-y-2">
                     
                     <div className="w-full flex flex-col items-center">
@@ -524,7 +525,6 @@ export default function WeddingInvitation() {
                         OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
                       </p>
                       
-                      {/* الزخرفة: خطين بينهما نجمة باللون الذهبي */}
                       <div className="flex items-center justify-center gap-2.5 mt-2">
                         <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
                         <span className="text-[#c5a059] text-xs">✦</span>
@@ -576,7 +576,6 @@ export default function WeddingInvitation() {
 
                   </div>
 
-                  {/* الصورة تتمدد وتكبر للأعلى فقط مع ثبات القاعدة السفلى تماماً */}
                   <div className="w-full shrink-0 z-0 leading-none flex justify-center items-end overflow-visible">
                     <img 
                       src={bottomImg} 
