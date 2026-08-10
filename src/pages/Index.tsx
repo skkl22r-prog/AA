@@ -11,6 +11,7 @@ export default function WeddingInvitation() {
   // حالات صفحة الانتظار والتحويل للواتساب
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [countdown, setCountdown] = useState(5);
+  const [isRedirectedDone, setIsRedirectedDone] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,18 +39,21 @@ export default function WeddingInvitation() {
   // مؤقت العد التنازلي للتحويل للواتساب (5 ثوانٍ)
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isRedirecting && countdown > 0) {
+    if (isRedirecting && !isRedirectedDone && countdown > 0) {
       timer = setInterval(() => {
         setCountdown((prev) => prev - 1);
       }, 1000);
-    } else if (isRedirecting && countdown === 0) {
+    } else if (isRedirecting && !isRedirectedDone && countdown === 0) {
       const adminPhone = "966554129943";
       const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
       const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
-      window.location.href = url;
+      
+      // فتح الواتساب
+      window.open(url, "_blank");
+      setIsRedirectedDone(true);
     }
     return () => clearInterval(timer);
-  }, [isRedirecting, countdown, fullName, phone, guests]);
+  }, [isRedirecting, isRedirectedDone, countdown, fullName, phone, guests]);
 
   const handleOpenEnvelope = () => {
     setIsOpen(true);
@@ -84,6 +88,15 @@ export default function WeddingInvitation() {
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsRedirecting(true);
+  };
+
+  const handleResetForm = () => {
+    setIsRedirecting(false);
+    setCountdown(5);
+    setIsRedirectedDone(false);
+    setFullName("");
+    setPhone("");
+    setGuests("");
   };
 
   return (
@@ -391,7 +404,7 @@ export default function WeddingInvitation() {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور أو صفحة العد التنازلي) ================= */}
+        {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center justify-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center">
             
@@ -493,33 +506,68 @@ export default function WeddingInvitation() {
                 </form>
               </>
             ) : (
-              /* صفحة العد التنازلي الوسيطة بعد الضغط على إرسال */
-              <div className="w-full bg-white text-[#2c2c2c] px-6 py-8 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 flex flex-col items-center">
-                {/* المخطوطة أو النص العلوي */}
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] mb-4 font-sarahhh1">
+              /* الشاشة الوسيطة بعد الضغط على إرسال (بدون مربعات وبنفس الترتيب والترجمات) */
+              <div className="w-full text-center flex flex-col items-center py-4 px-2">
+                
+                {/* 1. المخطوطة الكبيرة في الأعلى */}
+                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] mb-3 font-sarahhh1">
                   أفراحنا تزدان بحضوركم
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
-                  شكراً لتسجيل حضوركم.<br />
-                  تم استلام بياناتكم بنجاح، ونتطلع لقاءكم بكل سرور.
+                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-4 uppercase">Our weddings are graced by your presence</p>
+
+                {/* 2. شكراً لتأكيد حضورك مع الترجمة */}
+                <p className="text-lg sm:text-xl font-bold text-[#1e293b] mb-1">
+                  شكراً لتأكيد حضورك
+                </p>
+                <p className="text-xs text-gray-500 mb-6 font-sans">
+                  Thank you for confirming your attendance
                 </p>
 
-                {/* صندوق العد التنازلي */}
-                <div className="bg-[#faf8f5] border border-[#c5a059]/30 rounded-xl p-5 w-full mb-6">
-                  <p className="text-sm font-semibold text-[#23385e] mb-3">سيتم تحويلك إلى الواتساب تلقائياً خلال:</p>
-                  <div className="text-3xl font-bold text-[#c5a059] bg-white w-14 h-14 mx-auto rounded-full flex items-center justify-center shadow-inner border border-[#c5a059]/30">
-                    {countdown}
+                {/* 3. حالة العد التنازلي أو حالة فتح الواتساب */}
+                {!isRedirectedDone ? (
+                  <div className="mb-8 w-full">
+                    <p className="text-sm font-semibold text-[#23385e] mb-1">
+                      سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
+                    </p>
+                    <p className="text-xs text-gray-400 font-sans mb-4">
+                      You will be redirected to WhatsApp in {countdown} seconds ...
+                    </p>
+                    <div className="text-2xl font-bold text-[#c5a059] w-12 h-12 mx-auto rounded-full flex items-center justify-center bg-white border border-[#c5a059]/40 shadow-sm">
+                      {countdown}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="mb-8 w-full flex flex-col items-center">
+                    <div className="flex items-center justify-center gap-2 mb-1">
+                      <span className="text-blue-600 text-xl font-bold">✓</span>
+                      <p className="text-sm sm:text-base font-bold text-[#23385e]">
+                        تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
+                      </p>
+                    </div>
+                    <p className="text-xs text-gray-400 font-sans">
+                      WhatsApp opened - Press "Send" to confirm your attendance
+                    </p>
+                  </div>
+                )}
 
-                {/* مكان الصورة السفلية (متروكة للإضافة لاحقاً) */}
-                <div className="w-full mt-2">
-                  {/* أضف صورتك هنا لاحقاً باستخدام وسم img مباشرة */}
-                  <div className="w-full h-24 border-2 dashed border-[#c5a059]/40 rounded-xl flex items-center justify-center text-xs text-gray-400">
+                {/* 4. مساحة الصورة السفلية (متروكة للإضافة لاحقاً) */}
+                <div className="w-full my-4">
+                  <div className="w-full h-20 border border-dashed border-[#c5a059]/40 rounded-xl flex items-center justify-center text-xs text-gray-400">
                     مساحة الصورة السفلية (أضف صورتك هنا لاحقاً)
                   </div>
                 </div>
+
+                {/* 5. زر العودة بنفس تنسيق زر الإرسال تماماً */}
+                <div className="w-full pt-4">
+                  <button
+                    type="button"
+                    onClick={handleResetForm}
+                    className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                  >
+                    <span>العودة للصفحة الرئيسية | Return Home</span>
+                  </button>
+                </div>
+
               </div>
             )}
 
