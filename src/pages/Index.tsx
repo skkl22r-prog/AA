@@ -4,13 +4,17 @@ import groomImg from "@/assets/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
-const [fullName, setFullName] = useState("");
-const [phone, setPhone] = useState("");
-const [guests, setGuests] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [guests, setGuests] = useState("");
 
-const audioRef = useRef<HTMLAudioElement>(null);
-const [isPlaying, setIsPlaying] = useState(false);
-const [showSoundBubble, setShowSoundBubble] = useState(false);
+  // حالات صفحة الانتظار والتحويل للواتساب
+  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [countdown, setCountdown] = useState(5);
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showSoundBubble, setShowSoundBubble] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -31,117 +35,130 @@ const [showSoundBubble, setShowSoundBubble] = useState(false);
     return () => clearInterval(interval);
   }, []);
 
-const handleOpenEnvelope = () => {
-  setIsOpen(true);
-  setShowSoundBubble(true);
+  // مؤقت العد التنازلي للتحويل للواتساب (5 ثوانٍ)
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isRedirecting && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+    } else if (isRedirecting && countdown === 0) {
+      const adminPhone = "966554129943";
+      const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
+      const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
+      window.location.href = url;
+    }
+    return () => clearInterval(timer);
+  }, [isRedirecting, countdown, fullName, phone, guests]);
 
-  if (audioRef.current) {
-    audioRef.current.play().then(() => {
-      setIsPlaying(true);
-    }).catch(() => {
+  const handleOpenEnvelope = () => {
+    setIsOpen(true);
+    setShowSoundBubble(true);
+
+    if (audioRef.current) {
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {
+        setIsPlaying(false);
+      });
+    }
+
+    setTimeout(() => {
+      setShowSoundBubble(false);
+    }, 7000);
+  };
+
+  const toggleAudio = () => {
+    if (!audioRef.current) return;
+
+    if (audioRef.current.paused) {
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      });
+    } else {
+      audioRef.current.pause();
       setIsPlaying(false);
-    });
-  }
+    }
+  };
 
-  setTimeout(() => {
-    setShowSoundBubble(false);
-  }, 7000);
-};
-
-const toggleAudio = () => {
-  if (!audioRef.current) return;
-
-  if (audioRef.current.paused) {
-    audioRef.current.play().then(() => {
-      setIsPlaying(true);
-    });
-  } else {
-    audioRef.current.pause();
-    setIsPlaying(false);
-  }
-};
-
-const handleWhatsAppSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const adminPhone = "966554129943";
-    const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
-    const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    setIsRedirecting(true);
   };
 
   return (
     <div className="h-screen w-screen bg-[#faf8f5] text-[#2c2c2c] font-arabic overflow-y-scroll snap-y snap-mandatory scrollbar-none select-none relative">
-{!isOpen && <Envelope onOpen={handleOpenEnvelope} />}
+      {!isOpen && <Envelope onOpen={handleOpenEnvelope} />}
       <audio
-  ref={audioRef}
-  src="/music/shim2t.m4a"
-  loop
-  preload="auto"
-/>
+        ref={audioRef}
+        src="/music/shim2t.m4a"
+        loop
+        preload="auto"
+      />
 
-{isOpen && (
-  <div className="fixed bottom-5 left-5 z-[100]">
-    {showSoundBubble && (
-      <div className="absolute bottom-full left-0 mb-3 whitespace-nowrap">
-        <div className="relative bg-white text-[#8b7650] px-5 py-3 rounded-full shadow-lg border border-[#d8c8a8] text-sm font-medium">
-          <span className="mr-1">♪</span>
-          دعوة زواج متعب
+      {isOpen && (
+        <div className="fixed bottom-5 left-5 z-[100]">
+          {showSoundBubble && (
+            <div className="absolute bottom-full left-0 mb-3 whitespace-nowrap">
+              <div className="relative bg-white text-[#8b7650] px-5 py-3 rounded-full shadow-lg border border-[#d8c8a8] text-sm font-medium">
+                <span className="mr-1">♪</span>
+                دعوة زواج متعب
 
-          <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r border-b border-[#d8c8a8] rotate-45"></div>
+                <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r border-b border-[#d8c8a8] rotate-45"></div>
+              </div>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={toggleAudio}
+            aria-label={isPlaying ? "إيقاف الصوت" : "تشغيل الصوت"}
+            className="w-14 h-14 rounded-full bg-[#e8dfcd] text-[#8b7650] shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+          >
+            {isPlaying ? (
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                  d="M11 5L6 9H3v6h3l5 4V5z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                  d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                  d="M11 5L6 9H3v6h3l5 4V5z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                  d="M19 9l-6 6M13 9l6 6"
+                />
+              </svg>
+            )}
+          </button>
         </div>
-      </div>
-    )}
-
-    <button
-      type="button"
-      onClick={toggleAudio}
-      aria-label={isPlaying ? "إيقاف الصوت" : "تشغيل الصوت"}
-      className="w-14 h-14 rounded-full bg-[#e8dfcd] text-[#8b7650] shadow-lg flex items-center justify-center active:scale-95 transition-transform"
-    >
-      {isPlaying ? (
-        <svg
-          className="w-7 h-7"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.8"
-            d="M11 5L6 9H3v6h3l5 4V5z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.8"
-            d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12"
-          />
-        </svg>
-      ) : (
-        <svg
-          className="w-7 h-7"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.8"
-            d="M11 5L6 9H3v6h3l5 4V5z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.8"
-            d="M19 9l-6 6M13 9l6 6"
-          />
-        </svg>
       )}
-    </button>
-  </div>
-)}
 
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
@@ -313,26 +330,26 @@ const handleWhatsAppSubmit = (e: React.FormEvent) => {
                 <span className="w-6 h-[1px] bg-[#c5a059]/60"></span>
               </div>
               <a
-  href="https://www.google.com/maps/search/?api=1&query=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض"
-  target="_blank"
-  rel="noreferrer"
-  className="text-[10px] text-[#c5a059] font-bold underline mb-1.5 inline-block"
->
-  افتتح في الخرائط | Open in Maps
-</a>
+                href="https://www.google.com/maps/search/?api=1&query=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[10px] text-[#c5a059] font-bold underline mb-1.5 inline-block"
+              >
+                افتتح في الخرائط | Open in Maps
+              </a>
 
-<div className="w-full h-36 sm:h-40 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
-  <iframe
-    title="Prince Sultan Grand Hall - Al Faisaliah Hotel"
-    src="https://www.google.com/maps?q=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض&output=embed"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen={false}
-    loading="lazy"
-    className="w-full h-full object-cover"
-  ></iframe>
-</div>
+              <div className="w-full h-36 sm:h-40 rounded-xl overflow-hidden border border-gray-200 shadow-inner relative">
+                <iframe
+                  title="Prince Sultan Grand Hall - Al Faisaliah Hotel"
+                  src="https://www.google.com/maps?q=قاعة+الأمير+سلطان+الكبرى+فندق+الفيصلية+الرياض&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                ></iframe>
+              </div>
             </div>
 
           </div>
@@ -374,109 +391,138 @@ const handleWhatsAppSubmit = (e: React.FormEvent) => {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة ================= */}
-        <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
+        {/* ================= الصفحة الخامسة (تأكيد الحضور أو صفحة العد التنازلي) ================= */}
+        <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center justify-center px-4 pt-8 pb-6 bg-[#faf8f5]" dir="rtl">
           <div className="w-full max-w-md flex flex-col items-center">
             
-            <div className="text-center mb-4">
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
-                تأكـيد الحضـور
-              </h3>
-              <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">CONFIRM ATTENDANCE</p>
-              <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-2"></div>
-            </div>
-
-            <div className="text-center mb-6 px-2">
-              <p className="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed">
-                اكمل البيانات ثم اضغط إرسال — سيتم فتح واتساب برسالة جاهزة.
-              </p>
-              <p className="text-[11px] text-gray-400 mt-1" dir="ltr">
-                Fill in the details and press send — WhatsApp will open with a ready message.
-              </p>
-            </div>
-
-            <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-4">
-              
-              <div className="w-full">
-                <div className="flex justify-between items-end mb-1.5 px-1">
-                  <label className="text-sm font-bold text-[#23385e]">الاسم الكامل</label>
-                  <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
+            {!isRedirecting ? (
+              <>
+                <div className="text-center mb-4">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] drop-shadow-sm font-serif">
+                    تأكـيد الحضـور
+                  </h3>
+                  <p className="text-[10px] text-gray-500 tracking-[0.25em] mt-1">CONFIRM ATTENDANCE</p>
+                  <div className="w-12 h-[1px] bg-[#c5a059]/60 mx-auto mt-2"></div>
                 </div>
-                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
-                  <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                  </svg>
-                  <input
-                    type="text"
-                    required
-                    placeholder="اكتب اسمك"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
-                  />
+
+                <div className="text-center mb-6 px-2">
+                  <p className="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed">
+                    اكمل البيانات ثم اضغط إرسال.
+                  </p>
+                </div>
+
+                <form onSubmit={handleWhatsAppSubmit} className="w-full space-y-4">
+                  
+                  <div className="w-full">
+                    <div className="flex justify-between items-end mb-1.5 px-1">
+                      <label className="text-sm font-bold text-[#23385e]">الاسم الكامل</label>
+                      <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
+                    </div>
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                      <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                      </svg>
+                      <input
+                        type="text"
+                        required
+                        placeholder="اكتب اسمك"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="w-full">
+                    <div className="flex justify-between items-end mb-1.5 px-1">
+                      <label className="text-sm font-bold text-[#23385e]">رقم الجوال</label>
+                      <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
+                    </div>
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                      <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                      </svg>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="05xxxxxxxx"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
+                        dir="ltr"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="w-full">
+                    <div className="flex justify-between items-end mb-1.5 px-1">
+                      <label className="text-sm font-bold text-[#23385e]">عدد المرافقين</label>
+                      <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
+                    </div>
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
+                      <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      </svg>
+                      <select
+                        required
+                        value={guests}
+                        onChange={(e) => setGuests(e.target.value)}
+                        className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none text-right cursor-pointer"
+                      >
+                        <option value="" disabled>اختر</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex flex-col items-center">
+                    <button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                      </svg>
+                      <span>إرسال التأكيد</span>
+                    </button>
+                  </div>
+
+                </form>
+              </>
+            ) : (
+              /* صفحة العد التنازلي الوسيطة بعد الضغط على إرسال */
+              <div className="w-full bg-white text-[#2c2c2c] px-6 py-8 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/60 flex flex-col items-center">
+                {/* المخطوطة أو النص العلوي */}
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] mb-4 font-sarahhh1">
+                  أفراحنا تزدان بحضوركم
+                </h3>
+                
+                <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
+                  شكراً لتسجيل حضوركم.<br />
+                  تم استلام بياناتكم بنجاح، ونتطلع لقاءكم بكل سرور.
+                </p>
+
+                {/* صندوق العد التنازلي */}
+                <div className="bg-[#faf8f5] border border-[#c5a059]/30 rounded-xl p-5 w-full mb-6">
+                  <p className="text-sm font-semibold text-[#23385e] mb-3">سيتم تحويلك إلى الواتساب تلقائياً خلال:</p>
+                  <div className="text-3xl font-bold text-[#c5a059] bg-white w-14 h-14 mx-auto rounded-full flex items-center justify-center shadow-inner border border-[#c5a059]/30">
+                    {countdown}
+                  </div>
+                </div>
+
+                {/* مكان الصورة السفلية (متروكة للإضافة لاحقاً) */}
+                <div className="w-full mt-2">
+                  {/* أضف صورتك هنا لاحقاً باستخدام وسم img مباشرة */}
+                  <div className="w-full h-24 border-2 dashed border-[#c5a059]/40 rounded-xl flex items-center justify-center text-xs text-gray-400">
+                    مساحة الصورة السفلية (أضف صورتك هنا لاحقاً)
+                  </div>
                 </div>
               </div>
+            )}
 
-              <div className="w-full">
-                <div className="flex justify-between items-end mb-1.5 px-1">
-                  <label className="text-sm font-bold text-[#23385e]">رقم الجوال</label>
-                  <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
-                </div>
-                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
-                  <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                  </svg>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="05xxxxxxxx"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
-                    dir="ltr"
-                  />
-                </div>
-              </div>
-
-              <div className="w-full">
-                <div className="flex justify-between items-end mb-1.5 px-1">
-                  <label className="text-sm font-bold text-[#23385e]">عدد المرافقين</label>
-                  <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
-                </div>
-                <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-3.5 px-4 flex items-center shadow-sm">
-                  <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                  <select
-                    required
-                    value={guests}
-                    onChange={(e) => setGuests(e.target.value)}
-                    className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none text-right cursor-pointer"
-                  >
-                    <option value="" disabled>اختر</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-col items-center">
-                <span className="text-xs text-gray-600 mb-2 font-medium">سيتم فتح واتساب — اضغط "إرسال" لتأكيد حضورك.</span>
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-4 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                  </svg>
-                  <span>إرسال التأكيد عبر واتساب</span>
-                </button>
-                <span className="text-[10px] text-gray-400 mt-2">Confirm via WhatsApp</span>
-              </div>
-
-            </form>
           </div>
         </section>
 
