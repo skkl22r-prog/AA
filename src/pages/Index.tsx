@@ -504,13 +504,12 @@ export default function WeddingInvitation() {
               </form>
             </div>
           ) : (
-            /* ================= شاشة النجاح الجديدة بمقاسات وتوزيع مثالي ================= */
+            /* ================= شاشة النجاح الجديدة ================= */
             <div className="w-full h-full flex flex-col justify-between items-center relative pt-8 pb-0">
               
-              {/* النصوص والزر نازلة وملمومة بالمنتصف لتقترب جداً من رؤوس الرجال */}
+              {/* النصوص والزر نازلة وملمومة بالمنتصف */}
               <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mt-auto mb-2 space-y-2">
                 
-                {/* السطر الأول مع التكبير وبروز الخط */}
                 <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
                   أفراحنا تزدان بحضوركم
                 </h3>
@@ -550,7 +549,6 @@ export default function WeddingInvitation() {
                   </div>
                 )}
 
-                {/* الزر قريب جداً من رؤوس الشخصيات */}
                 <div className="w-full pt-1 pb-1">
                   <button
                     type="button"
@@ -563,14 +561,14 @@ export default function WeddingInvitation() {
 
               </div>
 
-              {/* الصورة مكبرة وملتصقة تماماً بالحواف الثلاث (الأسفل، اليمين، واليسار) */}
-             <div className="w-full shrink-0 z-0 leading-none flex items-end overflow-visible">
-  <img 
-    src={bottomImg} 
-    alt="شخصيات الحفل" 
-    className="w-[125%] max-w-none h-auto object-cover object-bottom block self-center" 
-  />
-</div>
+              {/* الصورة متمركزة في المنتصف تماماً بمحاذاة النص */}
+              <div className="w-full shrink-0 z-0 leading-none flex justify-center items-end">
+                <img 
+                  src={bottomImg} 
+                  alt="شخصيات الحفل" 
+                  className="w-full h-auto object-contain block" 
+                />
+              </div>
 
             </div>
           )}
