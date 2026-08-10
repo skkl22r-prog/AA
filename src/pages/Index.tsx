@@ -46,17 +46,15 @@ export default function WeddingInvitation() {
       }, 1000);
     } else if (isRedirecting && !isRedirectedDone && countdown === 0) {
       const adminPhone = "966554129943";
-const invitationUrl = "https://aa-sarah22.vercel.app";
 
 const message = `تأكيد حضوري - لحفل زواج متعب العطاوي
 
 الاسم : ${fullName}
-عدد المرافقين: ${guests}
-التاريخ : الجمعة ٢٥ / ٤ / 
+عدد المرافقين : ${guests}`;
 
 const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
 window.location.href = url;
-      setIsRedirectedDone(true);
+setIsRedirectedDone(true);
     }
     return () => clearInterval(timer);
   }, [isRedirecting, isRedirectedDone, countdown, fullName, phone, guests]);
