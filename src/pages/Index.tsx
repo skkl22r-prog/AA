@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Envelope from "@/components/Envelope";
 import groomImg from "@/assets/Photoroom_20260810_091731.png";
-import bottomImg from "@/assets/Photoroom_20260810_091623.png";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +48,6 @@ export default function WeddingInvitation() {
       const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
       const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
       
-      // فتح الواتساب
       window.open(url, "_blank");
       setIsRedirectedDone(true);
     }
@@ -119,13 +117,11 @@ export default function WeddingInvitation() {
                   <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                 </svg>
                 <span>دعوة زواج متعب</span>
-
                 <div className="absolute -bottom-1.5 left-6 w-3 h-3 bg-[#faf8f5] border-r border-b border-[#c5a059]/60 rotate-45"></div>
               </div>
             </div>
           )}
 
-          {/* زر الصوت المحدث بإحساس واقعي ومصغر */}
           <button
             type="button"
             onClick={toggleAudio}
@@ -134,44 +130,14 @@ export default function WeddingInvitation() {
           >
             <div className="absolute inset-[2px] rounded-full border border-white/60 pointer-events-none"></div>
             {isPlaying ? (
-              <svg
-                className="w-5 h-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.8"
-                  d="M11 5L6 9H3v6h3l5 4V5z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.8"
-                  d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12"
-                />
+              <svg className="w-5 h-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M11 5L6 9H3v6h3l5 4V5z"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12"/>
               </svg>
             ) : (
-              <svg
-                className="w-5 h-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.8"
-                  d="M11 5L6 9H3v6h3l5 4V5z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.8"
-                  d="M19 9l-6 6M13 9l6 6"
-                />
+              <svg className="w-5 h-5 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M11 5L6 9H3v6h3l5 4V5z"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M19 9l-6 6M13 9l6 6"/>
               </svg>
             )}
           </button>
@@ -231,70 +197,72 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الثانية المعدلة بالكامل ================= */}
-        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 pt-3 pb-3 bg-[#faf8f5] overflow-hidden">
+        {/* ================= الصفحة الثانية (المعدلة والمريحة للعين) ================= */}
+        <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 py-4 bg-[#faf8f5] overflow-hidden">
+          
           <div className="pt-2 shrink-0">
-            <p className="text-4xl sm:text-5xl font-besm text-[#23385e] text-center" dir="rtl">+</p>
+            <p className="text-3xl sm:text-4xl font-besm text-[#23385e] text-center" dir="rtl">
+              بسم الله الرحمن الرحيم
+            </p>
           </div>
 
-          <div className="w-full max-w-md bg-white text-[#2c2c2c] px-4 py-3 text-center rounded-2xl shadow-xl border-2 border-[#c5a059]/50 flex flex-col justify-between my-auto flex-1 max-h-[72vh] overflow-y-auto scrollbar-none">
+          <div className="w-full max-w-md bg-white/90 backdrop-blur-sm text-[#2c2c2c] px-6 py-6 text-center rounded-3xl shadow-lg border border-[#c5a059]/40 flex flex-col justify-center space-y-3.5 my-auto">
             
-            <div>
-              <p className="text-xs sm:text-sm text-gray-500 mt-1 mb-1">يتــشرف</p>
+            <p className="text-xs sm:text-sm text-gray-500 font-medium">يتــشرف</p>
 
-              <h2 className="text-xl sm:text-2xl font-bold text-[#1e293b] my-1 font-sarahhh1">
-                عبدالعزيز بن سلمان العطاوي
-              </h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1e293b] font-sarahhh1 leading-snug">
+              عبدالعزيز بن سلمان العطاوي
+            </h2>
 
-              <p className="text-xs sm:text-sm text-gray-500 my-1">
-                بدعوتكم لحضور حفل زواج ابنه
-              </p>
+            <p className="text-xs sm:text-sm text-gray-500 font-medium">
+              بدعوتكم لحضور حفل زواج ابنه
+            </p>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#c5a059] my-1.5 font-sarahhh1">
-                متعب بن عبدالعزيز العطاوي
-              </h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-[#c5a059] font-sarahhh1 leading-snug">
+              متعب بن عبدالعزيز العطاوي
+            </h3>
 
-              <p className="text-xs sm:text-sm text-gray-500 my-1">
-                على كريمة
-              </p>
+            <p className="text-xs sm:text-sm text-gray-500 font-medium">
+              على كريمة
+            </p>
 
-              <h4 className="text-xl sm:text-2xl font-bold text-[#1e293b] my-1 font-sarahhh1">
-                سلطان بن عيد الشمري
-              </h4>
+            <h4 className="text-2xl sm:text-3xl font-bold text-[#1e293b] font-sarahhh1 leading-snug">
+              سلطان بن عيد الشمري
+            </h4>
 
-              <div className="flex items-center justify-center gap-2.5 my-2">
-                <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
-                <span className="text-[#23385e] text-xs">✦</span>
-                <span className="w-8 h-[1px] bg-[#23385e]/40"></span>
-              </div>
-
-              <p className="text-xs sm:text-sm text-[#c5a059] font-bold my-1">
-                يوم الجمعة الموافق ٢٥ . ٤ . ١٤٤٨ هـ
-              </p>
-
-              <div className="text-[11px] sm:text-xs text-gray-700 leading-tight font-medium mt-1.5" dir="ltr">
-                <p>
-                  Abdulaziz bin Salman Al-Atawi has the honor of inviting you to attend
-                  the wedding celebration of his son,{" "}
-                  <span className="text-[#c5a059] font-bold">Miteb bin Abdulaziz Al-Atawi</span>, 
-                  to the daughter of{" "}
-                  <span className="text-[#c5a059] font-bold">Sultan bin Eid Al-Shammari</span>
-                </p>
-                <p className="text-[#c5a059] font-bold mt-1">Friday 16 . Oct . 2026</p>
-              </div>
+            <div className="flex items-center justify-center gap-3 py-1">
+              <span className="w-10 h-[1px] bg-[#c5a059]/40"></span>
+              <span className="text-[#c5a059] text-xs">✦</span>
+              <span className="w-10 h-[1px] bg-[#c5a059]/40"></span>
             </div>
 
-            <div className="pt-2 pb-1 border-t border-gray-100 mt-2">
-              <p className="text-xs sm:text-sm font-bold text-[#1e293b]">
+            <p className="text-sm sm:text-base text-[#c5a059] font-bold">
+              يوم الجمعة الموافق ٢٥ . ٤ . ١٤٤٨ هـ
+            </p>
+
+            <div className="text-[11px] sm:text-xs text-gray-600 leading-relaxed font-medium pt-1" dir="ltr">
+              <p>
+                Abdulaziz bin Salman Al-Atawi has the honor of inviting you to attend
+                the wedding celebration of his son,{" "}
+                <span className="text-[#c5a059] font-bold">Miteb bin Abdulaziz Al-Atawi</span>, 
+                to the daughter of{" "}
+                <span className="text-[#c5a059] font-bold">Sultan bin Eid Al-Shammari</span>
+              </p>
+              <p className="text-[#c5a059] font-bold mt-1">Friday 16 . Oct . 2026</p>
+            </div>
+
+            <div className="pt-3 border-t border-gray-100">
+              <p className="text-sm font-bold text-[#1e293b]">
                 وبحضوركم يتم لنا الفرح والسرور
               </p>
-              <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5" dir="ltr">
+              <p className="text-[11px] text-gray-400 mt-0.5" dir="ltr">
                 Your presence brings us honor and great joy
               </p>
             </div>
+
           </div>
 
-          <div className="pb-1 shrink-0 flex justify-center">
+          <div className="pb-2 shrink-0 flex justify-center">
             <span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span>
           </div>
         </section>
@@ -308,7 +276,6 @@ export default function WeddingInvitation() {
           </div>
 
           <div className="w-full max-w-md space-y-2 my-1 flex flex-col justify-start">
-            
             <div className="bg-white text-[#2c2c2c] px-3 py-2 text-center rounded-2xl shadow-md border-2 border-[#c5a059]/60 flex flex-col items-center">
               <div className="mb-1">
                 <svg className="w-5 h-5 text-[#c5a059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -371,7 +338,6 @@ export default function WeddingInvitation() {
                 ></iframe>
               </div>
             </div>
-
           </div>
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
@@ -411,9 +377,8 @@ export default function WeddingInvitation() {
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-        {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
+        {/* ================= الصفحة الخامسة (تأكيد الحضور) ================= */}
         <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col items-center justify-between bg-[#faf8f5] relative overflow-hidden" dir="rtl">
-          
           {!isRedirecting ? (
             <div className="w-full max-w-md flex flex-col items-center my-auto px-4 pt-4 pb-3 z-10">
               <div className="text-center mb-3">
@@ -437,9 +402,6 @@ export default function WeddingInvitation() {
                     <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
                   </div>
                   <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2 px-4 flex items-center shadow-sm">
-                    <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                    </svg>
                     <input
                       type="text"
                       required
@@ -457,9 +419,6 @@ export default function WeddingInvitation() {
                     <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
                   </div>
                   <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2 px-4 flex items-center shadow-sm">
-                    <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                    </svg>
                     <input
                       type="tel"
                       required
@@ -478,9 +437,6 @@ export default function WeddingInvitation() {
                     <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
                   </div>
                   <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2 px-4 flex items-center shadow-sm">
-                    <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
                     <select
                       required
                       value={guests}
@@ -501,97 +457,37 @@ export default function WeddingInvitation() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
                   >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                    </svg>
                     <span>إرسال التأكيد</span>
                   </button>
                 </div>
               </form>
             </div>
           ) : (
-            /* ================= شاشة النجاح ================= */
-            (() => {
-              const bottomImgScale = 125;
-
-              return (
-                <div className="w-full h-full flex flex-col justify-end items-center relative pt-4 pb-0">
-                  
-                  <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mb-2 space-y-2">
-                    
-                    <div className="w-full flex flex-col items-center">
-                      <h3 className="text-4xl sm:text-5xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
-                        أفراحنا تزدان بحضوركم
-                      </h3>
-                      <p className="text-[10px] sm:text-xs text-gray-400 uppercase font-sans mt-0.5 tracking-[0.27em] sm:tracking-[0.38em] whitespace-nowrap">
-                        OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
-                      </p>
-                      
-                      <div className="flex items-center justify-center gap-2.5 mt-2">
-                        <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
-                        <span className="text-[#c5a059] text-xs">✦</span>
-                        <span className="w-8 h-[1px] bg-[#c5a059]/60"></span>
-                      </div>
-                    </div>
-
-                    <div className="pt-1">
-                      <p className="text-base sm:text-lg font-bold text-[#1e293b]">
-                        شكراً لتأكيد حضورك
-                      </p>
-                      <p className="text-xs text-gray-500 font-sans">
-                        Thank you for confirming your attendance
-                      </p>
-                    </div>
-
-                    {!isRedirectedDone ? (
-                      <div className="py-1">
-                        <p className="text-xs sm:text-sm font-semibold text-[#23385e]">
-                          سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
-                        </p>
-                        <p className="text-[10px] text-gray-400 font-sans">
-                          You will be redirected to WhatsApp in {countdown} seconds ...
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="py-1 flex flex-col items-center">
-                        <div className="flex items-center justify-center gap-1.5">
-                          <span className="text-blue-600 text-base font-bold">✓</span>
-                          <p className="text-xs sm:text-sm font-bold text-[#23385e]">
-                            تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
-                          </p>
-                        </div>
-                        <p className="text-[10px] text-gray-400 font-sans">
-                          WhatsApp opened - Press "Send" to confirm your attendance
-                        </p>
-                      </div>
-                    )}
-
-                    <div className="w-full pt-1 pb-1">
-                      <button
-                        type="button"
-                        onClick={handleResetForm}
-                        className="w-full bg-[#2a4575] hover:bg-[#1e3256] text-white font-bold py-3.5 rounded-2xl shadow-md transition-all active:scale-[0.98] text-sm"
-                      >
-                        <span>العودة للصفحة الرئيسية | Return Home</span>
-                      </button>
-                    </div>
-
-                  </div>
-
-                  <div className="w-full shrink-0 z-0 leading-none flex justify-center items-end overflow-visible">
-                    <img 
-                      src={bottomImg} 
-                      alt="شخصيات الحفل" 
-                      style={{ width: `${bottomImgScale}%` }}
-                      className="max-w-none h-auto object-cover object-bottom block" 
-                    />
-                  </div>
-
-                </div>
-              );
-            })()
+            <div className="w-full h-full flex flex-col justify-center items-center px-4 text-center z-10 my-auto">
+              <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 mb-2">
+                أفراحنا تزدان بحضوركم
+              </h3>
+              <p className="text-sm font-bold text-[#1e293b] mt-2">
+                شكراً لتأكيد حضورك
+              </p>
+              {!isRedirectedDone ? (
+                <p className="text-xs text-[#23385e] mt-2">
+                  سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
+                </p>
+              ) : (
+                <p className="text-xs text-blue-600 font-bold mt-2">
+                  تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
+                </p>
+              )}
+              <button
+                type="button"
+                onClick={handleResetForm}
+                className="mt-6 bg-[#2a4575] text-white font-bold py-3 px-6 rounded-2xl shadow-md text-sm"
+              >
+                العودة للصفحة الرئيسية
+              </button>
+            </div>
           )}
-
         </section>
 
       </div>
