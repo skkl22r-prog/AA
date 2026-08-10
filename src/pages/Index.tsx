@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Envelope from "@/components/Envelope";
-import groomImg from "@/assets/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png";
+import groomImg from "@/assets/Photoroom_20260810_091731.png";
 import bottomImg from "@/assets/Photoroom_20260810_091623.png";
 
 export default function WeddingInvitation() {
