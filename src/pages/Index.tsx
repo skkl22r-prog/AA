@@ -59,7 +59,7 @@ const message = `تأكيد حضوري - لحفل زواج متعب العطاو
 ${invitationUrl}`;
 
 const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
+window.location.href = url;
       setIsRedirectedDone(true);
     }
     return () => clearInterval(timer);
