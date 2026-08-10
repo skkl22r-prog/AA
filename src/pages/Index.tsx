@@ -507,8 +507,8 @@ export default function WeddingInvitation() {
                 </form>
               </>
             ) : (
-              /* الشاشة الوسيطة بعد الضغط على إرسال */
-              <div className="w-full text-center flex flex-col items-center py-2 px-2">
+              /* الشاشة الوسيطة (التي تظهر بعد الضغط على إرسال) مع رفع العناصر للأعلى وتركيزها */
+              <div className="w-full text-center flex flex-col items-center py-2 px-2 -mt-6">
                 
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] mb-2 font-sarahhh1">
                   أفراحنا تزدان بحضوركم
@@ -560,14 +560,16 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* الصورة المضافة في نهاية الصفحة (ملاصقة للحافة تماماً ومرتفعة) */}
-          <div className="w-full flex justify-center z-0 -mb-2 pointer-events-none">
-            <img 
-              src={bottomImg} 
-              alt="تزيين أسفل الصفحة" 
-              className="w-full max-w-lg object-contain opacity-95" 
-            />
-          </div>
+          {/* الصورة المضافة في نهاية صفحة النجاح (ملاصقة للحافة السفلية تماماً، مكبرة ومرتفعة العناصر فوقها) */}
+          {isRedirecting && (
+            <div className="w-full flex justify-center z-0 -mb-2 pointer-events-none mt-auto">
+              <img 
+                src={bottomImg} 
+                alt="تزيين أسفل الصفحة" 
+                className="w-full max-w-xl object-contain opacity-95 scale-105 origin-bottom" 
+              />
+            </div>
+          )}
         </section>
 
       </div>
