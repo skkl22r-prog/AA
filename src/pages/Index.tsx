@@ -47,14 +47,14 @@ export default function WeddingInvitation() {
     } else if (isRedirecting && !isRedirectedDone && countdown === 0) {
       const adminPhone = "966554129943";
 
-const message = `تأكيد حضوري - لحفل زواج متعب العطاوي
+      const message = `تأكيد حضوري - لحفل زواج متعب العطاوي
 
 الاسم : ${fullName}
 عدد المرافقين : ${guests}`;
 
-const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
-window.location.href = url;
-setIsRedirectedDone(true);
+      const url = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
+      window.location.href = url;
+      setIsRedirectedDone(true);
     }
     return () => clearInterval(timer);
   }, [isRedirecting, isRedirectedDone, countdown, fullName, phone, guests]);
@@ -205,7 +205,6 @@ setIsRedirectedDone(true);
         {/* ================= الصفحة الثانية (المخطوطة الأصلية قريبة جداً من الكارد) ================= */}
         <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 py-4 bg-[#faf8f5] overflow-hidden">
           
-          {/* تم إرجاع المخطوطة (+) ونقلها لأسفل بالقرب من الحد العلوي للكارد */}
           <div className="mt-auto mb-1 shrink-0">
             <p className="text-3xl sm:text-4xl font-besm text-[#23385e] text-center" dir="rtl">
               +
@@ -383,7 +382,7 @@ setIsRedirectedDone(true);
           <div className="pb-1 flex justify-center"><span className="text-[#c5a059] text-xl animate-bounce font-bold">⌄</span></div>
         </section>
 
-                {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
+        {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
         <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col items-center justify-between bg-[#faf8f5] relative overflow-hidden" dir="rtl">
           
           {!isRedirecting ? (
@@ -482,18 +481,21 @@ setIsRedirectedDone(true);
               </form>
             </div>
           ) : (
-            <div className="w-full h-full flex flex-col justify-between items-center relative pt-8 pb-0">
+            <div className="w-full h-full flex flex-col justify-between items-center relative pt-6 pb-0 overflow-hidden">
               
-              <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mt-auto mb-2 space-y-2">
+              {/* حاوية العناصر العلوية المرتفعة تلقائياً مع المحافظة على الترتيب والمسافات */}
+              <div className="w-full max-w-md px-4 text-center z-10 flex-1 flex flex-col justify-end space-y-3 mb-3">
                 
-                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
-                  أفراحنا تزدان بحضوركم
-                </h3>
-                <p className="text-[10px] sm:text-xs text-gray-400 tracking-[0.2em] uppercase font-sans -mt-1">
-                  OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
-                </p>
+                <div className="space-y-1">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
+                    أفراحنا تزدان بحضوركم
+                  </h3>
+                  <p className="text-[10px] sm:text-xs text-gray-400 tracking-[0.2em] uppercase font-sans">
+                    OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
+                  </p>
+                </div>
 
-                <div className="pt-1">
+                <div>
                   <p className="text-base sm:text-lg font-bold text-[#1e293b]">
                     شكراً لتأكيد حضورك
                   </p>
@@ -503,7 +505,7 @@ setIsRedirectedDone(true);
                 </div>
 
                 {!isRedirectedDone ? (
-                  <div className="py-1">
+                  <div>
                     <p className="text-xs sm:text-sm font-semibold text-[#23385e]">
                       سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
                     </p>
@@ -512,7 +514,7 @@ setIsRedirectedDone(true);
                     </p>
                   </div>
                 ) : (
-                  <div className="py-1 flex flex-col items-center">
+                  <div className="flex flex-col items-center">
                     <div className="flex items-center justify-center gap-1.5">
                       <span className="text-blue-600 text-base font-bold">✓</span>
                       <p className="text-xs sm:text-sm font-bold text-[#23385e]">
@@ -525,7 +527,7 @@ setIsRedirectedDone(true);
                   </div>
                 )}
 
-                <div className="w-full pt-1 pb-1">
+                <div className="w-full pt-1">
                   <button
                     type="button"
                     onClick={handleResetForm}
@@ -537,11 +539,12 @@ setIsRedirectedDone(true);
 
               </div>
 
-              <div className="w-full shrink-0 z-0 leading-none flex items-end">
+              {/* حاوية الصورة المرفوعة مع الحفاظ على ملاصقة الحافة السفلى */}
+              <div className="w-full shrink-0 z-0 leading-none flex items-end justify-center h-[38vh] sm:h-[42vh]">
                 <img 
                   src={bottomImg} 
                   alt="شخصيات الحفل" 
-                  className="w-full h-auto object-cover object-bottom block" 
+                  className="w-full h-full object-contain object-bottom block pointer-events-none" 
                 />
               </div>
 
