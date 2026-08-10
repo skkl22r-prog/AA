@@ -505,72 +505,80 @@ export default function WeddingInvitation() {
             </div>
           ) : (
             /* ================= شاشة النجاح الجديدة ================= */
-            <div className="w-full h-full flex flex-col justify-between items-center relative pt-8 pb-0">
-              
-              {/* النصوص والزر نازلة وملمومة بالمنتصف */}
-              <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mt-auto mb-2 space-y-2">
-                
-                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
-                  أفراحنا تزدان بحضوركم
-                </h3>
-                <p className="text-[10px] sm:text-xs text-gray-400 tracking-[0.2em] uppercase font-sans -mt-1">
-                  OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
-                </p>
+            (() => {
+              // 👈 الرقم التالي هو المسؤول عن التحكم بحجم الصورة (غيري قيمته للتكبير والتصغير)
+              const bottomImgScale = 125;
 
-                <div className="pt-1">
-                  <p className="text-base sm:text-lg font-bold text-[#1e293b]">
-                    شكراً لتأكيد حضورك
-                  </p>
-                  <p className="text-xs text-gray-500 font-sans">
-                    Thank you for confirming your attendance
-                  </p>
-                </div>
+              return (
+                <div className="w-full h-full flex flex-col justify-end items-center relative pt-8 pb-0">
+                  
+                  {/* النصوص والزر ترتفع تلقائياً فوق الصورة بنفس المسافة والتناسق */}
+                  <div className="w-full max-w-md px-4 text-center z-10 flex flex-col items-center mb-2 space-y-2">
+                    
+                    <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
+                      أفراحنا تزدان بحضوركم
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-gray-400 tracking-[0.2em] uppercase font-sans -mt-1">
+                      OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
+                    </p>
 
-                {!isRedirectedDone ? (
-                  <div className="py-1">
-                    <p className="text-xs sm:text-sm font-semibold text-[#23385e]">
-                      سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
-                    </p>
-                    <p className="text-[10px] text-gray-400 font-sans">
-                      You will be redirected to WhatsApp in {countdown} seconds ...
-                    </p>
-                  </div>
-                ) : (
-                  <div className="py-1 flex flex-col items-center">
-                    <div className="flex items-center justify-center gap-1.5">
-                      <span className="text-blue-600 text-base font-bold">✓</span>
-                      <p className="text-xs sm:text-sm font-bold text-[#23385e]">
-                        تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
+                    <div className="pt-1">
+                      <p className="text-base sm:text-lg font-bold text-[#1e293b]">
+                        شكراً لتأكيد حضورك
+                      </p>
+                      <p className="text-xs text-gray-500 font-sans">
+                        Thank you for confirming your attendance
                       </p>
                     </div>
-                    <p className="text-[10px] text-gray-400 font-sans">
-                      WhatsApp opened - Press "Send" to confirm your attendance
-                    </p>
+
+                    {!isRedirectedDone ? (
+                      <div className="py-1">
+                        <p className="text-xs sm:text-sm font-semibold text-[#23385e]">
+                          سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
+                        </p>
+                        <p className="text-[10px] text-gray-400 font-sans">
+                          You will be redirected to WhatsApp in {countdown} seconds ...
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="py-1 flex flex-col items-center">
+                        <div className="flex items-center justify-center gap-1.5">
+                          <span className="text-blue-600 text-base font-bold">✓</span>
+                          <p className="text-xs sm:text-sm font-bold text-[#23385e]">
+                            تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
+                          </p>
+                        </div>
+                        <p className="text-[10px] text-gray-400 font-sans">
+                          WhatsApp opened - Press "Send" to confirm your attendance
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="w-full pt-1 pb-1">
+                      <button
+                        type="button"
+                        onClick={handleResetForm}
+                        className="w-full bg-[#2a4575] hover:bg-[#1e3256] text-white font-bold py-3.5 rounded-2xl shadow-md transition-all active:scale-[0.98] text-sm"
+                      >
+                        <span>العودة للصفحة الرئيسية | Return Home</span>
+                      </button>
+                    </div>
+
                   </div>
-                )}
 
-                <div className="w-full pt-1 pb-1">
-                  <button
-                    type="button"
-                    onClick={handleResetForm}
-                    className="w-full bg-[#2a4575] hover:bg-[#1e3256] text-white font-bold py-3.5 rounded-2xl shadow-md transition-all active:scale-[0.98] text-sm"
-                  >
-                    <span>العودة للصفحة الرئيسية | Return Home</span>
-                  </button>
+                  {/* الصورة تتمدد وتكبر للأعلى فقط مع ثبات القاعدة السفلى تماماً */}
+                  <div className="w-full shrink-0 z-0 leading-none flex justify-center items-end overflow-visible">
+                    <img 
+                      src={bottomImg} 
+                      alt="شخصيات الحفل" 
+                      style={{ width: `${bottomImgScale}%` }}
+                      className="max-w-none h-auto object-cover object-bottom block" 
+                    />
+                  </div>
+
                 </div>
-
-              </div>
-
-              {/* الصورة متمركزة في المنتصف تماماً بمحاذاة النص */}
-              <div className="w-full shrink-0 z-0 leading-none flex justify-center items-end">
-                <img 
-                  src={bottomImg} 
-                  alt="شخصيات الحفل" 
-                  className="w-full h-auto object-contain block" 
-                />
-              </div>
-
-            </div>
+              );
+            })()
           )}
 
         </section>
