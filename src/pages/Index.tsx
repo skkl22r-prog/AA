@@ -547,12 +547,12 @@ export default function WeddingInvitation() {
 
               </div>
 
-              {/* الصورة المصغرة الموزونة بحيث لا تقطع الأطراف وتلتحم بالأسفل */}
-              <div className="w-full max-w-xl shrink-0 z-0 flex items-end justify-center h-[42vh] sm:h-[45vh] overflow-hidden px-2">
+              {/* الصورة السفلية الملتصقة بالزر وحواشي الشاشة */}
+              <div className="w-full shrink-0 z-0 flex items-end justify-center h-[42vh] sm:h-[45vh] overflow-hidden p-0 m-0">
                 <img 
                   src={bottomImg} 
                   alt="شخصيات الحفل" 
-                  className="w-full h-full object-contain object-bottom block pointer-events-none" 
+                  className="w-full h-full object-cover object-bottom block pointer-events-none" 
                 />
               </div>
 
