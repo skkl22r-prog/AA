@@ -49,7 +49,7 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
         className="absolute cursor-pointer transition-all duration-150 select-none"
         style={{
           left: "50%",
-          top: "54%", /* تم تغييرها من 50% إلى 54% لتنزيل الشمعة على حد الظرف */
+          top: "58%", /* تم تغييرها من 50% إلى 54% لتنزيل الشمعة على حد الظرف */
           width: "140px",
           transform: pressed
             ? "translate(-50%, -50%) scale(0.96)"
