@@ -507,23 +507,23 @@ export default function WeddingInvitation() {
                 </form>
               </>
             ) : (
-              /* الشاشة الوسيطة (التي تظهر بعد الضغط على إرسال) مع رفع العناصر للأعلى وتركيزها */
-              <div className="w-full text-center flex flex-col items-center py-2 px-2 -mt-6">
+              /* شاشة النجاح مع تكبير كلمة "أفراحنا تزدان بحضوركم" ورفع العناصر لقرب رؤوس الأشخاص */
+              <div className="w-full text-center flex flex-col items-center py-2 px-2 -mt-16">
                 
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#23385e] mb-2 font-sarahhh1">
+                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] mb-2 font-sarahhh1">
                   أفراحنا تزدان بحضوركم
                 </h3>
-                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-4 uppercase">Our weddings are graced by your presence</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-3 uppercase">Our weddings are graced by your presence</p>
 
                 <p className="text-base sm:text-lg font-bold text-[#1e293b] mb-1">
                   شكراً لتأكيد حضورك
                 </p>
-                <p className="text-xs text-gray-500 mb-4 font-sans">
+                <p className="text-xs text-gray-500 mb-3 font-sans">
                   Thank you for confirming your attendance
                 </p>
 
                 {!isRedirectedDone ? (
-                  <div className="mb-6 w-full">
+                  <div className="mb-4 w-full">
                     <p className="text-xs sm:text-sm font-semibold text-[#23385e] mb-1">
                       سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
                     </p>
@@ -532,7 +532,7 @@ export default function WeddingInvitation() {
                     </p>
                   </div>
                 ) : (
-                  <div className="mb-6 w-full flex flex-col items-center">
+                  <div className="mb-4 w-full flex flex-col items-center">
                     <div className="flex items-center justify-center gap-2 mb-1">
                       <span className="text-blue-600 text-lg font-bold">✓</span>
                       <p className="text-xs sm:text-sm font-bold text-[#23385e]">
@@ -545,7 +545,7 @@ export default function WeddingInvitation() {
                   </div>
                 )}
 
-                <div className="w-full pt-2">
+                <div className="w-full pt-1">
                   <button
                     type="button"
                     onClick={handleResetForm}
@@ -560,13 +560,13 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* الصورة المضافة في نهاية صفحة النجاح (ملاصقة للحافة السفلية تماماً، مكبرة ومرتفعة العناصر فوقها) */}
+          {/* الصورة في نهاية صفحة النجاح (بعرض كامل الصفحة من اليمين لليسار، وبدون حساب الفراغات الشفافة) */}
           {isRedirecting && (
             <div className="w-full flex justify-center z-0 -mb-2 pointer-events-none mt-auto">
               <img 
                 src={bottomImg} 
                 alt="تزيين أسفل الصفحة" 
-                className="w-full max-w-xl object-contain opacity-95 scale-105 origin-bottom" 
+                className="w-screen max-w-none object-cover object-bottom opacity-95 scale-125 translate-y-4" 
               />
             </div>
           )}
