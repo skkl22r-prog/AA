@@ -73,7 +73,7 @@ setIsRedirectedDone(true);
 
     setTimeout(() => {
       setShowSoundBubble(false);
-    }, 7000);
+    }, 3000);
   };
 
   const toggleAudio = () => {
