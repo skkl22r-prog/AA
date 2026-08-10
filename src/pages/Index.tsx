@@ -179,7 +179,7 @@ export default function WeddingInvitation() {
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
         {/* ================= الصفحة الأولى ================= */}
-        <section className="min-h-[88vh] md:min-h-[100dvh] w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
+        <section className="min-h-[88vh] md:min-h-[100dvh] md:h-screen md:max-h-screen md:overflow-hidden w-screen snap-start relative flex flex-col justify-between items-center text-center pt-2 pb-2 px-3 bg-[#111C2E] text-[#f4ecd8] overflow-hidden">
           <div className="w-full relative z-30 shrink-0 mt-6 sm:mt-8 pt-2">
             <p className="text-xs text-[#c5a059] font-light uppercase opacity-90 mb-2 font-tajawal-medium">دعوة حفل زواج</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-white font-sarahhh1 drop-shadow-md my-2.5">متعب بن عبدالعزيز العطاوي</h1>
