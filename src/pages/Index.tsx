@@ -564,11 +564,11 @@ export default function WeddingInvitation() {
               </div>
 
               {/* الصورة مكبرة وملتصقة تماماً بالحواف الثلاث (الأسفل، اليمين، واليسار) */}
-              <div className="w-full shrink-0 z-0 leading-none flex items-end overflow-visible">
+             <div className="w-full shrink-0 z-0 leading-none flex items-end overflow-visible">
   <img 
     src={bottomImg} 
     alt="شخصيات الحفل" 
-    className="w-[115%] max-w-none h-auto object-cover object-bottom block relative left-1/2 -translate-x-1/2" 
+    className="w-[125%] max-w-none h-auto object-cover object-bottom block self-center" 
   />
 </div>
 
