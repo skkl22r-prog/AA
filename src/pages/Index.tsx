@@ -484,7 +484,7 @@ export default function WeddingInvitation() {
             <div className="w-full h-full flex flex-col justify-between items-center relative pt-4 pb-0 overflow-hidden">
               
               {/* النصوص العلوية والعناوين الترحيبية */}
-              <div className="w-full max-w-md px-4 text-center z-10 shrink-0 flex flex-col justify-center space-y-2 sm:space-y-3">
+              <div className="w-full max-w-md px-4 text-center z-10 flex-1 flex flex-col justify-center space-y-2 sm:space-y-3">
                 
                 <div className="flex flex-col items-center">
                   <h3 className="text-4xl sm:text-5xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
@@ -547,12 +547,12 @@ export default function WeddingInvitation() {
 
               </div>
 
-              {/* الصورة السفلية الملتصقة بالزر تماماً بدون قص علوي */}
-              <div className="w-full flex-1 z-0 overflow-hidden p-0 m-0 leading-none">
+              {/* الصورة السفلية الملتصقة بالزر وحواشي الشاشة */}
+              <div className="w-full shrink-0 z-0 flex items-end justify-center h-[42vh] sm:h-[45vh] overflow-hidden p-0 m-0">
                 <img 
                   src={bottomImg} 
                   alt="شخصيات الحفل" 
-                  className="w-full h-full object-fill block pointer-events-none" 
+className="w-full h-full object-cover object-top block pointer-events-none"
                 />
               </div>
 
