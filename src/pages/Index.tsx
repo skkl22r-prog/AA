@@ -202,7 +202,7 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ================= الصفحة الثانية (المخطوطة الأصلية قريبة جداً من الكارد) ================= */}
+        {/* ================= الصفحة الثانية ================= */}
         <section className="h-[100dvh] max-h-[100dvh] w-screen snap-start flex flex-col justify-between items-center px-4 py-4 bg-[#faf8f5] overflow-hidden">
           
           <div className="mt-auto mb-1 shrink-0">
@@ -483,19 +483,27 @@ export default function WeddingInvitation() {
           ) : (
             <div className="w-full h-full flex flex-col justify-between items-center relative pt-4 pb-0 overflow-hidden">
               
-              {/* النصوص المرتفعة تلقائياً بحسب الحجم المتاح */}
+              {/* النصوص العلوية والعناوين الترحيبية */}
               <div className="w-full max-w-md px-4 text-center z-10 flex-1 flex flex-col justify-center space-y-2 sm:space-y-3">
                 
-                <div className="space-y-1">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
+                <div className="flex flex-col items-center">
+                  <h3 className="text-4xl sm:text-5xl font-bold text-[#23385e] font-sarahhh1 tracking-wide leading-tight">
                     أفراحنا تزدان بحضوركم
                   </h3>
-                  <p className="text-[10px] sm:text-xs text-gray-400 tracking-[0.2em] uppercase font-sans">
+                  
+                  <p className="text-[8px] sm:text-[9px] text-gray-400 tracking-[0.05em] uppercase font-sans mt-0.5 whitespace-nowrap">
                     OUR WEDDINGS ARE GRACED BY YOUR PRESENCE
                   </p>
+
+                  {/* خطين ونجمة ذهبية أسفل الترجمة */}
+                  <div className="flex items-center justify-center gap-2 mt-2 w-full max-w-[200px]">
+                    <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c5a059] to-[#c5a059]"></span>
+                    <span className="text-[#c5a059] text-xs">✦</span>
+                    <span className="flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#c5a059] to-[#c5a059]"></span>
+                  </div>
                 </div>
 
-                <div>
+                <div className="pt-1">
                   <p className="text-base sm:text-lg font-bold text-[#1e293b]">
                     شكراً لتأكيد حضورك
                   </p>
@@ -539,12 +547,12 @@ export default function WeddingInvitation() {
 
               </div>
 
-              {/* الصورة المكبرة الممتدة للأعلى والمثبتة من الأسفل */}
-              <div className="w-full shrink-0 z-0 flex items-end justify-center h-[48vh] sm:h-[52vh] overflow-hidden">
+              {/* الصورة المصغرة الموزونة بحيث لا تقطع الأطراف وتلتحم بالأسفل */}
+              <div className="w-full max-w-xl shrink-0 z-0 flex items-end justify-center h-[42vh] sm:h-[45vh] overflow-hidden px-2">
                 <img 
                   src={bottomImg} 
                   alt="شخصيات الحفل" 
-                  className="w-full h-full object-cover object-top sm:object-contain sm:object-bottom scale-110 origin-bottom block pointer-events-none" 
+                  className="w-full h-full object-contain object-bottom block pointer-events-none" 
                 />
               </div>
 
