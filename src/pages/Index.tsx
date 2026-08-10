@@ -506,14 +506,14 @@ export default function WeddingInvitation() {
                 </form>
               </>
             ) : (
-              /* الشاشة الوسيطة بعد الضغط على إرسال (بدون مربعات وبنفس الترتيب والترجمات) */
-              <div className="w-full text-center flex flex-col items-center py-4 px-2">
+              /* الشاشة الوسيطة بعد الضغط على إرسال (بدون مربعات، بدون دائرة عد تنازلي، وبدون مكان الصورة) */
+              <div className="w-full text-center flex flex-col items-center py-6 px-2">
                 
                 {/* 1. المخطوطة الكبيرة في الأعلى */}
                 <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] mb-3 font-sarahhh1">
                   أفراحنا تزدان بحضوركم
                 </h3>
-                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-4 uppercase">Our weddings are graced by your presence</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-6 uppercase">Our weddings are graced by your presence</p>
 
                 {/* 2. شكراً لتأكيد حضورك مع الترجمة */}
                 <p className="text-lg sm:text-xl font-bold text-[#1e293b] mb-1">
@@ -523,18 +523,15 @@ export default function WeddingInvitation() {
                   Thank you for confirming your attendance
                 </p>
 
-                {/* 3. حالة العد التنازلي أو حالة فتح الواتساب */}
+                {/* 3. حالة العد التنازلي أو حالة فتح الواتساب (بدون أي دوائر) */}
                 {!isRedirectedDone ? (
                   <div className="mb-8 w-full">
                     <p className="text-sm font-semibold text-[#23385e] mb-1">
                       سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
                     </p>
-                    <p className="text-xs text-gray-400 font-sans mb-4">
+                    <p className="text-xs text-gray-400 font-sans">
                       You will be redirected to WhatsApp in {countdown} seconds ...
                     </p>
-                    <div className="text-2xl font-bold text-[#c5a059] w-12 h-12 mx-auto rounded-full flex items-center justify-center bg-white border border-[#c5a059]/40 shadow-sm">
-                      {countdown}
-                    </div>
                   </div>
                 ) : (
                   <div className="mb-8 w-full flex flex-col items-center">
@@ -550,14 +547,7 @@ export default function WeddingInvitation() {
                   </div>
                 )}
 
-                {/* 4. مساحة الصورة السفلية (متروكة للإضافة لاحقاً) */}
-                <div className="w-full my-4">
-                  <div className="w-full h-20 border border-dashed border-[#c5a059]/40 rounded-xl flex items-center justify-center text-xs text-gray-400">
-                    مساحة الصورة السفلية (أضف صورتك هنا لاحقاً)
-                  </div>
-                </div>
-
-                {/* 5. زر العودة بنفس تنسيق زر الإرسال تماماً */}
+                {/* 4. زر العودة بنفس تنسيق زر الإرسال تماماً */}
                 <div className="w-full pt-4">
                   <button
                     type="button"
