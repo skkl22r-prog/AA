@@ -407,7 +407,7 @@ export default function WeddingInvitation() {
 
         {/* ================= الصفحة الخامسة (تأكيد الحضور أو شاشة النجاح) ================= */}
         <section className="min-h-[88vh] w-screen snap-start flex flex-col items-center justify-between px-4 pt-4 pb-0 bg-[#faf8f5] relative overflow-hidden" dir="rtl">
-          <div className="w-full max-w-md flex flex-col items-center my-auto z-10">
+          <div className={`w-full max-w-md flex flex-col items-center my-auto z-10 ${isRedirecting ? 'justify-start pt-2 pb-2' : ''}`}>
             
             {!isRedirecting ? (
               <>
@@ -432,7 +432,7 @@ export default function WeddingInvitation() {
                       <label className="text-xs sm:text-sm font-bold text-[#23385e]">الاسم الكامل</label>
                       <span className="text-[10px] text-gray-400 font-sans">Full Name</span>
                     </div>
-                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2.5 sm:py-3 px-4 flex items-center shadow-sm">
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2 px-4 flex items-center shadow-sm">
                       <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
@@ -442,7 +442,7 @@ export default function WeddingInvitation() {
                         placeholder="اكتب اسمك"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
+                        className="w-full bg-transparent text-base text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
                       />
                     </div>
                   </div>
@@ -452,7 +452,7 @@ export default function WeddingInvitation() {
                       <label className="text-xs sm:text-sm font-bold text-[#23385e]">رقم الجوال</label>
                       <span className="text-[10px] text-gray-400 font-sans">Phone Number</span>
                     </div>
-                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2.5 sm:py-3 px-4 flex items-center shadow-sm">
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2 px-4 flex items-center shadow-sm">
                       <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                       </svg>
@@ -462,7 +462,7 @@ export default function WeddingInvitation() {
                         placeholder="05xxxxxxxx"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
+                        className="w-full bg-transparent text-base text-[#2c2c2c] focus:outline-none placeholder-gray-300 text-right"
                         dir="ltr"
                       />
                     </div>
@@ -473,7 +473,7 @@ export default function WeddingInvitation() {
                       <label className="text-xs sm:text-sm font-bold text-[#23385e]">عدد المرافقين</label>
                       <span className="text-[10px] text-gray-400 font-sans">Number of Guests</span>
                     </div>
-                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2.5 sm:py-3 px-4 flex items-center shadow-sm">
+                    <div className="bg-white border border-[#c5a059]/30 rounded-2xl py-2 px-4 flex items-center shadow-sm">
                       <svg className="w-4 h-4 text-gray-400 ml-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                       </svg>
@@ -481,7 +481,7 @@ export default function WeddingInvitation() {
                         required
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
-                        className="w-full bg-transparent text-sm text-[#2c2c2c] focus:outline-none text-right cursor-pointer"
+                        className="w-full bg-transparent text-base text-[#2c2c2c] focus:outline-none text-right cursor-pointer"
                       >
                         <option value="" disabled>اختر</option>
                         <option value="1">1</option>
@@ -495,7 +495,7 @@ export default function WeddingInvitation() {
                   <div className="pt-1 flex flex-col items-center">
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3.5 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                      className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
@@ -507,24 +507,24 @@ export default function WeddingInvitation() {
                 </form>
               </>
             ) : (
-              /* شاشة النجاح مع تكبير كلمة "أفراحنا تزدان بحضوركم" ورفع العناصر لقرب رؤوس الأشخاص */
-              <div className="w-full text-center flex flex-col items-center py-2 px-2 -mt-16">
+              /* شاشة النجاح مع تقريب العناصر للأعلى لتكون قريبة من الصورة وتفادي التكبير */
+              <div className="w-full text-center flex flex-col items-center px-2">
                 
-                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] mb-2 font-sarahhh1">
+                <h3 className="text-3xl sm:text-4xl font-bold text-[#23385e] mb-1.5 font-sarahhh1">
                   أفراحنا تزدان بحضوركم
                 </h3>
-                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-3 uppercase">Our weddings are graced by your presence</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.25em] mb-2 uppercase">Our weddings are graced by your presence</p>
 
-                <p className="text-base sm:text-lg font-bold text-[#1e293b] mb-1">
+                <p className="text-base sm:text-lg font-bold text-[#1e293b] mb-0.5">
                   شكراً لتأكيد حضورك
                 </p>
-                <p className="text-xs text-gray-500 mb-3 font-sans">
+                <p className="text-xs text-gray-500 mb-2 font-sans">
                   Thank you for confirming your attendance
                 </p>
 
                 {!isRedirectedDone ? (
-                  <div className="mb-4 w-full">
-                    <p className="text-xs sm:text-sm font-semibold text-[#23385e] mb-1">
+                  <div className="mb-3 w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-[#23385e] mb-0.5">
                       سيتم تحويلك إلى الواتساب خلال {countdown} ثوانٍ …
                     </p>
                     <p className="text-[11px] text-gray-400 font-sans">
@@ -532,8 +532,8 @@ export default function WeddingInvitation() {
                     </p>
                   </div>
                 ) : (
-                  <div className="mb-4 w-full flex flex-col items-center">
-                    <div className="flex items-center justify-center gap-2 mb-1">
+                  <div className="mb-3 w-full flex flex-col items-center">
+                    <div className="flex items-center justify-center gap-2 mb-0.5">
                       <span className="text-blue-600 text-lg font-bold">✓</span>
                       <p className="text-xs sm:text-sm font-bold text-[#23385e]">
                         تم فتح الواتساب - اضغط "إرسال" لتأكيد حضورك
@@ -549,7 +549,7 @@ export default function WeddingInvitation() {
                   <button
                     type="button"
                     onClick={handleResetForm}
-                    className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3.5 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
+                    className="w-full bg-gradient-to-r from-[#23385e] to-[#3a5a94] text-white font-bold py-3 rounded-2xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 text-sm"
                   >
                     <span>العودة للصفحة الرئيسية | Return Home</span>
                   </button>
@@ -560,13 +560,13 @@ export default function WeddingInvitation() {
 
           </div>
 
-          {/* الصورة في نهاية صفحة النجاح (بعرض كامل الصفحة من اليمين لليسار، وبدون حساب الفراغات الشفافة) */}
+          {/* الصورة في نهاية صفحة النجاح (كاملة وبدون قص، مع التصاق الحافة السفلية تماماً بحافة الصفحة) */}
           {isRedirecting && (
-            <div className="w-full flex justify-center z-0 -mb-2 pointer-events-none mt-auto">
+            <div className="w-full flex justify-center z-0 pointer-events-none mt-auto">
               <img 
                 src={bottomImg} 
                 alt="تزيين أسفل الصفحة" 
-                className="w-screen max-w-none object-cover object-bottom opacity-95 scale-125 translate-y-4" 
+                className="w-screen max-w-none object-contain object-bottom opacity-95" 
               />
             </div>
           )}
