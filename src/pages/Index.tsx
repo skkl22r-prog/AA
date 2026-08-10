@@ -1,13 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Envelope from "@/components/Envelope";
 import groomImg from "@/assets/E6546B44-EA2C-4D54-BA9E-74BD96B32702.png";
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [fullName, setFullName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [guests, setGuests] = useState("");
+const [fullName, setFullName] = useState("");
+const [phone, setPhone] = useState("");
+const [guests, setGuests] = useState("");
 
+const audioRef = useRef<HTMLAudioElement>(null);
+const [isPlaying, setIsPlaying] = useState(false);
+const [showSoundBubble, setShowSoundBubble] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -28,7 +31,37 @@ export default function WeddingInvitation() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+const handleOpenEnvelope = () => {
+  setIsOpen(true);
+  setShowSoundBubble(true);
+
+  if (audioRef.current) {
+    audioRef.current.play().then(() => {
+      setIsPlaying(true);
+    }).catch(() => {
+      setIsPlaying(false);
+    });
+  }
+
+  setTimeout(() => {
+    setShowSoundBubble(false);
+  }, 7000);
+};
+
+const toggleAudio = () => {
+  if (!audioRef.current) return;
+
+  if (audioRef.current.paused) {
+    audioRef.current.play().then(() => {
+      setIsPlaying(true);
+    });
+  } else {
+    audioRef.current.pause();
+    setIsPlaying(false);
+  }
+};
+
+const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const adminPhone = "966554129943";
     const message = `السلام عليكم، تأكيد الحضور بدعوة زواج متعب بن عبدالعزيز العطاوي.\nالاسم: ${fullName}\nالجوال: ${phone}\nعدد المرافقين: ${guests}`;
@@ -38,7 +71,77 @@ export default function WeddingInvitation() {
 
   return (
     <div className="h-screen w-screen bg-[#faf8f5] text-[#2c2c2c] font-arabic overflow-y-scroll snap-y snap-mandatory scrollbar-none select-none relative">
-      {!isOpen && <Envelope onOpen={() => setIsOpen(true)} />}
+{!isOpen && <Envelope onOpen={handleOpenEnvelope} />}
+      <audio
+  ref={audioRef}
+  src="/music/shim2t.m4a"
+  loop
+  preload="auto"
+/>
+
+{isOpen && (
+  <div className="fixed bottom-5 left-5 z-[100]">
+    {showSoundBubble && (
+      <div className="absolute bottom-full left-0 mb-3 whitespace-nowrap">
+        <div className="relative bg-white text-[#8b7650] px-5 py-3 rounded-full shadow-lg border border-[#d8c8a8] text-sm font-medium">
+          <span className="mr-1">♪</span>
+          دعوة زواج متعب
+
+          <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r border-b border-[#d8c8a8] rotate-45"></div>
+        </div>
+      </div>
+    )}
+
+    <button
+      type="button"
+      onClick={toggleAudio}
+      aria-label={isPlaying ? "إيقاف الصوت" : "تشغيل الصوت"}
+      className="w-14 h-14 rounded-full bg-[#e8dfcd] text-[#8b7650] shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+    >
+      {isPlaying ? (
+        <svg
+          className="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.8"
+            d="M11 5L6 9H3v6h3l5 4V5z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.8"
+            d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.8"
+            d="M11 5L6 9H3v6h3l5 4V5z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.8"
+            d="M19 9l-6 6M13 9l6 6"
+          />
+        </svg>
+      )}
+    </button>
+  </div>
+)}
 
       <div className={`transition-opacity duration-1000 h-full w-full ${isOpen ? "opacity-100" : "opacity-0"}`}>
         
