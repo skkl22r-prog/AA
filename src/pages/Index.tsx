@@ -108,7 +108,7 @@ export default function WeddingInvitation() {
       {!isOpen && <Envelope onOpen={handleOpenEnvelope} />}
       <audio
         ref={audioRef}
-        src="/music/12.m4a"
+        src="/music/A.m4a"
         loop
         preload="auto"
       />
